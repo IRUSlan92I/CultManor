@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://drk4dvbn78dva"]
+
+[ext_resource type="Script" uid="uid://cx5qcukr66whc" path="res://game/managers/sound_manager.gd" id="1_cg0sy"]
+
+[node name="SoundManager" type="Node"]
+script = ExtResource("1_cg0sy")
+putch_ui_min = 0.9500000000000001
+putch_ui_max = 1.05
+putch_sfx_min = 0.9500000000000001
+putch_sfx_max = 1.05
+player_count_ui = 4
+player_count_sfx = 25

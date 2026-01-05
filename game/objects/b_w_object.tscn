@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgtb7602a2260"]
+
+[ext_resource type="Script" uid="uid://b7qut5xhc5hxo" path="res://game/objects/b_w_object.gd" id="1_jpa1b"]
+
+[node name="BlackAndWhiteObject" type="Node2D"]
+script = ExtResource("1_jpa1b")
+
+[node name="Black" type="Node2D" parent="."]
+
+[node name="White" type="Node2D" parent="."]

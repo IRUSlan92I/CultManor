@@ -1,0 +1,25 @@
+[remap]
+
+importer="font_data_image"
+type="FontFile"
+uid="uid://dxal4vyl0jy4c"
+path="res://.godot/imported/font8.png-d37c339899adda35b5ea0bd08bc26657.fontdata"
+
+[deps]
+
+source_file="res://images/fonts/font8.png"
+dest_files=["res://.godot/imported/font8.png-d37c339899adda35b5ea0bd08bc26657.fontdata"]
+
+[params]
+
+character_ranges=PackedStringArray("\' \'-\'~\'")
+kerning_pairs=PackedStringArray()
+columns=94
+rows=1
+image_margin=Rect2i(0, 0, 0, 0)
+character_margin=Rect2i(0, 0, 0, 0)
+ascent=0
+descent=0
+fallbacks=[]
+compress=true
+scaling_mode=0
