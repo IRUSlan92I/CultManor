@@ -1,1 +1,2 @@
+class_name AbstractLevel
 extends Node2D

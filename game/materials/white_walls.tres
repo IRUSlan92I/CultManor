@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://d2o2o1w8kb51g"]
+
+[ext_resource type="Shader" uid="uid://lqq1mg6l1qqe" path="res://game/shaders/black_n_white.gdshader" id="1_1yg6n"]
+
+[resource]
+shader = ExtResource("1_1yg6n")
+shader_parameter/black_color = Color(0, 0, 0, 1)
+shader_parameter/white_color = Color(1, 1, 1, 1)
+shader_parameter/switch_colors = false
+shader_parameter/threshold = 0.5
+shader_parameter/speed = 5.0
+shader_parameter/intensity = 1.0
+shader_parameter/scale = 20.0

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://5qlocc0yu8ug"]
+
+[ext_resource type="Script" uid="uid://cwdy67a7t021g" path="res://game/collision_switcher.gd" id="1_imm5a"]
+
+[node name="CollisionSwitcher" type="Node"]
+script = ExtResource("1_imm5a")
