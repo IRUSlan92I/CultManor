@@ -79,7 +79,7 @@ func switch_color(time: float = 0.0) -> void:
 		_state = State.Black if _state == State.White else State.White
 	else:
 		_state = State.TransitionToBlack if _state == State.White else State.TransitionToWhite
-	
+		
 		_intensity_tween = create_tween()
 		_intensity_tween.tween_method(_set_shader_internsity, 0.0, MAX_INTENSITY, time)
 		_intensity_tween.finished.connect(_update_state)

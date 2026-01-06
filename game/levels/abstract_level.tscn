@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://mpsu4g2b5h3a"]
+[gd_scene load_steps=14 format=3 uid="uid://mpsu4g2b5h3a"]
 
 [ext_resource type="Script" uid="uid://c737mx0kxva7i" path="res://game/levels/abstract_level.gd" id="1_o2mui"]
 [ext_resource type="PackedScene" uid="uid://dtcad8tdx78tg" path="res://game/characters/player.tscn" id="2_r0ht6"]
@@ -6,6 +6,7 @@
 [ext_resource type="Material" uid="uid://dojhoc6ljpt1a" path="res://game/materials/gray_walls.tres" id="3_pi5fd"]
 [ext_resource type="Material" uid="uid://d2o2o1w8kb51g" path="res://game/materials/white_walls.tres" id="5_6b8cu"]
 [ext_resource type="Material" uid="uid://bhksbugqhxxa0" path="res://game/materials/black_walls.tres" id="6_x8k35"]
+[ext_resource type="PackedScene" uid="uid://dsts4y32slhnc" path="res://game/menu/pause_menu.tscn" id="7_l0xih"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pi5fd"]
 texture = ExtResource("3_fnnmn")
@@ -381,3 +382,8 @@ tile_set = SubResource("TileSet_b7vts")
 [node name="WhiteWalls" type="TileMapLayer" parent="Tiles"]
 material = ExtResource("5_6b8cu")
 tile_set = SubResource("TileSet_l0xih")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("7_l0xih")]
+unique_name_in_owner = true
