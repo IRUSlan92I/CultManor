@@ -16,6 +16,7 @@ const ANIMATION_FALL_DOWN_RIGHT = "fall_down_right"
 const ANIMATION_FALL_UP = "fall_up"
 const ANIMATION_FALL_UP_LEFT = "fall_up_left"
 const ANIMATION_FALL_UP_RIGHT = "fall_up_right"
+const ANIMATION_DEATH = "death"
 
 const LOOK_AROUND_CHANCE = 25
 const PICKUP_OFFSET = 16.0
@@ -56,8 +57,9 @@ func _physics_process(delta: float) -> void:
 		for i in range(get_slide_collision_count()):
 			var collision := get_slide_collision(i)
 			if collision.get_collider() is AbstractEnemy:
-				queue_free()
-				dead.emit()
+				get_tree().paused = true
+				sprite.process_mode = Node.PROCESS_MODE_ALWAYS
+				sprite.play(ANIMATION_DEATH)
 
 
 func _input(event: InputEvent) -> void:
@@ -127,6 +129,9 @@ func _on_animation_finished() -> void:
 	match sprite.animation:
 		ANIMATION_LOOK_AROUND_1, ANIMATION_LOOK_AROUND_2:
 			sprite.play(ANIMATION_IDLE)
+		ANIMATION_DEATH:
+			dead.emit()
+			queue_free()
 
 
 func _on_animation_looped() -> void:
