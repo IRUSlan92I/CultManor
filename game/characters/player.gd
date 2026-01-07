@@ -2,6 +2,9 @@ class_name Player
 extends CharacterBody2D
 
 
+signal dead
+
+
 const ANIMATION_IDLE = "idle"
 const ANIMATION_LOOK_AROUND_1 = "look_around_1"
 const ANIMATION_LOOK_AROUND_2 = "look_around_2"
@@ -47,7 +50,14 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, acceleration * delta)
 	
 	_update_animation()
-	move_and_slide()
+	
+	var was_collided := move_and_slide()
+	if was_collided:
+		for i in range(get_slide_collision_count()):
+			var collision := get_slide_collision(i)
+			if collision.get_collider() is AbstractEnemy:
+				queue_free()
+				dead.emit()
 
 
 func _input(event: InputEvent) -> void:

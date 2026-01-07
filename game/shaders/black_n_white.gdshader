@@ -33,7 +33,7 @@ float cellular(vec2 coord) {
 }
 
 void fragment() {
-	if (COLOR.a != 0.0) {
+	if (COLOR.a > 0.01) {
 		float l = dot(COLOR.rgb, vec3(0.2126, 0.7152, 0.0722));
 
 		bool is_black = l < threshold;

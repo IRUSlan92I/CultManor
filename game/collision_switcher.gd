@@ -37,12 +37,7 @@ const SHADER_INTENSITY = "shader_parameter/intensity"
 
 @export var object : CollisionObject2D
 
-@export var state := _state:
-	set(value):
-		if (_state != value):
-			_state = value
-	get():
-		return _state
+@export var initial_state : State = State.White
 
 
 var material : Material:
@@ -50,7 +45,7 @@ var material : Material:
 		material = value
 		_apply_color()
 
-var _state : State = State.White:
+var _state : State:
 	set(value):
 		_state = value
 		_apply_color()
@@ -70,6 +65,8 @@ func _ready() -> void:
 	
 	_grey_mask = _get_grey_collision(object.collision_mask)
 	_color_mask = _get_color_collision(object.collision_mask)
+	
+	_state = initial_state
 
 
 func switch_color(time: float = 0.0) -> void:
@@ -102,9 +99,9 @@ func _set_shader_internsity(value: float) -> void:
 func _update_state() -> void:
 	match _state:
 		State.TransitionToBlack:
-			state = State.Black
+			_state = State.Black
 		State.TransitionToWhite:
-			state = State.White
+			_state = State.White
 
 
 func _apply_color() -> void:
@@ -124,8 +121,7 @@ func _apply_color() -> void:
 	
 	object.collision_layer = layer
 	object.collision_mask = mask
-
-
+	
 	if material != null:
 		var is_black := _state == State.Black or _state == State.TransitionToBlack
 		material.set(SHADER_SWITCH_COLORS, is_black)
