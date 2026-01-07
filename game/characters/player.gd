@@ -28,6 +28,9 @@ const PICKUP_OFFSET = 16.0
 @export_range(0.0, 10.0) var switch_time := 1.0
 
 
+var _is_alive := true
+
+
 @onready var sprite : AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_switcher : CollisionSwitcher = $CollisionSwitcher
 @onready var pickups : Node2D = $Pickups
@@ -40,25 +43,30 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = -jump_velocity
-
-	var direction := Input.get_axis("move_left", "move_right")
-	if direction:
-		velocity.x = move_toward(velocity.x, direction * max_speed, acceleration * delta)
-	else:
-		velocity.x = move_toward(velocity.x, 0, acceleration * delta)
 	
-	_update_animation()
+	if not _is_alive:
+		_slow_down(delta)
+	else:
+		if Input.is_action_just_pressed("jump") and is_on_floor():
+			velocity.y = -jump_velocity
+		
+		var direction := Input.get_axis("move_left", "move_right")
+		if direction:
+			velocity.x = move_toward(velocity.x, direction * max_speed, acceleration * delta)
+		else:
+			_slow_down(delta)
+		
+		_update_animation()
 	
 	var was_collided := move_and_slide()
-	if was_collided:
+	if was_collided and _is_alive:
 		for i in range(get_slide_collision_count()):
 			var collision := get_slide_collision(i)
 			if collision.get_collider() is AbstractEnemy:
+				_is_alive = false
+				collision_mask = 1
 				get_tree().paused = true
-				sprite.process_mode = Node.PROCESS_MODE_ALWAYS
+				process_mode = Node.PROCESS_MODE_ALWAYS
 				sprite.play(ANIMATION_DEATH)
 
 
@@ -77,6 +85,10 @@ func remove_pickup(pickup: AbstractPickup) -> void:
 		pickups.remove_child(pickup)
 		pickup.queue_free()
 		_rearrange_pickups()
+
+
+func _slow_down(delta: float) -> void:
+	velocity.x = move_toward(velocity.x, 0, acceleration * delta)
 
 
 func _update_animation() -> void:

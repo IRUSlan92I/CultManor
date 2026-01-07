@@ -1,10 +1,22 @@
-[gd_scene load_steps=10 format=3 uid="uid://g0n5npbt3hb2"]
+[gd_scene load_steps=13 format=3 uid="uid://g0n5npbt3hb2"]
 
 [ext_resource type="PackedScene" uid="uid://cojxqx5al7kyv" path="res://game/doors/closed_door.tscn" id="1_amonf"]
 [ext_resource type="Texture2D" uid="uid://sfjjweantpja" path="res://images/level/doors.png" id="2_5d3q0"]
 [ext_resource type="Script" uid="uid://50eqrh24tgx7" path="res://game/doors/circle_door.gd" id="2_t4nfh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t4nfh"]
+atlas = ExtResource("2_5d3q0")
+region = Rect2(0, 96, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18a0u"]
+atlas = ExtResource("2_5d3q0")
+region = Rect2(64, 96, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jx0aw"]
+atlas = ExtResource("2_5d3q0")
+region = Rect2(32, 96, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pefjn"]
 atlas = ExtResource("2_5d3q0")
 region = Rect2(0, 96, 32, 48)
 
@@ -33,6 +45,20 @@ animations = [{
 "loop": true,
 "name": &"closed",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_18a0u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jx0aw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pefjn")
+}],
+"loop": false,
+"name": &"closing",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,

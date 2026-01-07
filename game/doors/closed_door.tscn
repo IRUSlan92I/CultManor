@@ -1,10 +1,22 @@
-[gd_scene load_steps=10 format=3 uid="uid://cojxqx5al7kyv"]
+[gd_scene load_steps=13 format=3 uid="uid://cojxqx5al7kyv"]
 
 [ext_resource type="PackedScene" uid="uid://b7mhdrj3b6loq" path="res://game/doors/door.tscn" id="1_rxn60"]
 [ext_resource type="Script" uid="uid://qd7aihqwgddj" path="res://game/doors/closed_door.gd" id="2_dntl7"]
 [ext_resource type="Texture2D" uid="uid://sfjjweantpja" path="res://images/level/doors.png" id="3_dntl7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3gkgk"]
+atlas = ExtResource("3_dntl7")
+region = Rect2(0, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dntl7"]
+atlas = ExtResource("3_dntl7")
+region = Rect2(64, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgn1o"]
+atlas = ExtResource("3_dntl7")
+region = Rect2(32, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpt8q"]
 atlas = ExtResource("3_dntl7")
 region = Rect2(0, 48, 32, 48)
 
@@ -36,6 +48,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_dntl7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fgn1o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qpt8q")
+}],
+"loop": false,
+"name": &"closing",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_gu75k")
 }],
 "loop": true,
@@ -62,4 +88,3 @@ script = ExtResource("2_dntl7")
 
 [node name="AnimatedSprite2D" parent="." index="2"]
 sprite_frames = SubResource("SpriteFrames_fgn1o")
-animation = &"closed"
