@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4gqqhlew67ay"]
+
+[ext_resource type="PackedScene" uid="uid://cmnfpr2h2hbeu" path="res://game/pickups/abstract_pickup.tscn" id="1_u687g"]
+[ext_resource type="Script" uid="uid://dbssfh6ecgstl" path="res://game/pickups/circle_key_pickup.gd" id="2_sjfny"]
+[ext_resource type="Texture2D" uid="uid://ybf6pbve48lv" path="res://images/level/pickups.png" id="3_pwkbp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mprb4"]
+atlas = ExtResource("3_pwkbp")
+region = Rect2(0, 0, 16, 16)
+
+[node name="CircleKeyPickup" instance=ExtResource("1_u687g")]
+script = ExtResource("2_sjfny")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = SubResource("AtlasTexture_mprb4")

@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://g0n5npbt3hb2"]
+
+[ext_resource type="PackedScene" uid="uid://cojxqx5al7kyv" path="res://game/doors/closed_door.tscn" id="1_amonf"]
+[ext_resource type="Texture2D" uid="uid://sfjjweantpja" path="res://images/level/doors.png" id="2_5d3q0"]
+[ext_resource type="Script" uid="uid://50eqrh24tgx7" path="res://game/doors/circle_door.gd" id="2_t4nfh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4nfh"]
+atlas = ExtResource("2_5d3q0")
+region = Rect2(0, 96, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bcn3i"]
+atlas = ExtResource("2_5d3q0")
+region = Rect2(64, 96, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wv48j"]
+atlas = ExtResource("2_5d3q0")
+region = Rect2(0, 96, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ybwy"]
+atlas = ExtResource("2_5d3q0")
+region = Rect2(32, 96, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7go8b"]
+atlas = ExtResource("2_5d3q0")
+region = Rect2(64, 96, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_18a0u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4nfh")
+}],
+"loop": true,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bcn3i")
+}],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wv48j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ybwy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7go8b")
+}],
+"loop": false,
+"name": &"opening",
+"speed": 10.0
+}]
+
+[node name="CircleDoor" instance=ExtResource("1_amonf")]
+script = ExtResource("2_t4nfh")
+
+[node name="AnimatedSprite2D" parent="." index="2"]
+sprite_frames = SubResource("SpriteFrames_18a0u")

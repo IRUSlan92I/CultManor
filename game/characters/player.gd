@@ -15,6 +15,7 @@ const ANIMATION_FALL_UP_LEFT = "fall_up_left"
 const ANIMATION_FALL_UP_RIGHT = "fall_up_right"
 
 const LOOK_AROUND_CHANCE = 25
+const PICKUP_OFFSET = 16.0
 
 
 @export_range(0.0, 1000.0) var max_speed := 160
@@ -25,6 +26,7 @@ const LOOK_AROUND_CHANCE = 25
 
 @onready var sprite : AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_switcher : CollisionSwitcher = $CollisionSwitcher
+@onready var pickups : Node2D = $Pickups
 
 
 func _ready() -> void:
@@ -51,6 +53,18 @@ func _physics_process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("switch_color"):
 		collision_switcher.switch_color(switch_time)
+
+
+func add_pickup(pickup: AbstractPickup) -> void:
+	pickup.reparent.call_deferred(pickups)
+	_rearrange_pickups.call_deferred()
+
+
+func remove_pickup(pickup: AbstractPickup) -> void:
+	if pickup in pickups.get_children():
+		pickups.remove_child(pickup)
+		pickup.queue_free()
+		_rearrange_pickups()
 
 
 func _update_animation() -> void:
@@ -86,6 +100,17 @@ func _get_animation() -> String:
 		return sprite.animation
 	
 	return ANIMATION_IDLE
+
+
+func _rearrange_pickups() -> void:
+	var children := pickups.get_children()
+	var pickup_shift := (children.size() - 1) * PICKUP_OFFSET / 2.0
+	
+	for i in range(children.size()):
+		if not children[i] is Node2D: continue
+		var node := children[i] as Node2D
+		node.position.x = i * PICKUP_OFFSET - pickup_shift
+		node.position.y = 0
 
 
 func _on_animation_finished() -> void:

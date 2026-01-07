@@ -365,7 +365,11 @@ sources/0 = SubResource("TileSetAtlasSource_x8k35")
 [node name="AbstractLevel" type="Node2D"]
 script = ExtResource("1_o2mui")
 
+[node name="Doors" type="Node2D" parent="."]
+
 [node name="Objects" type="Node2D" parent="."]
+
+[node name="Pickups" type="Node2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("2_r0ht6")]
 
@@ -387,3 +391,4 @@ tile_set = SubResource("TileSet_l0xih")
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("7_l0xih")]
 unique_name_in_owner = true
+visible = false

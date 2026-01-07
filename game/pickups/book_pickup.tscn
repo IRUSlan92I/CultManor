@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://cudbspmpx6sik"]
+
+[ext_resource type="PackedScene" uid="uid://cmnfpr2h2hbeu" path="res://game/pickups/abstract_pickup.tscn" id="1_e7pu1"]
+[ext_resource type="Script" uid="uid://sheh3mtq6k8o" path="res://game/pickups/book_pickup.gd" id="2_jsqc0"]
+[ext_resource type="Texture2D" uid="uid://ybf6pbve48lv" path="res://images/level/pickups.png" id="3_yg5bj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpnvb"]
+atlas = ExtResource("3_yg5bj")
+region = Rect2(16, 16, 16, 16)
+
+[node name="BookPickup" instance=ExtResource("1_e7pu1")]
+script = ExtResource("2_jsqc0")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = SubResource("AtlasTexture_cpnvb")
