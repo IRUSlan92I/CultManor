@@ -111,7 +111,7 @@ shape = SubResource("RectangleShape2D_u7b5a")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = ExtResource("1_xelsh")
 sprite_frames = SubResource("SpriteFrames_r8rhb")
-animation = &"closing"
+animation = &"closed"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_exited"]

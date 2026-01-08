@@ -45,7 +45,7 @@ func _open() -> void:
 
 func _close() -> void:
 	sprite.play(ANIMATION_CLOSING)
-	static_body.process_mode = Node.PROCESS_MODE_DISABLED
+	static_body.process_mode = Node.PROCESS_MODE_INHERIT
 
 
 func _on_animation_finished() -> void:
