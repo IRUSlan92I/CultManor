@@ -1,10 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://84lhc3yn8vub"]
+[gd_scene load_steps=4 format=3 uid="uid://bareycqj42c6e"]
 
-[ext_resource type="Theme" uid="uid://bh56my8b2htnr" path="res://themes/menu.tres" id="1_htxfh"]
-[ext_resource type="Script" uid="uid://bb257l7unttky" path="res://game/menu/game_over_menu.gd" id="2_m1ad0"]
-[ext_resource type="Theme" uid="uid://dosa0gsbrbnpe" path="res://themes/splash.tres" id="3_kodbj"]
+[ext_resource type="Theme" uid="uid://bh56my8b2htnr" path="res://themes/menu.tres" id="1_0iv8v"]
+[ext_resource type="Theme" uid="uid://dosa0gsbrbnpe" path="res://themes/splash.tres" id="2_0iv8v"]
+[ext_resource type="Script" uid="uid://dj6porbpmqbd1" path="res://game/menu/completion_menu.gd" id="2_kge0e"]
 
-[node name="GameOverMenu" type="Control"]
+[node name="CompletionMenu" type="Control"]
 process_mode = 2
 layout_mode = 3
 anchors_preset = 15
@@ -12,8 +12,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_htxfh")
-script = ExtResource("2_m1ad0")
+theme = ExtResource("1_0iv8v")
+script = ExtResource("2_kge0e")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -36,21 +36,21 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme = ExtResource("3_kodbj")
+theme = ExtResource("2_0iv8v")
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Game over!"
+text = "Completed!"
 horizontal_alignment = 1
 
-[node name="MainMenuButton" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="NextLevelButton" type="Button" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Main menu"
+text = "Next level"
 
 [node name="FocusTimer" type="Timer" parent="."]
 one_shot = true
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/NextLevelButton" to="." method="_on_next_level_button_pressed"]
 [connection signal="timeout" from="FocusTimer" to="." method="_on_focus_timer_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://mpsu4g2b5h3a"]
+[gd_scene load_steps=21 format=3 uid="uid://mpsu4g2b5h3a"]
 
 [ext_resource type="Script" uid="uid://c737mx0kxva7i" path="res://game/levels/abstract_level.gd" id="1_o2mui"]
 [ext_resource type="PackedScene" uid="uid://dtcad8tdx78tg" path="res://game/characters/player.tscn" id="2_r0ht6"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dpvsvsd8pcjqn" path="res://game/player_killer.tscn" id="7_8ydah"]
 [ext_resource type="PackedScene" uid="uid://dsts4y32slhnc" path="res://game/menu/pause_menu.tscn" id="7_l0xih"]
 [ext_resource type="PackedScene" uid="uid://84lhc3yn8vub" path="res://game/menu/game_over_menu.tscn" id="8_b7vts"]
+[ext_resource type="PackedScene" uid="uid://bareycqj42c6e" path="res://game/menu/completion_menu.tscn" id="11_3fw0b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pi5fd"]
 texture = ExtResource("3_fnnmn")
@@ -391,6 +392,8 @@ physics_layer_0/collision_layer = 16
 physics_layer_0/collision_mask = 16
 sources/0 = SubResource("TileSetAtlasSource_3fw0b")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3fw0b"]
+
 [node name="AbstractLevel" type="Node2D"]
 script = ExtResource("1_o2mui")
 
@@ -433,4 +436,16 @@ visible = false
 unique_name_in_owner = true
 visible = false
 
+[node name="CompletionMenu" parent="CanvasLayer" instance=ExtResource("11_3fw0b")]
+unique_name_in_owner = true
+visible = false
+
+[node name="LevelEnd" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 136
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelEnd"]
+shape = SubResource("RectangleShape2D_3fw0b")
+
 [connection signal="dead" from="Player" to="." method="_on_player_dead"]
+[connection signal="body_entered" from="LevelEnd" to="." method="_on_level_end_entered"]

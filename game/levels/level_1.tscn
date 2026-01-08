@@ -92,3 +92,6 @@ tile_map_data = PackedByteArray("AAAwAP3/AAAAAAEAAAAwAPz/AAAAAAEAAAAwAPv/AAAAAAE
 
 [node name="Traps" parent="Tiles" index="3"]
 tile_map_data = PackedByteArray("AAA9AAcAAAAAAAAAAAA9AAgAAAAAAAEAAAA9AAkAAAAAAAEAAAA=")
+
+[node name="LevelEnd" parent="." index="7"]
+position = Vector2(1334, 103)
