@@ -26,6 +26,9 @@ const PICKUP_OFFSET = 16.0
 @export_range(0.0, 1000.0) var acceleration := 600.0
 @export_range(0.0, 1000.0) var jump_velocity := 320.0
 @export_range(0.0, 10.0) var switch_time := 1.0
+@export_range(0.0, 2.0) var jump_gravity_factor := 1.0
+@export_range(0.0, 2.0) var fall_gravity_factor := 1.5
+@export_range(0.0, 1.0) var passive_jump_factor := 0.5
 
 
 var _is_alive := true
@@ -34,6 +37,8 @@ var _is_alive := true
 @onready var sprite : AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_switcher : CollisionSwitcher = $CollisionSwitcher
 @onready var pickups : Node2D = $Pickups
+@onready var jump_buffer_timer : Timer = $JumpBufferTimer
+@onready var coyote_time_timer : Timer = $CoyoteTimeTimer
 
 
 func _ready() -> void:
@@ -41,14 +46,26 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if is_on_floor():
+		coyote_time_timer.start()
+	
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		var gravity_factor := jump_gravity_factor if velocity.y < 0.0 else fall_gravity_factor
+		
+		if velocity.y < 0.0 and not Input.is_action_pressed("jump"):
+			velocity.y *= passive_jump_factor
+		
+		velocity += get_gravity() * gravity_factor * delta
 	
 	if not _is_alive:
 		_slow_down(delta)
 	else:
-		if Input.is_action_just_pressed("jump") and is_on_floor():
+		if Input.is_action_just_pressed("jump"):
+			jump_buffer_timer.start()
+		
+		if not coyote_time_timer.is_stopped() and not jump_buffer_timer.is_stopped():
 			velocity.y = -jump_velocity
+			jump_buffer_timer.stop()
 		
 		var direction := Input.get_axis("move_left", "move_right")
 		if direction:
