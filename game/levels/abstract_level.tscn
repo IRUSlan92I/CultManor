@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://mpsu4g2b5h3a"]
+[gd_scene load_steps=19 format=3 uid="uid://mpsu4g2b5h3a"]
 
 [ext_resource type="Script" uid="uid://c737mx0kxva7i" path="res://game/levels/abstract_level.gd" id="1_o2mui"]
 [ext_resource type="PackedScene" uid="uid://dtcad8tdx78tg" path="res://game/characters/player.tscn" id="2_r0ht6"]
@@ -6,6 +6,8 @@
 [ext_resource type="Material" uid="uid://dojhoc6ljpt1a" path="res://game/materials/gray_walls.tres" id="3_pi5fd"]
 [ext_resource type="Material" uid="uid://d2o2o1w8kb51g" path="res://game/materials/white_walls.tres" id="5_6b8cu"]
 [ext_resource type="Material" uid="uid://bhksbugqhxxa0" path="res://game/materials/black_walls.tres" id="6_x8k35"]
+[ext_resource type="Texture2D" uid="uid://5xkwkwjety0i" path="res://images/level/traps.png" id="7_8xgvj"]
+[ext_resource type="PackedScene" uid="uid://dpvsvsd8pcjqn" path="res://game/player_killer.tscn" id="7_8ydah"]
 [ext_resource type="PackedScene" uid="uid://dsts4y32slhnc" path="res://game/menu/pause_menu.tscn" id="7_l0xih"]
 [ext_resource type="PackedScene" uid="uid://84lhc3yn8vub" path="res://game/menu/game_over_menu.tscn" id="8_b7vts"]
 
@@ -363,6 +365,32 @@ physics_layer_0/collision_layer = 32
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_x8k35")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3fw0b"]
+texture = ExtResource("7_8xgvj")
+0:0/animation_columns = 4
+0:0/animation_speed = 5.0
+0:0/animation_mode = 1
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 7, 8, 7, 8, 8, -8, 8)
+0:1/animation_columns = 4
+0:1/animation_speed = 5.0
+0:1/animation_mode = 1
+0:1/animation_frame_0/duration = 1.0
+0:1/animation_frame_1/duration = 1.0
+0:1/animation_frame_2/duration = 1.0
+0:1/animation_frame_3/duration = 1.0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_un604"]
+physics_layer_0/collision_layer = 16
+physics_layer_0/collision_mask = 16
+sources/0 = SubResource("TileSetAtlasSource_3fw0b")
+
 [node name="AbstractLevel" type="Node2D"]
 script = ExtResource("1_o2mui")
 
@@ -389,6 +417,11 @@ tile_set = SubResource("TileSet_b7vts")
 [node name="WhiteWalls" type="TileMapLayer" parent="Tiles"]
 material = ExtResource("5_6b8cu")
 tile_set = SubResource("TileSet_l0xih")
+
+[node name="Traps" type="TileMapLayer" parent="Tiles"]
+tile_set = SubResource("TileSet_un604")
+
+[node name="PlayerKiller" parent="Tiles/Traps" instance=ExtResource("7_8ydah")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

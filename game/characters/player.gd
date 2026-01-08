@@ -62,7 +62,7 @@ func _physics_process(delta: float) -> void:
 	if was_collided and _is_alive:
 		for i in range(get_slide_collision_count()):
 			var collision := get_slide_collision(i)
-			if collision.get_collider() is AbstractEnemy:
+			if _is_killing_collider(collision.get_collider()):
 				_is_alive = false
 				collision_mask = 1
 				get_tree().paused = true
@@ -89,6 +89,13 @@ func remove_pickup(pickup: AbstractPickup) -> void:
 
 func _slow_down(delta: float) -> void:
 	velocity.x = move_toward(velocity.x, 0, acceleration * delta)
+
+
+func _is_killing_collider(collider: Object) -> bool:
+	if not collider is Node: return false
+	
+	var node := collider as Node
+	return node.has_node("PlayerKiller")
 
 
 func _update_animation() -> void:
