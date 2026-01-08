@@ -2,8 +2,14 @@ class_name GameOverMenu
 extends Control
 
 
+@onready var retry_button : Button = $%RetryButton
 @onready var main_menu_button : Button = $%MainMenuButton
 @onready var focus_timer : Timer = $FocusTimer
+
+
+func _on_retry_button_pressed() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_file(get_tree().current_scene.scene_file_path)
 
 
 func _on_main_menu_button_pressed() -> void:
@@ -19,4 +25,4 @@ func _on_visibility_changed() -> void:
 
 func _on_focus_timer_timeout() -> void:
 	if main_menu_button != null:
-			main_menu_button.grab_focus()
+			retry_button.grab_focus()

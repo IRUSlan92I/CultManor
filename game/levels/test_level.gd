@@ -1,2 +1,2 @@
-class_name Level1
+class_name TestLevel
 extends AbstractLevel
