@@ -1,12 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://drk4dvbn78dva"]
+[gd_scene load_steps=5 format=3 uid="uid://drk4dvbn78dva"]
 
 [ext_resource type="Script" uid="uid://cx5qcukr66whc" path="res://game/managers/sound_manager.gd" id="1_cg0sy"]
+[ext_resource type="AudioStream" uid="uid://d2suvaisb6w45" path="res://sound/ui/accept.wav" id="2_ge1il"]
+[ext_resource type="AudioStream" uid="uid://2smjkpqyjcrb" path="res://sound/ui/decline.wav" id="3_agyxs"]
+[ext_resource type="AudioStream" uid="uid://dnqw8nign1s6e" path="res://sound/ui/select.wav" id="4_0i6kl"]
 
 [node name="SoundManager" type="Node"]
 script = ExtResource("1_cg0sy")
-putch_ui_min = 0.9500000000000001
+putch_ui_min = 0.95
 putch_ui_max = 1.05
-putch_sfx_min = 0.9500000000000001
+putch_sfx_min = 0.95
 putch_sfx_max = 1.05
 player_count_ui = 4
 player_count_sfx = 25
+ui_stream_accept = ExtResource("2_ge1il")
+ui_stream_decline = ExtResource("3_agyxs")
+ui_stream_select = ExtResource("4_0i6kl")

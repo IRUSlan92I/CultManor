@@ -299,3 +299,9 @@ func _on_animation_looped() -> void:
 	if _state == State.Idle or (type == Type.Random and _is_walking_state()):
 		if randi_range(1, 100) <= LOOK_AROUND_CHANCE:
 			_state = State.LookAround
+
+
+func _on_player_touch_area_entered(body: Node2D) -> void:
+	if body is Player:
+		_target_x = body.position.x
+		_set_chase_state()

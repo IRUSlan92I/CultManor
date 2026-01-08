@@ -46,11 +46,13 @@ horizontal_alignment = 1
 [node name="NextLevelButton" type="Button" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+focus_neighbor_top = NodePath("../MainMenuButton")
 text = "Next level"
 
 [node name="MainMenuButton" type="Button" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+focus_neighbor_bottom = NodePath("../NextLevelButton")
 text = "Main menu"
 
 [node name="FocusTimer" type="Timer" parent="."]

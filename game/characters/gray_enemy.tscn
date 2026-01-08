@@ -29,13 +29,16 @@ collision_mask = 35
 collision_mask = 35
 
 [node name="LeftPlayerCloseRay" parent="PlayerCloseCheck" index="0"]
-collision_mask = 136
+collision_mask = 171
 
 [node name="RightPlayerCloseRay" parent="PlayerCloseCheck" index="1"]
-collision_mask = 136
+collision_mask = 171
 
 [node name="LeftPlayerDistantRay" parent="PlayerDistantCheck" index="0"]
-collision_mask = 136
+collision_mask = 171
 
 [node name="RightPlayerDistantRay" parent="PlayerDistantCheck" index="1"]
+collision_mask = 171
+
+[node name="PlayerTouchArea" parent="." index="6"]
 collision_mask = 136

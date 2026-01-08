@@ -18,6 +18,7 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
+		SoundManager.play_ui_stream.call_deferred(SoundManager.ui_stream_accept)
 		get_tree().paused = true
 		pause_menu.show()
 

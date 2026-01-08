@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://cdw72hewwmypn"]
+[gd_scene load_steps=6 format=3 uid="uid://cdw72hewwmypn"]
 
 [ext_resource type="Theme" uid="uid://bh56my8b2htnr" path="res://themes/menu.tres" id="1_5cn0b"]
 [ext_resource type="Script" uid="uid://47impoi24o7g" path="res://game/menu/level_selection.gd" id="1_fb5q3"]
 [ext_resource type="PackedScene" uid="uid://bmn74wc2vophn" path="res://game/levels/test_level.tscn" id="3_3oqjo"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_3oqjo"]
+action = &"ui_cancel"
+
+[sub_resource type="Shortcut" id="Shortcut_n2wmw"]
+events = [SubResource("InputEventAction_3oqjo")]
 
 [node name="LevelSelection" type="Control"]
 layout_mode = 3
@@ -40,6 +46,7 @@ size_flags_vertical = 3
 
 [node name="MainMenuButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+shortcut = SubResource("Shortcut_n2wmw")
 text = "Main menu"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]

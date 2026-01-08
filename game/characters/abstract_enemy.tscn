@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://bx0luh4vdob3q"]
+[gd_scene load_steps=47 format=3 uid="uid://bx0luh4vdob3q"]
 
 [ext_resource type="Script" uid="uid://but5aeh7y1s0f" path="res://game/characters/abstract_enemy.gd" id="1_2wrno"]
 [ext_resource type="Texture2D" uid="uid://drk8j57acajrq" path="res://images/characters/cultist.png" id="2_mocsw"]
@@ -422,6 +422,9 @@ animations = [{
 radius = 4.0
 height = 28.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vecdo"]
+size = Vector2(32, 28)
+
 [node name="AbstractEnemy" type="CharacterBody2D"]
 collision_layer = 0
 script = ExtResource("1_2wrno")
@@ -471,5 +474,14 @@ unique_name_in_owner = true
 target_position = Vector2(320, 0)
 collision_mask = 0
 
+[node name="PlayerTouchArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerTouchArea"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_vecdo")
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animation_finished"]
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animation_looped"]
+[connection signal="body_entered" from="PlayerTouchArea" to="." method="_on_player_touch_area_entered"]

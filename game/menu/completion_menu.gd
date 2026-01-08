@@ -8,7 +8,9 @@ extends Control
 
 
 func _get_next_level(remove := false) -> PackedScene:
-	var next_level : PackedScene = get_tree().get_meta(AbstractLevel.NEXT_LEVEL_META, null)
+	if not get_tree().has_meta(AbstractLevel.NEXT_LEVEL_META): return null
+	
+	var next_level : PackedScene = get_tree().get_meta(AbstractLevel.NEXT_LEVEL_META)
 	
 	if remove:
 		get_tree().remove_meta(AbstractLevel.NEXT_LEVEL_META)
@@ -16,21 +18,30 @@ func _get_next_level(remove := false) -> PackedScene:
 	return next_level
 
 
+func _on_gui_focus_changed(_node: Control) -> void:
+	SoundManager.play_ui_stream(SoundManager.ui_stream_select)
+
+
 func _on_next_level_button_pressed() -> void:
+	SoundManager.play_ui_stream(SoundManager.ui_stream_accept)
 	get_tree().paused = false
 	get_tree().change_scene_to_packed(_get_next_level(true))
 
 
 func _on_main_menu_button_pressed() -> void:
+	SoundManager.play_ui_stream(SoundManager.ui_stream_accept)
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://game/menu/main_menu.tscn")
 
 
 func _on_visibility_changed() -> void:
+	if not is_node_ready(): return 
 	if visible:
 		next_level_button.visible = _get_next_level() != null
-		if focus_timer != null:
-			focus_timer.start()
+		focus_timer.start()
+		get_viewport().gui_focus_changed.connect(_on_gui_focus_changed)
+	else:
+		get_viewport().gui_focus_changed.disconnect(_on_gui_focus_changed)
 
 
 func _on_focus_timer_timeout() -> void:

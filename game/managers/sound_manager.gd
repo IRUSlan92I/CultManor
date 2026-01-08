@@ -18,6 +18,10 @@ const MUSIC_BUS = "Music"
 @export_range(1, 10) var player_count_ui := 1
 @export_range(1, 100) var player_count_sfx := 1
 
+@export_group("UI Sounds", "ui")
+@export var ui_stream_accept : AudioStream
+@export var ui_stream_decline : AudioStream
+@export var ui_stream_select : AudioStream
 
 
 var _ui_players : Array[AudioStreamPlayer] = []

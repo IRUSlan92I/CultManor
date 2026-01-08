@@ -5,7 +5,7 @@ extends Control
 const WINDOW_FACTOR = "window_factor"
 
 
-signal back
+var _play_sound := false
 
 
 @onready var fullscreen_button : CheckButton = $%FullscreenCheckButton
@@ -18,26 +18,13 @@ signal back
 
 
 func _ready() -> void:
-	_connect_window_factor_buttons()
 	_load_current_settings()
-	_init_focus()
-	_setup_neighbors()
-
-
-func _play_left_sound() -> bool:
-	return _play_side_sound(1, 0)
-
-
-func _play_right_sound() -> bool:
-	return _play_side_sound(0, 1)
-
-
-func _play_side_sound(offset_begin: int, offset_end: int) -> bool:
-	for i in range(offset_begin, window_factor_buttons.get_child_count() - offset_end):
-		var child := window_factor_buttons.get_child(i)
-		if child is Button and child.has_focus():
-			return true
-	return false
+	_connect_window_factor_buttons()
+	
+	fullscreen_button.grab_focus()
+	
+	_play_sound = true
+	get_viewport().gui_focus_changed.connect(_on_gui_focus_changed)
 
 
 func _connect_window_factor_buttons() -> void:
@@ -45,23 +32,6 @@ func _connect_window_factor_buttons() -> void:
 		if child is Button:
 			var button : Button = child
 			button.pressed.connect(_on_window_factor_button_pressed.bind(button))
-
-
-func _on_visibility_changed() -> void:
-	if not is_node_ready(): return
-	if not visible: return
-	
-	_load_current_settings()
-	_init_focus()
-	_setup_neighbors()
-
-
-func _init_focus() -> void:
-	fullscreen_button.grab_focus()
-
-
-func _setup_neighbors() -> void:
-	music_slider.focus_neighbor_bottom = back_button.get_path()
 
 
 func _load_current_settings() -> void:
@@ -87,32 +57,44 @@ func _update_window_factor_disabled() -> void:
 		child.focus_mode = Control.FOCUS_NONE if SettingsManager.fullscreen else Control.FOCUS_ALL
 
 
+func _on_gui_focus_changed(_node: Control) -> void:
+	SoundManager.play_ui_stream(SoundManager.ui_stream_select)
+
+
 func _on_fullscreen_check_button_toggled(toggled: bool) -> void:
+	if _play_sound: SoundManager.play_ui_stream(SoundManager.ui_stream_accept)
 	SettingsManager.fullscreen = toggled
 	_update_window_factor_disabled()
 
 
 func _on_back_button_pressed() -> void:
+	if _play_sound: SoundManager.play_ui_stream(SoundManager.ui_stream_decline)
 	get_tree().change_scene_to_file("res://game/menu/main_menu.tscn")
 
 
 func _on_window_factor_button_pressed(button: Button) -> void:
+	if _play_sound: SoundManager.play_ui_stream(SoundManager.ui_stream_accept)
 	var window_factor : int = button.get_meta(WINDOW_FACTOR, 0)
 	if window_factor > 0:
 		SettingsManager.window_factor = window_factor
 
 
 func _on_master_volume_changed(value: float) -> void:
+	if _play_sound: SoundManager.play_ui_stream(SoundManager.ui_stream_select)
 	SettingsManager.master_volume = floor(value)
 
 
 func _on_ui_volume_changed(value: float) -> void:
+	if _play_sound: SoundManager.play_ui_stream(SoundManager.ui_stream_select)
 	SettingsManager.ui_volume = floor(value)
 
 
 func _on_sfx_volume_changed(value: float) -> void:
+	var screen_center := SettingsManager.window_base_size/2
+	if _play_sound: SoundManager.play_sfx_stream(SoundManager.ui_stream_select, screen_center)
 	SettingsManager.sfx_volume = floor(value)
 
 
 func _on_music_volume_changed(value: float) -> void:
+	if _play_sound: SoundManager.play_music_stream(SoundManager.ui_stream_select)
 	SettingsManager.music_volume = floor(value)
