@@ -16,8 +16,26 @@ shader_parameter/scale = 20.0
 
 [node name="GrayEnemy" instance=ExtResource("1_q3s46")]
 collision_layer = 16
-collision_mask = 137
+collision_mask = 35
 script = ExtResource("2_olede")
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 material = SubResource("ShaderMaterial_hsdrn")
+
+[node name="LeftWallRay" parent="WallCheck" index="0"]
+collision_mask = 35
+
+[node name="RightWallRay" parent="WallCheck" index="1"]
+collision_mask = 35
+
+[node name="LeftPlayerCloseRay" parent="PlayerCloseCheck" index="0"]
+collision_mask = 136
+
+[node name="RightPlayerCloseRay" parent="PlayerCloseCheck" index="1"]
+collision_mask = 136
+
+[node name="LeftPlayerDistantRay" parent="PlayerDistantCheck" index="0"]
+collision_mask = 136
+
+[node name="RightPlayerDistantRay" parent="PlayerDistantCheck" index="1"]
+collision_mask = 136

@@ -17,8 +17,28 @@ shader_parameter/scale = 20.0
 
 [node name="WhiteEnemy" instance=ExtResource("1_3yi7g")]
 collision_layer = 64
-collision_mask = 129
+collision_mask = 33
 script = ExtResource("2_c7pdf")
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 material = SubResource("ShaderMaterial_gfhm1")
+
+[node name="LeftWallRay" parent="WallCheck" index="0"]
+collision_mask = 33
+
+[node name="RightWallRay" parent="WallCheck" index="1"]
+collision_mask = 33
+
+[node name="LeftPlayerCloseRay" parent="PlayerCloseCheck" index="0"]
+target_position = Vector2(-32, 0)
+collision_mask = 128
+
+[node name="RightPlayerCloseRay" parent="PlayerCloseCheck" index="1"]
+target_position = Vector2(32, 0)
+collision_mask = 128
+
+[node name="LeftPlayerDistantRay" parent="PlayerDistantCheck" index="0"]
+collision_mask = 128
+
+[node name="RightPlayerDistantRay" parent="PlayerDistantCheck" index="1"]
+collision_mask = 128
