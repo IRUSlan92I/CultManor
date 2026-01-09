@@ -16,6 +16,7 @@ func _can_open(body: Node2D) -> bool:
 	
 	for pickup in body.get_node("Pickups").get_children():
 		if _is_key(pickup):
+			SoundManager.play_sfx_stream(SoundManager.sfx_stream_door_unlocking, global_position)
 			body.remove_pickup(pickup)
 			_unlocked = true
 			return true

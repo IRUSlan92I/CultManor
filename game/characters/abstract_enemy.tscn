@@ -441,6 +441,7 @@ shape = SubResource("CapsuleShape2D_mocsw")
 [node name="PlayerKiller" parent="." instance=ExtResource("4_vecdo")]
 
 [node name="WallCheck" type="Node2D" parent="."]
+position = Vector2(0, 9)
 
 [node name="LeftWallRay" type="RayCast2D" parent="WallCheck"]
 unique_name_in_owner = true
@@ -451,6 +452,7 @@ unique_name_in_owner = true
 target_position = Vector2(16, 0)
 
 [node name="PlayerCloseCheck" type="Node2D" parent="."]
+position = Vector2(0, 9)
 
 [node name="LeftPlayerCloseRay" type="RayCast2D" parent="PlayerCloseCheck"]
 unique_name_in_owner = true
@@ -463,6 +465,7 @@ target_position = Vector2(48, 0)
 collision_mask = 0
 
 [node name="PlayerDistantCheck" type="Node2D" parent="."]
+position = Vector2(0, 9)
 
 [node name="LeftPlayerDistantRay" type="RayCast2D" parent="PlayerDistantCheck"]
 unique_name_in_owner = true

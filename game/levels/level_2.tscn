@@ -21,7 +21,6 @@
 [ext_resource type="PackedScene" uid="uid://bmx60xftq8f2v" path="res://game/objects/mirror_s.tscn" id="17_ddwrs"]
 
 [node name="Level2" instance=ExtResource("1_t037v")]
-player_falling_at_start = true
 
 [node name="LockedDoor" parent="Doors" index="0" instance=ExtResource("2_iakit")]
 position = Vector2(-48, 296)

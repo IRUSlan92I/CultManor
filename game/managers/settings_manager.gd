@@ -149,7 +149,7 @@ func _apply_window_scale() -> void:
 	DisplayServer.window_set_size(new_size)
 	DisplayServer.window_set_position(new_position)
 	
-	_ensure_window_on_screen()
+	#_ensure_window_on_screen()
 
 
 func _ensure_window_on_screen() -> void:

@@ -2,7 +2,7 @@ class_name AbstractLevel
 extends Node2D
 
 
-@export var player_falling_at_start: bool = false
+@export var player_falling_at_start: bool = true
 
 
 @onready var player : Player = $Player

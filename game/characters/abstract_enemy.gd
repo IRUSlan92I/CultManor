@@ -115,6 +115,7 @@ func _physics_process(delta: float) -> void:
 			_update_x_velocity(DIRECTION_RIGHT, MAX_WALK_SPEED, delta)
 			_check_wall_collision_and_switch_state(DIRECTION_RIGHT)
 		State.LookAround:
+			_update_x_velocity(0, MAX_WALK_SPEED * 2, delta)
 			if not _target_found:
 				var close_rays : Array[RayCast2D] = [left_player_close_ray, right_player_close_ray]
 				_target_found = _process_player_rays(close_rays)
@@ -144,6 +145,7 @@ func _set_state(value: State) -> void:
 
 func _process_player_ray(ray: RayCast2D) -> bool:
 	if ray.is_colliding():
+		ray.force_raycast_update()
 		var collider := ray.get_collider()
 		if collider is Player:
 			_target_x = collider.position.x

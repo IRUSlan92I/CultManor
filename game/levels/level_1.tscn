@@ -57,6 +57,7 @@ physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_4ocoy")
 
 [node name="Level1" instance=ExtResource("1_15okj")]
+player_falling_at_start = false
 
 [node name="OutdoorDoor" parent="Doors" index="0" instance=ExtResource("2_4ocoy")]
 position = Vector2(-363, -8)

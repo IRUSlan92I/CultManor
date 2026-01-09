@@ -23,7 +23,6 @@
 [ext_resource type="PackedScene" uid="uid://c6qy8uybkn4x" path="res://game/objects/plate.tscn" id="20_b1jnq"]
 
 [node name="Level3" instance=ExtResource("1_4awbs")]
-player_falling_at_start = true
 
 [node name="Room1Door" parent="Doors" index="0" instance=ExtResource("2_rvmgs")]
 position = Vector2(336, 440)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://drk4dvbn78dva"]
+[gd_scene load_steps=17 format=3 uid="uid://drk4dvbn78dva"]
 
 [ext_resource type="Script" uid="uid://cx5qcukr66whc" path="res://game/managers/sound_manager.gd" id="1_cg0sy"]
 [ext_resource type="AudioStream" uid="uid://d2suvaisb6w45" path="res://sound/ui/accept.wav" id="2_ge1il"]
@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://2spbxv7pwkmb" path="res://sound/sfx/door_opening.wav" id="8_ounmg"]
 [ext_resource type="AudioStream" uid="uid://txk8dq16levc" path="res://sound/sfx/key_picked_up.wav" id="8_wyfta"]
 [ext_resource type="AudioStream" uid="uid://dy7qnen5k20mo" path="res://sound/sfx/player_spoted.wav" id="9_q7cyi"]
+[ext_resource type="AudioStream" uid="uid://dg0t7fwu8u3m2" path="res://sound/sfx/door_unlocking.wav" id="10_lqyhh"]
 
 [node name="SoundManager" type="Node"]
 process_mode = 3
@@ -33,6 +34,7 @@ sfx_stream_death = ExtResource("5_fpnh3")
 sfx_stream_door_closing = ExtResource("7_814q3")
 sfx_stream_door_locked = ExtResource("8_lqyhh")
 sfx_stream_door_opening = ExtResource("8_ounmg")
+sfx_stream_door_unlocking = ExtResource("10_lqyhh")
 sfx_stream_jump = ExtResource("6_22ptj")
 sfx_stream_key_picked_up = ExtResource("8_wyfta")
 sfx_stream_level_completed = ExtResource("7_22ptj")
