@@ -114,6 +114,8 @@ func _apply_all_settings() -> void:
 
 
 func _apply_video_settings() -> void:
+	if OS.get_name() == "Web": return
+	
 	if _fullscreen:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else:

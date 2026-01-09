@@ -8,8 +8,17 @@ extends Control
 
 
 func _ready() -> void:
+	if OS.get_name() == "Web":
+		_setup_for_web()
+	
 	start_button.grab_focus()
 	get_viewport().gui_focus_changed.connect(_on_gui_focus_changed)
+
+
+func _setup_for_web() -> void:
+	quit_button.hide()
+	start_button.focus_neighbor_top = options_button.get_path()
+	options_button.focus_neighbor_bottom = start_button.get_path()
 
 
 func _on_gui_focus_changed(_node: Control) -> void:

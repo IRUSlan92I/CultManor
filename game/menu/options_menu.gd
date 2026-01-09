@@ -18,13 +18,27 @@ var _play_sound := false
 
 
 func _ready() -> void:
+	
 	_load_current_settings()
 	_connect_window_factor_buttons()
 	
 	fullscreen_button.grab_focus()
 	
+	if OS.get_name() == "Web":
+		_setup_for_web()
+		master_slider.grab_focus()
+	
 	_play_sound = true
 	get_viewport().gui_focus_changed.connect(_on_gui_focus_changed)
+
+
+func _setup_for_web() -> void:
+	$%FullscreenLabel.hide()
+	$%WindowFactorLabel.hide()
+	fullscreen_button.hide()
+	window_factor_buttons.hide()
+	master_slider.focus_neighbor_top = back_button.get_path()
+	back_button.focus_neighbor_bottom = master_slider.get_path()
 
 
 func _connect_window_factor_buttons() -> void:
