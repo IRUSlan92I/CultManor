@@ -4,7 +4,7 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lviuj"]
 atlas = ExtResource("1_t6r5l")
-region = Rect2(48, 64, 32, 32)
+region = Rect2(0, 128, 48, 32)
 
 [node name="SwitchKbd" type="Node2D"]
 

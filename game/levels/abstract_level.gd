@@ -2,10 +2,10 @@ class_name AbstractLevel
 extends Node2D
 
 
-const NEXT_LEVEL_META = "next_level"
-const CURRENT_LEVEL_INDEX = "current_level"
+@export var player_falling_at_start: bool = false
 
 
+@onready var player : Player = $Player
 @onready var pause_menu : PauseMenu = $%PauseMenu
 @onready var game_over_menu : GameOverMenu = $%GameOverMenu
 @onready var completion_menu : CompletionMenu = $%CompletionMenu
@@ -14,6 +14,9 @@ const CURRENT_LEVEL_INDEX = "current_level"
 func _ready() -> void:
 	pause_menu.hide()
 	game_over_menu.hide()
+	
+	if player_falling_at_start:
+		player.velocity.y = player.max_fall_speed
 
 
 func _input(event: InputEvent) -> void:
@@ -33,9 +36,6 @@ func _on_level_end_entered(body: Node2D) -> void:
 		get_tree().paused = true
 		completion_menu.show()
 		
-		var level_index : int = get_tree().get_meta(AbstractLevel.CURRENT_LEVEL_INDEX, 0)
-		get_tree().remove_meta(AbstractLevel.CURRENT_LEVEL_INDEX)
-		
-		if SaveManager.completed_levels <= level_index:
-			SaveManager.completed_levels = level_index + 1
+		if SaveManager.completed_levels <= LevelManager.current_level_index:
+			SaveManager.completed_levels = LevelManager.current_level_index + 1
 			SaveManager.save()

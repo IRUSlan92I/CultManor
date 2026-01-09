@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cdw72hewwmypn"]
+[gd_scene load_steps=9 format=3 uid="uid://cdw72hewwmypn"]
 
 [ext_resource type="Theme" uid="uid://bh56my8b2htnr" path="res://themes/menu.tres" id="1_5cn0b"]
 [ext_resource type="Script" uid="uid://47impoi24o7g" path="res://game/menu/level_selection.gd" id="1_fb5q3"]
 [ext_resource type="PackedScene" uid="uid://bmn74wc2vophn" path="res://game/levels/test_level.tscn" id="3_3oqjo"]
+[ext_resource type="PackedScene" uid="uid://dlpi1ptis3wna" path="res://game/levels/level_1.tscn" id="3_n2wmw"]
+[ext_resource type="PackedScene" uid="uid://cc06c06hlv7ix" path="res://game/levels/level_2.tscn" id="4_0qtcq"]
+[ext_resource type="PackedScene" uid="uid://ungdvjmfc6v7" path="res://game/levels/level_3.tscn" id="5_yk0t5"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_3oqjo"]
 action = &"ui_cancel"
@@ -19,7 +22,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_5cn0b")
 script = ExtResource("1_fb5q3")
-levels = Array[PackedScene]([ExtResource("3_3oqjo"), ExtResource("3_3oqjo")])
+levels = Array[PackedScene]([ExtResource("3_n2wmw"), ExtResource("4_0qtcq"), ExtResource("5_yk0t5"), ExtResource("3_3oqjo")])
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1

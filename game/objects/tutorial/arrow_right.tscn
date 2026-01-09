@@ -4,7 +4,7 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r0fup"]
 atlas = ExtResource("1_gvebv")
-region = Rect2(160, 128, 32, 16)
+region = Rect2(160, 144, 32, 16)
 
 [node name="ArrowRight" type="Node2D"]
 

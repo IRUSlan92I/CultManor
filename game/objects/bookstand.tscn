@@ -4,7 +4,7 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_opqiy"]
 atlas = ExtResource("1_nvgb0")
-region = Rect2(48, 0, 16, 32)
+region = Rect2(144, 0, 16, 32)
 
 [node name="Bookstand" type="Node2D"]
 

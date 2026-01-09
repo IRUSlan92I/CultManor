@@ -7,15 +7,8 @@ extends Control
 @onready var focus_timer : Timer = $FocusTimer
 
 
-func _get_next_level(remove := false) -> PackedScene:
-	if not get_tree().has_meta(AbstractLevel.NEXT_LEVEL_META): return null
-	
-	var next_level : PackedScene = get_tree().get_meta(AbstractLevel.NEXT_LEVEL_META)
-	
-	if remove:
-		get_tree().remove_meta(AbstractLevel.NEXT_LEVEL_META)
-	
-	return next_level
+func _is_last_level() -> bool:
+	return LevelManager.current_level_index >= (LevelManager.levels.size() - 1)
 
 
 func _on_gui_focus_changed(_node: Control) -> void:
@@ -25,7 +18,8 @@ func _on_gui_focus_changed(_node: Control) -> void:
 func _on_next_level_button_pressed() -> void:
 	SoundManager.play_ui_stream(SoundManager.ui_stream_accept)
 	get_tree().paused = false
-	get_tree().change_scene_to_packed(_get_next_level(true))
+	LevelManager.current_level_index += 1
+	get_tree().change_scene_to_packed(LevelManager.levels[LevelManager.current_level_index])
 
 
 func _on_main_menu_button_pressed() -> void:
@@ -37,7 +31,7 @@ func _on_main_menu_button_pressed() -> void:
 func _on_visibility_changed() -> void:
 	if not is_node_ready(): return 
 	if visible:
-		next_level_button.visible = _get_next_level() != null
+		next_level_button.visible = not _is_last_level()
 		focus_timer.start()
 		get_viewport().gui_focus_changed.connect(_on_gui_focus_changed)
 	else:

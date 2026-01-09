@@ -4,7 +4,7 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hq5lq"]
 atlas = ExtResource("1_v74mh")
-region = Rect2(96, 0, 32, 48)
+region = Rect2(80, 0, 32, 48)
 
 [node name="PaintingVL" type="Node2D"]
 

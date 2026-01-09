@@ -23,9 +23,10 @@ const PICKUP_OFFSET = 16.0
 
 
 @export_range(0.0, 1000.0) var max_speed := 160
+@export_range(0.0, 1000.0) var max_fall_speed := 640
 @export_range(0.0, 1000.0) var acceleration := 600.0
 @export_range(0.0, 1000.0) var jump_velocity := 320.0
-@export_range(0.0, 10.0) var switch_time := 1.0
+@export_range(0.0, 10.0) var switch_time := 0.0
 @export_range(0.0, 2.0) var jump_gravity_factor := 1.0
 @export_range(0.0, 2.0) var fall_gravity_factor := 1.5
 @export_range(0.0, 1.0) var passive_jump_factor := 0.5
@@ -48,6 +49,8 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		coyote_time_timer.start()
+	if is_on_ceiling_only() and velocity.y < 0.0:
+		velocity.y = 0.0
 	
 	if not is_on_floor():
 		var gravity_factor := jump_gravity_factor if velocity.y < 0.0 else fall_gravity_factor
@@ -56,6 +59,7 @@ func _physics_process(delta: float) -> void:
 			velocity.y *= passive_jump_factor
 		
 		velocity += get_gravity() * gravity_factor * delta
+		velocity.y = clampf(velocity.y, -max_fall_speed, max_fall_speed)
 	
 	if not _is_alive:
 		_slow_down(delta)

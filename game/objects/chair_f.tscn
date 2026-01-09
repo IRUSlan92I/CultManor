@@ -4,9 +4,9 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1kw05"]
 atlas = ExtResource("1_rse2u")
-region = Rect2(176, 0, 16, 32)
+region = Rect2(112, 0, 16, 32)
 
-[node name="Chair" type="Node2D"]
+[node name="ChairF" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_1kw05")

@@ -117,7 +117,7 @@ func _apply_color() -> void:
 			mask = _grey_mask | (_color_mask << COLLISION_WHITE_SHIFT)
 		State.TransitionToBlack, State.TransitionToWhite:
 			layer = _grey_layer | _color_layer | (_color_layer << COLLISION_WHITE_SHIFT)
-			mask = _grey_mask | _color_mask | (_color_mask << COLLISION_WHITE_SHIFT)
+			mask = _grey_mask
 	
 	object.collision_layer = layer
 	object.collision_mask = mask
