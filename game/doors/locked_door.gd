@@ -1,4 +1,4 @@
-class_name ClosedDoor
+class_name LockedDoor
 extends Door
 
 

@@ -39,11 +39,13 @@ func _can_close(_body: Node2D) -> bool:
 
 
 func _open() -> void:
+	SoundManager.play_sfx_stream(SoundManager.sfx_stream_door_opening, global_position)
 	sprite.play(ANIMATION_OPENING)
 	static_body.process_mode = Node.PROCESS_MODE_DISABLED
 
 
 func _close() -> void:
+	SoundManager.play_sfx_stream(SoundManager.sfx_stream_door_closing, global_position)
 	sprite.play(ANIMATION_CLOSING)
 	static_body.process_mode = Node.PROCESS_MODE_INHERIT
 
@@ -71,6 +73,8 @@ func _on_area_entered(body: Node2D) -> void:
 			_open()
 		else:
 			_needed_to_be_open = true
+	else:
+		SoundManager.play_sfx_stream(SoundManager.sfx_stream_door_locked, global_position)
 
 
 func _on_area_exited(body: Node2D) -> void:

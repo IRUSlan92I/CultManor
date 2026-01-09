@@ -26,7 +26,6 @@ const PICKUP_OFFSET = 16.0
 @export_range(0.0, 1000.0) var max_fall_speed := 640
 @export_range(0.0, 1000.0) var acceleration := 600.0
 @export_range(0.0, 1000.0) var jump_velocity := 320.0
-@export_range(0.0, 10.0) var switch_time := 0.0
 @export_range(0.0, 2.0) var jump_gravity_factor := 1.0
 @export_range(0.0, 2.0) var fall_gravity_factor := 1.5
 @export_range(0.0, 1.0) var passive_jump_factor := 0.5
@@ -68,6 +67,7 @@ func _physics_process(delta: float) -> void:
 			jump_buffer_timer.start()
 		
 		if not coyote_time_timer.is_stopped() and not jump_buffer_timer.is_stopped():
+			SoundManager.play_sfx_stream(SoundManager.sfx_stream_jump, global_position)
 			velocity.y = -jump_velocity
 			jump_buffer_timer.stop()
 		
@@ -83,7 +83,8 @@ func _physics_process(delta: float) -> void:
 	if was_collided and _is_alive:
 		for i in range(get_slide_collision_count()):
 			var collision := get_slide_collision(i)
-			if _is_killing_collider(collision.get_collider()):
+			if _is_killing_collider(collision.get_collider()) and _is_alive:
+				SoundManager.play_sfx_stream(SoundManager.sfx_stream_death, global_position)
 				_is_alive = false
 				collision_mask = 1
 				get_tree().paused = true
@@ -93,7 +94,8 @@ func _physics_process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("switch_color") and _is_alive:
-		collision_switcher.switch_color(switch_time)
+		SoundManager.play_sfx_stream(SoundManager.sfx_stream_switch, global_position)
+		collision_switcher.switch_color()
 
 
 func add_pickup(pickup: AbstractPickup) -> void:

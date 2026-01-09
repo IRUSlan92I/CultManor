@@ -1,11 +1,10 @@
-[gd_scene load_steps=22 format=4 uid="uid://bmn74wc2vophn"]
+[gd_scene load_steps=21 format=4 uid="uid://bmn74wc2vophn"]
 
 [ext_resource type="PackedScene" uid="uid://mpsu4g2b5h3a" path="res://game/levels/abstract_level.tscn" id="1_15okj"]
-[ext_resource type="Script" uid="uid://b04km0lbc108u" path="res://game/levels/test_level.gd" id="2_hj65a"]
 [ext_resource type="PackedScene" uid="uid://b3kyqvuxmfn8f" path="res://game/objects/fireplace.tscn" id="3_tuvkr"]
 [ext_resource type="PackedScene" uid="uid://pw8xqtpauy57" path="res://game/objects/tutorial/jump_kbd.tscn" id="4_crrvt"]
 [ext_resource type="PackedScene" uid="uid://g0n5npbt3hb2" path="res://game/doors/circle_door.tscn" id="4_yrqjd"]
-[ext_resource type="PackedScene" uid="uid://cojxqx5al7kyv" path="res://game/doors/closed_door.tscn" id="5_1skah"]
+[ext_resource type="PackedScene" uid="uid://cojxqx5al7kyv" path="res://game/doors/locked_door.tscn" id="5_1skah"]
 [ext_resource type="PackedScene" uid="uid://cemhsfdru4pv6" path="res://game/objects/tutorial/movement_kbd.tscn" id="5_rifvl"]
 [ext_resource type="PackedScene" uid="uid://dwvv5dj8lqif2" path="res://game/doors/triangle_door.tscn" id="6_75eok"]
 [ext_resource type="PackedScene" uid="uid://deo60sij43ibm" path="res://game/objects/tutorial/switch_kbd.tscn" id="6_l6jt4"]
@@ -23,7 +22,6 @@
 [ext_resource type="PackedScene" uid="uid://bv2gahb4wxgb1" path="res://game/characters/white_enemy.tscn" id="20_rt0xo"]
 
 [node name="TestLevel" instance=ExtResource("1_15okj")]
-script = ExtResource("2_hj65a")
 
 [node name="Door" parent="Doors" index="0" instance=ExtResource("11_g1txn")]
 position = Vector2(416, -56)

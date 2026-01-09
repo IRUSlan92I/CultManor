@@ -1,5 +1,5 @@
 class_name BookDoor
-extends ClosedDoor
+extends LockedDoor
 
 
 func _is_key(node: Node) -> bool:

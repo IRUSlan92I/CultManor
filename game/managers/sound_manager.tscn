@@ -1,11 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://drk4dvbn78dva"]
+[gd_scene load_steps=16 format=3 uid="uid://drk4dvbn78dva"]
 
 [ext_resource type="Script" uid="uid://cx5qcukr66whc" path="res://game/managers/sound_manager.gd" id="1_cg0sy"]
 [ext_resource type="AudioStream" uid="uid://d2suvaisb6w45" path="res://sound/ui/accept.wav" id="2_ge1il"]
 [ext_resource type="AudioStream" uid="uid://2smjkpqyjcrb" path="res://sound/ui/decline.wav" id="3_agyxs"]
 [ext_resource type="AudioStream" uid="uid://dnqw8nign1s6e" path="res://sound/ui/select.wav" id="4_0i6kl"]
+[ext_resource type="AudioStream" uid="uid://bar0qo30hnk5a" path="res://sound/sfx/death.wav" id="5_fpnh3"]
+[ext_resource type="AudioStream" uid="uid://ngforqq1dxy8" path="res://sound/sfx/book_picked_up.wav" id="5_l4iry"]
+[ext_resource type="AudioStream" uid="uid://kdtpvofbtlus" path="res://sound/sfx/jump.wav" id="6_22ptj"]
+[ext_resource type="AudioStream" uid="uid://cye1ne86awd0u" path="res://sound/sfx/level_completed.wav" id="7_22ptj"]
+[ext_resource type="AudioStream" uid="uid://dri8l7y40s3g6" path="res://sound/sfx/door_closing.wav" id="7_814q3"]
+[ext_resource type="AudioStream" uid="uid://yjq5ojrma76c" path="res://sound/sfx/switch.wav" id="7_ab171"]
+[ext_resource type="AudioStream" uid="uid://dgnsy5siim5gp" path="res://sound/sfx/player_lost.wav" id="8_6ll5c"]
+[ext_resource type="AudioStream" uid="uid://bglv6ptl6tlu1" path="res://sound/sfx/door_locked.wav" id="8_lqyhh"]
+[ext_resource type="AudioStream" uid="uid://2spbxv7pwkmb" path="res://sound/sfx/door_opening.wav" id="8_ounmg"]
+[ext_resource type="AudioStream" uid="uid://txk8dq16levc" path="res://sound/sfx/key_picked_up.wav" id="8_wyfta"]
+[ext_resource type="AudioStream" uid="uid://dy7qnen5k20mo" path="res://sound/sfx/player_spoted.wav" id="9_q7cyi"]
 
 [node name="SoundManager" type="Node"]
+process_mode = 3
 script = ExtResource("1_cg0sy")
 putch_ui_min = 0.95
 putch_ui_max = 1.05
@@ -16,3 +28,14 @@ player_count_sfx = 25
 ui_stream_accept = ExtResource("2_ge1il")
 ui_stream_decline = ExtResource("3_agyxs")
 ui_stream_select = ExtResource("4_0i6kl")
+sfx_stream_book_picked_up = ExtResource("5_l4iry")
+sfx_stream_death = ExtResource("5_fpnh3")
+sfx_stream_door_closing = ExtResource("7_814q3")
+sfx_stream_door_locked = ExtResource("8_lqyhh")
+sfx_stream_door_opening = ExtResource("8_ounmg")
+sfx_stream_jump = ExtResource("6_22ptj")
+sfx_stream_key_picked_up = ExtResource("8_wyfta")
+sfx_stream_level_completed = ExtResource("7_22ptj")
+sfx_stream_player_lost = ExtResource("8_6ll5c")
+sfx_stream_player_spoted = ExtResource("9_q7cyi")
+sfx_stream_switch = ExtResource("7_ab171")

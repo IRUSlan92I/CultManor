@@ -91,6 +91,7 @@ func _physics_process(delta: float) -> void:
 		State.ChasingLeft:
 			_process_player_ray(left_player_distant_ray)
 			if position.x < _target_x:
+				SoundManager.play_sfx_stream(SoundManager.sfx_stream_player_lost, global_position)
 				_state = State.LookAround
 			else:
 				_update_x_velocity(DIRECTION_LEFT, MAX_CHASE_SPEED, delta)
@@ -98,6 +99,7 @@ func _physics_process(delta: float) -> void:
 		State.ChasingRight:
 			_process_player_ray(right_player_distant_ray)
 			if position.x > _target_x:
+				SoundManager.play_sfx_stream(SoundManager.sfx_stream_player_lost, global_position)
 				_state = State.LookAround
 			else:
 				_update_x_velocity(DIRECTION_RIGHT, MAX_CHASE_SPEED, delta)
@@ -174,6 +176,8 @@ func _check_wall_collision_and_switch_state(direction: int) -> void:
 				State.WalkRight:
 					_state = State.WalkLeft
 				State.ChasingLeft, State.ChasingRight:
+					var stream := SoundManager.sfx_stream_player_lost
+					SoundManager.play_sfx_stream(stream, global_position)
 					_state = State.LookAround
 
 
@@ -267,6 +271,7 @@ func _set_walking_state() -> void:
 
 
 func _set_chase_state() -> void:
+	SoundManager.play_sfx_stream(SoundManager.sfx_stream_player_spoted, global_position)
 	if _target_x < position.x:
 		_state = State.ChasingLeft
 	else:

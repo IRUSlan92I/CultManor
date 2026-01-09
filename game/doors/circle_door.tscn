@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://g0n5npbt3hb2"]
 
-[ext_resource type="PackedScene" uid="uid://cojxqx5al7kyv" path="res://game/doors/closed_door.tscn" id="1_amonf"]
+[ext_resource type="PackedScene" uid="uid://cojxqx5al7kyv" path="res://game/doors/locked_door.tscn" id="1_amonf"]
 [ext_resource type="Texture2D" uid="uid://sfjjweantpja" path="res://images/level/doors.png" id="2_5d3q0"]
 [ext_resource type="Script" uid="uid://50eqrh24tgx7" path="res://game/doors/circle_door.gd" id="2_t4nfh"]
 

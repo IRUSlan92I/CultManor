@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=4 uid="uid://cc06c06hlv7ix"]
 
 [ext_resource type="PackedScene" uid="uid://mpsu4g2b5h3a" path="res://game/levels/abstract_level.tscn" id="1_t037v"]
-[ext_resource type="PackedScene" uid="uid://cojxqx5al7kyv" path="res://game/doors/closed_door.tscn" id="2_iakit"]
+[ext_resource type="PackedScene" uid="uid://cojxqx5al7kyv" path="res://game/doors/locked_door.tscn" id="2_iakit"]
 [ext_resource type="PackedScene" uid="uid://deo60sij43ibm" path="res://game/objects/tutorial/switch_kbd.tscn" id="3_6jjde"]
 [ext_resource type="PackedScene" uid="uid://b7mhdrj3b6loq" path="res://game/doors/door.tscn" id="3_ylsm2"]
 [ext_resource type="PackedScene" uid="uid://f70xseggdimg" path="res://game/objects/tutorial/switch_pad.tscn" id="4_bxukv"]
@@ -23,7 +23,7 @@
 [node name="Level2" instance=ExtResource("1_t037v")]
 player_falling_at_start = true
 
-[node name="ClosedDoor" parent="Doors" index="0" instance=ExtResource("2_iakit")]
+[node name="LockedDoor" parent="Doors" index="0" instance=ExtResource("2_iakit")]
 position = Vector2(-48, 296)
 
 [node name="TunnelEntranceDoor" parent="Doors" index="1" instance=ExtResource("3_ylsm2")]

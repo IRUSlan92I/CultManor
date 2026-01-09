@@ -21,7 +21,7 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
-		SoundManager.play_ui_stream.call_deferred(SoundManager.ui_stream_accept)
+		SoundManager.play_ui_stream(SoundManager.ui_stream_accept)
 		get_tree().paused = true
 		pause_menu.show()
 
@@ -33,6 +33,8 @@ func _on_player_dead() -> void:
 
 func _on_level_end_entered(body: Node2D) -> void:
 	if body is Player:
+		var player_position := player.global_position
+		SoundManager.play_sfx_stream(SoundManager.sfx_stream_level_completed, player_position)
 		get_tree().paused = true
 		completion_menu.show()
 		

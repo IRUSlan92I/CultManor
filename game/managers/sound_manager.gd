@@ -18,10 +18,23 @@ const MUSIC_BUS = "Music"
 @export_range(1, 10) var player_count_ui := 1
 @export_range(1, 100) var player_count_sfx := 1
 
-@export_group("UI Sounds", "ui")
+@export_group("UI Sounds", "ui_stream")
 @export var ui_stream_accept : AudioStream
 @export var ui_stream_decline : AudioStream
 @export var ui_stream_select : AudioStream
+
+@export_group("SFX Sounds", "sfx_stream")
+@export var sfx_stream_book_picked_up : AudioStream
+@export var sfx_stream_death : AudioStream
+@export var sfx_stream_door_closing : AudioStream
+@export var sfx_stream_door_locked : AudioStream
+@export var sfx_stream_door_opening : AudioStream
+@export var sfx_stream_jump : AudioStream
+@export var sfx_stream_key_picked_up : AudioStream
+@export var sfx_stream_level_completed : AudioStream
+@export var sfx_stream_player_lost : AudioStream
+@export var sfx_stream_player_spoted : AudioStream
+@export var sfx_stream_switch : AudioStream
 
 
 var _ui_players : Array[AudioStreamPlayer] = []
