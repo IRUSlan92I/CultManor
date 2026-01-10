@@ -11,6 +11,8 @@ func _ready() -> void:
 	if OS.get_name() == "Web":
 		_setup_for_web()
 	
+	SoundManager.play_music_stream(SoundManager.music_stream_main_menu)
+	
 	start_button.grab_focus()
 	get_viewport().gui_focus_changed.connect(_on_gui_focus_changed)
 

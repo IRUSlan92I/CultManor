@@ -110,5 +110,4 @@ func _on_sfx_volume_changed(value: float) -> void:
 
 
 func _on_music_volume_changed(value: float) -> void:
-	if _play_sound: SoundManager.play_music_stream(SoundManager.ui_stream_select)
 	SettingsManager.music_volume = floor(value)
