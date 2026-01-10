@@ -55,13 +55,13 @@ func _on_animation_finished() -> void:
 		ANIMATION_OPENING:
 			_needed_to_be_open = false
 			if _needed_to_be_closed:
-				sprite.play(ANIMATION_CLOSING)
+				_close()
 			else:
 				sprite.play(ANIMATION_OPEN)
 		ANIMATION_CLOSING:
 			_needed_to_be_closed = false
 			if _needed_to_be_open:
-				sprite.play(ANIMATION_OPENING)
+				_open()
 			else:
 				sprite.play(ANIMATION_CLOSED)
 			pass
