@@ -148,19 +148,3 @@ func _apply_window_scale() -> void:
 	
 	DisplayServer.window_set_size(new_size)
 	DisplayServer.window_set_position(new_position)
-	
-	#_ensure_window_on_screen()
-
-
-func _ensure_window_on_screen() -> void:
-	if _fullscreen: return
-	
-	var window_position := DisplayServer.window_get_position()
-	var window_size := DisplayServer.window_get_size()
-	var screen_size := DisplayServer.screen_get_size()
-	
-	var new_x : int = clamp(window_position.x, 0, screen_size.x - window_size.x)
-	var new_y : int = clamp(window_position.y, 0, screen_size.y - window_size.y)
-	
-	if new_x != window_position.x or new_y != window_position.y:
-		DisplayServer.window_set_position(Vector2i(new_x, new_y))
