@@ -63,7 +63,7 @@ var sfx_volume : int:
 		_apply_audio_settings()
 		_save_settings()
 
-var _music_volume := 100
+var _music_volume := 50
 var music_volume : int:
 	get():
 		return _music_volume

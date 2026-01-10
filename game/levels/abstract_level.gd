@@ -15,6 +15,8 @@ func _ready() -> void:
 	pause_menu.hide()
 	game_over_menu.hide()
 	
+	SoundManager.play_music_stream(SoundManager.music_stream_gameplay)
+	
 	if player_falling_at_start:
 		player.velocity.y = player.max_fall_speed
 

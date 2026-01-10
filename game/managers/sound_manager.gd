@@ -38,6 +38,7 @@ const MUSIC_BUS = "Music"
 @export var sfx_stream_switch : AudioStream
 
 @export_group("Music Streams", "music_stream")
+@export var music_stream_gameplay : AudioStream
 @export var music_stream_main_menu : AudioStream
 
 
@@ -70,6 +71,8 @@ func play_sfx_stream(stream: AudioStream, position: Vector2) -> AudioStreamPlaye
 
 
 func play_music_stream(stream: AudioStream) -> AudioStreamPlayer:
+	if _music_player.stream == stream: return
+	
 	_music_player.stream = stream
 	_music_player.play()
 	return _music_player
