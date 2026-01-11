@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://b7mhdrj3b6loq"]
 
 [ext_resource type="Script" uid="uid://5uqub2a6701b" path="res://game/doors/door.gd" id="1_vx1od"]
-[ext_resource type="Material" uid="uid://dojhoc6ljpt1a" path="res://game/materials/gray_walls.tres" id="1_xelsh"]
+[ext_resource type="Material" uid="uid://dojhoc6ljpt1a" path="res://game/materials/walls_gray.tres" id="1_xelsh"]
 [ext_resource type="Texture2D" uid="uid://sfjjweantpja" path="res://images/level/doors.png" id="3_ymlcn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cs8ri"]

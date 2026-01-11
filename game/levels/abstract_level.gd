@@ -28,6 +28,16 @@ func _input(event: InputEvent) -> void:
 		pause_menu.show()
 
 
+func _complete_level(player_position: Vector2) -> void:
+	SoundManager.play_sfx_stream(SoundManager.sfx_stream_level_completed, player_position)
+	get_tree().paused = true
+	completion_menu.show()
+		
+	if SaveManager.completed_levels <= LevelManager.current_level_index:
+		SaveManager.completed_levels = LevelManager.current_level_index + 1
+		SaveManager.save()
+
+
 func _on_player_dead() -> void:
 	get_tree().paused = true
 	game_over_menu.show()
@@ -35,11 +45,4 @@ func _on_player_dead() -> void:
 
 func _on_level_end_entered(body: Node2D) -> void:
 	if body is Player:
-		var player_position := player.global_position
-		SoundManager.play_sfx_stream(SoundManager.sfx_stream_level_completed, player_position)
-		get_tree().paused = true
-		completion_menu.show()
-		
-		if SaveManager.completed_levels <= LevelManager.current_level_index:
-			SaveManager.completed_levels = LevelManager.current_level_index + 1
-			SaveManager.save()
+		_complete_level(player.global_position)

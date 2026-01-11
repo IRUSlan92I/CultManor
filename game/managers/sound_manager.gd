@@ -30,6 +30,7 @@ const MUSIC_BUS = "Music"
 @export var sfx_stream_door_locked : AudioStream
 @export var sfx_stream_door_opening : AudioStream
 @export var sfx_stream_door_unlocking : AudioStream
+@export var sfx_stream_haze : AudioStream
 @export var sfx_stream_jump : AudioStream
 @export var sfx_stream_key_picked_up : AudioStream
 @export var sfx_stream_level_completed : AudioStream
