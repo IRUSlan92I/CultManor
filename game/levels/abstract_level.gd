@@ -15,6 +15,8 @@ func _ready() -> void:
 	pause_menu.hide()
 	game_over_menu.hide()
 	
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+	
 	SoundManager.play_music_stream(SoundManager.music_stream_gameplay)
 	
 	if player_falling_at_start:
@@ -26,12 +28,14 @@ func _input(event: InputEvent) -> void:
 		SoundManager.play_ui_stream(SoundManager.ui_stream_accept)
 		get_tree().paused = true
 		pause_menu.show()
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 
 func _complete_level(player_position: Vector2) -> void:
 	SoundManager.play_sfx_stream(SoundManager.sfx_stream_level_completed, player_position)
 	get_tree().paused = true
 	completion_menu.show()
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		
 	if SaveManager.completed_levels <= LevelManager.current_level_index:
 		SaveManager.completed_levels = LevelManager.current_level_index + 1
@@ -41,6 +45,7 @@ func _complete_level(player_position: Vector2) -> void:
 func _on_player_dead() -> void:
 	get_tree().paused = true
 	game_over_menu.show()
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 
 func _on_level_end_entered(body: Node2D) -> void:

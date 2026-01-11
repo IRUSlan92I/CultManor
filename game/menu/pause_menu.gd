@@ -35,6 +35,7 @@ func _on_continue_button_pressed() -> void:
 	SoundManager.play_ui_stream(SoundManager.ui_stream_decline)
 	get_tree().paused = false
 	hide()
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 
 
 func _on_main_menu_button_pressed() -> void:

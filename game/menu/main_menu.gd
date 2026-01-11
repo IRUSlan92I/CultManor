@@ -11,6 +11,8 @@ func _ready() -> void:
 	if OS.get_name() == "Web":
 		_setup_for_web()
 	
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	
 	SoundManager.play_music_stream(SoundManager.music_stream_main_menu)
 	
 	start_button.grab_focus()
