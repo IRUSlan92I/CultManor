@@ -167,6 +167,10 @@ func _rearrange_pickups() -> void:
 		node.position.y = 0
 
 
+func _play_look_around_animation() -> void:
+	sprite.play(ANIMATION_LOOK_AROUND_1 if randi_range(1, 2) == 1 else ANIMATION_LOOK_AROUND_2)
+
+
 func _on_animation_finished() -> void:
 	match sprite.animation:
 		ANIMATION_LOOK_AROUND_1, ANIMATION_LOOK_AROUND_2:
@@ -181,7 +185,3 @@ func _on_animation_looped() -> void:
 		ANIMATION_IDLE:
 			if randi_range(1, 100) <= LOOK_AROUND_CHANCE:
 				_play_look_around_animation()
-
-
-func _play_look_around_animation() -> void:
-	sprite.play(ANIMATION_LOOK_AROUND_1 if randi_range(1, 2) == 1 else ANIMATION_LOOK_AROUND_2)

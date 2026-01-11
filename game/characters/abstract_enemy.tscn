@@ -68,4 +68,6 @@ collision_mask = 0
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_vecdo")
 
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animation_finished"]
+[connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animation_looped"]
 [connection signal="body_entered" from="PlayerTouchArea" to="." method="_on_player_touch_area_entered"]

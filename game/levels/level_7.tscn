@@ -32,17 +32,6 @@ shader_parameter/scale = 20.0
 atlas = ExtResource("6_7erpt")
 region = Rect2(0, 360, 640, 360)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_o6y7x"]
-resource_local_to_scene = true
-shader = ExtResource("7_qqn64")
-shader_parameter/black_color = Color(0, 0, 0, 1)
-shader_parameter/white_color = Color(1, 1, 1, 1)
-shader_parameter/switch_colors = true
-shader_parameter/threshold = 0.5
-shader_parameter/speed = 5.0
-shader_parameter/intensity = 1.0
-shader_parameter/scale = 20.0
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6yudq"]
 resource_local_to_scene = true
 shader = ExtResource("7_qqn64")
@@ -110,6 +99,17 @@ shader_parameter/intensity = 1.0
 shader_parameter/scale = 20.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6mp5f"]
+resource_local_to_scene = true
+shader = ExtResource("7_qqn64")
+shader_parameter/black_color = Color(0, 0, 0, 1)
+shader_parameter/white_color = Color(1, 1, 1, 1)
+shader_parameter/switch_colors = true
+shader_parameter/threshold = 0.5
+shader_parameter/speed = 5.0
+shader_parameter/intensity = 1.0
+shader_parameter/scale = 20.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nhfvd"]
 resource_local_to_scene = true
 shader = ExtResource("7_qqn64")
 shader_parameter/black_color = Color(0, 0, 0, 1)
@@ -222,7 +222,7 @@ position = Vector2(-77, 0)
 animation = &"look_around_front_1"
 
 [node name="Right_3" parent="Cutscene/EnemyWaves/WaveThree" index="2" instance=ExtResource("11_6yudq")]
-material = SubResource("ShaderMaterial_o6y7x")
+material = SubResource("ShaderMaterial_6yudq")
 position = Vector2(-87, 0)
 animation = &"look_around_front_1"
 
@@ -231,7 +231,7 @@ position = Vector2(-95, 0)
 animation = &"look_around_front_1"
 
 [node name="Right_5" parent="Cutscene/EnemyWaves/WaveThree" index="4" instance=ExtResource("11_6yudq")]
-material = SubResource("ShaderMaterial_6yudq")
+material = SubResource("ShaderMaterial_8x4ch")
 position = Vector2(-104, 0)
 animation = &"look_around_front_1"
 
@@ -245,7 +245,7 @@ position = Vector2(-120, 0)
 animation = &"look_around_front_1"
 
 [node name="Left_1" parent="Cutscene/EnemyWaves/WaveThree" index="7" instance=ExtResource("11_6yudq")]
-material = SubResource("ShaderMaterial_8x4ch")
+material = SubResource("ShaderMaterial_x83dg")
 position = Vector2(78, 0)
 animation = &"look_around_front_2"
 
@@ -254,7 +254,7 @@ position = Vector2(86, 0)
 animation = &"look_around_front_2"
 
 [node name="Left_3" parent="Cutscene/EnemyWaves/WaveThree" index="9" instance=ExtResource("11_6yudq")]
-material = SubResource("ShaderMaterial_x83dg")
+material = SubResource("ShaderMaterial_jbfb3")
 position = Vector2(95, 0)
 animation = &"look_around_front_2"
 
@@ -287,7 +287,7 @@ position = Vector2(156, 0)
 animation = &"walk_left"
 
 [node name="Left_3" parent="Cutscene/EnemyWaves/WaveOne" index="2" instance=ExtResource("11_6yudq")]
-material = SubResource("ShaderMaterial_jbfb3")
+material = SubResource("ShaderMaterial_n303p")
 position = Vector2(168, 0)
 animation = &"walk_left"
 
@@ -296,7 +296,7 @@ position = Vector2(181, 0)
 animation = &"walk_left"
 
 [node name="Left_5" parent="Cutscene/EnemyWaves/WaveOne" index="4" instance=ExtResource("11_6yudq")]
-material = SubResource("ShaderMaterial_n303p")
+material = SubResource("ShaderMaterial_ghjrb")
 position = Vector2(196, 0)
 animation = &"walk_left"
 
@@ -317,7 +317,7 @@ position = Vector2(-131, 0)
 animation = &"walk_right"
 
 [node name="Right_2" parent="Cutscene/EnemyWaves/WaveTwo" index="1" instance=ExtResource("11_6yudq")]
-material = SubResource("ShaderMaterial_ghjrb")
+material = SubResource("ShaderMaterial_6mp5f")
 position = Vector2(-142, 0)
 animation = &"walk_right"
 
@@ -339,7 +339,7 @@ position = Vector2(-188, -1)
 animation = &"walk_right"
 
 [node name="Right_7" parent="Cutscene/EnemyWaves/WaveTwo" index="6" instance=ExtResource("11_6yudq")]
-material = SubResource("ShaderMaterial_6mp5f")
+material = SubResource("ShaderMaterial_nhfvd")
 position = Vector2(-200, -1)
 animation = &"walk_right"
 
