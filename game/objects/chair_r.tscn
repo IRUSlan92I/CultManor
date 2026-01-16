@@ -4,7 +4,7 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e7ewy"]
 atlas = ExtResource("1_e7ewy")
-region = Rect2(128, 32, 16, 32)
+region = Rect2(176, 32, 16, 32)
 
 [node name="ChairR" type="Node2D"]
 

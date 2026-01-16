@@ -4,7 +4,7 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sqimt"]
 atlas = ExtResource("1_57t4w")
-region = Rect2(160, 0, 32, 32)
+region = Rect2(160, 64, 32, 32)
 
 [node name="Cabinet" type="Node2D"]
 

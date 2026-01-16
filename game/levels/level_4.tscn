@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://cmp1cog2cbfh5"]
+[gd_scene load_steps=23 format=4 uid="uid://cmp1cog2cbfh5"]
 
 [ext_resource type="PackedScene" uid="uid://mpsu4g2b5h3a" path="res://game/levels/abstract_level.tscn" id="1_v1h2f"]
 [ext_resource type="PackedScene" uid="uid://b7mhdrj3b6loq" path="res://game/doors/door.tscn" id="2_h35x0"]
@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://d3m8kf7lqmyb8" path="res://game/objects/flask_l.tscn" id="8_pp088"]
 [ext_resource type="PackedScene" uid="uid://bt4smb361amjj" path="res://game/objects/flask_s.tscn" id="9_gtr04"]
 [ext_resource type="PackedScene" uid="uid://c0bk5sk661hi1" path="res://game/objects/painting_h_s.tscn" id="10_c6guj"]
-[ext_resource type="PackedScene" uid="uid://dwnalr4rphui0" path="res://game/objects/candle.tscn" id="11_gtkf3"]
 [ext_resource type="PackedScene" uid="uid://b3kyqvuxmfn8f" path="res://game/objects/fireplace.tscn" id="12_s735u"]
 [ext_resource type="PackedScene" uid="uid://dopjsft0y8mw5" path="res://game/objects/cabinet.tscn" id="13_rnrg1"]
 [ext_resource type="PackedScene" uid="uid://bo7756lp68bl1" path="res://game/objects/painting_v_s.tscn" id="14_4ncxq"]
@@ -77,16 +76,10 @@ position = Vector2(32, -3)
 [node name="Room2" type="Node2D" parent="Objects" index="1"]
 position = Vector2(257, 256)
 
-[node name="Candle1" parent="Objects/Room2" index="0" instance=ExtResource("11_gtkf3")]
-position = Vector2(-35, 23)
-
-[node name="Candle2" parent="Objects/Room2" index="1" instance=ExtResource("11_gtkf3")]
-position = Vector2(-14, 21)
-
-[node name="FlaskS" parent="Objects/Room2" index="2" instance=ExtResource("9_gtr04")]
+[node name="FlaskS" parent="Objects/Room2" index="0" instance=ExtResource("9_gtr04")]
 position = Vector2(-26, 20)
 
-[node name="Fireplace" parent="Objects/Room2" index="3" instance=ExtResource("12_s735u")]
+[node name="Fireplace" parent="Objects/Room2" index="1" instance=ExtResource("12_s735u")]
 position = Vector2(-24, 32)
 
 [node name="Room3" type="Node2D" parent="Objects" index="2"]

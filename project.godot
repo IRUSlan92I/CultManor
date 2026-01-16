@@ -23,6 +23,7 @@ SettingsManager="*res://game/managers/settings_manager.tscn"
 SoundManager="*res://game/managers/sound_manager.tscn"
 SaveManager="*res://game/managers/save_manager.tscn"
 LevelManager="*res://game/managers/level_manager.tscn"
+InputManager="*res://game/managers/input_manager.tscn"
 
 [debug]
 

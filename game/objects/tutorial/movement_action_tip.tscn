@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://be3mqeb784shj"]
+
+[ext_resource type="PackedScene" uid="uid://b24pn1q6u3u5v" path="res://game/objects/tutorial/abstract_action_tip.tscn" id="1_6vlve"]
+[ext_resource type="Texture2D" uid="uid://ddm4gc2g3aj2i" path="res://images/level/objects.png" id="2_aui55"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qoa1y"]
+atlas = ExtResource("2_aui55")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aui55"]
+atlas = ExtResource("2_aui55")
+region = Rect2(0, 128, 32, 32)
+
+[node name="MovementActionTip" instance=ExtResource("1_6vlve")]
+
+[node name="SpriteKbd" parent="." index="0"]
+texture = SubResource("AtlasTexture_qoa1y")
+
+[node name="SpritePad" parent="." index="1"]
+texture = SubResource("AtlasTexture_aui55")

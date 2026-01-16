@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b24pn1q6u3u5v"]
+
+[ext_resource type="Script" uid="uid://byjums4jdva4x" path="res://game/objects/tutorial/abstract_action_tip.gd" id="1_erg4q"]
+
+[node name="AbstractActionTip" type="Node2D"]
+script = ExtResource("1_erg4q")
+
+[node name="SpriteKbd" type="Sprite2D" parent="."]
+
+[node name="SpritePad" type="Sprite2D" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://dlpi1ptis3wna"]
+[gd_scene load_steps=26 format=4 uid="uid://dlpi1ptis3wna"]
 
 [ext_resource type="PackedScene" uid="uid://mpsu4g2b5h3a" path="res://game/levels/abstract_level.tscn" id="1_15okj"]
 [ext_resource type="PackedScene" uid="uid://cojxqx5al7kyv" path="res://game/doors/locked_door.tscn" id="2_4ocoy"]
@@ -7,10 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://b7mhdrj3b6loq" path="res://game/doors/door.tscn" id="3_crrvt"]
 [ext_resource type="Texture2D" uid="uid://du56n63yrot7d" path="res://images/level/tree.png" id="3_o0jti"]
 [ext_resource type="Texture2D" uid="uid://d3346lrt1c1oh" path="res://images/level/outdoor.png" id="3_wi6ud"]
-[ext_resource type="PackedScene" uid="uid://cemhsfdru4pv6" path="res://game/objects/tutorial/movement_kbd.tscn" id="4_rifvl"]
-[ext_resource type="PackedScene" uid="uid://tipop68pyrf7" path="res://game/objects/tutorial/movement_pad.tscn" id="5_l6jt4"]
-[ext_resource type="PackedScene" uid="uid://pw8xqtpauy57" path="res://game/objects/tutorial/jump_kbd.tscn" id="6_g1txn"]
-[ext_resource type="PackedScene" uid="uid://3372ayctb2ed" path="res://game/objects/tutorial/jump_pad.tscn" id="7_yrqjd"]
+[ext_resource type="PackedScene" uid="uid://be3mqeb784shj" path="res://game/objects/tutorial/movement_action_tip.tscn" id="6_ia26y"]
+[ext_resource type="PackedScene" uid="uid://cjduhfqgdmyhe" path="res://game/objects/tutorial/jump_action_tip.tscn" id="7_rt0xo"]
 [ext_resource type="PackedScene" uid="uid://b3kyqvuxmfn8f" path="res://game/objects/fireplace.tscn" id="8_dea75"]
 [ext_resource type="PackedScene" uid="uid://bt4smb361amjj" path="res://game/objects/flask_s.tscn" id="8_rt0xo"]
 [ext_resource type="PackedScene" uid="uid://d330w1ygg6uxy" path="res://game/objects/painting_v_l.tscn" id="9_mmf06"]
@@ -97,31 +95,25 @@ position = Vector2(1776, 280)
 [node name="Outdoor" type="Node2D" parent="Objects" index="0"]
 position = Vector2(71, 0)
 
-[node name="MovementKbd" parent="Objects/Outdoor" index="0" instance=ExtResource("4_rifvl")]
-position = Vector2(-21, 2)
-
-[node name="MovementPad" parent="Objects/Outdoor" index="1" instance=ExtResource("5_l6jt4")]
-position = Vector2(24, -4)
+[node name="MovementActionTip" parent="Objects/Outdoor" index="0" instance=ExtResource("6_ia26y")]
+position = Vector2(-11, 2)
 
 [node name="Entrance" type="Node2D" parent="Objects" index="1"]
 position = Vector2(641, 0)
 
-[node name="JumpKbd" parent="Objects/Entrance" index="0" instance=ExtResource("6_g1txn")]
-position = Vector2(173, -52)
+[node name="JumpActionTip" parent="Objects/Entrance" index="0" instance=ExtResource("7_rt0xo")]
+position = Vector2(131, -43)
 
-[node name="JumpPad" parent="Objects/Entrance" index="1" instance=ExtResource("7_yrqjd")]
-position = Vector2(95, -28)
-
-[node name="FlaskS" parent="Objects/Entrance" index="2" instance=ExtResource("8_rt0xo")]
+[node name="FlaskS" parent="Objects/Entrance" index="1" instance=ExtResource("8_rt0xo")]
 position = Vector2(-212, -15)
 
-[node name="Fireplace" parent="Objects/Entrance" index="3" instance=ExtResource("8_dea75")]
+[node name="Fireplace" parent="Objects/Entrance" index="2" instance=ExtResource("8_dea75")]
 position = Vector2(-206, 0)
 
-[node name="PaintingVL" parent="Objects/Entrance" index="4" instance=ExtResource("9_mmf06")]
+[node name="PaintingVL" parent="Objects/Entrance" index="3" instance=ExtResource("9_mmf06")]
 position = Vector2(-259, -48)
 
-[node name="PaintingHS" parent="Objects/Entrance" index="5" instance=ExtResource("10_yrqjd")]
+[node name="PaintingHS" parent="Objects/Entrance" index="4" instance=ExtResource("10_yrqjd")]
 position = Vector2(-80, -38)
 
 [node name="Room1" type="Node2D" parent="Objects" index="2"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://bmn74wc2vophn"]
+[gd_scene load_steps=20 format=4 uid="uid://bmn74wc2vophn"]
 
 [ext_resource type="PackedScene" uid="uid://mpsu4g2b5h3a" path="res://game/levels/abstract_level.tscn" id="1_15okj"]
 [ext_resource type="PackedScene" uid="uid://b3kyqvuxmfn8f" path="res://game/objects/fireplace.tscn" id="3_tuvkr"]
@@ -16,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://dqgmfpv2mhdpn" path="res://game/pickups/triangle_key_pickup.tscn" id="10_dea75"]
 [ext_resource type="PackedScene" uid="uid://b7mhdrj3b6loq" path="res://game/doors/door.tscn" id="11_g1txn"]
 [ext_resource type="PackedScene" uid="uid://dx1yasi8wlaye" path="res://game/objects/bookstand.tscn" id="13_g3b4m"]
-[ext_resource type="PackedScene" uid="uid://b6qvcio6bnaoi" path="res://game/objects/tutorial/arrow_down.tscn" id="14_r01v2"]
 [ext_resource type="PackedScene" uid="uid://cb0w6mt8g4mer" path="res://game/characters/gray_enemy.tscn" id="18_blgb8"]
 [ext_resource type="PackedScene" uid="uid://cutjutvd8dqqc" path="res://game/characters/black_enemy.tscn" id="19_ohfy3"]
 [ext_resource type="PackedScene" uid="uid://bv2gahb4wxgb1" path="res://game/characters/white_enemy.tscn" id="20_rt0xo"]
@@ -61,9 +60,6 @@ position = Vector2(692, -72)
 
 [node name="Bookstand" parent="Objects" index="4" instance=ExtResource("13_g3b4m")]
 position = Vector2(1216, 102)
-
-[node name="ArrowDown" parent="Objects" index="5" instance=ExtResource("14_r01v2")]
-position = Vector2(1376, 79)
 
 [node name="BookPickup" parent="Pickups" index="0" instance=ExtResource("7_fq0h3")]
 position = Vector2(1216, 86)

@@ -4,7 +4,7 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wg65s"]
 atlas = ExtResource("1_05y3q")
-region = Rect2(48, 64, 16, 16)
+region = Rect2(128, 32, 16, 16)
 
 [node name="FlaskS" type="Node2D"]
 

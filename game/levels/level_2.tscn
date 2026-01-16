@@ -1,10 +1,9 @@
-[gd_scene load_steps=20 format=4 uid="uid://cc06c06hlv7ix"]
+[gd_scene load_steps=19 format=4 uid="uid://cc06c06hlv7ix"]
 
 [ext_resource type="PackedScene" uid="uid://mpsu4g2b5h3a" path="res://game/levels/abstract_level.tscn" id="1_t037v"]
 [ext_resource type="PackedScene" uid="uid://cojxqx5al7kyv" path="res://game/doors/locked_door.tscn" id="2_iakit"]
-[ext_resource type="PackedScene" uid="uid://deo60sij43ibm" path="res://game/objects/tutorial/switch_kbd.tscn" id="3_6jjde"]
 [ext_resource type="PackedScene" uid="uid://b7mhdrj3b6loq" path="res://game/doors/door.tscn" id="3_ylsm2"]
-[ext_resource type="PackedScene" uid="uid://f70xseggdimg" path="res://game/objects/tutorial/switch_pad.tscn" id="4_bxukv"]
+[ext_resource type="PackedScene" uid="uid://b0pxe00dlyx7t" path="res://game/objects/tutorial/switch_action_tip.tscn" id="4_xx77b"]
 [ext_resource type="PackedScene" uid="uid://xny1x7me75gc" path="res://game/objects/mirror_l.tscn" id="5_bxukv"]
 [ext_resource type="PackedScene" uid="uid://dopjsft0y8mw5" path="res://game/objects/cabinet.tscn" id="5_uivyf"]
 [ext_resource type="PackedScene" uid="uid://b8pvlnpdnfmd0" path="res://game/objects/chair_f.tscn" id="6_go8g1"]
@@ -34,16 +33,13 @@ position = Vector2(963, 440)
 [node name="Room1" type="Node2D" parent="Objects" index="0"]
 position = Vector2(45, 272)
 
-[node name="SwitchKbd" parent="Objects/Room1" index="0" instance=ExtResource("3_6jjde")]
-position = Vector2(59, -11)
+[node name="SwitchActionTip" parent="Objects/Room1" index="0" instance=ExtResource("4_xx77b")]
+position = Vector2(57, -11)
 
-[node name="SwitchPad" parent="Objects/Room1" index="1" instance=ExtResource("4_bxukv")]
-position = Vector2(-36, -3)
-
-[node name="MirrorL" parent="Objects/Room1" index="2" instance=ExtResource("5_bxukv")]
+[node name="MirrorL" parent="Objects/Room1" index="1" instance=ExtResource("5_bxukv")]
 position = Vector2(0, 20)
 
-[node name="Cabinet" parent="Objects/Room1" index="3" instance=ExtResource("5_uivyf")]
+[node name="Cabinet" parent="Objects/Room1" index="2" instance=ExtResource("5_uivyf")]
 position = Vector2(0, 37)
 
 [node name="Room2" type="Node2D" parent="Objects" index="1"]

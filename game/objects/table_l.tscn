@@ -4,7 +4,7 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l7gad"]
 atlas = ExtResource("1_ftoqg")
-region = Rect2(80, 160, 80, 32)
+region = Rect2(80, 64, 80, 32)
 
 [node name="TableL" type="Node2D"]
 

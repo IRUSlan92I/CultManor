@@ -4,7 +4,7 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nypty"]
 atlas = ExtResource("1_xsvl5")
-region = Rect2(144, 64, 32, 16)
+region = Rect2(80, 48, 32, 16)
 
 [node name="MirrorL" type="Node2D"]
 

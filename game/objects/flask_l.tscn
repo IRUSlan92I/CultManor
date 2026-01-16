@@ -4,7 +4,7 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i1pbn"]
 atlas = ExtResource("1_x6vix")
-region = Rect2(64, 64, 16, 16)
+region = Rect2(128, 48, 16, 16)
 
 [node name="FlaskL" type="Node2D"]
 

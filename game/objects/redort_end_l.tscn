@@ -4,7 +4,7 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hbatg"]
 atlas = ExtResource("1_xsq2h")
-region = Rect2(64, 80, 16, 16)
+region = Rect2(144, 0, 16, 16)
 
 [node name="RedortEndL" type="Node2D"]
 

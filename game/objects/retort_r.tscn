@@ -4,7 +4,7 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f54r7"]
 atlas = ExtResource("1_gohft")
-region = Rect2(160, 160, 32, 16)
+region = Rect2(112, 0, 32, 16)
 
 [node name="RetortR" type="Node2D"]
 

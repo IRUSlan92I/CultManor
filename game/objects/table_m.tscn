@@ -4,7 +4,7 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_runce"]
 atlas = ExtResource("1_qacj7")
-region = Rect2(112, 128, 48, 32)
+region = Rect2(32, 64, 48, 32)
 
 [node name="TableM" type="Node2D"]
 
