@@ -163,6 +163,10 @@ pause={
 2d_physics/layer_7="White enemy"
 2d_physics/layer_8="White player"
 
+[physics]
+
+common/physics_ticks_per_second=120
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
