@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bx0luh4vdob3q"]
+[gd_scene format=3 uid="uid://bx0luh4vdob3q"]
 
 [ext_resource type="Script" uid="uid://but5aeh7y1s0f" path="res://game/characters/abstract_enemy.gd" id="1_2wrno"]
 [ext_resource type="PackedScene" uid="uid://dtxiercm8dsfm" path="res://game/characters/enemy_sprite.tscn" id="2_tjvyk"]
@@ -11,60 +11,60 @@ height = 28.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vecdo"]
 size = Vector2(32, 28)
 
-[node name="AbstractEnemy" type="CharacterBody2D"]
+[node name="AbstractEnemy" type="CharacterBody2D" unique_id=1676614852]
 collision_layer = 0
 script = ExtResource("1_2wrno")
 
-[node name="AnimatedSprite2D" parent="." instance=ExtResource("2_tjvyk")]
+[node name="AnimatedSprite2D" parent="." unique_id=1997264413 instance=ExtResource("2_tjvyk")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=185651284]
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_mocsw")
 
-[node name="PlayerKiller" parent="." instance=ExtResource("4_vecdo")]
+[node name="PlayerKiller" parent="." unique_id=1874600747 instance=ExtResource("4_vecdo")]
 
-[node name="WallCheck" type="Node2D" parent="."]
+[node name="WallCheck" type="Node2D" parent="." unique_id=782156094]
 position = Vector2(0, 9)
 
-[node name="LeftWallRay" type="RayCast2D" parent="WallCheck"]
+[node name="LeftWallRay" type="RayCast2D" parent="WallCheck" unique_id=521416854]
 unique_name_in_owner = true
 target_position = Vector2(-16, 0)
 
-[node name="RightWallRay" type="RayCast2D" parent="WallCheck"]
+[node name="RightWallRay" type="RayCast2D" parent="WallCheck" unique_id=1457669135]
 unique_name_in_owner = true
 target_position = Vector2(16, 0)
 
-[node name="PlayerCloseCheck" type="Node2D" parent="."]
+[node name="PlayerCloseCheck" type="Node2D" parent="." unique_id=1593775088]
 position = Vector2(0, 9)
 
-[node name="LeftPlayerCloseRay" type="RayCast2D" parent="PlayerCloseCheck"]
+[node name="LeftPlayerCloseRay" type="RayCast2D" parent="PlayerCloseCheck" unique_id=947570027]
 unique_name_in_owner = true
 target_position = Vector2(-48, 0)
 collision_mask = 0
 
-[node name="RightPlayerCloseRay" type="RayCast2D" parent="PlayerCloseCheck"]
+[node name="RightPlayerCloseRay" type="RayCast2D" parent="PlayerCloseCheck" unique_id=1559118218]
 unique_name_in_owner = true
 target_position = Vector2(48, 0)
 collision_mask = 0
 
-[node name="PlayerDistantCheck" type="Node2D" parent="."]
+[node name="PlayerDistantCheck" type="Node2D" parent="." unique_id=1597489123]
 position = Vector2(0, 9)
 
-[node name="LeftPlayerDistantRay" type="RayCast2D" parent="PlayerDistantCheck"]
+[node name="LeftPlayerDistantRay" type="RayCast2D" parent="PlayerDistantCheck" unique_id=1491085518]
 unique_name_in_owner = true
 target_position = Vector2(-320, 0)
 collision_mask = 0
 
-[node name="RightPlayerDistantRay" type="RayCast2D" parent="PlayerDistantCheck"]
+[node name="RightPlayerDistantRay" type="RayCast2D" parent="PlayerDistantCheck" unique_id=1377654831]
 unique_name_in_owner = true
 target_position = Vector2(320, 0)
 collision_mask = 0
 
-[node name="PlayerTouchArea" type="Area2D" parent="."]
+[node name="PlayerTouchArea" type="Area2D" parent="." unique_id=2147163970]
 collision_layer = 0
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerTouchArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerTouchArea" unique_id=262478897]
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_vecdo")
 

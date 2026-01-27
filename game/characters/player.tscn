@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dtcad8tdx78tg"]
+[gd_scene format=3 uid="uid://dtcad8tdx78tg"]
 
 [ext_resource type="Script" uid="uid://bb8kc32sggrn2" path="res://game/characters/player.gd" id="1_xln5q"]
 [ext_resource type="PackedScene" uid="uid://5qlocc0yu8ug" path="res://game/collision_switcher.tscn" id="2_j06tb"]
@@ -7,32 +7,33 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xln5q"]
 radius = 4.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" unique_id=508706417]
 collision_layer = 128
 collision_mask = 113
 script = ExtResource("1_xln5q")
 
-[node name="AnimatedSprite2D" parent="." instance=ExtResource("2_n6ad3")]
+[node name="AnimatedSprite2D" parent="." unique_id=237719081 instance=ExtResource("2_n6ad3")]
 animation = &"death"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1101386361]
 position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_xln5q")
 
-[node name="CollisionSwitcher" parent="." node_paths=PackedStringArray("object") instance=ExtResource("2_j06tb")]
+[node name="CollisionSwitcher" parent="." unique_id=601548821 node_paths=PackedStringArray("object") instance=ExtResource("2_j06tb")]
 object = NodePath("..")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=45512317]
+process_callback = 0
 position_smoothing_enabled = true
 
-[node name="Pickups" type="Node2D" parent="."]
+[node name="Pickups" type="Node2D" parent="." unique_id=958829860]
 position = Vector2(0, -24)
 
-[node name="JumpBufferTimer" type="Timer" parent="."]
+[node name="JumpBufferTimer" type="Timer" parent="." unique_id=740877224]
 wait_time = 0.1
 one_shot = true
 
-[node name="CoyoteTimeTimer" type="Timer" parent="."]
+[node name="CoyoteTimeTimer" type="Timer" parent="." unique_id=117837002]
 wait_time = 0.1
 one_shot = true
 
