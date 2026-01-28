@@ -143,8 +143,8 @@ func _apply_window_scale() -> void:
 	var current_position := DisplayServer.window_get_position()
 	var current_size := DisplayServer.window_get_size()
 	
-	var current_center := current_position + current_size / 2
-	var new_position := current_center - new_size / 2
+	var current_center := current_position + Vector2i(current_size / 2.0)
+	var new_position := current_center - Vector2i(new_size / 2.0)
 	
 	DisplayServer.window_set_size(new_size)
 	DisplayServer.window_set_position(new_position)

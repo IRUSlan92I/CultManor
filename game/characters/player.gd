@@ -79,23 +79,29 @@ func _physics_process(delta: float) -> void:
 		
 		_update_animation()
 	
-	var was_collided := move_and_slide()
-	if was_collided and _is_alive:
-		for i in range(get_slide_collision_count()):
-			var collision := get_slide_collision(i)
-			if _is_killing_collider(collision.get_collider()) and _is_alive:
-				SoundManager.play_sfx_stream(SoundManager.sfx_stream_death, global_position)
-				_is_alive = false
-				collision_mask = 1
-				get_tree().paused = true
-				process_mode = Node.PROCESS_MODE_ALWAYS
-				sprite.play(ANIMATION_DEATH)
+	move_and_slide()
+	#var was_collided := move_and_slide()
+	#if was_collided and _is_alive:
+		#for i in range(get_slide_collision_count()): #TODO remove
+			#var collision := get_slide_collision(i)
+			#if _is_killing_collider(collision.get_collider()):
+				#kill()
 
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("switch_color") and _is_alive:
 		SoundManager.play_sfx_stream(SoundManager.sfx_stream_switch, global_position)
 		collision_switcher.switch_color()
+
+
+func kill() -> void:
+	if not _is_alive: return
+	
+	SoundManager.play_sfx_stream(SoundManager.sfx_stream_death, global_position)
+	_is_alive = false
+	get_tree().paused = true
+	process_mode = Node.PROCESS_MODE_ALWAYS
+	sprite.play(ANIMATION_DEATH)
 
 
 func add_pickup(pickup: AbstractPickup) -> void:

@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://nfgx201cn4ti"]
+[gd_scene format=3 uid="uid://nfgx201cn4ti"]
 
 [ext_resource type="Texture2D" uid="uid://5xkwkwjety0i" path="res://images/level/traps.png" id="1_wrl76"]
-[ext_resource type="PackedScene" uid="uid://dpvsvsd8pcjqn" path="res://game/player_killer.tscn" id="2_6f2i6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3fw0b"]
 texture = ExtResource("1_wrl76")
@@ -29,7 +28,5 @@ physics_layer_0/collision_layer = 16
 physics_layer_0/collision_mask = 16
 sources/0 = SubResource("TileSetAtlasSource_3fw0b")
 
-[node name="Traps" type="TileMapLayer"]
+[node name="Traps" type="TileMapLayer" unique_id=397992951]
 tile_set = SubResource("TileSet_un604")
-
-[node name="PlayerKiller" parent="." instance=ExtResource("2_6f2i6")]

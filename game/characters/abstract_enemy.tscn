@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://but5aeh7y1s0f" path="res://game/characters/abstract_enemy.gd" id="1_2wrno"]
 [ext_resource type="PackedScene" uid="uid://dtxiercm8dsfm" path="res://game/characters/enemy_sprite.tscn" id="2_tjvyk"]
-[ext_resource type="PackedScene" uid="uid://dpvsvsd8pcjqn" path="res://game/player_killer.tscn" id="4_vecdo"]
+[ext_resource type="PackedScene" uid="uid://dike8xgbqdut2" path="res://game/killing_area.tscn" id="3_tjvyk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mocsw"]
 radius = 4.0
@@ -10,6 +10,10 @@ height = 28.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vecdo"]
 size = Vector2(32, 28)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tjvyk"]
+radius = 4.0
+height = 28.0
 
 [node name="AbstractEnemy" type="CharacterBody2D" unique_id=1676614852]
 collision_layer = 0
@@ -20,8 +24,6 @@ script = ExtResource("1_2wrno")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=185651284]
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_mocsw")
-
-[node name="PlayerKiller" parent="." unique_id=1874600747 instance=ExtResource("4_vecdo")]
 
 [node name="WallCheck" type="Node2D" parent="." unique_id=782156094]
 position = Vector2(0, 9)
@@ -67,6 +69,14 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerTouchArea" unique_id=262478897]
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_vecdo")
+
+[node name="KillingArea" parent="." unique_id=1891922549 instance=ExtResource("3_tjvyk")]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillingArea" unique_id=1710758452]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_tjvyk")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animation_finished"]
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animation_looped"]

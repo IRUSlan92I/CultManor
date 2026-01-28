@@ -1,34 +1,37 @@
-[gd_scene load_steps=4 format=3 uid="uid://cb0w6mt8g4mer"]
+[gd_scene format=3 uid="uid://cb0w6mt8g4mer"]
 
 [ext_resource type="PackedScene" uid="uid://bx0luh4vdob3q" path="res://game/characters/abstract_enemy.tscn" id="1_q3s46"]
 [ext_resource type="Script" uid="uid://cern5veiqkrkc" path="res://game/characters/gray_enemy.gd" id="2_olede"]
 [ext_resource type="Material" uid="uid://dbkn3k0batj5w" path="res://game/materials/enemy_gray.tres" id="3_ho47d"]
 
-[node name="GrayEnemy" instance=ExtResource("1_q3s46")]
+[node name="GrayEnemy" unique_id=139812221 instance=ExtResource("1_q3s46")]
 collision_layer = 16
 collision_mask = 35
 script = ExtResource("2_olede")
 
-[node name="AnimatedSprite2D" parent="." index="0"]
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=1997264413]
 material = ExtResource("3_ho47d")
 
-[node name="LeftWallRay" parent="WallCheck" index="0"]
+[node name="LeftWallRay" parent="WallCheck" parent_id_path=PackedInt32Array(782156094) index="0" unique_id=521416854]
 collision_mask = 35
 
-[node name="RightWallRay" parent="WallCheck" index="1"]
+[node name="RightWallRay" parent="WallCheck" parent_id_path=PackedInt32Array(782156094) index="1" unique_id=1457669135]
 collision_mask = 35
 
-[node name="LeftPlayerCloseRay" parent="PlayerCloseCheck" index="0"]
+[node name="LeftPlayerCloseRay" parent="PlayerCloseCheck" parent_id_path=PackedInt32Array(1593775088) index="0" unique_id=947570027]
 collision_mask = 171
 
-[node name="RightPlayerCloseRay" parent="PlayerCloseCheck" index="1"]
+[node name="RightPlayerCloseRay" parent="PlayerCloseCheck" parent_id_path=PackedInt32Array(1593775088) index="1" unique_id=1559118218]
 collision_mask = 171
 
-[node name="LeftPlayerDistantRay" parent="PlayerDistantCheck" index="0"]
+[node name="LeftPlayerDistantRay" parent="PlayerDistantCheck" parent_id_path=PackedInt32Array(1597489123) index="0" unique_id=1491085518]
 collision_mask = 171
 
-[node name="RightPlayerDistantRay" parent="PlayerDistantCheck" index="1"]
+[node name="RightPlayerDistantRay" parent="PlayerDistantCheck" parent_id_path=PackedInt32Array(1597489123) index="1" unique_id=1377654831]
 collision_mask = 171
 
-[node name="PlayerTouchArea" parent="." index="6"]
+[node name="PlayerTouchArea" parent="." index="5" unique_id=2147163970]
+collision_mask = 136
+
+[node name="KillingArea" parent="." index="6" unique_id=1891922549]
 collision_mask = 136

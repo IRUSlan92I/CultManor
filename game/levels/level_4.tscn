@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://cmp1cog2cbfh5"]
+[gd_scene format=4 uid="uid://cmp1cog2cbfh5"]
 
 [ext_resource type="PackedScene" uid="uid://mpsu4g2b5h3a" path="res://game/levels/abstract_level.tscn" id="1_v1h2f"]
 [ext_resource type="PackedScene" uid="uid://b7mhdrj3b6loq" path="res://game/doors/door.tscn" id="2_h35x0"]
@@ -22,250 +22,260 @@
 [ext_resource type="PackedScene" uid="uid://b6wgujelmka5p" path="res://game/objects/chair_r.tscn" id="17_fovvg"]
 [ext_resource type="PackedScene" uid="uid://baqawh1drerhk" path="res://game/objects/table_s.tscn" id="18_0iuyy"]
 [ext_resource type="PackedScene" uid="uid://d330w1ygg6uxy" path="res://game/objects/painting_v_l.tscn" id="19_s735u"]
+[ext_resource type="PackedScene" uid="uid://dike8xgbqdut2" path="res://game/killing_area.tscn" id="23_s735u"]
 
-[node name="Level4" instance=ExtResource("1_v1h2f")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rnrg1"]
+size = Vector2(224, 8)
 
-[node name="Room1Door" parent="Doors" index="0" instance=ExtResource("2_h35x0")]
+[node name="Level4" unique_id=154944069 instance=ExtResource("1_v1h2f")]
+
+[node name="Room1Door" parent="Doors" parent_id_path=PackedInt32Array(1468144392) index="0" unique_id=566374522 instance=ExtResource("2_h35x0")]
 position = Vector2(176, 280)
 
-[node name="Room2Door" parent="Doors" index="1" instance=ExtResource("2_h35x0")]
+[node name="Room2Door" parent="Doors" parent_id_path=PackedInt32Array(1468144392) index="1" unique_id=1122597865 instance=ExtResource("2_h35x0")]
 position = Vector2(352, 280)
 
-[node name="Room4Door" parent="Doors" index="2" instance=ExtResource("2_h35x0")]
+[node name="Room4Door" parent="Doors" parent_id_path=PackedInt32Array(1468144392) index="2" unique_id=876008404 instance=ExtResource("2_h35x0")]
 position = Vector2(640, 568)
 
-[node name="Room5Door" parent="Doors" index="3" instance=ExtResource("2_h35x0")]
+[node name="Room5Door" parent="Doors" parent_id_path=PackedInt32Array(1468144392) index="3" unique_id=372210623 instance=ExtResource("2_h35x0")]
 position = Vector2(992, 568)
 
-[node name="Room6Door" parent="Doors" index="4" instance=ExtResource("2_h35x0")]
+[node name="Room6Door" parent="Doors" parent_id_path=PackedInt32Array(1468144392) index="4" unique_id=1604779474 instance=ExtResource("2_h35x0")]
 position = Vector2(1283, 568)
 
-[node name="SquareDoor" parent="Doors" index="5" instance=ExtResource("3_qpxtm")]
+[node name="SquareDoor" parent="Doors" parent_id_path=PackedInt32Array(1468144392) index="5" unique_id=1600726778 instance=ExtResource("3_qpxtm")]
 position = Vector2(531, 568)
 
-[node name="Room1" type="Node2D" parent="Objects" index="0"]
+[node name="Room1" type="Node2D" parent="Objects" parent_id_path=PackedInt32Array(1320033435) index="0" unique_id=141484401]
 position = Vector2(74, 257)
 
-[node name="Wardrobe" parent="Objects/Room1" index="0" instance=ExtResource("4_mpb5r")]
+[node name="Wardrobe" parent="Objects/Room1" index="0" unique_id=364486566 instance=ExtResource("4_mpb5r")]
 position = Vector2(-74, 25)
 
-[node name="ChairF" parent="Objects/Room1" index="1" instance=ExtResource("5_i374g")]
+[node name="ChairF" parent="Objects/Room1" index="1" unique_id=624360144 instance=ExtResource("5_i374g")]
 position = Vector2(-14, 33)
 
-[node name="Plate" parent="Objects/Room1" index="2" instance=ExtResource("6_gwfl1")]
+[node name="Plate" parent="Objects/Room1" index="2" unique_id=2111173472 instance=ExtResource("6_gwfl1")]
 position = Vector2(5, 28)
 
-[node name="TableM" parent="Objects/Room1" index="3" instance=ExtResource("7_fxyr3")]
+[node name="TableM" parent="Objects/Room1" index="3" unique_id=2140203385 instance=ExtResource("7_fxyr3")]
 position = Vector2(-9, 38)
 
-[node name="FlaskL_1" parent="Objects/Room1" index="4" instance=ExtResource("8_pp088")]
+[node name="FlaskL_1" parent="Objects/Room1" index="4" unique_id=1387659164 instance=ExtResource("8_pp088")]
 position = Vector2(-19, 23)
 
-[node name="FlaskS_1" parent="Objects/Room1" index="5" instance=ExtResource("9_gtr04")]
+[node name="FlaskS_1" parent="Objects/Room1" index="5" unique_id=982484723 instance=ExtResource("9_gtr04")]
 position = Vector2(-3, 24)
 
-[node name="FlaskL_2" parent="Objects/Room1" index="6" instance=ExtResource("8_pp088")]
+[node name="FlaskL_2" parent="Objects/Room1" index="6" unique_id=891325853 instance=ExtResource("8_pp088")]
 position = Vector2(-7, 23)
 
-[node name="FlaskS_2" parent="Objects/Room1" index="7" instance=ExtResource("9_gtr04")]
+[node name="FlaskS_2" parent="Objects/Room1" index="7" unique_id=2052705816 instance=ExtResource("9_gtr04")]
 position = Vector2(-13, 24)
 
-[node name="PaintingHS" parent="Objects/Room1" index="8" instance=ExtResource("10_c6guj")]
+[node name="PaintingHS" parent="Objects/Room1" index="8" unique_id=2134083444 instance=ExtResource("10_c6guj")]
 position = Vector2(32, -3)
 
-[node name="Room2" type="Node2D" parent="Objects" index="1"]
+[node name="Room2" type="Node2D" parent="Objects" parent_id_path=PackedInt32Array(1320033435) index="1" unique_id=2094394692]
 position = Vector2(257, 256)
 
-[node name="FlaskS" parent="Objects/Room2" index="0" instance=ExtResource("9_gtr04")]
+[node name="FlaskS" parent="Objects/Room2" index="0" unique_id=1557572773 instance=ExtResource("9_gtr04")]
 position = Vector2(-26, 20)
 
-[node name="Fireplace" parent="Objects/Room2" index="1" instance=ExtResource("12_s735u")]
+[node name="Fireplace" parent="Objects/Room2" index="1" unique_id=339133866 instance=ExtResource("12_s735u")]
 position = Vector2(-24, 32)
 
-[node name="Room3" type="Node2D" parent="Objects" index="2"]
+[node name="Room3" type="Node2D" parent="Objects" parent_id_path=PackedInt32Array(1320033435) index="2" unique_id=286045658]
 position = Vector2(461, 244)
 
-[node name="Cabinet" parent="Objects/Room3" index="0" instance=ExtResource("13_rnrg1")]
+[node name="Cabinet" parent="Objects/Room3" index="0" unique_id=558802539 instance=ExtResource("13_rnrg1")]
 position = Vector2(-65, 49)
 
-[node name="PaintingVS" parent="Objects/Room3" index="1" instance=ExtResource("14_4ncxq")]
+[node name="PaintingVS" parent="Objects/Room3" index="1" unique_id=223578580 instance=ExtResource("14_4ncxq")]
 position = Vector2(-48, -10)
 
-[node name="PaintingHL" parent="Objects/Room3" index="2" instance=ExtResource("15_sqm4v")]
+[node name="PaintingHL" parent="Objects/Room3" index="2" unique_id=1486649578 instance=ExtResource("15_sqm4v")]
 position = Vector2(37, -7)
 
-[node name="Room4" type="Node2D" parent="Objects" index="3"]
+[node name="Room4" type="Node2D" parent="Objects" parent_id_path=PackedInt32Array(1320033435) index="3" unique_id=287093756]
 position = Vector2(572, 544)
 
-[node name="FlaskL" parent="Objects/Room4" index="0" instance=ExtResource("8_pp088")]
+[node name="FlaskL" parent="Objects/Room4" index="0" unique_id=86629796 instance=ExtResource("8_pp088")]
 position = Vector2(13, -1)
 
-[node name="Wardrobe" parent="Objects/Room4" index="1" instance=ExtResource("4_mpb5r")]
+[node name="Wardrobe" parent="Objects/Room4" index="1" unique_id=496603279 instance=ExtResource("4_mpb5r")]
 position = Vector2(7, 25)
 
-[node name="Room5" type="Node2D" parent="Objects" index="4"]
+[node name="Room5" type="Node2D" parent="Objects" parent_id_path=PackedInt32Array(1320033435) index="4" unique_id=1992503710]
 position = Vector2(808, 533)
 
-[node name="PaintingHL_1" parent="Objects/Room5" index="0" instance=ExtResource("15_sqm4v")]
+[node name="PaintingHL_1" parent="Objects/Room5" index="0" unique_id=1606064541 instance=ExtResource("15_sqm4v")]
 position = Vector2(-64, -30)
 
-[node name="PaintingHL_2" parent="Objects/Room5" index="1" instance=ExtResource("15_sqm4v")]
+[node name="PaintingHL_2" parent="Objects/Room5" index="1" unique_id=910334203 instance=ExtResource("15_sqm4v")]
 position = Vector2(64, -30)
 
-[node name="Table_1" type="Node2D" parent="Objects/Room5" index="2"]
+[node name="Table_1" type="Node2D" parent="Objects/Room5" index="2" unique_id=922425728]
 position = Vector2(-78, 66)
 
-[node name="ChairL" parent="Objects/Room5/Table_1" index="0" instance=ExtResource("16_had2m")]
+[node name="ChairL" parent="Objects/Room5/Table_1" index="0" unique_id=1353531552 instance=ExtResource("16_had2m")]
 position = Vector2(9, -5)
 
-[node name="ChairL2" parent="Objects/Room5/Table_1" index="1" instance=ExtResource("16_had2m")]
+[node name="ChairL2" parent="Objects/Room5/Table_1" index="1" unique_id=1464411013 instance=ExtResource("16_had2m")]
 position = Vector2(11, -5)
 
-[node name="ChairL3" parent="Objects/Room5/Table_1" index="2" instance=ExtResource("16_had2m")]
+[node name="ChairL3" parent="Objects/Room5/Table_1" index="2" unique_id=1085081463 instance=ExtResource("16_had2m")]
 position = Vector2(14, -5)
 
-[node name="ChairR" parent="Objects/Room5/Table_1" index="3" instance=ExtResource("17_fovvg")]
+[node name="ChairR" parent="Objects/Room5/Table_1" index="3" unique_id=926766789 instance=ExtResource("17_fovvg")]
 position = Vector2(-9, -5)
 
-[node name="ChairR2" parent="Objects/Room5/Table_1" index="4" instance=ExtResource("17_fovvg")]
+[node name="ChairR2" parent="Objects/Room5/Table_1" index="4" unique_id=75530884 instance=ExtResource("17_fovvg")]
 position = Vector2(-12, -5)
 
-[node name="TableS" parent="Objects/Room5/Table_1" index="5" instance=ExtResource("18_0iuyy")]
+[node name="TableS" parent="Objects/Room5/Table_1" index="5" unique_id=1358360014 instance=ExtResource("18_0iuyy")]
 
-[node name="Plate" parent="Objects/Room5/Table_1" index="6" instance=ExtResource("6_gwfl1")]
+[node name="Plate" parent="Objects/Room5/Table_1" index="6" unique_id=929035056 instance=ExtResource("6_gwfl1")]
 position = Vector2(0, -9)
 
-[node name="Plate2" parent="Objects/Room5/Table_1" index="7" instance=ExtResource("6_gwfl1")]
+[node name="Plate2" parent="Objects/Room5/Table_1" index="7" unique_id=1851641539 instance=ExtResource("6_gwfl1")]
 position = Vector2(6, -9)
 
-[node name="Plate3" parent="Objects/Room5/Table_1" index="8" instance=ExtResource("6_gwfl1")]
+[node name="Plate3" parent="Objects/Room5/Table_1" index="8" unique_id=1265254802 instance=ExtResource("6_gwfl1")]
 position = Vector2(-5, -9)
 
-[node name="Table_2" type="Node2D" parent="Objects/Room5" index="3"]
+[node name="Table_2" type="Node2D" parent="Objects/Room5" index="3" unique_id=1188882843]
 position = Vector2(-22, 66)
 
-[node name="ChairL" parent="Objects/Room5/Table_2" index="0" instance=ExtResource("16_had2m")]
+[node name="ChairL" parent="Objects/Room5/Table_2" index="0" unique_id=894196984 instance=ExtResource("16_had2m")]
 position = Vector2(10, -5)
 
-[node name="ChairL2" parent="Objects/Room5/Table_2" index="1" instance=ExtResource("16_had2m")]
+[node name="ChairL2" parent="Objects/Room5/Table_2" index="1" unique_id=1508172232 instance=ExtResource("16_had2m")]
 position = Vector2(13, -5)
 
-[node name="ChairR" parent="Objects/Room5/Table_2" index="2" instance=ExtResource("17_fovvg")]
+[node name="ChairR" parent="Objects/Room5/Table_2" index="2" unique_id=1184708931 instance=ExtResource("17_fovvg")]
 position = Vector2(-10, -5)
 
-[node name="ChairR2" parent="Objects/Room5/Table_2" index="3" instance=ExtResource("17_fovvg")]
+[node name="ChairR2" parent="Objects/Room5/Table_2" index="3" unique_id=719843785 instance=ExtResource("17_fovvg")]
 position = Vector2(-13, -5)
 
-[node name="TableS" parent="Objects/Room5/Table_2" index="4" instance=ExtResource("18_0iuyy")]
+[node name="TableS" parent="Objects/Room5/Table_2" index="4" unique_id=1639852157 instance=ExtResource("18_0iuyy")]
 
-[node name="Plate" parent="Objects/Room5/Table_2" index="5" instance=ExtResource("6_gwfl1")]
+[node name="Plate" parent="Objects/Room5/Table_2" index="5" unique_id=1875361868 instance=ExtResource("6_gwfl1")]
 position = Vector2(-5, -9)
 
-[node name="Plate2" parent="Objects/Room5/Table_2" index="6" instance=ExtResource("6_gwfl1")]
+[node name="Plate2" parent="Objects/Room5/Table_2" index="6" unique_id=146296693 instance=ExtResource("6_gwfl1")]
 position = Vector2(7, -9)
 
-[node name="Plate3" parent="Objects/Room5/Table_2" index="7" instance=ExtResource("6_gwfl1")]
+[node name="Plate3" parent="Objects/Room5/Table_2" index="7" unique_id=578807558 instance=ExtResource("6_gwfl1")]
 position = Vector2(0, -9)
 
-[node name="Table_3" type="Node2D" parent="Objects/Room5" index="4"]
+[node name="Table_3" type="Node2D" parent="Objects/Room5" index="4" unique_id=562791768]
 position = Vector2(29, 66)
 
-[node name="ChairL" parent="Objects/Room5/Table_3" index="0" instance=ExtResource("16_had2m")]
+[node name="ChairL" parent="Objects/Room5/Table_3" index="0" unique_id=1085542376 instance=ExtResource("16_had2m")]
 position = Vector2(9, -5)
 
-[node name="ChairL2" parent="Objects/Room5/Table_3" index="1" instance=ExtResource("16_had2m")]
+[node name="ChairL2" parent="Objects/Room5/Table_3" index="1" unique_id=1953161899 instance=ExtResource("16_had2m")]
 position = Vector2(11, -5)
 
-[node name="ChairR" parent="Objects/Room5/Table_3" index="2" instance=ExtResource("17_fovvg")]
+[node name="ChairR" parent="Objects/Room5/Table_3" index="2" unique_id=1728450236 instance=ExtResource("17_fovvg")]
 position = Vector2(-13, -5)
 
-[node name="ChairR2" parent="Objects/Room5/Table_3" index="3" instance=ExtResource("17_fovvg")]
+[node name="ChairR2" parent="Objects/Room5/Table_3" index="3" unique_id=1597572404 instance=ExtResource("17_fovvg")]
 position = Vector2(-10, -5)
 
-[node name="TableS" parent="Objects/Room5/Table_3" index="4" instance=ExtResource("18_0iuyy")]
+[node name="TableS" parent="Objects/Room5/Table_3" index="4" unique_id=635781710 instance=ExtResource("18_0iuyy")]
 
-[node name="Plate" parent="Objects/Room5/Table_3" index="5" instance=ExtResource("6_gwfl1")]
+[node name="Plate" parent="Objects/Room5/Table_3" index="5" unique_id=388307994 instance=ExtResource("6_gwfl1")]
 position = Vector2(0, -9)
 
-[node name="Plate2" parent="Objects/Room5/Table_3" index="6" instance=ExtResource("6_gwfl1")]
+[node name="Plate2" parent="Objects/Room5/Table_3" index="6" unique_id=2053992930 instance=ExtResource("6_gwfl1")]
 position = Vector2(6, -9)
 
-[node name="Plate3" parent="Objects/Room5/Table_3" index="7" instance=ExtResource("6_gwfl1")]
+[node name="Plate3" parent="Objects/Room5/Table_3" index="7" unique_id=893966668 instance=ExtResource("6_gwfl1")]
 position = Vector2(-6, -9)
 
-[node name="Table_4" type="Node2D" parent="Objects/Room5" index="5"]
+[node name="Table_4" type="Node2D" parent="Objects/Room5" index="5" unique_id=1181751227]
 position = Vector2(85, 66)
 
-[node name="ChairL" parent="Objects/Room5/Table_4" index="0" instance=ExtResource("16_had2m")]
+[node name="ChairL" parent="Objects/Room5/Table_4" index="0" unique_id=1192780441 instance=ExtResource("16_had2m")]
 position = Vector2(10, -5)
 
-[node name="ChairL2" parent="Objects/Room5/Table_4" index="1" instance=ExtResource("16_had2m")]
+[node name="ChairL2" parent="Objects/Room5/Table_4" index="1" unique_id=834066326 instance=ExtResource("16_had2m")]
 position = Vector2(13, -5)
 
-[node name="ChairL3" parent="Objects/Room5/Table_4" index="2" instance=ExtResource("16_had2m")]
+[node name="ChairL3" parent="Objects/Room5/Table_4" index="2" unique_id=435595466 instance=ExtResource("16_had2m")]
 position = Vector2(16, -5)
 
-[node name="ChairR" parent="Objects/Room5/Table_4" index="3" instance=ExtResource("17_fovvg")]
+[node name="ChairR" parent="Objects/Room5/Table_4" index="3" unique_id=1955680121 instance=ExtResource("17_fovvg")]
 position = Vector2(-14, -5)
 
-[node name="ChairR2" parent="Objects/Room5/Table_4" index="4" instance=ExtResource("17_fovvg")]
+[node name="ChairR2" parent="Objects/Room5/Table_4" index="4" unique_id=1065079218 instance=ExtResource("17_fovvg")]
 position = Vector2(-11, -5)
 
-[node name="ChairR3" parent="Objects/Room5/Table_4" index="5" instance=ExtResource("17_fovvg")]
+[node name="ChairR3" parent="Objects/Room5/Table_4" index="5" unique_id=74538832 instance=ExtResource("17_fovvg")]
 position = Vector2(-20, -5)
 
-[node name="TableS" parent="Objects/Room5/Table_4" index="6" instance=ExtResource("18_0iuyy")]
+[node name="TableS" parent="Objects/Room5/Table_4" index="6" unique_id=1153769591 instance=ExtResource("18_0iuyy")]
 
-[node name="Plate" parent="Objects/Room5/Table_4" index="7" instance=ExtResource("6_gwfl1")]
+[node name="Plate" parent="Objects/Room5/Table_4" index="7" unique_id=105254350 instance=ExtResource("6_gwfl1")]
 position = Vector2(-6, -9)
 
-[node name="Plate2" parent="Objects/Room5/Table_4" index="8" instance=ExtResource("6_gwfl1")]
+[node name="Plate2" parent="Objects/Room5/Table_4" index="8" unique_id=1256035192 instance=ExtResource("6_gwfl1")]
 position = Vector2(1, -9)
 
-[node name="Plate3" parent="Objects/Room5/Table_4" index="9" instance=ExtResource("6_gwfl1")]
+[node name="Plate3" parent="Objects/Room5/Table_4" index="9" unique_id=2008224714 instance=ExtResource("6_gwfl1")]
 position = Vector2(6, -9)
 
-[node name="Room6" type="Node2D" parent="Objects" index="5"]
+[node name="Room6" type="Node2D" parent="Objects" parent_id_path=PackedInt32Array(1320033435) index="5" unique_id=2086328878]
 position = Vector2(1124, 533)
 
-[node name="PaintingVL" parent="Objects/Room6" index="0" instance=ExtResource("19_s735u")]
+[node name="PaintingVL" parent="Objects/Room6" index="0" unique_id=314476613 instance=ExtResource("19_s735u")]
 position = Vector2(-69, 23)
 
-[node name="PaintingHS" parent="Objects/Room6" index="1" instance=ExtResource("10_c6guj")]
+[node name="PaintingHS" parent="Objects/Room6" index="1" unique_id=286558287 instance=ExtResource("10_c6guj")]
 position = Vector2(-11, 29)
 
-[node name="PaintingVS" parent="Objects/Room6" index="2" instance=ExtResource("14_4ncxq")]
+[node name="PaintingVS" parent="Objects/Room6" index="2" unique_id=1207208337 instance=ExtResource("14_4ncxq")]
 position = Vector2(46, 25)
 
-[node name="SquareKeyPickup" parent="Pickups" index="0" instance=ExtResource("4_p0pgv")]
+[node name="SquareKeyPickup" parent="Pickups" parent_id_path=PackedInt32Array(1113969064) index="0" unique_id=1818750964 instance=ExtResource("4_p0pgv")]
 position = Vector2(1312, 560)
 
-[node name="WhiteEnemy" parent="Enemies" index="0" instance=ExtResource("3_2vfi4")]
+[node name="WhiteEnemy" parent="Enemies" parent_id_path=PackedInt32Array(857989772) index="0" unique_id=1184609649 instance=ExtResource("3_2vfi4")]
 position = Vector2(258, 289)
 type = 1
 initial_state = 1
 
-[node name="GrayEnemy" parent="Enemies" index="1" instance=ExtResource("5_p0pgv")]
+[node name="GrayEnemy" parent="Enemies" parent_id_path=PackedInt32Array(857989772) index="1" unique_id=455148405 instance=ExtResource("5_p0pgv")]
 position = Vector2(796, 592)
 type = 1
 initial_state = 1
 
-[node name="BlackEnemy" parent="Enemies" index="2" instance=ExtResource("7_12tya")]
+[node name="BlackEnemy" parent="Enemies" parent_id_path=PackedInt32Array(857989772) index="2" unique_id=1794979765 instance=ExtResource("7_12tya")]
 position = Vector2(1162, 592)
 type = 1
 initial_state = 1
 
-[node name="GrayWalls" parent="Tiles" index="0"]
+[node name="GrayWalls" parent="Tiles" parent_id_path=PackedInt32Array(1626037498) index="0" unique_id=557672309]
 tile_map_data = PackedByteArray("AAD+////AAACAAEAAAD+//7/AAACAAEAAAD+//3/AAACAAEAAAD+//z/AAACAAEAAAD+//v/AAACAAEAAAD+//r/AAACAAEAAAD+//n/AAACAAEAAAD+//j/AAACAAEAAAD+//f/AAACAAEAAAD+//b/AAACAAEAAAD+//X/AAACAAEAAAD+//T/AAACAAEAAAD+/wAAAAACAAEAAAD+/wEAAAACAAEAAAD+/wIAAAACAAEAAAD+/wMAAAACAAEAAAD+/wQAAAACAAEAAAD+/wUAAAACAAEAAAD+/wYAAAACAAEAAAD+/wcAAAACAAEAAAD+/wgAAAACAAEAAAD+/wkAAAACAAEAAAD+/woAAAACAAEAAAD+/wsAAAACAAEAAAABAAoAAAAAAAEAAAABAAkAAAAAAAEAAAABAAgAAAAAAAEAAAABAAcAAAAAAAEAAAABAAYAAAAAAAEAAAABAAUAAAAAAAEAAAABAAQAAAAAAAEAAAABAAMAAAAAAAEAAAABAAIAAAAAAAEAAAABAAEAAAAAAAEAAAABAAAAAAAAAAEAAAABAP//AAAAAAEAAAABAP7/AAAAAAEAAAABAP3/AAAAAAEAAAABAPz/AAAAAAEAAAABAPv/AAAAAAEAAAABAPr/AAAAAAEAAAABAPn/AAAAAAEAAAABAPj/AAAAAAEAAAABAPf/AAAAAAEAAAABAPb/AAAAAAEAAAABAPX/AAAAAAEAAAABAPT/AAAAAAEAAAD+/wwAAAACAAEAAAD+/w0AAAACAAEAAAD+/w4AAAACAAEAAAD+/w8AAAACAAEAAAD+/xAAAAACAAEAAAD+/xEAAAACAAEAAAD+/xIAAAACAAEAAAD//xMAAAABAAAAAAAAABMAAAABAAAAAAABABMAAAABAAAAAAACABMAAAABAAAAAAADABMAAAABAAAAAAAEABMAAAABAAAAAAAFABMAAAABAAAAAAAGABMAAAABAAAAAAAHABMAAAABAAAAAAAIABMAAAABAAAAAAAJABMAAAABAAAAAAD+/xMAAAADAAEAAAAKABMAAAABAAAAAAALABMAAAABAAAAAAAMABMAAAABAAAAAAANABMAAAABAAAAAAAOABMAAAABAAAAAAAPABMAAAABAAAAAAAQABMAAAABAAAAAAARABMAAAABAAAAAAAKAA4AAAAGAAEAAAAKAA8AAAAGAAIAAAAVAA4AAAAGAAEAAAAVAA8AAAAGAAIAAAASABMAAAABAAAAAAATABMAAAABAAAAAAAUABMAAAABAAAAAAAVABMAAAABAAAAAAAWABMAAAABAAAAAAAXABMAAAABAAAAAAAYABMAAAABAAAAAAAZABMAAAABAAAAAAAaABMAAAAEAAEAAAAaABIAAAAAAAEAAAAaABEAAAAAAAAAAAAgABEAAAACAAQAAAAgABIAAAACAAEAAAAgABMAAAACAAEAAAAgABQAAAACAAEAAAAgABUAAAACAAEAAAAgABYAAAACAAEAAAAgABcAAAACAAEAAAAgABgAAAACAAEAAAAgABkAAAACAAEAAAAgABoAAAACAAEAAAAgABsAAAACAAEAAAAgABwAAAACAAEAAAAjAAwAAAAAAAEAAAAjAA0AAAAAAAEAAAAjAA4AAAAAAAEAAAAjAA8AAAAAAAEAAAAjABAAAAAAAAEAAAAjABEAAAAAAAEAAAAjABIAAAAAAAEAAAAjABMAAAAAAAEAAAAjABQAAAAAAAEAAAAjABUAAAAAAAEAAAAjABYAAAAAAAEAAAAjABcAAAAAAAEAAAAjABgAAAAAAAEAAAAjABkAAAAAAAEAAAAjABoAAAAAAAEAAAAjABsAAAAAAAEAAAAjABwAAAAAAAEAAAAbABEAAAABAAAAAAAcABEAAAABAAAAAAAdABEAAAABAAAAAAAeABEAAAABAAAAAAAfABEAAAABAAAAAAAgAB0AAAACAAEAAAAgAB4AAAACAAEAAAAgAB8AAAACAAEAAAAgACAAAAACAAEAAAAgACEAAAACAAIAAAAhACUAAAABAAAAAAAiACUAAAABAAAAAAAjACUAAAABAAAAAAAkACUAAAABAAAAAAAlACUAAAABAAAAAAAmACUAAAABAAAAAAAnACUAAAABAAAAAAAoACUAAAABAAAAAAApACUAAAABAAAAAAAqACUAAAACAAAAAAAnACAAAAAGAAEAAAAnACEAAAAGAAIAAAAnAB0AAAACAAEAAAAnAB4AAAACAAEAAAAnAB8AAAACAAEAAAAgACUAAAABAAAAAAAfACUAAAABAAAAAAAfACEAAAABAAIAAAAeACEAAAABAAIAAAAdACEAAAABAAIAAAAcACEAAAABAAIAAAAbACEAAAABAAIAAAAaACEAAAABAAIAAAAeACUAAAABAAAAAAAdACUAAAABAAAAAAAcACUAAAABAAAAAAAbACUAAAABAAAAAAAaACUAAAABAAAAAAAZACUAAAAAAAAAAAAZACEAAAABAAIAAAAYACEAAAABAAIAAAAXACEAAAABAAIAAAAWACEAAAADAAAAAAAZACYAAAAAAAEAAAAZACcAAAAAAAEAAAAZACgAAAAAAAEAAAAZACkAAAAAAAEAAAAZACoAAAAAAAEAAAAZACsAAAAAAAEAAAAZACwAAAAAAAEAAAAZAC0AAAAAAAEAAAAZAC4AAAAAAAEAAAAZAC8AAAAAAAEAAAAZADAAAAAAAAEAAAAZADEAAAAAAAEAAAAZADIAAAAAAAEAAAAZADMAAAAAAAEAAAAZADQAAAAAAAEAAAAZADUAAAAAAAEAAAAZADYAAAAAAAEAAAAZADcAAAAAAAEAAAAWACIAAAACAAEAAAAWACMAAAACAAEAAAAWACQAAAACAAEAAAAWACUAAAACAAEAAAAWACYAAAACAAEAAAAWACcAAAACAAEAAAAWACgAAAACAAEAAAAWACkAAAACAAEAAAAWACoAAAACAAEAAAAWACsAAAACAAEAAAAWACwAAAACAAEAAAAWAC0AAAACAAEAAAAWAC4AAAACAAEAAAAWAC8AAAACAAEAAAAWADAAAAACAAEAAAAWADEAAAACAAEAAAAWADIAAAACAAEAAAAWADMAAAACAAEAAAAWADQAAAACAAEAAAAWADUAAAACAAEAAAAWADYAAAACAAEAAAAWADcAAAACAAEAAAAWADgAAAACAAEAAAAWADkAAAACAAEAAAAWADoAAAACAAEAAAAWADsAAAACAAEAAAAWADwAAAACAAEAAAAWAD0AAAACAAEAAAAWAD4AAAACAAEAAAAWAD8AAAACAAEAAAAWAEAAAAACAAEAAAAZADgAAAAAAAEAAAAZADkAAAAAAAEAAAAZADoAAAAAAAEAAAAZADsAAAAAAAEAAAAZADwAAAAAAAEAAAAZAD0AAAAAAAEAAAAZAD4AAAAAAAEAAAAZAD8AAAAAAAEAAAAZAEAAAAAAAAEAAAAZAEEAAAAAAAEAAAAWAEEAAAACAAEAAAAnABwAAAADAAAAAAAoABwAAAABAAIAAAApABwAAAABAAIAAAAqABwAAAABAAIAAAArABwAAAABAAIAAAAsABwAAAABAAIAAAAtABwAAAABAAIAAAAuABwAAAABAAIAAAAvABwAAAABAAIAAAAwABwAAAABAAIAAAAxABwAAAABAAIAAAAyABwAAAACAAYAAAAzABwAAAABAAIAAAA0ABwAAAABAAIAAAA1ABwAAAABAAIAAAA2ABwAAAABAAIAAAA3ABwAAAABAAIAAAA4ABwAAAABAAIAAAA5ABwAAAABAAIAAAA6ABwAAAABAAIAAAA7ABwAAAABAAIAAAA9ABwAAAAEAAAAAAA8ABwAAAABAAIAAAA9AB0AAAAAAAEAAAA9AB4AAAAAAAEAAAA9AB8AAAAAAAEAAAA9ACAAAAAGAAEAAAA9ACEAAAAGAAIAAAA6ACUAAAAAAAAAAAA7ACUAAAABAAAAAAA8ACUAAAABAAAAAAA9ACUAAAABAAAAAAAqACYAAAADAAEAAAA5ACYAAAABAAAAAAA4ACYAAAABAAAAAAA3ACYAAAABAAAAAAA2ACYAAAABAAAAAAA1ACYAAAABAAAAAAA0ACYAAAABAAAAAAAzACYAAAABAAAAAAAyACYAAAABAAAAAAAxACYAAAABAAAAAAAwACYAAAABAAAAAAAvACYAAAABAAAAAAAuACYAAAABAAAAAAAtACYAAAABAAAAAAAsACYAAAABAAAAAAArACYAAAABAAAAAAA6ACYAAAAEAAEAAAA+ACUAAAACAAAAAABNACUAAAAAAAAAAABOACUAAAABAAAAAABPACUAAAABAAAAAABQACUAAAABAAAAAABRACUAAAABAAAAAABSACUAAAABAAAAAABTACUAAAABAAAAAABOACAAAAAAAAEAAABOACEAAAAAAAIAAABPACEAAAACAAIAAABQACAAAAABAAIAAABRACAAAAABAAIAAABSACAAAAABAAIAAABTACAAAAABAAIAAABUACAAAAAEAAAAAABUACUAAAAEAAEAAABUACEAAAAAAAEAAABUACIAAAAAAAEAAABUACMAAAAAAAEAAABUACQAAAAAAAEAAABNACYAAAAAAAEAAAA+ACYAAAACAAEAAABNACcAAAAAAAEAAABNACgAAAAAAAEAAAA+ACcAAAACAAEAAAA+ACgAAAACAAEAAAA+ACkAAAACAAEAAABNACkAAAAAAAEAAAA/ACkAAAABAAIAAABAACkAAAABAAIAAABBACkAAAABAAIAAABCACkAAAABAAIAAABDACkAAAABAAIAAABEACkAAAABAAIAAABFACkAAAABAAIAAABGACkAAAABAAIAAABHACkAAAABAAIAAABIACkAAAABAAIAAABJACkAAAABAAIAAABKACkAAAABAAIAAABLACkAAAABAAIAAABMACkAAAABAAIAAAA=")
 
-[node name="BlackWalls" parent="Tiles" index="1"]
+[node name="BlackWalls" parent="Tiles" parent_id_path=PackedInt32Array(1626037498) index="1" unique_id=1250602228]
 tile_map_data = PackedByteArray("AAAhABEAAAABAAAAAAAiABEAAAABAAAAAAA/ACYAAAABAAAAAABAACYAAAABAAAAAABBACYAAAABAAAAAABCACYAAAABAAAAAABDACYAAAABAAAAAABEACYAAAABAAAAAABFACYAAAABAAAAAABGACYAAAABAAAAAABHACYAAAABAAAAAABIACYAAAABAAAAAABJACYAAAABAAAAAABKACYAAAABAAAAAABLACYAAAABAAAAAABMACYAAAABAAAAAAA=")
 
-[node name="WhiteWalls" parent="Tiles" index="2"]
+[node name="WhiteWalls" parent="Tiles" parent_id_path=PackedInt32Array(1626037498) index="2" unique_id=940613078]
 tile_map_data = PackedByteArray("AAABAAsAAAAAAAIAAAACAAsAAAABAAIAAAADAAsAAAABAAIAAAAEAAsAAAABAAIAAAAFAAsAAAABAAIAAAAGAAsAAAABAAIAAAAHAAsAAAABAAIAAAAIAAsAAAABAAIAAAAKAAsAAAABAAcAAAAJAAsAAAABAAIAAAAKAAwAAAAGAAEAAAAKAA0AAAAGAAEAAAALAAsAAAABAAIAAAAMAAsAAAABAAIAAAANAAsAAAABAAIAAAAOAAsAAAABAAIAAAAPAAsAAAABAAIAAAAQAAsAAAABAAIAAAARAAsAAAABAAIAAAASAAsAAAABAAIAAAATAAsAAAABAAIAAAAUAAsAAAABAAIAAAAVAAsAAAABAAcAAAAVAAwAAAAGAAEAAAAVAA0AAAAGAAEAAAAWAAsAAAABAAIAAAAXAAsAAAABAAIAAAAYAAsAAAABAAIAAAAZAAsAAAABAAIAAAAaAAsAAAABAAIAAAAbAAsAAAABAAIAAAAcAAsAAAABAAIAAAAdAAsAAAABAAIAAAAeAAsAAAABAAIAAAAfAAsAAAABAAIAAAAgAAsAAAABAAIAAAAhAAsAAAABAAIAAAAiAAsAAAABAAIAAAAjAAsAAAAEAAAAAAAjAB0AAAAAAAIAAAAkAB0AAAABAAIAAAAlAB0AAAABAAIAAAAmAB0AAAABAAIAAAAnAB4AAAAAAAEAAAAnAB8AAAAAAAEAAAAnAB0AAAAEAAAAAAAoACEAAAABAAAAAAApACEAAAABAAAAAAAqACEAAAACAAAAAAAqACIAAAADAAEAAAArACIAAAABAAAAAAAsACIAAAABAAAAAAAtACIAAAABAAAAAAAuACIAAAABAAAAAAAvACIAAAABAAAAAAAwACIAAAABAAAAAAAxACIAAAABAAAAAAAyACIAAAABAAAAAAAzACIAAAABAAAAAAA0ACIAAAABAAAAAAA1ACIAAAABAAAAAAA2ACIAAAABAAAAAAA3ACIAAAABAAAAAAA4ACIAAAABAAAAAAA5ACIAAAABAAAAAAA6ACIAAAAEAAEAAAA6ACEAAAAAAAAAAAA7ACEAAAABAAAAAAA8ACEAAAABAAAAAAA9AB0AAAADAAAAAAA9AB4AAAACAAEAAAA9AB8AAAACAAEAAAA+AB0AAAABAAIAAAA/AB0AAAABAAIAAABAAB0AAAABAAIAAABBAB0AAAABAAIAAABCAB0AAAABAAIAAABDAB0AAAABAAIAAABEAB0AAAABAAIAAABFAB0AAAABAAIAAABGAB0AAAABAAIAAABHAB0AAAABAAIAAABIAB0AAAABAAIAAABJAB0AAAABAAIAAABKAB0AAAABAAIAAABLAB0AAAABAAIAAABMAB0AAAABAAIAAABNAB0AAAABAAIAAABOAB0AAAAEAAAAAABOAB4AAAAAAAEAAABOAB8AAAAAAAEAAAAyACEAAAAGAAEAAAAyACAAAAAGAAEAAAAyAB8AAAAGAAEAAAAyAB4AAAAGAAEAAAAyAB0AAAAGAAEAAAA=")
 
-[node name="Traps" parent="Tiles" index="3"]
+[node name="Traps" parent="Tiles" parent_id_path=PackedInt32Array(1626037498) index="3" unique_id=635748436]
 tile_map_data = PackedByteArray("AAA/ACcAAAAAAAAAAABAACcAAAAAAAAAAABBACcAAAAAAAAAAABCACcAAAAAAAAAAABDACcAAAAAAAAAAABEACcAAAAAAAAAAABFACcAAAAAAAAAAABGACcAAAAAAAAAAABHACcAAAAAAAAAAABIACcAAAAAAAAAAABJACcAAAAAAAAAAABKACcAAAAAAAAAAABLACcAAAAAAAAAAABMACcAAAAAAAAAAAA/ACgAAAAAAAEAAABAACgAAAAAAAEAAABBACgAAAAAAAEAAABCACgAAAAAAAEAAABDACgAAAAAAAEAAABEACgAAAAAAAEAAABFACgAAAAAAAEAAABGACgAAAAAAAEAAABHACgAAAAAAAEAAABIACgAAAAAAAEAAABJACgAAAAAAAEAAABKACgAAAAAAAEAAABLACgAAAAAAAEAAABMACgAAAAAAAEAAABMACkAAAAAAAEAAABLACkAAAAAAAEAAABKACkAAAAAAAEAAABJACkAAAAAAAEAAABIACkAAAAAAAEAAABHACkAAAAAAAEAAABGACkAAAAAAAEAAABFACkAAAAAAAEAAABEACkAAAAAAAEAAABDACkAAAAAAAEAAABCACkAAAAAAAEAAABBACkAAAAAAAEAAABAACkAAAAAAAEAAAA/ACkAAAAAAAEAAAA=")
 
-[node name="LevelEnd" parent="." index="7"]
+[node name="KillingArea" parent="KillingAreas" parent_id_path=PackedInt32Array(1935554921) index="0" unique_id=1891922549 instance=ExtResource("23_s735u")]
+position = Vector2(1120, 668)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillingAreas/KillingArea" index="0" unique_id=1130088126]
+shape = SubResource("RectangleShape2D_rnrg1")
+
+[node name="LevelEnd" parent="." index="8" unique_id=1018767708]
 position = Vector2(384, 812)

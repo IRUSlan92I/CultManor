@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://mpsu4g2b5h3a"]
+[gd_scene format=3 uid="uid://mpsu4g2b5h3a"]
 
 [ext_resource type="Script" uid="uid://c737mx0kxva7i" path="res://game/levels/abstract_level.gd" id="1_o2mui"]
 [ext_resource type="PackedScene" uid="uid://dtcad8tdx78tg" path="res://game/characters/player.tscn" id="2_r0ht6"]
@@ -501,54 +501,56 @@ sources/0 = SubResource("TileSetAtlasSource_rvm7w")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fw0b"]
 size = Vector2(32, 32)
 
-[node name="AbstractLevel" type="Node2D"]
+[node name="AbstractLevel" type="Node2D" unique_id=1364620575]
 script = ExtResource("1_o2mui")
 
-[node name="Doors" type="Node2D" parent="."]
+[node name="Doors" type="Node2D" parent="." unique_id=1468144392]
 
-[node name="Objects" type="Node2D" parent="."]
+[node name="Objects" type="Node2D" parent="." unique_id=1320033435]
 
-[node name="Pickups" type="Node2D" parent="."]
+[node name="Pickups" type="Node2D" parent="." unique_id=1113969064]
 
-[node name="Enemies" type="Node2D" parent="."]
+[node name="Enemies" type="Node2D" parent="." unique_id=857989772]
 
-[node name="Player" parent="." instance=ExtResource("2_r0ht6")]
+[node name="Player" parent="." unique_id=1058744997 instance=ExtResource("2_r0ht6")]
 
-[node name="Tiles" type="Node2D" parent="."]
+[node name="Tiles" type="Node2D" parent="." unique_id=1626037498]
 
-[node name="GrayWalls" parent="Tiles" instance=ExtResource("3_3fw0b")]
+[node name="GrayWalls" parent="Tiles" unique_id=557672309 instance=ExtResource("3_3fw0b")]
 material = ExtResource("3_pi5fd")
 tile_set = SubResource("TileSet_8xgvj")
 
-[node name="BlackWalls" parent="Tiles" instance=ExtResource("3_3fw0b")]
+[node name="BlackWalls" parent="Tiles" unique_id=1250602228 instance=ExtResource("3_3fw0b")]
 material = ExtResource("6_x8k35")
 tile_set = SubResource("TileSet_un604")
 
-[node name="WhiteWalls" parent="Tiles" instance=ExtResource("3_3fw0b")]
+[node name="WhiteWalls" parent="Tiles" unique_id=940613078 instance=ExtResource("3_3fw0b")]
 material = ExtResource("5_6b8cu")
 tile_set = SubResource("TileSet_jsd6f")
 
-[node name="Traps" parent="Tiles" instance=ExtResource("5_b7vts")]
+[node name="Traps" parent="Tiles" unique_id=635748436 instance=ExtResource("5_b7vts")]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="KillingAreas" type="Node2D" parent="." unique_id=1935554921]
 
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("7_l0xih")]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1402255323]
+
+[node name="PauseMenu" parent="CanvasLayer" unique_id=1609121400 instance=ExtResource("7_l0xih")]
 unique_name_in_owner = true
 visible = false
 
-[node name="GameOverMenu" parent="CanvasLayer" instance=ExtResource("8_b7vts")]
+[node name="GameOverMenu" parent="CanvasLayer" unique_id=859418625 instance=ExtResource("8_b7vts")]
 unique_name_in_owner = true
 visible = false
 
-[node name="CompletionMenu" parent="CanvasLayer" instance=ExtResource("11_3fw0b")]
+[node name="CompletionMenu" parent="CanvasLayer" unique_id=814534035 instance=ExtResource("11_3fw0b")]
 unique_name_in_owner = true
 visible = false
 
-[node name="LevelEnd" type="Area2D" parent="."]
+[node name="LevelEnd" type="Area2D" parent="." unique_id=1018767708]
 collision_layer = 0
 collision_mask = 136
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelEnd"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelEnd" unique_id=937956890]
 shape = SubResource("RectangleShape2D_3fw0b")
 
 [connection signal="dead" from="Player" to="." method="_on_player_dead"]
