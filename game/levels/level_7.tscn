@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://cddh8nh54mrog"]
+[gd_scene format=4 uid="uid://cddh8nh54mrog"]
 
 [ext_resource type="PackedScene" uid="uid://mpsu4g2b5h3a" path="res://game/levels/abstract_level.tscn" id="1_bhhdo"]
 [ext_resource type="PackedScene" uid="uid://dx1yasi8wlaye" path="res://game/objects/bookstand.tscn" id="2_1t02d"]
@@ -9,8 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://dioc4r03dfleq" path="res://game/doors/book_door.tscn" id="4_qqn64"]
 [ext_resource type="Texture2D" uid="uid://f6vlokb08jir" path="res://images/level/candles.png" id="6_7erpt"]
 [ext_resource type="Shader" uid="uid://lqq1mg6l1qqe" path="res://game/shaders/black_n_white.gdshader" id="7_qqn64"]
-[ext_resource type="PackedScene" uid="uid://cvx6akiplg21s" path="res://game/characters/player_sprite.tscn" id="10_x0kb5"]
-[ext_resource type="PackedScene" uid="uid://dtxiercm8dsfm" path="res://game/characters/enemy_sprite.tscn" id="11_6yudq"]
+[ext_resource type="PackedScene" uid="uid://cvx6akiplg21s" path="res://game/characters/player/player_sprite.tscn" id="10_x0kb5"]
+[ext_resource type="PackedScene" uid="uid://dtxiercm8dsfm" path="res://game/characters/enemies/enemy_sprite.tscn" id="11_6yudq"]
 [ext_resource type="Theme" uid="uid://bh56my8b2htnr" path="res://themes/menu.tres" id="13_6yudq"]
 [ext_resource type="Material" uid="uid://dbkn3k0batj5w" path="res://game/materials/enemy_gray.tres" id="13_x83dg"]
 

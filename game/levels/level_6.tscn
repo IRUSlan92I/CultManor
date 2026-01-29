@@ -21,8 +21,8 @@
 [ext_resource type="PackedScene" uid="uid://d330w1ygg6uxy" path="res://game/objects/painting_v_l.tscn" id="19_l40pv"]
 [ext_resource type="PackedScene" uid="uid://ciubf1ttwc133" path="res://game/pickups/square_key_pickup.tscn" id="20_uffr2"]
 [ext_resource type="PackedScene" uid="uid://dqgmfpv2mhdpn" path="res://game/pickups/triangle_key_pickup.tscn" id="21_jk2b3"]
-[ext_resource type="PackedScene" uid="uid://cutjutvd8dqqc" path="res://game/characters/black_enemy.tscn" id="22_b1xny"]
-[ext_resource type="PackedScene" uid="uid://bv2gahb4wxgb1" path="res://game/characters/white_enemy.tscn" id="23_8555i"]
+[ext_resource type="PackedScene" uid="uid://cutjutvd8dqqc" path="res://game/characters/enemies/black_enemy.tscn" id="22_b1xny"]
+[ext_resource type="PackedScene" uid="uid://bv2gahb4wxgb1" path="res://game/characters/enemies/white_enemy.tscn" id="23_8555i"]
 [ext_resource type="PackedScene" uid="uid://dike8xgbqdut2" path="res://game/killing_area.tscn" id="24_te27h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cjy8w"]

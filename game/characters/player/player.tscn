@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dtcad8tdx78tg"]
 
-[ext_resource type="Script" uid="uid://bb8kc32sggrn2" path="res://game/characters/player.gd" id="1_xln5q"]
+[ext_resource type="Script" uid="uid://bb8kc32sggrn2" path="res://game/characters/player/player.gd" id="1_xln5q"]
 [ext_resource type="PackedScene" uid="uid://5qlocc0yu8ug" path="res://game/collision_switcher.tscn" id="2_j06tb"]
-[ext_resource type="PackedScene" uid="uid://cvx6akiplg21s" path="res://game/characters/player_sprite.tscn" id="2_n6ad3"]
+[ext_resource type="PackedScene" uid="uid://cvx6akiplg21s" path="res://game/characters/player/player_sprite.tscn" id="2_n6ad3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xln5q"]
 radius = 4.0

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cb0w6mt8g4mer"]
 
-[ext_resource type="PackedScene" uid="uid://bx0luh4vdob3q" path="res://game/characters/abstract_enemy.tscn" id="1_q3s46"]
-[ext_resource type="Script" uid="uid://cern5veiqkrkc" path="res://game/characters/gray_enemy.gd" id="2_olede"]
+[ext_resource type="PackedScene" uid="uid://bx0luh4vdob3q" path="res://game/characters/enemies/abstract_enemy.tscn" id="1_q3s46"]
+[ext_resource type="Script" uid="uid://cern5veiqkrkc" path="res://game/characters/enemies/gray_enemy.gd" id="2_olede"]
 [ext_resource type="Material" uid="uid://dbkn3k0batj5w" path="res://game/materials/enemy_gray.tres" id="3_ho47d"]
 
 [node name="GrayEnemy" unique_id=139812221 instance=ExtResource("1_q3s46")]

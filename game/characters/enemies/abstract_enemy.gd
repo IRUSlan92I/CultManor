@@ -68,7 +68,7 @@ var _target_x := 0.0
 var _target_found := false
 
 
-@onready var _state : State = initial_state:
+var _state : State:
 	set = _set_state
 
 @onready var sprite : AnimatedSprite2D = $AnimatedSprite2D
@@ -81,6 +81,10 @@ var _target_found := false
 
 @onready var left_player_distant_ray : RayCast2D = $%LeftPlayerDistantRay
 @onready var right_player_distant_ray : RayCast2D = $%RightPlayerDistantRay
+
+
+func _ready() -> void:
+	_state = initial_state
 
 
 func _physics_process(delta: float) -> void:
@@ -132,15 +136,23 @@ func _set_state(value: State) -> void:
 	right_player_close_ray.process_mode = Node.PROCESS_MODE_DISABLED
 	left_player_distant_ray.process_mode = Node.PROCESS_MODE_DISABLED
 	right_player_distant_ray.process_mode = Node.PROCESS_MODE_DISABLED
+	left_player_close_ray.hide()
+	right_player_close_ray.hide()
+	left_player_distant_ray.hide()
+	right_player_distant_ray.hide()
 	
 	match _state:
 		State.ChasingLeft, State.WalkLeft:
 			left_player_distant_ray.process_mode = Node.PROCESS_MODE_INHERIT
+			left_player_distant_ray.show()
 		State.ChasingRight, State.WalkRight:
-			left_player_distant_ray.process_mode = Node.PROCESS_MODE_INHERIT
+			right_player_distant_ray.process_mode = Node.PROCESS_MODE_INHERIT
+			right_player_distant_ray.show()
 		State.LookAround:
 			left_player_close_ray.process_mode = Node.PROCESS_MODE_INHERIT
-			right_player_distant_ray.process_mode = Node.PROCESS_MODE_INHERIT
+			right_player_close_ray.process_mode = Node.PROCESS_MODE_INHERIT
+			left_player_close_ray.show()
+			right_player_close_ray.show()
 
 
 func _process_player_ray(ray: RayCast2D) -> bool:

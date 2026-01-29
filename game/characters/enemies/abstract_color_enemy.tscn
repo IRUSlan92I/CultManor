@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://d37eyum03h83i"]
+[gd_scene format=3 uid="uid://d37eyum03h83i"]
 
-[ext_resource type="PackedScene" uid="uid://bx0luh4vdob3q" path="res://game/characters/abstract_enemy.tscn" id="1_12hr0"]
-[ext_resource type="Script" uid="uid://das7ujanefsn0" path="res://game/characters/abstract_color_enemy.gd" id="2_rd56i"]
+[ext_resource type="PackedScene" uid="uid://bx0luh4vdob3q" path="res://game/characters/enemies/abstract_enemy.tscn" id="1_12hr0"]
+[ext_resource type="Script" uid="uid://das7ujanefsn0" path="res://game/characters/enemies/abstract_color_enemy.gd" id="2_rd56i"]
 [ext_resource type="PackedScene" uid="uid://5qlocc0yu8ug" path="res://game/collision_switcher.tscn" id="3_e5cea"]
 [ext_resource type="Shader" uid="uid://lqq1mg6l1qqe" path="res://game/shaders/black_n_white.gdshader" id="3_r5rx0"]
 
