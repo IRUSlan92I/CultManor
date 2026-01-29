@@ -1,10 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4iica45gnke0"]
+[gd_scene format=3 uid="uid://c4iica45gnke0"]
 
 [ext_resource type="Script" uid="uid://c3wyvemy5hxs2" path="res://game/menu/main_menu.gd" id="1_5d27k"]
 [ext_resource type="Theme" uid="uid://bh56my8b2htnr" path="res://themes/menu.tres" id="2_qnvmd"]
 [ext_resource type="Theme" uid="uid://lkf8obv8x5ve" path="res://themes/label.tres" id="3_i4f54"]
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" unique_id=1961175385]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,7 +14,7 @@ grow_vertical = 2
 theme = ExtResource("2_qnvmd")
 script = ExtResource("1_5d27k")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=974207401]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,33 +22,33 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=520918461]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1267066925]
 unique_name_in_owner = true
 layout_mode = 2
 focus_neighbor_top = NodePath("../QuitButton")
 text = "Start"
 
-[node name="OptionsButton" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="OptionsButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=63771675]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Options"
 
-[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1809921079]
 unique_name_in_owner = true
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../StartButton")
 text = "Quit"
 
-[node name="CopyrightLabel" type="Label" parent="MarginContainer"]
+[node name="CopyrightLabel" type="Label" parent="MarginContainer" unique_id=1732939048]
 layout_mode = 2
 size_flags_vertical = 1
 theme = ExtResource("3_i4f54")
-text = "v 1.0.2
+text = "v 1.0.3
 (c) Ruslan Ignatov 2026
 Powered by Godot Engine"
 horizontal_alignment = 2

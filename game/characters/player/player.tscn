@@ -9,7 +9,7 @@ radius = 4.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t6gq4"]
 radius = 2.0
-height = 10.0
+height = 15.0
 
 [node name="Player" type="CharacterBody2D" unique_id=508706417]
 collision_layer = 128
