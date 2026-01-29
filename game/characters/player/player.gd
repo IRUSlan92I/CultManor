@@ -32,6 +32,7 @@ const PICKUP_OFFSET = 16.0
 
 
 var _is_alive := true
+var _is_switching_needed := false
 
 
 @onready var sprite : AnimatedSprite2D = $AnimatedSprite2D
@@ -39,6 +40,7 @@ var _is_alive := true
 @onready var pickups : Node2D = $Pickups
 @onready var jump_buffer_timer : Timer = $JumpBufferTimer
 @onready var coyote_time_timer : Timer = $CoyoteTimeTimer
+@onready var center_area : Area2D = $CenterArea2D
 
 
 func _ready() -> void:
@@ -79,13 +81,28 @@ func _physics_process(delta: float) -> void:
 		
 		_update_animation()
 	
+	if _is_switching_needed:
+		_switch()
+	
 	move_and_slide()
 
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("switch_color") and _is_alive:
+	if event.is_action_pressed("switch_color"):
+		_switch()
+
+
+func _switch() -> void:
+	_is_switching_needed = false
+		
+	if not _is_alive:
+		return
+	
+	if center_area.get_overlapping_bodies().size() == 0:
 		SoundManager.play_sfx_stream(SoundManager.sfx_stream_switch, global_position)
 		collision_switcher.switch_color()
+	else:
+		_is_switching_needed = true
 
 
 func kill() -> void:
