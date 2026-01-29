@@ -80,12 +80,6 @@ func _physics_process(delta: float) -> void:
 		_update_animation()
 	
 	move_and_slide()
-	#var was_collided := move_and_slide()
-	#if was_collided and _is_alive:
-		#for i in range(get_slide_collision_count()): #TODO remove
-			#var collision := get_slide_collision(i)
-			#if _is_killing_collider(collision.get_collider()):
-				#kill()
 
 
 func _input(event: InputEvent) -> void:
