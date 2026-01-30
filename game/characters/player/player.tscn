@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://5qlocc0yu8ug" path="res://game/collision_switcher.tscn" id="2_j06tb"]
 [ext_resource type="PackedScene" uid="uid://cvx6akiplg21s" path="res://game/characters/player/player_sprite.tscn" id="2_n6ad3"]
 [ext_resource type="PackedScene" uid="uid://3ll3i1fgktg2" path="res://game/state_machine/state_machine.tscn" id="4_65114"]
-[ext_resource type="PackedScene" uid="uid://c7adrbfobmvl8" path="res://game/state_machine/abstract_state.tscn" id="5_65114"]
-[ext_resource type="Script" uid="uid://bnxccvt265hlu" path="res://game/characters/player/states/idle_state.gd" id="6_3qf5w"]
+[ext_resource type="PackedScene" uid="uid://c0d4wfdg7xjti" path="res://game/characters/player/state_machine/player_state.tscn" id="5_65114"]
+[ext_resource type="Script" uid="uid://bnxccvt265hlu" path="res://game/characters/player/state_machine/idle_state.gd" id="6_3qf5w"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xln5q"]
 radius = 4.0
@@ -53,8 +53,9 @@ shape = SubResource("CapsuleShape2D_t6gq4")
 
 [node name="StateMachine" parent="." unique_id=633169960 instance=ExtResource("4_65114")]
 
-[node name="IdleState" parent="StateMachine" unique_id=739226464 instance=ExtResource("5_65114")]
+[node name="IdleState" parent="StateMachine" unique_id=739226464 node_paths=PackedStringArray("player") instance=ExtResource("5_65114")]
 script = ExtResource("6_3qf5w")
+player = NodePath("../..")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animation_finished"]
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animation_looped"]
