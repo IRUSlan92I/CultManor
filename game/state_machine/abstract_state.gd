@@ -3,7 +3,7 @@ extends Node
 
 
 @warning_ignore("unused_signal")
-signal new_state(state: AbstractState)
+signal switch_state(state: AbstractState)
 
 
 func enter() -> void:

@@ -42,6 +42,8 @@ var _is_switching_needed := false
 @onready var coyote_time_timer : Timer = $CoyoteTimeTimer
 @onready var center_area : Area2D = $CenterArea2D
 
+@onready var state_machine : PlayerStateMachine = $PlayerStateMachine
+
 
 func _ready() -> void:
 	collision_switcher.material = sprite.material
@@ -106,13 +108,8 @@ func _switch() -> void:
 
 
 func kill() -> void:
-	if not _is_alive: return
-	
-	SoundManager.play_sfx_stream(SoundManager.sfx_stream_death, global_position)
 	_is_alive = false
-	get_tree().paused = true
-	process_mode = Node.PROCESS_MODE_ALWAYS
-	sprite.play(ANIMATION_DEATH)
+	state_machine.kill_player()
 
 
 func add_pickup(pickup: AbstractPickup) -> void:
@@ -140,7 +137,7 @@ func _is_killing_collider(collider: Object) -> bool:
 
 func _update_animation() -> void:
 	var animation := _get_animation()
-	if sprite.animation != animation:
+	if sprite.animation != animation and acceleration not in [ANIMATION_IDLE, ANIMATION_LOOK_AROUND_1, ANIMATION_LOOK_AROUND_2]:
 		sprite.play(animation)
 
 
@@ -185,20 +182,22 @@ func _rearrange_pickups() -> void:
 
 
 func _play_look_around_animation() -> void:
-	sprite.play(ANIMATION_LOOK_AROUND_1 if randi_range(1, 2) == 1 else ANIMATION_LOOK_AROUND_2)
+	pass
+	#sprite.play(ANIMATION_LOOK_AROUND_1 if randi_range(1, 2) == 1 else ANIMATION_LOOK_AROUND_2)
 
 
 func _on_animation_finished() -> void:
 	match sprite.animation:
-		ANIMATION_LOOK_AROUND_1, ANIMATION_LOOK_AROUND_2:
-			sprite.play(ANIMATION_IDLE)
+		#ANIMATION_LOOK_AROUND_1, ANIMATION_LOOK_AROUND_2:
+			#sprite.play(ANIMATION_IDLE)
 		ANIMATION_DEATH:
 			dead.emit()
 			queue_free()
 
 
 func _on_animation_looped() -> void:
-	match sprite.animation:
-		ANIMATION_IDLE:
-			if randi_range(1, 100) <= LOOK_AROUND_CHANCE:
-				_play_look_around_animation()
+	pass
+	#match sprite.animation:
+		#ANIMATION_IDLE:
+			#if randi_range(1, 100) <= LOOK_AROUND_CHANCE:
+				#_play_look_around_animation()
