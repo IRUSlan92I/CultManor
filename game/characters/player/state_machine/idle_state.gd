@@ -1,8 +1,6 @@
 extends PlayerState
 
 
-const ANIMATION_IDLE = "idle"
-
 const LOOK_AROUND_CHANCE = 25
 
 
@@ -11,7 +9,7 @@ const LOOK_AROUND_CHANCE = 25
 
 func enter() -> void:
 	player.sprite.animation_looped.connect(_on_animation_looped)
-	player.sprite.play(ANIMATION_IDLE)
+	player.sprite.play(PlayerSprite.ANIMATION_IDLE)
 
 
 func exit() -> void:

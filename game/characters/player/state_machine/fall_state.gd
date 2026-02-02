@@ -1,8 +1,5 @@
 extends PlayerState
 
 
-const ANIMATION_FALL = "fall"
-
-
 func enter() -> void:
-	player.sprite.play(ANIMATION_FALL)
+	player.sprite.play(PlayerSprite.ANIMATION_FALL)

@@ -2,6 +2,7 @@
 
 [ext_resource type="Shader" uid="uid://lqq1mg6l1qqe" path="res://game/shaders/black_n_white.gdshader" id="1_57ht8"]
 [ext_resource type="Texture2D" uid="uid://bjccaucrio6ht" path="res://images/characters/player.png" id="2_mi53p"]
+[ext_resource type="Script" uid="uid://bpclheyn60yp7" path="res://game/characters/player/player_sprite.gd" id="3_ulfbe"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i05k5"]
 shader = ExtResource("1_57ht8")
@@ -426,7 +427,8 @@ animations = [{
 "speed": 20.0
 }]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=259457082]
+[node name="PlayerSprite2D" type="AnimatedSprite2D" unique_id=259457082]
 material = SubResource("ShaderMaterial_i05k5")
 sprite_frames = SubResource("SpriteFrames_v8w1g")
 animation = &"fall_right"
+script = ExtResource("3_ulfbe")

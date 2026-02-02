@@ -1,8 +1,5 @@
 extends PlayerState
 
 
-const ANIMATION_WALK_RIGHT = "walk_right"
-
-
 func enter() -> void:
-	player.sprite.play(ANIMATION_WALK_RIGHT)
+	player.sprite.play(PlayerSprite.ANIMATION_WALK_RIGHT)
