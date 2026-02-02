@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://cvx6akiplg21s"]
+[gd_scene format=3 uid="uid://cvx6akiplg21s"]
 
 [ext_resource type="Shader" uid="uid://lqq1mg6l1qqe" path="res://game/shaders/black_n_white.gdshader" id="1_57ht8"]
 [ext_resource type="Texture2D" uid="uid://bjccaucrio6ht" path="res://images/characters/player.png" id="2_mi53p"]
@@ -81,18 +81,6 @@ region = Rect2(64, 96, 32, 32)
 atlas = ExtResource("2_mi53p")
 region = Rect2(0, 96, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_htqrf"]
-atlas = ExtResource("2_mi53p")
-region = Rect2(160, 96, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vkuli"]
-atlas = ExtResource("2_mi53p")
-region = Rect2(96, 96, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_457no"]
-atlas = ExtResource("2_mi53p")
-region = Rect2(32, 96, 32, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_n6ad3"]
 atlas = ExtResource("2_mi53p")
 region = Rect2(0, 0, 32, 32)
@@ -112,6 +100,18 @@ region = Rect2(32, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_kepaj"]
 atlas = ExtResource("2_mi53p")
 region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_htqrf"]
+atlas = ExtResource("2_mi53p")
+region = Rect2(160, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkuli"]
+atlas = ExtResource("2_mi53p")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_457no"]
+atlas = ExtResource("2_mi53p")
+region = Rect2(32, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mi53p"]
 atlas = ExtResource("2_mi53p")
@@ -259,7 +259,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_4u621")
 }],
 "loop": true,
-"name": &"fall_down",
+"name": &"fall",
 "speed": 5.0
 }, {
 "frames": [{
@@ -267,7 +267,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_tqwgk")
 }],
 "loop": true,
-"name": &"fall_down_left",
+"name": &"fall_left",
 "speed": 5.0
 }, {
 "frames": [{
@@ -275,31 +275,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_ly4f6")
 }],
 "loop": true,
-"name": &"fall_down_right",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_htqrf")
-}],
-"loop": true,
-"name": &"fall_up",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vkuli")
-}],
-"loop": true,
-"name": &"fall_up_left",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_457no")
-}],
-"loop": true,
-"name": &"fall_up_right",
+"name": &"fall_right",
 "speed": 5.0
 }, {
 "frames": [{
@@ -320,6 +296,30 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_htqrf")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vkuli")
+}],
+"loop": true,
+"name": &"jump_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_457no")
+}],
+"loop": true,
+"name": &"jump_right",
 "speed": 5.0
 }, {
 "frames": [{
@@ -426,7 +426,7 @@ animations = [{
 "speed": 20.0
 }]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=259457082]
 material = SubResource("ShaderMaterial_i05k5")
 sprite_frames = SubResource("SpriteFrames_v8w1g")
-animation = &"look_around"
+animation = &"fall_right"

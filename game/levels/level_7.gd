@@ -1,6 +1,10 @@
 extends AbstractLevel
 
 
+const ANIMATION_WALK_LEFT = "walk_left"
+const ANIMATION_WALK_RIGHT = "walk_right"
+
+
 const CUTSCENE_CAMERA_TIME = 5
 const CUTSCENE_HAZE_TIME = 0.1
 
@@ -96,7 +100,7 @@ func _do_cutscene_phase_one() -> void:
 	cutscene_camera.enabled = true
 	cutscene_camera.make_current()
 	cutscene_fake_player.show()
-	cutscene_fake_player.play(Player.ANIMATION_WALK_RIGHT, _cutscene_player_speed_factor)
+	cutscene_fake_player.play(ANIMATION_WALK_RIGHT, _cutscene_player_speed_factor)
 	var tween : Tween = create_tween()
 	tween.set_ease(Tween.EASE_IN_OUT)
 	tween.set_trans(Tween.TRANS_QUAD)
@@ -104,12 +108,12 @@ func _do_cutscene_phase_one() -> void:
 
 
 func _do_cutscene_phase_four() -> void:
-	cutscene_fake_player.play(Player.ANIMATION_WALK_LEFT,_cutscene_player_speed_factor)
+	cutscene_fake_player.play(ANIMATION_WALK_LEFT,_cutscene_player_speed_factor)
 
 
 func _do_cutscene_phase_six() -> void:
 	_cutscene_player_speed_factor = 0.25
-	cutscene_fake_player.play(Player.ANIMATION_WALK_RIGHT, _cutscene_player_speed_factor)
+	cutscene_fake_player.play(ANIMATION_WALK_RIGHT, _cutscene_player_speed_factor)
 
 
 func _do_cutscene_phase_seven() -> void:

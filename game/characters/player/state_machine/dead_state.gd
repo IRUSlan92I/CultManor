@@ -13,6 +13,9 @@ func enter() -> void:
 	get_tree().paused = true
 
 
+func physics_process(_delta: float) -> void:
+	pass
+
+
 func _on_aniimation_finished() -> void:
-	player.dead.emit()
-	player.queue_free()
+	player.process_dead()

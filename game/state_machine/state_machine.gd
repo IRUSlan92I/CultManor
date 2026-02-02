@@ -25,6 +25,9 @@ func _physics_process(delta: float) -> void:
 
 
 func _change_state(new_state: AbstractState) -> void:
+	if new_state == null: return
+	if new_state == current_state: return
+	
 	if current_state:
 		current_state.exit()
 	current_state = new_state

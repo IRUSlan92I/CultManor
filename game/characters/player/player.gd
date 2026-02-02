@@ -5,19 +5,6 @@ extends CharacterBody2D
 signal dead
 
 
-const ANIMATION_IDLE = "idle"
-const ANIMATION_LOOK_AROUND_1 = "look_around_1"
-const ANIMATION_LOOK_AROUND_2 = "look_around_2"
-const ANIMATION_WALK_LEFT = "walk_left"
-const ANIMATION_WALK_RIGHT = "walk_right"
-const ANIMATION_FALL_DOWN = "fall_down"
-const ANIMATION_FALL_DOWN_LEFT = "fall_down_left"
-const ANIMATION_FALL_DOWN_RIGHT = "fall_down_right"
-const ANIMATION_FALL_UP = "fall_up"
-const ANIMATION_FALL_UP_LEFT = "fall_up_left"
-const ANIMATION_FALL_UP_RIGHT = "fall_up_right"
-const ANIMATION_DEATH = "death"
-
 const LOOK_AROUND_CHANCE = 25
 const PICKUP_OFFSET = 16.0
 
@@ -31,7 +18,7 @@ const PICKUP_OFFSET = 16.0
 @export_range(0.0, 1.0) var passive_jump_factor := 0.5
 
 
-var _is_alive := true
+var is_dead := false
 var _is_switching_needed := false
 
 
@@ -41,8 +28,6 @@ var _is_switching_needed := false
 @onready var jump_buffer_timer : Timer = $JumpBufferTimer
 @onready var coyote_time_timer : Timer = $CoyoteTimeTimer
 @onready var center_area : Area2D = $CenterArea2D
-
-@onready var state_machine : PlayerStateMachine = $PlayerStateMachine
 
 
 func _ready() -> void:
@@ -64,7 +49,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * gravity_factor * delta
 		velocity.y = clampf(velocity.y, -max_fall_speed, max_fall_speed)
 	
-	if not _is_alive:
+	if is_dead:
 		_slow_down(delta)
 	else:
 		if Input.is_action_just_pressed("jump"):
@@ -74,14 +59,13 @@ func _physics_process(delta: float) -> void:
 			SoundManager.play_sfx_stream(SoundManager.sfx_stream_jump, global_position)
 			velocity.y = -jump_velocity
 			jump_buffer_timer.stop()
+			coyote_time_timer.stop()
 		
 		var direction := Input.get_axis("move_left", "move_right")
 		if direction:
 			velocity.x = move_toward(velocity.x, direction * max_speed, acceleration * delta)
 		else:
 			_slow_down(delta)
-		
-		_update_animation()
 	
 	if _is_switching_needed:
 		_switch()
@@ -97,7 +81,7 @@ func _input(event: InputEvent) -> void:
 func _switch() -> void:
 	_is_switching_needed = false
 		
-	if not _is_alive:
+	if is_dead:
 		return
 	
 	if center_area.get_overlapping_bodies().size() == 0:
@@ -108,8 +92,12 @@ func _switch() -> void:
 
 
 func kill() -> void:
-	_is_alive = false
-	state_machine.kill_player()
+	is_dead = true
+
+
+func process_dead() -> void:
+	dead.emit()
+	queue_free()
 
 
 func add_pickup(pickup: AbstractPickup) -> void:
@@ -135,41 +123,6 @@ func _is_killing_collider(collider: Object) -> bool:
 	return node.has_node("PlayerKiller")
 
 
-func _update_animation() -> void:
-	var animation := _get_animation()
-	if sprite.animation != animation and acceleration not in [ANIMATION_IDLE, ANIMATION_LOOK_AROUND_1, ANIMATION_LOOK_AROUND_2]:
-		sprite.play(animation)
-
-
-func _get_animation() -> String:
-	if is_on_floor():
-		if velocity.x > 0:
-			return ANIMATION_WALK_RIGHT
-		elif velocity.x < 0:
-			return ANIMATION_WALK_LEFT
-	else:
-		if is_zero_approx(velocity.x):
-			if velocity.y > 0:
-				return ANIMATION_FALL_DOWN
-			else:
-				return ANIMATION_FALL_UP
-		if velocity.x > 0:
-			if velocity.y > 0:
-				return ANIMATION_FALL_DOWN_RIGHT
-			else:
-				return ANIMATION_FALL_UP_RIGHT
-		elif velocity.x < 0:
-			if velocity.y > 0:
-				return ANIMATION_FALL_DOWN_LEFT
-			else:
-				return ANIMATION_FALL_UP_LEFT
-	
-	if sprite.animation in [ANIMATION_LOOK_AROUND_1, ANIMATION_LOOK_AROUND_2]:
-		return sprite.animation
-	
-	return ANIMATION_IDLE
-
-
 func _rearrange_pickups() -> void:
 	var children := pickups.get_children()
 	var pickup_shift := (children.size() - 1) * PICKUP_OFFSET / 2.0
@@ -179,25 +132,3 @@ func _rearrange_pickups() -> void:
 		var node := children[i] as Node2D
 		node.position.x = i * PICKUP_OFFSET - pickup_shift
 		node.position.y = 0
-
-
-func _play_look_around_animation() -> void:
-	pass
-	#sprite.play(ANIMATION_LOOK_AROUND_1 if randi_range(1, 2) == 1 else ANIMATION_LOOK_AROUND_2)
-
-
-func _on_animation_finished() -> void:
-	match sprite.animation:
-		#ANIMATION_LOOK_AROUND_1, ANIMATION_LOOK_AROUND_2:
-			#sprite.play(ANIMATION_IDLE)
-		ANIMATION_DEATH:
-			dead.emit()
-			queue_free()
-
-
-func _on_animation_looped() -> void:
-	pass
-	#match sprite.animation:
-		#ANIMATION_IDLE:
-			#if randi_range(1, 100) <= LOOK_AROUND_CHANCE:
-				#_play_look_around_animation()

@@ -5,9 +5,6 @@ const ANIMATION_LOOK_AROUND_1 = "look_around_1"
 const ANIMATION_LOOK_AROUND_2 = "look_around_2"
 
 
-@export var idle_state: PlayerState
-
-
 func enter() -> void:
 	player.sprite.animation_finished.connect(_on_animation_finished, CONNECT_ONE_SHOT)
 	player.sprite.play(_get_animation())
