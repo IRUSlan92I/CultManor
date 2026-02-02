@@ -5,7 +5,6 @@ extends CharacterBody2D
 signal dead
 
 
-const LOOK_AROUND_CHANCE = 25
 const PICKUP_OFFSET = 16.0
 
 
@@ -114,13 +113,6 @@ func remove_pickup(pickup: AbstractPickup) -> void:
 
 func _slow_down(delta: float) -> void:
 	velocity.x = move_toward(velocity.x, 0, acceleration * delta)
-
-
-func _is_killing_collider(collider: Object) -> bool:
-	if not collider is Node: return false
-	
-	var node := collider as Node
-	return node.has_node("PlayerKiller")
 
 
 func _rearrange_pickups() -> void:
