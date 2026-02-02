@@ -8,6 +8,7 @@ const LOOK_AROUND_CHANCE = 25
 
 
 func enter() -> void:
+	player.sprite.speed_scale = 1
 	player.sprite.animation_looped.connect(_on_animation_looped)
 	player.sprite.play(PlayerSprite.ANIMATION_IDLE)
 
