@@ -21,8 +21,8 @@
 [ext_resource type="PackedScene" uid="uid://d330w1ygg6uxy" path="res://game/objects/painting_v_l.tscn" id="19_l40pv"]
 [ext_resource type="PackedScene" uid="uid://ciubf1ttwc133" path="res://game/pickups/square_key_pickup.tscn" id="20_uffr2"]
 [ext_resource type="PackedScene" uid="uid://dqgmfpv2mhdpn" path="res://game/pickups/triangle_key_pickup.tscn" id="21_jk2b3"]
-[ext_resource type="PackedScene" uid="uid://cutjutvd8dqqc" path="res://game/characters/enemies/black_enemy.tscn" id="22_b1xny"]
-[ext_resource type="PackedScene" uid="uid://bv2gahb4wxgb1" path="res://game/characters/enemies/white_enemy.tscn" id="23_8555i"]
+[ext_resource type="PackedScene" uid="uid://cutjutvd8dqqc" path="res://game/characters/enemies/black_cultist.tscn" id="22_b1xny"]
+[ext_resource type="PackedScene" uid="uid://bv2gahb4wxgb1" path="res://game/characters/enemies/white_cultist.tscn" id="23_8555i"]
 [ext_resource type="PackedScene" uid="uid://dike8xgbqdut2" path="res://game/killing_area.tscn" id="24_te27h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cjy8w"]
@@ -315,22 +315,22 @@ position = Vector2(1113, 344)
 [node name="TriangleKeyPickup" parent="Pickups" parent_id_path=PackedInt32Array(1113969064) index="1" unique_id=85412946 instance=ExtResource("21_jk2b3")]
 position = Vector2(857, 136)
 
-[node name="BlackEnemy" parent="Enemies" parent_id_path=PackedInt32Array(857989772) index="0" unique_id=129671926 instance=ExtResource("22_b1xny")]
+[node name="BlackCultist1" parent="Enemies" parent_id_path=PackedInt32Array(857989772) index="0" unique_id=129671926 instance=ExtResource("22_b1xny")]
 position = Vector2(1041, 352)
 type = 1
 initial_state = 1
 
-[node name="BlackEnemy2" parent="Enemies" parent_id_path=PackedInt32Array(857989772) index="1" unique_id=1222909487 instance=ExtResource("22_b1xny")]
+[node name="BlackCultist2" parent="Enemies" parent_id_path=PackedInt32Array(857989772) index="1" unique_id=1222909487 instance=ExtResource("22_b1xny")]
 position = Vector2(477, 160)
 type = 1
 initial_state = 1
 
-[node name="WhiteEnemy" parent="Enemies" parent_id_path=PackedInt32Array(857989772) index="2" unique_id=503464276 instance=ExtResource("23_8555i")]
+[node name="WhiteCultist1" parent="Enemies" parent_id_path=PackedInt32Array(857989772) index="2" unique_id=503464276 instance=ExtResource("23_8555i")]
 position = Vector2(587, 368)
 type = 1
 initial_state = 2
 
-[node name="WhiteEnemy2" parent="Enemies" parent_id_path=PackedInt32Array(857989772) index="3" unique_id=624398972 instance=ExtResource("23_8555i")]
+[node name="WhiteCultist2" parent="Enemies" parent_id_path=PackedInt32Array(857989772) index="3" unique_id=624398972 instance=ExtResource("23_8555i")]
 position = Vector2(493, 160)
 type = 1
 initial_state = 2

@@ -1,4 +1,4 @@
-class_name EnemySprite
+class_name CultistSprite
 extends AnimatedSprite2D
 
 

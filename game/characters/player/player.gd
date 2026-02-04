@@ -21,7 +21,7 @@ var is_dead := false
 var _is_switching_needed := false
 
 
-@onready var sprite : AnimatedSprite2D = $AnimatedSprite2D
+@onready var sprite : AnimatedSprite2D = $PlayerSprite
 @onready var collision_switcher : CollisionSwitcher = $CollisionSwitcher
 @onready var pickups : Node2D = $Pickups
 @onready var jump_buffer_timer : Timer = $JumpBufferTimer

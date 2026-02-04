@@ -5,7 +5,7 @@ extends Control
 @onready var grid : GridContainer = $%GridContainer
 
 
-func _ready() -> void:	
+func _ready() -> void:
 	for i in range(LevelManager.levels.size()):
 		var level := LevelManager.levels[i]
 		var disable := SaveManager.completed_levels < i

@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://cutjutvd8dqqc"]
 
-[ext_resource type="PackedScene" uid="uid://d37eyum03h83i" path="res://game/characters/enemies/abstract_color_enemy.tscn" id="1_gj2ks"]
-[ext_resource type="Script" uid="uid://c2knsjcp6faf6" path="res://game/characters/enemies/black_enemy.gd" id="2_332ds"]
+[ext_resource type="PackedScene" uid="uid://d37eyum03h83i" path="res://game/characters/enemies/abstract_color_cultist.tscn" id="1_gj2ks"]
+[ext_resource type="Script" uid="uid://c2knsjcp6faf6" path="res://game/characters/enemies/black_cultist.gd" id="2_332ds"]
 [ext_resource type="Shader" uid="uid://lqq1mg6l1qqe" path="res://game/shaders/black_n_white.gdshader" id="3_3jy5n"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0u0ii"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v1if5"]
 resource_local_to_scene = true
 shader = ExtResource("3_3jy5n")
 shader_parameter/black_color = Color(0, 0, 0, 1)
@@ -15,15 +15,15 @@ shader_parameter/speed = 5.0
 shader_parameter/intensity = 1.0
 shader_parameter/scale = 20.0
 
-[node name="BlackEnemy" unique_id=1910124567 instance=ExtResource("1_gj2ks")]
+[node name="BlackCultist" unique_id=1910124567 instance=ExtResource("1_gj2ks")]
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("2_332ds")
 
-[node name="AnimatedSprite2D" parent="." index="0" unique_id=1997264413]
-material = SubResource("ShaderMaterial_0u0ii")
+[node name="CultistSprite" parent="." index="0" unique_id=1997264413]
+material = SubResource("ShaderMaterial_v1if5")
 
-[node name="CollisionSwitcher" parent="." index="2"]
+[node name="CollisionSwitcher" parent="." index="2" unique_id=991274552]
 initial_state = 0
 
 [node name="LeftWallRay" parent="WallCheck" parent_id_path=PackedInt32Array(782156094) index="0" unique_id=521416854]

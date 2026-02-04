@@ -30,11 +30,11 @@ var _function_by_phase : Dictionary[int, Callable] = {
 
 @onready var cutscene_haze_timer : Timer = $Cutscene/HazeTimer
 @onready var cutscene_player_timer : Timer = $Cutscene/PlayerTimer
-@onready var cutscene_enemy_timer : Timer = $Cutscene/EnemyTimer
+@onready var cutscene_cultist_timer : Timer = $Cutscene/CultistTimer
 @onready var cutscene_end_timer : Timer = $Cutscene/EndTimer
 
 @onready var cutscene_fake_player : AnimatedSprite2D = $Cutscene/FakePlayer
-@onready var cutscene_fake_enemy : AnimatedSprite2D = $Cutscene/FakeEnemy
+@onready var cutscene_fake_cultist : AnimatedSprite2D = $Cutscene/FakeCultist
 
 @onready var enemy_waves_by_phase : Dictionary[int, Node2D] = {
 	3: $Cutscene/EnemyWaves/WaveOne,
@@ -49,7 +49,7 @@ var _function_by_phase : Dictionary[int, Callable] = {
 	3: $Cutscene/PlayerTargetPositions/PhaseThree.global_position,
 	4: $Cutscene/PlayerTargetPositions/PhaseFour.global_position,
 	5: $Cutscene/PlayerTargetPositions/PhaseFive.global_position,
-	6: $Cutscene/FakeEnemy.global_position,
+	6: $Cutscene/FakeCultist.global_position,
 }
 
 
@@ -58,7 +58,7 @@ func _ready() -> void:
 	_player_walk_speed = player.max_speed
 	cutscene_haze.hide()
 	cutscene_fake_player.hide()
-	cutscene_fake_enemy.hide()
+	cutscene_fake_cultist.hide()
 	cutscene_thanks.hide()
 	for phase in enemy_waves_by_phase:
 		enemy_waves_by_phase[phase].hide()
@@ -134,9 +134,9 @@ func _on_haze_timer_timeout() -> void:
 func _on_player_timer_timeout() -> void:
 	_show_cutscene_haze(CUTSCENE_HAZE_TIME)
 	cutscene_fake_player.queue_free()
-	cutscene_fake_enemy.show()
-	cutscene_fake_enemy.play("look_around", 0.5)
-	cutscene_enemy_timer.start()
+	cutscene_fake_cultist.show()
+	cutscene_fake_cultist.play("look_around", 0.5)
+	cutscene_cultist_timer.start()
 
 
 func _on_enemy_timer_timeout() -> void:

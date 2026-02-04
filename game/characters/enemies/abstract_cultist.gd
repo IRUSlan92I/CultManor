@@ -1,4 +1,4 @@
-class_name AbstractEnemy
+class_name AbstractCultist
 extends CharacterBody2D
 
 
@@ -45,7 +45,7 @@ var _target_found := false
 var _state : State:
 	set = _set_state
 
-@onready var sprite : AnimatedSprite2D = $AnimatedSprite2D
+@onready var sprite : AnimatedSprite2D = $CultistSprite
 
 @onready var left_wall_ray : RayCast2D = $%LeftWallRay
 @onready var right_wall_ray : RayCast2D = $%RightWallRay
@@ -180,13 +180,13 @@ func _update_animation() -> void:
 	if is_zero_approx(velocity.y):
 		match _state:
 			State.WalkLeft:
-				_play_animation(EnemySprite.ANIMATION_WALK_LEFT)
+				_play_animation(CultistSprite.ANIMATION_WALK_LEFT)
 			State.WalkRight:
-				_play_animation(EnemySprite.ANIMATION_WALK_RIGHT)
+				_play_animation(CultistSprite.ANIMATION_WALK_RIGHT)
 			State.ChasingLeft:
-				_play_animation(EnemySprite.ANIMATION_CHASE_LEFT)
+				_play_animation(CultistSprite.ANIMATION_CHASE_LEFT)
 			State.ChasingRight:
-				_play_animation(EnemySprite.ANIMATION_CHASE_RIGHT)
+				_play_animation(CultistSprite.ANIMATION_CHASE_RIGHT)
 			State.Idle:
 				_play_idle_animation()
 			State.LookAround:
@@ -198,9 +198,9 @@ func _update_animation() -> void:
 func _play_idle_animation() -> void:
 	match facing:
 		Facing.Front:
-			_play_animation(EnemySprite.ANIMATION_IDLE_FRONT)
+			_play_animation(CultistSprite.ANIMATION_IDLE_FRONT)
 		Facing.Rear:
-			_play_animation(EnemySprite.ANIMATION_IDLE_REAR)
+			_play_animation(CultistSprite.ANIMATION_IDLE_REAR)
 
 
 func _play_look_around_animation() -> void:
@@ -208,35 +208,35 @@ func _play_look_around_animation() -> void:
 	
 	match facing:
 		Facing.Front:
-			var animation := _get_random_animation(EnemySprite.LOOK_AROUND_FRONT_ANIMATIONS)
+			var animation := _get_random_animation(CultistSprite.LOOK_AROUND_FRONT_ANIMATIONS)
 			_play_animation(animation)
 		Facing.Rear:
-			var animation := _get_random_animation(EnemySprite.LOOK_AROUND_REAR_ANIMATIONS)
+			var animation := _get_random_animation(CultistSprite.LOOK_AROUND_REAR_ANIMATIONS)
 			_play_animation(animation)
 
 
 func _play_fall_animation() -> void:
 	if is_zero_approx(velocity.x):
 		if velocity.y < 0:
-			_play_animation(EnemySprite.ANIMATION_FALL_UP)
+			_play_animation(CultistSprite.ANIMATION_FALL_UP)
 		else:
-			_play_animation(EnemySprite.ANIMATION_FALL_DOWN)
+			_play_animation(CultistSprite.ANIMATION_FALL_DOWN)
 	elif velocity.x < 0:
 		if velocity.y < 0:
-			_play_animation(EnemySprite.ANIMATION_FALL_UP_LEFT)
+			_play_animation(CultistSprite.ANIMATION_FALL_UP_LEFT)
 		else:
-			_play_animation(EnemySprite.ANIMATION_FALL_DOWN_LEFT)
+			_play_animation(CultistSprite.ANIMATION_FALL_DOWN_LEFT)
 	else:
 		if velocity.y < 0:
-			_play_animation(EnemySprite.ANIMATION_FALL_UP_RIGHT)
+			_play_animation(CultistSprite.ANIMATION_FALL_UP_RIGHT)
 		else:
-			_play_animation(EnemySprite.ANIMATION_FALL_DOWN_RIGHT)
+			_play_animation(CultistSprite.ANIMATION_FALL_DOWN_RIGHT)
 
 
 func _is_current_animation_look_around() -> bool:
 	if not sprite.is_playing(): return false
-	if sprite.animation in EnemySprite.LOOK_AROUND_FRONT_ANIMATIONS: return true
-	if sprite.animation in EnemySprite.LOOK_AROUND_REAR_ANIMATIONS: return true
+	if sprite.animation in CultistSprite.LOOK_AROUND_FRONT_ANIMATIONS: return true
+	if sprite.animation in CultistSprite.LOOK_AROUND_REAR_ANIMATIONS: return true
 	return false
 
 

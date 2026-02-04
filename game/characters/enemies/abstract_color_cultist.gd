@@ -1,5 +1,5 @@
-class_name AbstractColorEnemy
-extends AbstractEnemy
+class_name AbstractColorCultist
+extends AbstractCultist
 
 
 @onready var collision_switcher : CollisionSwitcher = $CollisionSwitcher
