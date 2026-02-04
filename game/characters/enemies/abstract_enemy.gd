@@ -23,32 +23,6 @@ enum State {
 }
 
 
-const ANIMATION_FALL_DOWN = "fall_down"
-const ANIMATION_FALL_DOWN_LEFT = "fall_down_left"
-const ANIMATION_FALL_DOWN_RIGHT = "fall_down_right"
-const ANIMATION_FALL_UP = "fall_up"
-const ANIMATION_FALL_UP_LEFT = "fall_up_left"
-const ANIMATION_FALL_UP_RIGHT = "fall_up_right"
-const ANIMATION_IDLE_FRONT = "idle_front"
-const ANIMATION_IDLE_REAR = "idle_rear"
-const ANIMATION_LOOK_AROUND_FRONT_1 = "look_around_front_1"
-const ANIMATION_LOOK_AROUND_FRONT_2 = "look_around_front_2"
-const ANIMATION_LOOK_AROUND_REAR_1 = "look_around_rear_1"
-const ANIMATION_LOOK_AROUND_REAR_2 = "look_around_rear_2"
-const ANIMATION_WALK_LEFT = "walk_left"
-const ANIMATION_WALK_RIGHT = "walk_right"
-const ANIMATION_CHASE_LEFT = "chase_left"
-const ANIMATION_CHASE_RIGHT = "chase_right"
-
-const LOOK_AROUND_FRONT_ANIMATIONS : Array[String] = [
-	ANIMATION_LOOK_AROUND_FRONT_1,
-	ANIMATION_LOOK_AROUND_FRONT_2,
-]
-const LOOK_AROUND_REAR_ANIMATIONS : Array[String] = [
-	ANIMATION_LOOK_AROUND_REAR_1,
-	ANIMATION_LOOK_AROUND_REAR_2,
-]
-
 const MAX_WALK_SPEED = 85
 const MAX_CHASE_SPEED = 170
 const ACCELERATION = 600.0
@@ -206,13 +180,13 @@ func _update_animation() -> void:
 	if is_zero_approx(velocity.y):
 		match _state:
 			State.WalkLeft:
-				_play_animation(ANIMATION_WALK_LEFT)
+				_play_animation(EnemySprite.ANIMATION_WALK_LEFT)
 			State.WalkRight:
-				_play_animation(ANIMATION_WALK_RIGHT)
+				_play_animation(EnemySprite.ANIMATION_WALK_RIGHT)
 			State.ChasingLeft:
-				_play_animation(ANIMATION_CHASE_LEFT)
+				_play_animation(EnemySprite.ANIMATION_CHASE_LEFT)
 			State.ChasingRight:
-				_play_animation(ANIMATION_CHASE_RIGHT)
+				_play_animation(EnemySprite.ANIMATION_CHASE_RIGHT)
 			State.Idle:
 				_play_idle_animation()
 			State.LookAround:
@@ -224,9 +198,9 @@ func _update_animation() -> void:
 func _play_idle_animation() -> void:
 	match facing:
 		Facing.Front:
-			_play_animation(ANIMATION_IDLE_FRONT)
+			_play_animation(EnemySprite.ANIMATION_IDLE_FRONT)
 		Facing.Rear:
-			_play_animation(ANIMATION_IDLE_REAR)
+			_play_animation(EnemySprite.ANIMATION_IDLE_REAR)
 
 
 func _play_look_around_animation() -> void:
@@ -234,29 +208,35 @@ func _play_look_around_animation() -> void:
 	
 	match facing:
 		Facing.Front:
-			var animation := _get_random_animation(LOOK_AROUND_FRONT_ANIMATIONS)
+			var animation := _get_random_animation(EnemySprite.LOOK_AROUND_FRONT_ANIMATIONS)
 			_play_animation(animation)
 		Facing.Rear:
-			var animation := _get_random_animation(LOOK_AROUND_REAR_ANIMATIONS)
+			var animation := _get_random_animation(EnemySprite.LOOK_AROUND_REAR_ANIMATIONS)
 			_play_animation(animation)
 
 
 func _play_fall_animation() -> void:
 	if is_zero_approx(velocity.x):
-		var animation := ANIMATION_FALL_UP if velocity.y < 0 else ANIMATION_FALL_DOWN
-		_play_animation(animation)
+		if velocity.y < 0:
+			_play_animation(EnemySprite.ANIMATION_FALL_UP)
+		else:
+			_play_animation(EnemySprite.ANIMATION_FALL_DOWN)
 	elif velocity.x < 0:
-		var animation := ANIMATION_FALL_UP_LEFT if velocity.y < 0 else ANIMATION_FALL_DOWN_LEFT
-		_play_animation(animation)
+		if velocity.y < 0:
+			_play_animation(EnemySprite.ANIMATION_FALL_UP_LEFT)
+		else:
+			_play_animation(EnemySprite.ANIMATION_FALL_DOWN_LEFT)
 	else:
-		var animation := ANIMATION_FALL_UP_RIGHT if velocity.y < 0 else ANIMATION_FALL_DOWN_RIGHT
-		_play_animation(animation)
+		if velocity.y < 0:
+			_play_animation(EnemySprite.ANIMATION_FALL_UP_RIGHT)
+		else:
+			_play_animation(EnemySprite.ANIMATION_FALL_DOWN_RIGHT)
 
 
 func _is_current_animation_look_around() -> bool:
 	if not sprite.is_playing(): return false
-	if sprite.animation in LOOK_AROUND_FRONT_ANIMATIONS: return true
-	if sprite.animation in LOOK_AROUND_REAR_ANIMATIONS: return true
+	if sprite.animation in EnemySprite.LOOK_AROUND_FRONT_ANIMATIONS: return true
+	if sprite.animation in EnemySprite.LOOK_AROUND_REAR_ANIMATIONS: return true
 	return false
 
 

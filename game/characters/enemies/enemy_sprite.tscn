@@ -1,7 +1,8 @@
-[gd_scene load_steps=47 format=3 uid="uid://dtxiercm8dsfm"]
+[gd_scene format=3 uid="uid://dtxiercm8dsfm"]
 
 [ext_resource type="Shader" uid="uid://lqq1mg6l1qqe" path="res://game/shaders/black_n_white.gdshader" id="1_b6aoy"]
 [ext_resource type="Texture2D" uid="uid://drk8j57acajrq" path="res://images/characters/cultist.png" id="2_yjsd7"]
+[ext_resource type="Script" uid="uid://dkxmwkjttbf2d" path="res://game/characters/enemies/enemy_sprite.gd" id="3_h0tku"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vecdo"]
 shader = ExtResource("1_b6aoy")
@@ -449,7 +450,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+[node name="EnemySprite" type="AnimatedSprite2D" unique_id=351120861]
 material = SubResource("ShaderMaterial_vecdo")
 sprite_frames = SubResource("SpriteFrames_2wrno")
 animation = &"look_around"
+script = ExtResource("3_h0tku")
