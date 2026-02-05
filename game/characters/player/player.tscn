@@ -13,9 +13,9 @@
 [ext_resource type="Script" uid="uid://kufq6bwnv80t" path="res://game/characters/player/state_machine/walk_right_state.gd" id="9_wdx7h"]
 [ext_resource type="Script" uid="uid://c0bbmif5ucw28" path="res://game/characters/player/state_machine/jump_left_state.gd" id="11_q2504"]
 [ext_resource type="Script" uid="uid://cr0hkb4wggcys" path="res://game/characters/player/state_machine/jump_right_state.gd" id="12_l8uo5"]
-[ext_resource type="Script" uid="uid://c7myrm50fnpfn" path="res://game/characters/player/state_machine/fall_state.gd" id="13_m2bqk"]
-[ext_resource type="Script" uid="uid://cmimnl6jf78ao" path="res://game/characters/player/state_machine/fall_left_state.gd" id="14_2lnxg"]
-[ext_resource type="Script" uid="uid://5s7ko6pcqagy" path="res://game/characters/player/state_machine/fall_right_state.gd" id="15_bfpdl"]
+[ext_resource type="Script" uid="uid://c7myrm50fnpfn" path="res://game/characters/player/state_machine/falingl_state.gd" id="13_m2bqk"]
+[ext_resource type="Script" uid="uid://cmimnl6jf78ao" path="res://game/characters/player/state_machine/falling_left_state.gd" id="14_2lnxg"]
+[ext_resource type="Script" uid="uid://5s7ko6pcqagy" path="res://game/characters/player/state_machine/falling_right_state.gd" id="15_bfpdl"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xln5q"]
 radius = 4.0

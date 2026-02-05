@@ -135,7 +135,7 @@ func _on_player_timer_timeout() -> void:
 	_show_cutscene_haze(CUTSCENE_HAZE_TIME)
 	cutscene_fake_player.queue_free()
 	cutscene_fake_cultist.show()
-	cutscene_fake_cultist.play("look_around", 0.5)
+	cutscene_fake_cultist.play(CultistSprite.ANIMATION_LOOK_AROUND, 0.5)
 	cutscene_cultist_timer.start()
 
 

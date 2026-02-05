@@ -8,11 +8,6 @@ enum Type {
 	Random,
 }
 
-enum Facing {
-	Front,
-	Rear,
-}
-
 enum State {
 	Idle,
 	WalkLeft,
@@ -34,7 +29,6 @@ const DIRECTION_RIGHT = 1
 
 
 @export var type : Type = Type.Standing
-@export var facing : Facing = Facing.Front
 @export var initial_state : State = State.Idle
 
 
@@ -62,9 +56,6 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-	
 	match _state:
 		State.ChasingLeft:
 			_process_player_ray(left_player_distant_ray)
@@ -74,6 +65,8 @@ func _physics_process(delta: float) -> void:
 			else:
 				_update_x_velocity(DIRECTION_LEFT, MAX_CHASE_SPEED, delta)
 				_check_wall_collision_and_switch_state(DIRECTION_LEFT)
+			_update_animation()
+			move_and_slide()
 		State.ChasingRight:
 			_process_player_ray(right_player_distant_ray)
 			if position.x > _target_x:
@@ -82,25 +75,29 @@ func _physics_process(delta: float) -> void:
 			else:
 				_update_x_velocity(DIRECTION_RIGHT, MAX_CHASE_SPEED, delta)
 				_check_wall_collision_and_switch_state(DIRECTION_RIGHT)
+			_update_animation()
+			move_and_slide()
 		State.WalkLeft:
 			if _process_player_ray(left_player_distant_ray):
 				_set_chase_state()
 			_update_x_velocity(DIRECTION_LEFT, MAX_WALK_SPEED, delta)
 			_check_wall_collision_and_switch_state(DIRECTION_LEFT)
+			_update_animation()
+			move_and_slide()
 		State.WalkRight:
 			if _process_player_ray(right_player_distant_ray):
 				_set_chase_state()
 			_update_x_velocity(DIRECTION_RIGHT, MAX_WALK_SPEED, delta)
 			_check_wall_collision_and_switch_state(DIRECTION_RIGHT)
+			_update_animation()
+			move_and_slide()
 		State.LookAround:
 			_update_x_velocity(0, MAX_WALK_SPEED * 2, delta)
 			if not _target_found:
 				var close_rays : Array[RayCast2D] = [left_player_close_ray, right_player_close_ray]
 				_target_found = _process_player_rays(close_rays)
-	
-	_update_animation()
-	
-	move_and_slide()
+			_update_animation()
+			move_and_slide()
 
 
 func _set_state(value: State) -> void:
@@ -191,58 +188,21 @@ func _update_animation() -> void:
 				_play_idle_animation()
 			State.LookAround:
 				_play_look_around_animation()
-	else:
-		_play_fall_animation()
 
 
 func _play_idle_animation() -> void:
-	match facing:
-		Facing.Front:
-			_play_animation(CultistSprite.ANIMATION_IDLE_FRONT)
-		Facing.Rear:
-			_play_animation(CultistSprite.ANIMATION_IDLE_REAR)
+	_play_animation(CultistSprite.ANIMATION_IDLE)
 
 
 func _play_look_around_animation() -> void:
 	if _is_current_animation_look_around(): return
-	
-	match facing:
-		Facing.Front:
-			var animation := _get_random_animation(CultistSprite.LOOK_AROUND_FRONT_ANIMATIONS)
-			_play_animation(animation)
-		Facing.Rear:
-			var animation := _get_random_animation(CultistSprite.LOOK_AROUND_REAR_ANIMATIONS)
-			_play_animation(animation)
-
-
-func _play_fall_animation() -> void:
-	if is_zero_approx(velocity.x):
-		if velocity.y < 0:
-			_play_animation(CultistSprite.ANIMATION_FALL_UP)
-		else:
-			_play_animation(CultistSprite.ANIMATION_FALL_DOWN)
-	elif velocity.x < 0:
-		if velocity.y < 0:
-			_play_animation(CultistSprite.ANIMATION_FALL_UP_LEFT)
-		else:
-			_play_animation(CultistSprite.ANIMATION_FALL_DOWN_LEFT)
-	else:
-		if velocity.y < 0:
-			_play_animation(CultistSprite.ANIMATION_FALL_UP_RIGHT)
-		else:
-			_play_animation(CultistSprite.ANIMATION_FALL_DOWN_RIGHT)
+	_play_animation(CultistSprite.LOOK_AROUND_ANIMATIONS.pick_random())
 
 
 func _is_current_animation_look_around() -> bool:
 	if not sprite.is_playing(): return false
-	if sprite.animation in CultistSprite.LOOK_AROUND_FRONT_ANIMATIONS: return true
-	if sprite.animation in CultistSprite.LOOK_AROUND_REAR_ANIMATIONS: return true
+	if sprite.animation in CultistSprite.LOOK_AROUND_ANIMATIONS: return true
 	return false
-
-
-func _get_random_animation(animations: Array[String]) -> String:
-	var index := randi_range(0, animations.size() - 1)
-	return animations[index]
 
 
 func _play_animation(animation: String) -> void:

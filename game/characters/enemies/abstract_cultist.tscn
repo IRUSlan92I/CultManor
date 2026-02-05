@@ -6,6 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://bg7k6ovbk1xgm" path="res://game/characters/enemies/state_machine/cultist_state_machine.tscn" id="4_yu28k"]
 [ext_resource type="PackedScene" uid="uid://bq1v55jv4c6qe" path="res://game/characters/enemies/state_machine/cultist_state.tscn" id="5_tu2pi"]
 [ext_resource type="Script" uid="uid://cdw73paln1rg8" path="res://game/characters/enemies/state_machine/idle_state.gd" id="6_e5j7k"]
+[ext_resource type="Script" uid="uid://bqnq6m0s4etqh" path="res://game/characters/enemies/state_machine/fall_state.gd" id="7_7tkj8"]
+[ext_resource type="Script" uid="uid://b8o0lvuy6a5q1" path="res://game/characters/enemies/state_machine/fall_left_state.gd" id="8_2opx4"]
+[ext_resource type="Script" uid="uid://cxg54u14yb6go" path="res://game/characters/enemies/state_machine/fall_right_state.gd" id="9_lu83c"]
+[ext_resource type="Script" uid="uid://bfp8gywqqkju7" path="res://game/characters/enemies/state_machine/look_around_state.gd" id="10_lu83c"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mocsw"]
 radius = 4.0
@@ -86,6 +90,25 @@ initial_state = NodePath("IdleState")
 
 [node name="IdleState" parent="CultistStateMachine" unique_id=739226464 node_paths=PackedStringArray("cultist") instance=ExtResource("5_tu2pi")]
 script = ExtResource("6_e5j7k")
+cultist = NodePath("../..")
+
+[node name="FallState" parent="CultistStateMachine" unique_id=1764777802 node_paths=PackedStringArray("look_around_state", "cultist") instance=ExtResource("5_tu2pi")]
+script = ExtResource("7_7tkj8")
+look_around_state = NodePath("../LookAroundState")
+cultist = NodePath("../..")
+
+[node name="FallLeftState" parent="CultistStateMachine" unique_id=1011952297 node_paths=PackedStringArray("look_around_state", "cultist") instance=ExtResource("5_tu2pi")]
+script = ExtResource("8_2opx4")
+look_around_state = NodePath("../LookAroundState")
+cultist = NodePath("../..")
+
+[node name="FallRightState" parent="CultistStateMachine" unique_id=1932915544 node_paths=PackedStringArray("look_around_state", "cultist") instance=ExtResource("5_tu2pi")]
+script = ExtResource("9_lu83c")
+look_around_state = NodePath("../LookAroundState")
+cultist = NodePath("../..")
+
+[node name="LookAroundState" parent="CultistStateMachine" unique_id=2025927882 node_paths=PackedStringArray("cultist") instance=ExtResource("5_tu2pi")]
+script = ExtResource("10_lu83c")
 cultist = NodePath("../..")
 
 [connection signal="animation_finished" from="CultistSprite" to="." method="_on_animation_finished"]
