@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bq1v55jv4c6qe"]
+
+[ext_resource type="PackedScene" uid="uid://c7adrbfobmvl8" path="res://game/state_machine/abstract_state.tscn" id="1_qehp8"]
+[ext_resource type="Script" uid="uid://c2et1lt2xgk45" path="res://game/characters/enemies/state_machine/cultist_state.gd" id="2_3mu4s"]
+
+[node name="CultistState" unique_id=739226464 instance=ExtResource("1_qehp8")]
+script = ExtResource("2_3mu4s")

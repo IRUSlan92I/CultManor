@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://but5aeh7y1s0f" path="res://game/characters/enemies/abstract_cultist.gd" id="1_2wrno"]
 [ext_resource type="PackedScene" uid="uid://dtxiercm8dsfm" path="res://game/characters/enemies/cultist_sprite.tscn" id="2_tjvyk"]
 [ext_resource type="PackedScene" uid="uid://dike8xgbqdut2" path="res://game/killing_area.tscn" id="3_tjvyk"]
+[ext_resource type="PackedScene" uid="uid://bg7k6ovbk1xgm" path="res://game/characters/enemies/state_machine/cultist_state_machine.tscn" id="4_yu28k"]
+[ext_resource type="PackedScene" uid="uid://bq1v55jv4c6qe" path="res://game/characters/enemies/state_machine/cultist_state.tscn" id="5_tu2pi"]
+[ext_resource type="Script" uid="uid://cdw73paln1rg8" path="res://game/characters/enemies/state_machine/idle_state.gd" id="6_e5j7k"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mocsw"]
 radius = 4.0
@@ -76,6 +79,14 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillingArea" unique_id=1710758452]
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_tjvyk")
+
+[node name="CultistStateMachine" parent="." unique_id=633169960 node_paths=PackedStringArray("cultist", "initial_state") instance=ExtResource("4_yu28k")]
+cultist = NodePath("..")
+initial_state = NodePath("IdleState")
+
+[node name="IdleState" parent="CultistStateMachine" unique_id=739226464 node_paths=PackedStringArray("cultist") instance=ExtResource("5_tu2pi")]
+script = ExtResource("6_e5j7k")
+cultist = NodePath("../..")
 
 [connection signal="animation_finished" from="CultistSprite" to="." method="_on_animation_finished"]
 [connection signal="animation_looped" from="CultistSprite" to="." method="_on_animation_looped"]
