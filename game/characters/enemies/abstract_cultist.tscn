@@ -88,8 +88,9 @@ shape = SubResource("CapsuleShape2D_tjvyk")
 cultist = NodePath("..")
 initial_state = NodePath("IdleState")
 
-[node name="IdleState" parent="CultistStateMachine" unique_id=739226464 node_paths=PackedStringArray("cultist") instance=ExtResource("5_tu2pi")]
+[node name="IdleState" parent="CultistStateMachine" unique_id=739226464 node_paths=PackedStringArray("fall_state", "cultist") instance=ExtResource("5_tu2pi")]
 script = ExtResource("6_e5j7k")
+fall_state = NodePath("../FallState")
 cultist = NodePath("../..")
 
 [node name="FallState" parent="CultistStateMachine" unique_id=1764777802 node_paths=PackedStringArray("look_around_state", "cultist") instance=ExtResource("5_tu2pi")]
@@ -97,18 +98,21 @@ script = ExtResource("7_7tkj8")
 look_around_state = NodePath("../LookAroundState")
 cultist = NodePath("../..")
 
-[node name="FallLeftState" parent="CultistStateMachine" unique_id=1011952297 node_paths=PackedStringArray("look_around_state", "cultist") instance=ExtResource("5_tu2pi")]
+[node name="FallLeftState" parent="CultistStateMachine" unique_id=1011952297 node_paths=PackedStringArray("fall_state", "look_around_state", "cultist") instance=ExtResource("5_tu2pi")]
 script = ExtResource("8_2opx4")
+fall_state = NodePath("../FallState")
 look_around_state = NodePath("../LookAroundState")
 cultist = NodePath("../..")
 
-[node name="FallRightState" parent="CultistStateMachine" unique_id=1932915544 node_paths=PackedStringArray("look_around_state", "cultist") instance=ExtResource("5_tu2pi")]
+[node name="FallRightState" parent="CultistStateMachine" unique_id=1932915544 node_paths=PackedStringArray("fall_state", "look_around_state", "cultist") instance=ExtResource("5_tu2pi")]
 script = ExtResource("9_lu83c")
+fall_state = NodePath("../FallState")
 look_around_state = NodePath("../LookAroundState")
 cultist = NodePath("../..")
 
-[node name="LookAroundState" parent="CultistStateMachine" unique_id=2025927882 node_paths=PackedStringArray("cultist") instance=ExtResource("5_tu2pi")]
+[node name="LookAroundState" parent="CultistStateMachine" unique_id=2025927882 node_paths=PackedStringArray("fall_state", "cultist") instance=ExtResource("5_tu2pi")]
 script = ExtResource("10_lu83c")
+fall_state = NodePath("../FallState")
 cultist = NodePath("../..")
 
 [connection signal="animation_finished" from="CultistSprite" to="." method="_on_animation_finished"]
