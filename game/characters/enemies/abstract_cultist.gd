@@ -32,7 +32,7 @@ const DIRECTION_RIGHT = 1
 @export var initial_state : State = State.Idle
 
 
-var _target_x := 0.0
+var target_x := 0.0
 var _target_found := false
 
 
@@ -59,40 +59,40 @@ func _physics_process(delta: float) -> void:
 	match _state:
 		State.ChasingLeft:
 			_process_player_ray(left_player_distant_ray)
-			if position.x < _target_x:
+			if position.x < target_x:
 				SoundManager.play_sfx_stream(SoundManager.sfx_stream_player_lost, global_position)
 				_state = State.LookAround
 			else:
-				_update_x_velocity(DIRECTION_LEFT, MAX_CHASE_SPEED, delta)
+				update_x_velocity(DIRECTION_LEFT, MAX_CHASE_SPEED, delta)
 				_check_wall_collision_and_switch_state(DIRECTION_LEFT)
 			_update_animation()
 			move_and_slide()
 		State.ChasingRight:
 			_process_player_ray(right_player_distant_ray)
-			if position.x > _target_x:
+			if position.x > target_x:
 				SoundManager.play_sfx_stream(SoundManager.sfx_stream_player_lost, global_position)
 				_state = State.LookAround
 			else:
-				_update_x_velocity(DIRECTION_RIGHT, MAX_CHASE_SPEED, delta)
+				update_x_velocity(DIRECTION_RIGHT, MAX_CHASE_SPEED, delta)
 				_check_wall_collision_and_switch_state(DIRECTION_RIGHT)
 			_update_animation()
 			move_and_slide()
 		State.WalkLeft:
 			if _process_player_ray(left_player_distant_ray):
 				_set_chase_state()
-			_update_x_velocity(DIRECTION_LEFT, MAX_WALK_SPEED, delta)
+			update_x_velocity(DIRECTION_LEFT, MAX_WALK_SPEED, delta)
 			_check_wall_collision_and_switch_state(DIRECTION_LEFT)
 			_update_animation()
 			move_and_slide()
 		State.WalkRight:
 			if _process_player_ray(right_player_distant_ray):
 				_set_chase_state()
-			_update_x_velocity(DIRECTION_RIGHT, MAX_WALK_SPEED, delta)
+			update_x_velocity(DIRECTION_RIGHT, MAX_WALK_SPEED, delta)
 			_check_wall_collision_and_switch_state(DIRECTION_RIGHT)
 			_update_animation()
 			move_and_slide()
 		State.LookAround:
-			_update_x_velocity(0, MAX_WALK_SPEED * 2, delta)
+			update_x_velocity(0, MAX_WALK_SPEED * 2, delta)
 			if not _target_found:
 				var close_rays : Array[RayCast2D] = [left_player_close_ray, right_player_close_ray]
 				_target_found = _process_player_rays(close_rays)
@@ -131,7 +131,7 @@ func _process_player_ray(ray: RayCast2D) -> bool:
 		ray.force_raycast_update()
 		var collider := ray.get_collider()
 		if collider is Player:
-			_target_x = collider.position.x
+			target_x = collider.position.x
 			return true
 	return false
 
@@ -143,7 +143,7 @@ func _process_player_rays(rays: Array[RayCast2D]) -> bool:
 	return false
 
 
-func _update_x_velocity(direction: int, max_speed: float, delta: float) -> void:
+func update_x_velocity(direction: int, max_speed: float, delta: float) -> void:
 	velocity.x = move_toward(velocity.x, direction * max_speed, ACCELERATION * delta)
 
 
@@ -226,7 +226,7 @@ func _set_walking_state() -> void:
 
 func _set_chase_state() -> void:
 	SoundManager.play_sfx_stream(SoundManager.sfx_stream_player_spoted, global_position)
-	if _target_x < position.x:
+	if target_x < position.x:
 		_state = State.ChasingLeft
 	else:
 		_state = State.ChasingRight
@@ -262,5 +262,5 @@ func _on_animation_looped() -> void:
 
 func _on_player_touch_area_entered(body: Node2D) -> void:
 	if body is Player:
-		_target_x = body.position.x
+		target_x = body.position.x
 		_set_chase_state()

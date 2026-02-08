@@ -117,15 +117,11 @@ script = ExtResource("10_lu83c")
 fall_state = NodePath("../FallState")
 cultist = NodePath("../..")
 
-[node name="MoveLeftState" parent="CultistStateMachine" unique_id=276543931 node_paths=PackedStringArray("another_direction_move_state", "cultist") instance=ExtResource("5_tu2pi")]
+[node name="MoveLeftState" parent="CultistStateMachine" unique_id=276543931 instance=ExtResource("5_tu2pi")]
 script = ExtResource("11_lh753")
-another_direction_move_state = NodePath("../MoveRightState")
-cultist = NodePath("../..")
 
-[node name="MoveRightState" parent="CultistStateMachine" unique_id=1671686910 node_paths=PackedStringArray("another_direction_move_state", "cultist") instance=ExtResource("5_tu2pi")]
+[node name="MoveRightState" parent="CultistStateMachine" unique_id=1671686910 instance=ExtResource("5_tu2pi")]
 script = ExtResource("12_lh753")
-another_direction_move_state = NodePath("../MoveLeftState")
-cultist = NodePath("../..")
 
 [connection signal="animation_finished" from="CultistSprite" to="." method="_on_animation_finished"]
 [connection signal="animation_looped" from="CultistSprite" to="." method="_on_animation_looped"]
