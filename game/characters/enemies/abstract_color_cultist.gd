@@ -6,5 +6,4 @@ extends AbstractCultist
 
 
 func _ready() -> void:
-	super._ready()
 	collision_switcher.material = sprite.material

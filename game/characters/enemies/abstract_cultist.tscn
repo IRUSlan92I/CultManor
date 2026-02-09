@@ -10,8 +10,10 @@
 [ext_resource type="Script" uid="uid://b8o0lvuy6a5q1" path="res://game/characters/enemies/state_machine/fall_left_state.gd" id="8_2opx4"]
 [ext_resource type="Script" uid="uid://cxg54u14yb6go" path="res://game/characters/enemies/state_machine/fall_right_state.gd" id="9_lu83c"]
 [ext_resource type="Script" uid="uid://bfp8gywqqkju7" path="res://game/characters/enemies/state_machine/look_around_state.gd" id="10_lu83c"]
-[ext_resource type="Script" uid="uid://hgn4yll571hp" path="res://game/characters/enemies/state_machine/move_left_state.gd" id="11_lh753"]
-[ext_resource type="Script" uid="uid://bwwhmjxhg2adp" path="res://game/characters/enemies/state_machine/move_right_state.gd" id="12_lh753"]
+[ext_resource type="Script" uid="uid://hgn4yll571hp" path="res://game/characters/enemies/state_machine/walk_left_state.gd" id="11_lh753"]
+[ext_resource type="Script" uid="uid://bwwhmjxhg2adp" path="res://game/characters/enemies/state_machine/walk_right_state.gd" id="12_lh753"]
+[ext_resource type="Script" uid="uid://cn2lfl4kuxvjk" path="res://game/characters/enemies/state_machine/chase_left_state.gd" id="13_42ivi"]
+[ext_resource type="Script" uid="uid://3kl84tu1vwiv" path="res://game/characters/enemies/state_machine/chase_right_state.gd" id="14_cqp7f"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mocsw"]
 radius = 4.0
@@ -112,19 +114,37 @@ fall_state = NodePath("../FallState")
 look_around_state = NodePath("../LookAroundState")
 cultist = NodePath("../..")
 
-[node name="LookAroundState" parent="CultistStateMachine" unique_id=2025927882 node_paths=PackedStringArray("fall_state", "cultist") instance=ExtResource("5_tu2pi")]
+[node name="LookAroundState" parent="CultistStateMachine" unique_id=2025927882 node_paths=PackedStringArray("fall_state", "chase_left_state", "chase_right_state", "cultist") instance=ExtResource("5_tu2pi")]
 script = ExtResource("10_lu83c")
+fall_state = NodePath("../FallState")
+chase_left_state = NodePath("../ChaseLeftState")
+chase_right_state = NodePath("../ChaseRightState")
+cultist = NodePath("../..")
+
+[node name="WalkLeftState" parent="CultistStateMachine" unique_id=276543931 node_paths=PackedStringArray("chase_state", "another_direction_walk_state", "fall_state", "cultist") instance=ExtResource("5_tu2pi")]
+script = ExtResource("11_lh753")
+chase_state = NodePath("../ChaseLeftState")
+another_direction_walk_state = NodePath("../WalkRightState")
+fall_state = NodePath("../FallLeftState")
+cultist = NodePath("../..")
+
+[node name="WalkRightState" parent="CultistStateMachine" unique_id=1671686910 node_paths=PackedStringArray("chase_state", "another_direction_walk_state", "fall_state", "cultist") instance=ExtResource("5_tu2pi")]
+script = ExtResource("12_lh753")
+chase_state = NodePath("../ChaseRightState")
+another_direction_walk_state = NodePath("../WalkLeftState")
+fall_state = NodePath("../FallRightState")
+cultist = NodePath("../..")
+
+[node name="ChaseLeftState" parent="CultistStateMachine" unique_id=209480830 node_paths=PackedStringArray("look_around_state", "fall_state", "cultist") instance=ExtResource("5_tu2pi")]
+script = ExtResource("13_42ivi")
+look_around_state = NodePath("../LookAroundState")
 fall_state = NodePath("../FallState")
 cultist = NodePath("../..")
 
-[node name="MoveLeftState" parent="CultistStateMachine" unique_id=276543931 node_paths=PackedStringArray("another_direction_move_state", "cultist") instance=ExtResource("5_tu2pi")]
-script = ExtResource("11_lh753")
-another_direction_move_state = NodePath("../MoveRightState")
-cultist = NodePath("../..")
-
-[node name="MoveRightState" parent="CultistStateMachine" unique_id=1671686910 node_paths=PackedStringArray("another_direction_move_state", "cultist") instance=ExtResource("5_tu2pi")]
-script = ExtResource("12_lh753")
-another_direction_move_state = NodePath("../MoveLeftState")
+[node name="ChaseRightState" parent="CultistStateMachine" unique_id=383038915 node_paths=PackedStringArray("look_around_state", "fall_state", "cultist") instance=ExtResource("5_tu2pi")]
+script = ExtResource("14_cqp7f")
+look_around_state = NodePath("../LookAroundState")
+fall_state = NodePath("../FallState")
 cultist = NodePath("../..")
 
 [connection signal="animation_finished" from="CultistSprite" to="." method="_on_animation_finished"]
