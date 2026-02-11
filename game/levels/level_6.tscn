@@ -317,23 +317,15 @@ position = Vector2(857, 136)
 
 [node name="BlackCultist1" parent="Enemies" parent_id_path=PackedInt32Array(857989772) index="0" unique_id=129671926 instance=ExtResource("22_b1xny")]
 position = Vector2(1041, 352)
-type = 1
-initial_state = 1
 
 [node name="BlackCultist2" parent="Enemies" parent_id_path=PackedInt32Array(857989772) index="1" unique_id=1222909487 instance=ExtResource("22_b1xny")]
-position = Vector2(477, 160)
-type = 1
-initial_state = 1
+position = Vector2(403, 160)
 
 [node name="WhiteCultist1" parent="Enemies" parent_id_path=PackedInt32Array(857989772) index="2" unique_id=503464276 instance=ExtResource("23_8555i")]
 position = Vector2(587, 368)
-type = 1
-initial_state = 2
 
 [node name="WhiteCultist2" parent="Enemies" parent_id_path=PackedInt32Array(857989772) index="3" unique_id=624398972 instance=ExtResource("23_8555i")]
-position = Vector2(493, 160)
-type = 1
-initial_state = 2
+position = Vector2(549, 160)
 
 [node name="Player" parent="." index="4" unique_id=1058744997]
 position = Vector2(208, -162)

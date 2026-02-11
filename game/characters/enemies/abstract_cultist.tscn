@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://dike8xgbqdut2" path="res://game/killing_area.tscn" id="3_tjvyk"]
 [ext_resource type="PackedScene" uid="uid://bg7k6ovbk1xgm" path="res://game/characters/enemies/state_machine/cultist_state_machine.tscn" id="4_yu28k"]
 [ext_resource type="PackedScene" uid="uid://bq1v55jv4c6qe" path="res://game/characters/enemies/state_machine/cultist_state.tscn" id="5_tu2pi"]
-[ext_resource type="Script" uid="uid://cdw73paln1rg8" path="res://game/characters/enemies/state_machine/idle_state.gd" id="6_e5j7k"]
 [ext_resource type="Script" uid="uid://bqnq6m0s4etqh" path="res://game/characters/enemies/state_machine/fall_state.gd" id="7_7tkj8"]
 [ext_resource type="Script" uid="uid://b8o0lvuy6a5q1" path="res://game/characters/enemies/state_machine/fall_left_state.gd" id="8_2opx4"]
 [ext_resource type="Script" uid="uid://cxg54u14yb6go" path="res://game/characters/enemies/state_machine/fall_right_state.gd" id="9_lu83c"]
@@ -91,11 +90,6 @@ shape = SubResource("CapsuleShape2D_tjvyk")
 [node name="CultistStateMachine" parent="." unique_id=633169960 node_paths=PackedStringArray("cultist", "initial_state") instance=ExtResource("4_yu28k")]
 cultist = NodePath("..")
 initial_state = NodePath("WalkLeftState")
-
-[node name="IdleState" parent="CultistStateMachine" unique_id=739226464 node_paths=PackedStringArray("fall_state", "cultist") instance=ExtResource("5_tu2pi")]
-script = ExtResource("6_e5j7k")
-fall_state = NodePath("../FallState")
-cultist = NodePath("../..")
 
 [node name="FallState" parent="CultistStateMachine" unique_id=1764777802 node_paths=PackedStringArray("look_around_state", "cultist") instance=ExtResource("5_tu2pi")]
 script = ExtResource("7_7tkj8")
