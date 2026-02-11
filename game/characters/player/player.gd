@@ -52,7 +52,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y = clampf(velocity.y, -max_fall_speed, max_fall_speed)
 	
 	if is_dead:
-		_slow_down(delta)
+		_slow_down(delta*3)
 	else:
 		if Input.is_action_just_pressed("jump"):
 			jump_buffer_timer.start()
