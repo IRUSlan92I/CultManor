@@ -8,18 +8,18 @@ extends Node
 var current_state : AbstractState
 
 
-func _ready() -> void:
-	_connect_states()
+func init() -> void:
+	_init_states()
 	if initial_state:
 		_change_state(initial_state)
 
 
-func _process(delta: float) -> void:
+func process(delta: float) -> void:
 	if current_state:
 		current_state.process(delta)
 
 
-func _physics_process(delta: float) -> void:
+func physics_process(delta: float) -> void:
 	if current_state:
 		current_state.physics_process(delta)
 
@@ -34,9 +34,10 @@ func _change_state(new_state: AbstractState) -> void:
 	current_state.enter()
 
 
-func _connect_states() -> void:
+func _init_states() -> void:
 	for child in get_children():
 		if not child is AbstractState: continue
 		var state := child as AbstractState
+		state.init()
 		state.switch_state.connect(_change_state)
 	

@@ -18,8 +18,8 @@ var _player_ray_cast : RayCast2D
 
 
 func enter() -> void:
-	_set_ray_cast_enable(_player_ray_cast, true)
+	cultist._set_ray_cast_enable(_player_ray_cast, true)
 
 
 func exit() -> void:
-	_set_ray_cast_enable(_player_ray_cast, false)
+	cultist._set_ray_cast_enable(_player_ray_cast, false)

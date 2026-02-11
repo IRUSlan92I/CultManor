@@ -6,6 +6,10 @@ extends Node
 signal switch_state(state: AbstractState)
 
 
+func init() -> void:
+	pass
+
+
 func enter() -> void:
 	pass
 

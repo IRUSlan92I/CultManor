@@ -2,15 +2,18 @@ extends CultistState
 
 
 @export var fall_state: CultistState
+@export var walk_left_state: CultistState
+@export var walk_right_state: CultistState
 @export var chase_left_state: CultistState
 @export var chase_right_state: CultistState
 
 
 func enter() -> void:
+	cultist.sprite.animation_finished.connect(_on_animation_finished, CONNECT_ONE_SHOT)
 	cultist.sprite.play(CultistSprite.LOOK_AROUND_ANIMATIONS.pick_random())
 	cultist.velocity = Vector2.ZERO
-	_set_ray_cast_enable(cultist.left_player_close_ray, true)
-	_set_ray_cast_enable(cultist.right_player_close_ray, true)
+	cultist._set_ray_cast_enable(cultist.left_player_close_ray, true)
+	cultist._set_ray_cast_enable(cultist.right_player_close_ray, true)
 
 
 func physics_process(_delta: float) -> void:
@@ -26,5 +29,9 @@ func physics_process(_delta: float) -> void:
 
 
 func exit() -> void:
-	_set_ray_cast_enable(cultist.left_player_close_ray, false)
-	_set_ray_cast_enable(cultist.right_player_close_ray, false)
+	cultist._set_ray_cast_enable(cultist.left_player_close_ray, false)
+	cultist._set_ray_cast_enable(cultist.right_player_close_ray, false)
+
+
+func _on_animation_finished() -> void:
+	switch_state.emit([walk_left_state, walk_right_state].pick_random())

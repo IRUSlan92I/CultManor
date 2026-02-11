@@ -27,10 +27,13 @@ var _is_switching_needed := false
 @onready var jump_buffer_timer : Timer = $JumpBufferTimer
 @onready var coyote_time_timer : Timer = $CoyoteTimeTimer
 @onready var center_area : Area2D = $CenterArea2D
+@onready var state_machine : PlayerStateMachine = $PlayerStateMachine
 
 
 func _ready() -> void:
 	collision_switcher.material = sprite.material
+	
+	state_machine.init()
 
 
 func _physics_process(delta: float) -> void:
@@ -70,6 +73,7 @@ func _physics_process(delta: float) -> void:
 		_switch()
 	
 	move_and_slide()
+	state_machine.physics_process(delta)
 
 
 func _input(event: InputEvent) -> void:

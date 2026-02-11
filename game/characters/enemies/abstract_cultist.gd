@@ -26,8 +26,18 @@ var target_x := 0.0
 @onready var chase_right_state : CultistState = $CultistStateMachine/ChaseRightState
 
 
-func _physics_process(_delta: float) -> void:
+func _ready() -> void:
+	_set_ray_cast_enable(left_player_close_ray, false)
+	_set_ray_cast_enable(right_player_close_ray, false)
+	_set_ray_cast_enable(left_player_distant_ray, false)
+	_set_ray_cast_enable(right_player_distant_ray, false)
+	
+	state_machine.init()
+
+
+func _physics_process(delta: float) -> void:
 	move_and_slide()
+	state_machine.physics_process(delta)
 
 
 func update_x_velocity(direction: int, max_speed: float, delta: float) -> void:
@@ -42,3 +52,7 @@ func _on_player_touch_area_entered(body: Node2D) -> void:
 			state_machine._change_state(chase_left_state)
 		else:
 			state_machine._change_state(chase_right_state)
+
+
+func _set_ray_cast_enable(ray_cast: RayCast2D, enabled: bool) -> void:
+	ray_cast.process_mode = Node.PROCESS_MODE_INHERIT if enabled else Node.PROCESS_MODE_DISABLED

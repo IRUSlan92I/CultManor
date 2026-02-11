@@ -5,16 +5,6 @@ extends AbstractState
 @export var cultist: AbstractCultist
 
 
-
-func _ready() -> void:
-	if not cultist.is_node_ready():
-		await cultist.ready
-
-
-func _set_ray_cast_enable(ray_cast: RayCast2D, enabled: bool) -> void:
-	ray_cast.process_mode = Node.PROCESS_MODE_INHERIT if enabled else Node.PROCESS_MODE_DISABLED
-
-
 func _get_colliding_player(ray_cast: RayCast2D) -> Player:
 	ray_cast.force_raycast_update()
 	

@@ -90,7 +90,7 @@ shape = SubResource("CapsuleShape2D_tjvyk")
 
 [node name="CultistStateMachine" parent="." unique_id=633169960 node_paths=PackedStringArray("cultist", "initial_state") instance=ExtResource("4_yu28k")]
 cultist = NodePath("..")
-initial_state = NodePath("IdleState")
+initial_state = NodePath("WalkLeftState")
 
 [node name="IdleState" parent="CultistStateMachine" unique_id=739226464 node_paths=PackedStringArray("fall_state", "cultist") instance=ExtResource("5_tu2pi")]
 script = ExtResource("6_e5j7k")
@@ -114,9 +114,11 @@ fall_state = NodePath("../FallState")
 look_around_state = NodePath("../LookAroundState")
 cultist = NodePath("../..")
 
-[node name="LookAroundState" parent="CultistStateMachine" unique_id=2025927882 node_paths=PackedStringArray("fall_state", "chase_left_state", "chase_right_state", "cultist") instance=ExtResource("5_tu2pi")]
+[node name="LookAroundState" parent="CultistStateMachine" unique_id=2025927882 node_paths=PackedStringArray("fall_state", "walk_left_state", "walk_right_state", "chase_left_state", "chase_right_state", "cultist") instance=ExtResource("5_tu2pi")]
 script = ExtResource("10_lu83c")
 fall_state = NodePath("../FallState")
+walk_left_state = NodePath("../WalkLeftState")
+walk_right_state = NodePath("../WalkRightState")
 chase_left_state = NodePath("../ChaseLeftState")
 chase_right_state = NodePath("../ChaseRightState")
 cultist = NodePath("../..")
@@ -147,6 +149,4 @@ look_around_state = NodePath("../LookAroundState")
 fall_state = NodePath("../FallState")
 cultist = NodePath("../..")
 
-[connection signal="animation_finished" from="CultistSprite" to="." method="_on_animation_finished"]
-[connection signal="animation_looped" from="CultistSprite" to="." method="_on_animation_looped"]
 [connection signal="body_entered" from="PlayerTouchArea" to="." method="_on_player_touch_area_entered"]
