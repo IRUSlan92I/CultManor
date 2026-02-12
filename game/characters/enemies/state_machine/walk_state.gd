@@ -11,7 +11,10 @@ func physics_process(delta: float) -> void:
 	if not cultist.is_on_floor():
 		switch_state.emit(fall_state)
 	else:
-		if not _chase_if_player_in_ray_cast(_player_ray_cast, chase_state):
+		var player := _get_colliding_player(_player_ray_cast)
+		if player != null:
+			switch_state.emit(chase_state)
+		else:
 			if _wall_ray_cast.is_colliding():
 				var stream := SoundManager.sfx_stream_player_lost
 				SoundManager.play_sfx_stream(stream, cultist.global_position)

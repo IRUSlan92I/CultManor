@@ -18,9 +18,6 @@
 radius = 4.0
 height = 28.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vecdo"]
-size = Vector2(32, 28)
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tjvyk"]
 radius = 4.0
 height = 28.0
@@ -71,14 +68,6 @@ collision_mask = 0
 unique_name_in_owner = true
 target_position = Vector2(320, 0)
 collision_mask = 0
-
-[node name="PlayerTouchArea" type="Area2D" parent="." unique_id=2147163970]
-collision_layer = 0
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerTouchArea" unique_id=262478897]
-position = Vector2(0, 2)
-shape = SubResource("RectangleShape2D_vecdo")
 
 [node name="KillingArea" parent="." unique_id=1891922549 instance=ExtResource("3_tjvyk")]
 collision_mask = 0
@@ -142,5 +131,3 @@ script = ExtResource("14_cqp7f")
 look_around_state = NodePath("../LookAroundState")
 fall_state = NodePath("../FallState")
 cultist = NodePath("../..")
-
-[connection signal="body_entered" from="PlayerTouchArea" to="." method="_on_player_touch_area_entered"]

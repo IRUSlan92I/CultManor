@@ -30,8 +30,5 @@ collision_mask = 171
 [node name="RightPlayerDistantRay" parent="PlayerDistantCheck" parent_id_path=PackedInt32Array(1597489123) index="1" unique_id=1377654831]
 collision_mask = 171
 
-[node name="PlayerTouchArea" parent="." index="5" unique_id=2147163970]
-collision_mask = 136
-
-[node name="KillingArea" parent="." index="6" unique_id=1891922549]
+[node name="KillingArea" parent="." index="5" unique_id=1891922549]
 collision_mask = 136
