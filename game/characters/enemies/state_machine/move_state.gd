@@ -3,10 +3,6 @@ class_name CultistMoveState
 extends CultistState
 
 
-const DIRECTION_LEFT = -1
-const DIRECTION_RIGHT = 1
-
-
 @export var fall_state: CultistState
 
 

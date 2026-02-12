@@ -2,6 +2,10 @@ class_name CultistState
 extends AbstractState
 
 
+const DIRECTION_LEFT = -1
+const DIRECTION_RIGHT = 1
+
+
 @export var cultist: AbstractCultist
 
 

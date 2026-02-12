@@ -5,6 +5,9 @@ extends CharacterBody2D
 const MAX_WALK_SPEED = 85
 const MAX_CHASE_SPEED = 170
 const ACCELERATION = 600.0
+const JUMP_VELOCITY = 333.0
+const JUMP_GRAVITY_FACTOR = 1.0
+const FALL_GRAVITY_FACTOR = 1.5
 
 
 var target_x := 0.0
@@ -43,6 +46,10 @@ func _physics_process(delta: float) -> void:
 
 func update_x_velocity(direction: int, max_speed: float, delta: float) -> void:
 	velocity.x = move_toward(velocity.x, direction * max_speed, ACCELERATION * delta)
+
+
+func get_gravity_factor() -> float:
+	return JUMP_GRAVITY_FACTOR if velocity.y < 0.0 else FALL_GRAVITY_FACTOR
 
 
 func _set_ray_cast_enable(ray_cast: RayCast2D, enabled: bool) -> void:
