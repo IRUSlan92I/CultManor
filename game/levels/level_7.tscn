@@ -214,67 +214,53 @@ position = Vector2(2304, 2448)
 
 [node name="Right_1" parent="Cutscene/EnemyWaves/WaveThree" index="0" unique_id=1741494130 instance=ExtResource("11_6yudq")]
 position = Vector2(-69, 0)
-animation = &"idle"
 
 [node name="Right_2" parent="Cutscene/EnemyWaves/WaveThree" index="1" unique_id=761362258 instance=ExtResource("11_6yudq")]
 material = ExtResource("13_x83dg")
 position = Vector2(-77, 0)
-animation = &"idle"
 
 [node name="Right_3" parent="Cutscene/EnemyWaves/WaveThree" index="2" unique_id=418001405 instance=ExtResource("11_6yudq")]
 material = SubResource("ShaderMaterial_6yudq")
 position = Vector2(-87, 0)
-animation = &"idle"
 
 [node name="Right_4" parent="Cutscene/EnemyWaves/WaveThree" index="3" unique_id=1330937276 instance=ExtResource("11_6yudq")]
 position = Vector2(-95, 0)
-animation = &"idle"
 
 [node name="Right_5" parent="Cutscene/EnemyWaves/WaveThree" index="4" unique_id=1285782564 instance=ExtResource("11_6yudq")]
 material = SubResource("ShaderMaterial_8x4ch")
 position = Vector2(-104, 0)
-animation = &"idle"
 
 [node name="Right_6" parent="Cutscene/EnemyWaves/WaveThree" index="5" unique_id=348811069 instance=ExtResource("11_6yudq")]
 material = ExtResource("13_x83dg")
 position = Vector2(-113, 0)
-animation = &"idle"
 
 [node name="Right_7" parent="Cutscene/EnemyWaves/WaveThree" index="6" unique_id=1822852735 instance=ExtResource("11_6yudq")]
 position = Vector2(-120, 0)
-animation = &"idle"
 
 [node name="Left_1" parent="Cutscene/EnemyWaves/WaveThree" index="7" unique_id=2036807955 instance=ExtResource("11_6yudq")]
 material = SubResource("ShaderMaterial_x83dg")
 position = Vector2(78, 0)
-animation = &"idle"
 
 [node name="Left_2" parent="Cutscene/EnemyWaves/WaveThree" index="8" unique_id=1125192387 instance=ExtResource("11_6yudq")]
 position = Vector2(86, 0)
-animation = &"idle"
 
 [node name="Left_3" parent="Cutscene/EnemyWaves/WaveThree" index="9" unique_id=1717461753 instance=ExtResource("11_6yudq")]
 material = SubResource("ShaderMaterial_jbfb3")
 position = Vector2(95, 0)
-animation = &"idle"
 
 [node name="Left_4" parent="Cutscene/EnemyWaves/WaveThree" index="10" unique_id=1540913182 instance=ExtResource("11_6yudq")]
 material = ExtResource("13_x83dg")
 position = Vector2(105, 0)
-animation = &"idle"
 
 [node name="Left_5" parent="Cutscene/EnemyWaves/WaveThree" index="11" unique_id=1177455845 instance=ExtResource("11_6yudq")]
 position = Vector2(115, 0)
-animation = &"idle"
 
 [node name="Left_6" parent="Cutscene/EnemyWaves/WaveThree" index="12" unique_id=1103369493 instance=ExtResource("11_6yudq")]
 position = Vector2(123, 0)
-animation = &"idle"
 
 [node name="Left_7" parent="Cutscene/EnemyWaves/WaveThree" index="13" unique_id=1686075717 instance=ExtResource("11_6yudq")]
 material = ExtResource("13_x83dg")
 position = Vector2(131, 0)
-animation = &"idle"
 
 [node name="WaveOne" type="Node2D" parent="Cutscene/EnemyWaves" index="1" unique_id=122551187]
 

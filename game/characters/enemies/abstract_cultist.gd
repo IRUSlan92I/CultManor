@@ -5,7 +5,7 @@ extends CharacterBody2D
 const MAX_WALK_SPEED = 85
 const MAX_CHASE_SPEED = 170
 const ACCELERATION = 600.0
-const JUMP_VELOCITY = 333.0
+const JUMP_VELOCITY = 222.0
 const JUMP_GRAVITY_FACTOR = 1.0
 const FALL_GRAVITY_FACTOR = 1.5
 

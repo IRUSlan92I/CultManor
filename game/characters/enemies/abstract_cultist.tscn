@@ -143,12 +143,12 @@ jump_state = NodePath("../JumpRightState")
 fall_state = NodePath("../FallState")
 cultist = NodePath("../..")
 
-[node name="JumpLeftState" parent="CultistStateMachine" unique_id=739226464 node_paths=PackedStringArray("fall_state", "cultist") instance=ExtResource("5_tu2pi")]
+[node name="JumpLeftState" parent="CultistStateMachine" unique_id=739226464 node_paths=PackedStringArray("chase_state", "cultist") instance=ExtResource("5_tu2pi")]
 script = ExtResource("14_42ivi")
-fall_state = NodePath("../FallLeftState")
+chase_state = NodePath("../ChaseLeftState")
 cultist = NodePath("../..")
 
-[node name="JumpRightState" parent="CultistStateMachine" unique_id=756126836 node_paths=PackedStringArray("fall_state", "cultist") instance=ExtResource("5_tu2pi")]
+[node name="JumpRightState" parent="CultistStateMachine" unique_id=756126836 node_paths=PackedStringArray("chase_state", "cultist") instance=ExtResource("5_tu2pi")]
 script = ExtResource("15_cqp7f")
-fall_state = NodePath("../FallRightState")
+chase_state = NodePath("../ChaseRightState")
 cultist = NodePath("../..")
