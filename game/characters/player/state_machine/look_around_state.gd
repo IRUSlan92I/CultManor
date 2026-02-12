@@ -3,8 +3,12 @@ extends PlayerState
 
 func enter() -> void:
 	player.sprite.speed_scale = 1
-	player.sprite.animation_finished.connect(_on_animation_finished, CONNECT_ONE_SHOT)
+	player.sprite.animation_finished.connect(_on_animation_finished)
 	player.sprite.play(_get_animation())
+
+
+func exit() -> void:
+	player.sprite.animation_finished.disconnect(_on_animation_finished)
 
 
 func _on_animation_finished() -> void:

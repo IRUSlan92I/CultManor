@@ -15,7 +15,7 @@ func physics_process(delta: float) -> void:
 		if player != null:
 			switch_state.emit(chase_state)
 		else:
-			if _wall_ray_cast.is_colliding():
+			if _wall_low_ray_cast.is_colliding() or _wall_high_ray_cast.is_colliding():
 				var stream := SoundManager.sfx_stream_player_lost
 				SoundManager.play_sfx_stream(stream, cultist.global_position)
 				switch_state.emit(another_direction_walk_state)

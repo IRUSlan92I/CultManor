@@ -15,8 +15,11 @@ var target_x := 0.0
 
 @onready var sprite : AnimatedSprite2D = $CultistSprite
 
-@onready var left_wall_ray : RayCast2D = $%LeftWallRay
-@onready var right_wall_ray : RayCast2D = $%RightWallRay
+@onready var left_wall_high_ray : RayCast2D = $WallCheckHigh/LeftWallRay
+@onready var right_wall_high_ray : RayCast2D = $WallCheckHigh/RightWallRay
+
+@onready var left_wall_low_ray : RayCast2D = $WallCheckLow/LeftWallRay
+@onready var right_wall_low_ray : RayCast2D = $WallCheckLow/RightWallRay
 
 @onready var left_player_close_ray : RayCast2D = $%LeftPlayerCloseRay
 @onready var right_player_close_ray : RayCast2D = $%RightPlayerCloseRay

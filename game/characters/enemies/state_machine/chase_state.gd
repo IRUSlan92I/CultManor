@@ -15,9 +15,9 @@ func physics_process(delta: float) -> void:
 		if player != null:
 			cultist.target_x = player.position.x
 		
-		if _is_target_reached():
+		if _is_target_reached() or _wall_high_ray_cast.is_colliding():
 			switch_state.emit(look_around_state)
-		elif _wall_ray_cast.is_colliding():
+		elif _wall_low_ray_cast.is_colliding():
 			switch_state.emit(jump_state)
 		else:
 			cultist.update_x_velocity(_direction, cultist.MAX_CHASE_SPEED, delta)

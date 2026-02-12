@@ -391,5 +391,5 @@ animations = [{
 [node name="CultistSprite" type="AnimatedSprite2D" unique_id=351120861]
 material = SubResource("ShaderMaterial_vecdo")
 sprite_frames = SubResource("SpriteFrames_2wrno")
-animation = &"fall_left"
+animation = &"idle"
 script = ExtResource("3_ef0vi")

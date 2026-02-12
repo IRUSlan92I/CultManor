@@ -34,19 +34,26 @@ script = ExtResource("1_2wrno")
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_mocsw")
 
-[node name="WallCheck" type="Node2D" parent="." unique_id=782156094]
-position = Vector2(0, 9)
+[node name="WallCheckHigh" type="Node2D" parent="." unique_id=1697845810]
+position = Vector2(0, -8)
 
-[node name="LeftWallRay" type="RayCast2D" parent="WallCheck" unique_id=521416854]
-unique_name_in_owner = true
+[node name="LeftWallRay" type="RayCast2D" parent="WallCheckHigh" unique_id=1026693538]
 target_position = Vector2(-16, 0)
 
-[node name="RightWallRay" type="RayCast2D" parent="WallCheck" unique_id=1457669135]
-unique_name_in_owner = true
+[node name="RightWallRay" type="RayCast2D" parent="WallCheckHigh" unique_id=1129233918]
+target_position = Vector2(16, 0)
+
+[node name="WallCheckLow" type="Node2D" parent="." unique_id=782156094]
+position = Vector2(0, 9)
+
+[node name="LeftWallRay" type="RayCast2D" parent="WallCheckLow" unique_id=521416854]
+target_position = Vector2(-16, 0)
+
+[node name="RightWallRay" type="RayCast2D" parent="WallCheckLow" unique_id=1457669135]
 target_position = Vector2(16, 0)
 
 [node name="PlayerCloseCheck" type="Node2D" parent="." unique_id=1593775088]
-position = Vector2(0, 9)
+position = Vector2(0, -8)
 
 [node name="LeftPlayerCloseRay" type="RayCast2D" parent="PlayerCloseCheck" unique_id=947570027]
 unique_name_in_owner = true
@@ -59,7 +66,7 @@ target_position = Vector2(48, 0)
 collision_mask = 0
 
 [node name="PlayerDistantCheck" type="Node2D" parent="." unique_id=1597489123]
-position = Vector2(0, 9)
+position = Vector2(0, -8)
 
 [node name="LeftPlayerDistantRay" type="RayCast2D" parent="PlayerDistantCheck" unique_id=1491085518]
 unique_name_in_owner = true
@@ -132,7 +139,7 @@ cultist = NodePath("../..")
 [node name="ChaseRightState" parent="CultistStateMachine" unique_id=383038915 node_paths=PackedStringArray("look_around_state", "jump_state", "fall_state", "cultist") instance=ExtResource("5_tu2pi")]
 script = ExtResource("14_cqp7f")
 look_around_state = NodePath("../LookAroundState")
-jump_state = NodePath(".")
+jump_state = NodePath("../JumpRightState")
 fall_state = NodePath("../FallState")
 cultist = NodePath("../..")
 
