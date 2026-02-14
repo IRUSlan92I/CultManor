@@ -104,7 +104,7 @@ func _on_ui_volume_changed(value: float) -> void:
 
 
 func _on_sfx_volume_changed(value: float) -> void:
-	var screen_center := SettingsManager.window_base_size/2
+	var screen_center := SettingsManager.window_base_size/2.0
 	if _play_sound: SoundManager.play_sfx_stream(SoundManager.ui_stream_select, screen_center)
 	SettingsManager.sfx_volume = floor(value)
 

@@ -22,7 +22,7 @@ radius = 4.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t6gq4"]
 radius = 2.0
-height = 15.0
+height = 20.0
 
 [node name="Player" type="CharacterBody2D" unique_id=508706417]
 collision_layer = 128
@@ -59,6 +59,7 @@ collision_layer = 0
 collision_mask = 35
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CenterArea2D" unique_id=1350886064]
+position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_t6gq4")
 
 [node name="PlayerStateMachine" parent="." unique_id=633169960 node_paths=PackedStringArray("player", "initial_state") instance=ExtResource("4_ybe51")]
