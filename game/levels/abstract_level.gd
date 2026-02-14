@@ -14,6 +14,7 @@ extends Node2D
 func _ready() -> void:
 	pause_menu.hide()
 	game_over_menu.hide()
+	completion_menu.hide()
 	
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	

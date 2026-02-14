@@ -120,6 +120,415 @@ shader_parameter/speed = 5.0
 shader_parameter/intensity = 1.0
 shader_parameter/scale = 20.0
 
+[sub_resource type="Animation" id="Animation_fta07"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cutscene/FakePlayer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2034, 2448)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/MarginContainer/ThanksLabel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cutscene/FakePlayer:speed_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cutscene/FakePlayer:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Cutscene/Camera2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Cutscene/EnemyWaves/WaveOne:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Cutscene/EnemyWaves/WaveTwo:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Cutscene/EnemyWaves/WaveThree:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Cutscene/FakeCultist:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("CanvasLayer/CutsceneHaze:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_wrq4k"]
+resource_name = "final_cutscene"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cutscene/FakePlayer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10, 12, 14),
+"transitions": PackedFloat32Array(0.5, -1, -1, -1),
+"update": 0,
+"values": [Vector2(1986, 2448), Vector2(2349, 2448), Vector2(2264, 2448), Vector2(2304, 2448)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/MarginContainer/ThanksLabel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(24),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cutscene/FakePlayer:speed_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 10, 12, 14),
+"transitions": PackedFloat32Array(0.5, -2, -2, -2),
+"update": 0,
+"values": [0.5, 0.5, 0.5, 0.5]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cutscene/FakePlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 10, 12, 14),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"values": [{
+"args": [&"walk_right", 0.5, false],
+"method": &"play"
+}, {
+"args": [&"walk_left", 0.5, false],
+"method": &"play"
+}, {
+"args": [&"walk_right", 0.5, false],
+"method": &"play"
+}, {
+"args": [&"look_around", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Cutscene/FakePlayer:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 19.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Cutscene/Camera2D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 9.2),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(1986, 2448), Vector2(2304, 2448)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Cutscene/EnemyWaves/WaveOne:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(7.8333335),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Cutscene/EnemyWaves/WaveTwo:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(11.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Cutscene/EnemyWaves/WaveThree:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(15.766666),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Cutscene/FakeCultist:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(19.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "method"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Cutscene/FakeCultist")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(17.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"look_around", 0.5, false],
+"method": &"play"
+}]
+}
+tracks/11/type = "method"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Doors/Door2")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.8666667),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"_open"
+}, {
+"args": [],
+"method": &"_close"
+}]
+}
+tracks/12/type = "method"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath(".")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 7.8333, 11.1, 15.7667, 19.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"values": [{
+"args": [0.1],
+"method": &"_show_cutscene_haze"
+}, {
+"args": [0.1],
+"method": &"_show_cutscene_haze"
+}, {
+"args": [0.1],
+"method": &"_show_cutscene_haze"
+}, {
+"args": [0.1],
+"method": &"_show_cutscene_haze"
+}, {
+"args": [0.1],
+"method": &"_show_cutscene_haze"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_6yudq"]
+resource_name = "hide_cutscene_elements"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cutscene/FakePlayer:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cutscene/FakeCultist:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cutscene/EnemyWaves/WaveOne:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cutscene/EnemyWaves/WaveTwo:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Cutscene/EnemyWaves/WaveThree:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/MarginContainer/ThanksLabel:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasLayer/CutsceneHaze:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fta07"]
+_data = {
+&"RESET": SubResource("Animation_fta07"),
+&"final_cutscene": SubResource("Animation_wrq4k"),
+&"hide_cutscene_elements": SubResource("Animation_6yudq")
+}
+
 [node name="Level7" unique_id=1209872473 instance=ExtResource("1_bhhdo")]
 script = ExtResource("2_sh0fj")
 
@@ -166,48 +575,20 @@ tile_map_data = PackedByteArray("AAABAP//AAAAAAEAAAABAAAAAAAAAAEAAAABAAEAAAAAAAE
 [node name="HazeTimer" type="Timer" parent="Cutscene" index="0" unique_id=407248883]
 one_shot = true
 
-[node name="PlayerTimer" type="Timer" parent="Cutscene" index="1" unique_id=320210641]
-wait_time = 3.8
-one_shot = true
-
-[node name="CultistTimer" type="Timer" parent="Cutscene" index="2" unique_id=1282865117]
-wait_time = 10.0
-one_shot = true
-
-[node name="EndTimer" type="Timer" parent="Cutscene" index="3" unique_id=446132469]
-wait_time = 10.0
-one_shot = true
-
-[node name="Camera2D" type="Camera2D" parent="Cutscene" index="4" unique_id=1980628744]
+[node name="Camera2D" type="Camera2D" parent="Cutscene" index="1" unique_id=1980628744]
 enabled = false
 
-[node name="FakePlayer" parent="Cutscene" index="5" unique_id=782833865 instance=ExtResource("10_x0kb5")]
+[node name="FakePlayer" parent="Cutscene" index="2" unique_id=782833865 instance=ExtResource("10_x0kb5")]
 position = Vector2(2034, 2448)
+animation = &"walk_right"
 
-[node name="FakeCultist" parent="Cutscene" index="6" unique_id=375756058 instance=ExtResource("11_6yudq")]
+[node name="FakeCultist" parent="Cutscene" index="3" unique_id=375756058 instance=ExtResource("11_6yudq")]
 position = Vector2(2304, 2448)
 
-[node name="RoomCenter" type="Node2D" parent="Cutscene" index="7" unique_id=653526662]
+[node name="RoomCenter" type="Node2D" parent="Cutscene" index="4" unique_id=653526662]
 position = Vector2(2304, 2448)
 
-[node name="PlayerTargetPositions" type="Node2D" parent="Cutscene" index="8" unique_id=679487035]
-position = Vector2(2304, 2448)
-
-[node name="PhaseOne" type="Node2D" parent="Cutscene/PlayerTargetPositions" index="0" unique_id=2087621101]
-position = Vector2(-87, 0)
-
-[node name="PhaseTwo" type="Node2D" parent="Cutscene/PlayerTargetPositions" index="1" unique_id=510465848]
-
-[node name="PhaseThree" type="Node2D" parent="Cutscene/PlayerTargetPositions" index="2" unique_id=1175692467]
-position = Vector2(45, 0)
-
-[node name="PhaseFour" type="Node2D" parent="Cutscene/PlayerTargetPositions" index="3" unique_id=642832738]
-position = Vector2(-40, 0)
-
-[node name="PhaseFive" type="Node2D" parent="Cutscene/PlayerTargetPositions" index="4" unique_id=834113393]
-position = Vector2(-62, 0)
-
-[node name="EnemyWaves" type="Node2D" parent="Cutscene" index="9" unique_id=1349451991]
+[node name="EnemyWaves" type="Node2D" parent="Cutscene" index="5" unique_id=1349451991]
 position = Vector2(2304, 2448)
 
 [node name="WaveThree" type="Node2D" parent="Cutscene/EnemyWaves" index="0" unique_id=1872436058]
@@ -345,14 +726,23 @@ horizontal_alignment = 1
 
 [node name="CutsceneHaze" type="Polygon2D" parent="CanvasLayer" parent_id_path=PackedInt32Array(1402255323) index="1" unique_id=766558100]
 unique_name_in_owner = true
-visible = false
 color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(0, 0, 640, 0, 640, 360, 0, 360)
 
+[node name="PauseMenu" parent="CanvasLayer" parent_id_path=PackedInt32Array(1402255323) index="2" unique_id=1609121400]
+visible = true
+
+[node name="GameOverMenu" parent="CanvasLayer" parent_id_path=PackedInt32Array(1402255323) index="3" unique_id=859418625]
+visible = true
+
+[node name="CompletionMenu" parent="CanvasLayer" parent_id_path=PackedInt32Array(1402255323) index="4" unique_id=814534035]
+visible = true
+
 [node name="LevelEnd" parent="." index="9" unique_id=1018767708]
-position = Vector2(2031, 2440)
+position = Vector2(1986, 2440)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="10" unique_id=648159573]
+libraries/ = SubResource("AnimationLibrary_fta07")
 
 [connection signal="timeout" from="Cutscene/HazeTimer" to="." method="_on_haze_timer_timeout"]
-[connection signal="timeout" from="Cutscene/PlayerTimer" to="." method="_on_player_timer_timeout"]
-[connection signal="timeout" from="Cutscene/CultistTimer" to="." method="_on_enemy_timer_timeout"]
-[connection signal="timeout" from="Cutscene/EndTimer" to="." method="_on_end_timer_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

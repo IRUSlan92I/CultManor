@@ -49,5 +49,5 @@ func _on_visibility_changed() -> void:
 	if visible:
 		continue_button.grab_focus()
 		get_viewport().gui_focus_changed.connect(_on_gui_focus_changed)
-	else:
+	elif get_viewport().gui_focus_changed.is_connected(_on_gui_focus_changed):
 		get_viewport().gui_focus_changed.disconnect(_on_gui_focus_changed)
