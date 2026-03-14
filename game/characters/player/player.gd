@@ -21,6 +21,7 @@ var is_dead := false
 var _is_switching_needed := false
 
 
+@onready var camera : Camera2D = $Camera2D
 @onready var sprite : AnimatedSprite2D = $PlayerSprite
 @onready var collision_switcher : CollisionSwitcher = $CollisionSwitcher
 @onready var pickups : Node2D = $Pickups

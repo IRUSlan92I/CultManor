@@ -230,18 +230,6 @@ tracks/8/keys = {
 "update": 1,
 "values": [true]
 }
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("CanvasLayer/CutsceneHaze:visible")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
 
 [sub_resource type="Animation" id="Animation_wrq4k"]
 resource_name = "final_cutscene"
@@ -256,7 +244,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 10, 12, 14),
 "transitions": PackedFloat32Array(0.5, -1, -1, -1),
 "update": 0,
-"values": [Vector2(1986, 2448), Vector2(2349, 2448), Vector2(2264, 2448), Vector2(2304, 2448)]
+"values": [Vector2(1970, 2448), Vector2(2349, 2448), Vector2(2264, 2448), Vector2(2304, 2448)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -418,20 +406,20 @@ tracks/12/keys = {
 "times": PackedFloat32Array(0, 7.8333, 11.1, 15.7667, 19.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "values": [{
-"args": [0.1],
-"method": &"_show_cutscene_haze"
+"args": [],
+"method": &"_play_cutscene_boop"
 }, {
-"args": [0.1],
-"method": &"_show_cutscene_haze"
+"args": [],
+"method": &"_play_cutscene_boop"
 }, {
-"args": [0.1],
-"method": &"_show_cutscene_haze"
+"args": [],
+"method": &"_play_cutscene_boop"
 }, {
-"args": [0.1],
-"method": &"_show_cutscene_haze"
+"args": [],
+"method": &"_play_cutscene_boop"
 }, {
-"args": [0.1],
-"method": &"_show_cutscene_haze"
+"args": [],
+"method": &"_play_cutscene_boop"
 }]
 }
 
@@ -509,18 +497,6 @@ tracks/5/keys = {
 "update": 1,
 "values": [false]
 }
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("CanvasLayer/CutsceneHaze:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fta07"]
 _data = {
@@ -572,23 +548,19 @@ tile_map_data = PackedByteArray("AAABAP//AAAAAAEAAAABAAAAAAAAAAEAAAABAAEAAAAAAAE
 
 [node name="Cutscene" type="Node2D" parent="." index="6" unique_id=1766969073]
 
-[node name="HazeTimer" type="Timer" parent="Cutscene" index="0" unique_id=407248883]
-one_shot = true
-
-[node name="Camera2D" type="Camera2D" parent="Cutscene" index="1" unique_id=1980628744]
+[node name="Camera2D" type="Camera2D" parent="Cutscene" index="0" unique_id=1980628744]
 enabled = false
 
-[node name="FakePlayer" parent="Cutscene" index="2" unique_id=782833865 instance=ExtResource("10_x0kb5")]
+[node name="FakePlayer" parent="Cutscene" index="1" unique_id=782833865 instance=ExtResource("10_x0kb5")]
 position = Vector2(2034, 2448)
-animation = &"walk_right"
 
-[node name="FakeCultist" parent="Cutscene" index="3" unique_id=375756058 instance=ExtResource("11_6yudq")]
+[node name="FakeCultist" parent="Cutscene" index="2" unique_id=375756058 instance=ExtResource("11_6yudq")]
 position = Vector2(2304, 2448)
 
-[node name="RoomCenter" type="Node2D" parent="Cutscene" index="4" unique_id=653526662]
+[node name="RoomCenter" type="Node2D" parent="Cutscene" index="3" unique_id=653526662]
 position = Vector2(2304, 2448)
 
-[node name="EnemyWaves" type="Node2D" parent="Cutscene" index="5" unique_id=1349451991]
+[node name="EnemyWaves" type="Node2D" parent="Cutscene" index="4" unique_id=1349451991]
 position = Vector2(2304, 2448)
 
 [node name="WaveThree" type="Node2D" parent="Cutscene/EnemyWaves" index="0" unique_id=1872436058]
@@ -724,25 +696,22 @@ theme = ExtResource("13_6yudq")
 text = "Thanks for playing!"
 horizontal_alignment = 1
 
-[node name="CutsceneHaze" type="Polygon2D" parent="CanvasLayer" parent_id_path=PackedInt32Array(1402255323) index="1" unique_id=766558100]
-unique_name_in_owner = true
-color = Color(0, 0, 0, 1)
-polygon = PackedVector2Array(0, 0, 640, 0, 640, 360, 0, 360)
-
-[node name="PauseMenu" parent="CanvasLayer" parent_id_path=PackedInt32Array(1402255323) index="2" unique_id=1609121400]
+[node name="PauseMenu" parent="CanvasLayer" parent_id_path=PackedInt32Array(1402255323) index="1" unique_id=1609121400]
 visible = true
 
-[node name="GameOverMenu" parent="CanvasLayer" parent_id_path=PackedInt32Array(1402255323) index="3" unique_id=859418625]
+[node name="GameOverMenu" parent="CanvasLayer" parent_id_path=PackedInt32Array(1402255323) index="2" unique_id=859418625]
 visible = true
 
-[node name="CompletionMenu" parent="CanvasLayer" parent_id_path=PackedInt32Array(1402255323) index="4" unique_id=814534035]
+[node name="CompletionMenu" parent="CanvasLayer" parent_id_path=PackedInt32Array(1402255323) index="3" unique_id=814534035]
 visible = true
 
 [node name="LevelEnd" parent="." index="9" unique_id=1018767708]
-position = Vector2(1986, 2440)
+position = Vector2(1945, 2442)
+
+[node name="CollisionShape2D" parent="LevelEnd" index="0" unique_id=937956890]
+position = Vector2(0, -1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="10" unique_id=648159573]
 libraries/ = SubResource("AnimationLibrary_fta07")
 
-[connection signal="timeout" from="Cutscene/HazeTimer" to="." method="_on_haze_timer_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
