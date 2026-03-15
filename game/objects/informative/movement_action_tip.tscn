@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://be3mqeb784shj"]
+[gd_scene format=3 uid="uid://be3mqeb784shj"]
 
-[ext_resource type="PackedScene" uid="uid://b24pn1q6u3u5v" path="res://game/objects/tutorial/abstract_action_tip.tscn" id="1_6vlve"]
+[ext_resource type="PackedScene" uid="uid://b24pn1q6u3u5v" path="res://game/objects/informative/abstract_action_tip.tscn" id="1_6vlve"]
 [ext_resource type="Texture2D" uid="uid://ddm4gc2g3aj2i" path="res://images/level/objects.png" id="2_aui55"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qoa1y"]
