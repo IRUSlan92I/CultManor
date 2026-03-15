@@ -162,6 +162,7 @@ pause={
 2d_physics/layer_6="White world"
 2d_physics/layer_7="White enemy"
 2d_physics/layer_8="White player"
+2d_physics/layer_9="ActivatableObjects"
 
 [physics]
 
