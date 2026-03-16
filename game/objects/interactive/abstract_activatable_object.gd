@@ -16,8 +16,10 @@ func _ready() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
 		hint_sprite.show()
+		body.interacted.connect(activate)
 
 
 func _on_body_exited(body: Node2D) -> void:
 	if body is Player:
 		hint_sprite.hide()
+		body.interacted.disconnect(activate)

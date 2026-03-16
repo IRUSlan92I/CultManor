@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 
 signal dead
+signal interacted
 
 
 const PICKUP_OFFSET = 16.0
@@ -55,6 +56,9 @@ func _physics_process(delta: float) -> void:
 	if is_dead:
 		_slow_down(delta*3)
 	else:
+		if Input.is_action_just_pressed("interact"):
+			interacted.emit()
+		
 		if Input.is_action_just_pressed("jump"):
 			jump_buffer_timer.start()
 		
