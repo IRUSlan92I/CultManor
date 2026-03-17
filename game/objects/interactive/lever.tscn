@@ -66,7 +66,7 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_fmhac")
 }, {
 "duration": 1.0,
@@ -75,15 +75,15 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_m2d68")
 }, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_eom63")
 }],
 "loop": false,
 "name": &"turning_left",
-"speed": 10.0
+"speed": 20.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_0m1ch")
 }, {
 "duration": 1.0,
@@ -92,12 +92,12 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_b2o5l")
 }, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_5h41l")
 }],
 "loop": false,
 "name": &"turning_right",
-"speed": 10.0
+"speed": 20.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5upgc"]
@@ -106,6 +106,7 @@ region = Rect2(96, 0, 16, 16)
 
 [node name="Lever" unique_id=1479061220 instance=ExtResource("1_rl4ey")]
 script = ExtResource("2_5hu3b")
+initial_state = 0
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=2065213362]
 position = Vector2(0, -4)
@@ -116,7 +117,9 @@ position = Vector2(0, -11)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="2" unique_id=2086579452]
 sprite_frames = SubResource("SpriteFrames_kky3u")
-animation = &"turned_left"
+animation = &"turning_left"
 
 [node name="BaseSprite" type="Sprite2D" parent="." index="3" unique_id=256419860]
 texture = SubResource("AtlasTexture_5upgc")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animation_finished"]

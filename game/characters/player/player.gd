@@ -56,7 +56,7 @@ func _physics_process(delta: float) -> void:
 	if is_dead:
 		_slow_down(delta*3)
 	else:
-		if Input.is_action_just_pressed("interact"):
+		if Input.is_action_pressed("interact"):
 			interacted.emit()
 		
 		if Input.is_action_just_pressed("jump"):
