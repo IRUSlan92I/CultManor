@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://ct6n0u0iegynv"]
+
+[ext_resource type="PackedScene" uid="uid://b7mhdrj3b6loq" path="res://game/doors/door.tscn" id="1_jgfnv"]
+[ext_resource type="Script" uid="uid://dbkeh7pcgqi57" path="res://game/doors/lever_door.gd" id="2_fk4ax"]
+[ext_resource type="Texture2D" uid="uid://sfjjweantpja" path="res://images/level/doors.png" id="3_x1nwx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h66js"]
+atlas = ExtResource("3_x1nwx")
+region = Rect2(0, 288, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bylla"]
+atlas = ExtResource("3_x1nwx")
+region = Rect2(64, 288, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xebht"]
+atlas = ExtResource("3_x1nwx")
+region = Rect2(32, 288, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nru66"]
+atlas = ExtResource("3_x1nwx")
+region = Rect2(0, 288, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwy8m"]
+atlas = ExtResource("3_x1nwx")
+region = Rect2(64, 288, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3afl"]
+atlas = ExtResource("3_x1nwx")
+region = Rect2(0, 288, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tyoor"]
+atlas = ExtResource("3_x1nwx")
+region = Rect2(32, 288, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0spri"]
+atlas = ExtResource("3_x1nwx")
+region = Rect2(64, 288, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iecf3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h66js")
+}],
+"loop": true,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bylla")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xebht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nru66")
+}],
+"loop": false,
+"name": &"closing",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qwy8m")
+}],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3afl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tyoor")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0spri")
+}],
+"loop": false,
+"name": &"opening",
+"speed": 10.0
+}]
+
+[node name="LeverDoor" unique_id=1575363350 instance=ExtResource("1_jgfnv")]
+script = ExtResource("2_fk4ax")
+
+[node name="AnimatedSprite2D" parent="." index="2"]
+sprite_frames = SubResource("SpriteFrames_iecf3")

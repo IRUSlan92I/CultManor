@@ -1,6 +1,8 @@
 [gd_scene format=4 uid="uid://bmn74wc2vophn"]
 
 [ext_resource type="PackedScene" uid="uid://mpsu4g2b5h3a" path="res://game/levels/abstract_level.tscn" id="1_15okj"]
+[ext_resource type="Script" uid="uid://bc114fx0hcb6s" path="res://game/levels/test_level.gd" id="2_a2sw7"]
+[ext_resource type="PackedScene" uid="uid://ct6n0u0iegynv" path="res://game/doors/lever_door.tscn" id="2_r01v2"]
 [ext_resource type="PackedScene" uid="uid://b3kyqvuxmfn8f" path="res://game/objects/decorative/fireplace.tscn" id="3_tuvkr"]
 [ext_resource type="PackedScene" uid="uid://g0n5npbt3hb2" path="res://game/doors/circle_door.tscn" id="4_yrqjd"]
 [ext_resource type="PackedScene" uid="uid://cojxqx5al7kyv" path="res://game/doors/locked_door.tscn" id="5_1skah"]
@@ -22,11 +24,12 @@
 [ext_resource type="PackedScene" uid="uid://bv2gahb4wxgb1" path="res://game/characters/enemies/white_cultist.tscn" id="20_rt0xo"]
 
 [node name="TestLevel" unique_id=600627332 instance=ExtResource("1_15okj")]
+script = ExtResource("2_a2sw7")
 
-[node name="Door" parent="Doors" parent_id_path=PackedInt32Array(1468144392) index="0" unique_id=609778620 instance=ExtResource("11_g1txn")]
+[node name="LeverDoor" parent="Doors" parent_id_path=PackedInt32Array(1468144392) index="0" unique_id=1575363350 instance=ExtResource("2_r01v2")]
 position = Vector2(416, -56)
 
-[node name="Door2" parent="Doors" parent_id_path=PackedInt32Array(1468144392) index="1" unique_id=1324343186 instance=ExtResource("11_g1txn")]
+[node name="Door" parent="Doors" parent_id_path=PackedInt32Array(1468144392) index="1" unique_id=1324343186 instance=ExtResource("11_g1txn")]
 position = Vector2(1488, 88)
 
 [node name="CircleDoor" parent="Doors" parent_id_path=PackedInt32Array(1468144392) index="2" unique_id=2030956679 instance=ExtResource("4_yrqjd")]

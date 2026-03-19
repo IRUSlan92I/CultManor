@@ -17,6 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://dy7qnen5k20mo" path="res://sound/sfx/player_spoted.wav" id="9_q7cyi"]
 [ext_resource type="AudioStream" uid="uid://dg0t7fwu8u3m2" path="res://sound/sfx/door_unlocking.wav" id="10_lqyhh"]
 [ext_resource type="AudioStream" uid="uid://capj5pjbrdpw5" path="res://sound/sfx/haze.wav" id="11_13qx5"]
+[ext_resource type="AudioStream" uid="uid://buv55jfj7qhix" path="res://sound/sfx/lever.wav" id="15_3d1ws"]
 [ext_resource type="AudioStream" uid="uid://ckmpft46wjgqs" path="res://sound/music/main_menu.wav" id="17_g6nb7"]
 [ext_resource type="AudioStream" uid="uid://ttemdy7avyh7" path="res://sound/music/gameplay.wav" id="17_l5yxe"]
 
@@ -42,6 +43,7 @@ sfx_stream_haze = ExtResource("11_13qx5")
 sfx_stream_jump = ExtResource("6_22ptj")
 sfx_stream_key_picked_up = ExtResource("8_wyfta")
 sfx_stream_level_completed = ExtResource("7_22ptj")
+sfx_stream_lever = ExtResource("15_3d1ws")
 sfx_stream_player_lost = ExtResource("8_6ll5c")
 sfx_stream_player_spoted = ExtResource("9_q7cyi")
 sfx_stream_switch = ExtResource("7_ab171")

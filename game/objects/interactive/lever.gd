@@ -41,6 +41,7 @@ func _activate() -> void:
 		_update_animation()
 		hint_sprite.hide()
 		switching.emit()
+		SoundManager.play_sfx_stream(SoundManager.sfx_stream_lever, global_position)
 	
 	match _current_state:
 		State.TurnedLeft:

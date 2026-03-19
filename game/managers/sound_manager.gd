@@ -34,6 +34,7 @@ const MUSIC_BUS = "Music"
 @export var sfx_stream_jump : AudioStream
 @export var sfx_stream_key_picked_up : AudioStream
 @export var sfx_stream_level_completed : AudioStream
+@export var sfx_stream_lever : AudioStream
 @export var sfx_stream_player_lost : AudioStream
 @export var sfx_stream_player_spoted : AudioStream
 @export var sfx_stream_switch : AudioStream
