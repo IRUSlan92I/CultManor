@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://guvijso3k6eq"]
+
+[ext_resource type="Script" uid="uid://kjy0t56tgpxs" path="res://game/platform/abstract_platform.gd" id="1_426vp"]
+[ext_resource type="Texture2D" uid="uid://cpcuokqv8u2xa" path="res://images/level/platform.png" id="2_31xwx"]
+[ext_resource type="Shader" uid="uid://d4hm3vjx1rhsf" path="res://game/shaders/platform.gdshader" id="2_jsq8n"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2ivtb"]
+shader = ExtResource("2_jsq8n")
+shader_parameter/tile_size = 16.0
+shader_parameter/platform_width = 16.0
+
+[node name="AbstractPlatform" type="Node2D" unique_id=1226827206]
+script = ExtResource("1_426vp")
+
+[node name="PlatformSprite" type="Sprite2D" parent="." unique_id=1901062470]
+material = SubResource("ShaderMaterial_2ivtb")
+texture = ExtResource("2_31xwx")
+
+[node name="IconSprite" type="AnimatedSprite2D" parent="." unique_id=287774650]
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=908936954]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=175449124]

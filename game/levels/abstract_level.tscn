@@ -504,6 +504,8 @@ size = Vector2(32, 32)
 [node name="AbstractLevel" type="Node2D" unique_id=1364620575]
 script = ExtResource("1_o2mui")
 
+[node name="Platforms" type="Node2D" parent="." unique_id=1140671629]
+
 [node name="Doors" type="Node2D" parent="." unique_id=1468144392]
 
 [node name="Objects" type="Node2D" parent="." unique_id=1320033435]
