@@ -17,12 +17,13 @@ const MAX_WIDTH = TILE_SIZE * 32
 
 
 @onready var collision: CollisionShape2D = $AnimatableBody2D/CollisionShape2D
-@onready var platform_sprite: Sprite2D = $PlatformSprite
+@onready var platform_rect: ColorRect = $PlatformRect
 @onready var icon_sprite: AnimatedSprite2D = $IconSprite
 
 
 func _ready() -> void:
-	platform_sprite.material.set_shader_parameter("tile_size", TILE_SIZE)
+	platform_rect.material.set_shader_parameter("tile_size", TILE_SIZE)
+	platform_rect.material.set_shader_parameter("seed", randf())
 	rebuild_platform()
 
 
@@ -33,7 +34,9 @@ func rebuild_platform() -> void:
 		collision.shape = shape
 	shape.size = Vector2(platform_width, TILE_SIZE)
 	
-	platform_sprite.material.set_shader_parameter("platform_width", platform_width)
+	platform_rect.size.x = platform_width
+	platform_rect.position.x = -platform_width/2
+	platform_rect.material.set_shader_parameter("platform_width", platform_width)
 
 
 func _physics_process(_delta: float) -> void:

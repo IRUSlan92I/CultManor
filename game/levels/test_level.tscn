@@ -28,8 +28,8 @@
 script = ExtResource("2_a2sw7")
 
 [node name="AbstractPlatform" parent="Platforms" parent_id_path=PackedInt32Array(1140671629) index="0" unique_id=1226827206 instance=ExtResource("3_pmn5w")]
-position = Vector2(144, -58)
-platform_width = 256
+position = Vector2(182, -42)
+platform_width = 104
 
 [node name="LeverDoor" parent="Doors" parent_id_path=PackedInt32Array(1468144392) index="0" unique_id=1575363350 instance=ExtResource("2_r01v2")]
 position = Vector2(416, -56)
