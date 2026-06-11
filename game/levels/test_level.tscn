@@ -23,7 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://cb0w6mt8g4mer" path="res://game/characters/enemies/gray_cultist.tscn" id="18_blgb8"]
 [ext_resource type="PackedScene" uid="uid://cutjutvd8dqqc" path="res://game/characters/enemies/black_cultist.tscn" id="19_ohfy3"]
 [ext_resource type="PackedScene" uid="uid://bv2gahb4wxgb1" path="res://game/characters/enemies/white_cultist.tscn" id="20_rt0xo"]
-[ext_resource type="PackedScene" uid="uid://wpkj48bqyuy2" path="res://game/platform/abstract_colored_platform.tscn" id="24_h1708"]
+[ext_resource type="PackedScene" uid="uid://wpkj48bqyuy2" path="res://game/platform/abstract_color_platform.tscn" id="24_h1708"]
 
 [node name="TestLevel" unique_id=600627332 instance=ExtResource("1_15okj")]
 script = ExtResource("2_a2sw7")

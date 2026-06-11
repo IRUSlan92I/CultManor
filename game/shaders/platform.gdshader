@@ -1,7 +1,5 @@
 shader_type canvas_item;
 
-#include "get_black_n_white.gdshaderinc"
-
 uniform float tile_size = 8.0;
 uniform float platform_width = 24.0;
 uniform sampler2D atlas : filter_nearest;
@@ -37,5 +35,4 @@ void fragment() {
 	vec2 atlas_size = vec2(textureSize(atlas, 0));
 	vec2 atlas_uv = atlas_pixel / atlas_size;
 	COLOR = texture(atlas, atlas_uv);
-	COLOR = get_black_and_white(COLOR, UV, TIME);
 }

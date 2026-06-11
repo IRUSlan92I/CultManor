@@ -1,5 +1,5 @@
 @tool
-class_name AbstractColoredPlatform
+class_name AbstractColorPlatform
 extends AbstractPlatform
 
 

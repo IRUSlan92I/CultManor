@@ -30,7 +30,7 @@ func _ready() -> void:
 
 func rebuild_platform() -> void:
 	var shape := collision.shape as RectangleShape2D
-	shape.size = Vector2(platform_width, TILE_SIZE)
+	shape.size.x = platform_width
 	
 	sub_viewport.size = Vector2(platform_width, TILE_SIZE)
 	platform_rect.size.x = platform_width
