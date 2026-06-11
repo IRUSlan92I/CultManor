@@ -16,9 +16,10 @@ const MAX_WIDTH = TILE_SIZE * 32
 			rebuild_platform()
 
 
-@onready var collision: CollisionShape2D = $AnimatableBody2D/CollisionShape2D
-@onready var platform_rect: ColorRect = $PlatformRect
-@onready var icon_sprite: AnimatedSprite2D = $IconSprite
+@onready var collision: CollisionShape2D = $CollisionShape2D
+@onready var sub_viewport: SubViewport = $SubViewport
+@onready var platform_rect: ColorRect = $SubViewport/PlatformRect
+@onready var icon_sprite: AnimatedSprite2D = $SubViewport/IconSprite
 
 
 func _ready() -> void:
@@ -29,13 +30,13 @@ func _ready() -> void:
 
 func rebuild_platform() -> void:
 	var shape := collision.shape as RectangleShape2D
-	if not shape:
-		shape = RectangleShape2D.new()
-		collision.shape = shape
 	shape.size = Vector2(platform_width, TILE_SIZE)
 	
+	sub_viewport.size = Vector2(platform_width, TILE_SIZE)
 	platform_rect.size.x = platform_width
-	platform_rect.position.x = -platform_width/2
+	platform_rect.position = Vector2.ZERO
+	icon_sprite.position = Vector2.ZERO
+	
 	platform_rect.material.set_shader_parameter("platform_width", platform_width)
 
 

@@ -23,12 +23,13 @@
 [ext_resource type="PackedScene" uid="uid://cb0w6mt8g4mer" path="res://game/characters/enemies/gray_cultist.tscn" id="18_blgb8"]
 [ext_resource type="PackedScene" uid="uid://cutjutvd8dqqc" path="res://game/characters/enemies/black_cultist.tscn" id="19_ohfy3"]
 [ext_resource type="PackedScene" uid="uid://bv2gahb4wxgb1" path="res://game/characters/enemies/white_cultist.tscn" id="20_rt0xo"]
+[ext_resource type="PackedScene" uid="uid://wpkj48bqyuy2" path="res://game/platform/abstract_colored_platform.tscn" id="24_h1708"]
 
 [node name="TestLevel" unique_id=600627332 instance=ExtResource("1_15okj")]
 script = ExtResource("2_a2sw7")
 
 [node name="AbstractPlatform" parent="Platforms" parent_id_path=PackedInt32Array(1140671629) index="0" unique_id=1226827206 instance=ExtResource("3_pmn5w")]
-position = Vector2(182, -42)
+position = Vector2(180, -51)
 platform_width = 104
 
 [node name="LeverDoor" parent="Doors" parent_id_path=PackedInt32Array(1468144392) index="0" unique_id=1575363350 instance=ExtResource("2_r01v2")]
@@ -114,3 +115,7 @@ position = Vector2(1334, 103)
 
 [node name="CollisionShape2D" parent="LevelEnd" index="0" unique_id=937956890]
 position = Vector2(42, 59)
+
+[node name="AbstractColoredPlatform" parent="." index="10" unique_id=137546339 instance=ExtResource("24_h1708")]
+position = Vector2(274, -81)
+platform_width = 48

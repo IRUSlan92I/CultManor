@@ -1,25 +1,48 @@
 [gd_scene format=3 uid="uid://guvijso3k6eq"]
 
 [ext_resource type="Script" uid="uid://kjy0t56tgpxs" path="res://game/platform/abstract_platform.gd" id="1_426vp"]
+[ext_resource type="Material" uid="uid://dojhoc6ljpt1a" path="res://game/materials/walls_gray.tres" id="2_2ivtb"]
 [ext_resource type="Texture2D" uid="uid://cpcuokqv8u2xa" path="res://images/level/platform.png" id="2_31xwx"]
 [ext_resource type="Shader" uid="uid://d4hm3vjx1rhsf" path="res://game/shaders/platform.gdshader" id="2_jsq8n"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_2ivtb"]
+viewport_path = NodePath("SubViewport")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2ivtb"]
 resource_local_to_scene = true
 shader = ExtResource("2_jsq8n")
+shader_parameter/black_color = Color(0, 0, 0, 1)
+shader_parameter/white_color = Color(1, 1, 1, 1)
+shader_parameter/switch_colors = false
+shader_parameter/threshold = 0.5
+shader_parameter/speed = 0.5
+shader_parameter/intensity = 1.0
+shader_parameter/scale = 20.0
 shader_parameter/tile_size = 8.0
 shader_parameter/platform_width = 24.0
 shader_parameter/atlas = ExtResource("2_31xwx")
-shader_parameter/seed = 0.038039055
+shader_parameter/seed = 0.7482483
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jsq8n"]
 resource_local_to_scene = true
-size = Vector2(16, 8)
+size = Vector2(16, 7)
 
-[node name="AbstractPlatform" type="Node2D" unique_id=1226827206]
+[node name="AbstractPlatform" type="AnimatableBody2D" unique_id=137546339]
+collision_mask = 0
 script = ExtResource("1_426vp")
 
-[node name="PlatformRect" type="ColorRect" parent="." unique_id=646284480]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=264863796]
+material = ExtResource("2_2ivtb")
+texture = SubResource("ViewportTexture_2ivtb")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=226200089]
+transparent_bg = true
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+size = Vector2i(16, 8)
+render_target_update_mode = 4
+
+[node name="PlatformRect" type="ColorRect" parent="SubViewport" unique_id=794315918]
 material = SubResource("ShaderMaterial_2ivtb")
 anchors_preset = 8
 anchor_left = 0.5
@@ -33,10 +56,11 @@ offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
-[node name="IconSprite" type="AnimatedSprite2D" parent="." unique_id=287774650]
+[node name="IconSprite" type="AnimatedSprite2D" parent="SubViewport" unique_id=1917841765]
 
-[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=908936954]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=175449124]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=175449124]
+position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_jsq8n")
