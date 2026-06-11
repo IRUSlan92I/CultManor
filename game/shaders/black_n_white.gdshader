@@ -1,5 +1,7 @@
 shader_type canvas_item;
 
+varying vec2 world_pos;
+
 uniform vec4 black_color : source_color = vec4(0.0, 0.0, 0.0, 1.0);
 uniform vec4 white_color : source_color = vec4(1.0, 1.0, 1.0, 1.0);
 uniform bool switch_colors = false;
@@ -7,6 +9,7 @@ uniform float threshold : hint_range(0.0, 1.0) = 0.5;
 uniform float speed : hint_range(0.0, 10.0) = 0.5;
 uniform float intensity : hint_range(0.0, 1.0) = 1.0;
 uniform float scale : hint_range(0.0, 100.0) = 20.0;
+uniform bool use_world_pos = false;
 
 vec2 random(vec2 uv){
     uv = vec2( dot(uv, vec2(127.1,311.7) ),
@@ -26,9 +29,17 @@ float noise(vec2 uv) {
                      dot( random(uv_index + vec2(1.0,1.0) ), uv_fract - vec2(1.0,1.0) ), blur.x), blur.y) + 0.5;
 }
 
+void vertex() {
+	if (use_world_pos) {
+    	world_pos = (MODEL_MATRIX * vec4(VERTEX, 0.0, 1.0)).xy;
+	}
+}
+
 void fragment() {
 	if (COLOR.a > 0.01) {
-		vec2 noise_uv = UV * vec2(1.0, TEXTURE_PIXEL_SIZE.x / TEXTURE_PIXEL_SIZE.y);
+		vec2 noise_uv = vec2(1.0, TEXTURE_PIXEL_SIZE.x / TEXTURE_PIXEL_SIZE.y);
+		noise_uv *= use_world_pos ? world_pos : UV;
+		
 		float l = dot(COLOR.rgb, vec3(0.2126, 0.7152, 0.0722));
 
 		bool is_black = l < threshold;
@@ -37,6 +48,7 @@ void fragment() {
 		}
 		if (intensity < 1.0) {
 			vec2 coord = noise_uv * scale + TIME * speed;
+
 			if (noise(coord) > intensity) {
 				is_black = !is_black;
 			}
