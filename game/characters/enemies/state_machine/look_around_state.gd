@@ -12,8 +12,8 @@ var state_by_ray_cast : Dictionary[RayCast2D, CultistState]
 
 
 func enter() -> void:
-	cultist.sprite.animation_finished.connect(_on_animation_finished)
-	cultist.sprite.play(CultistSprite.LOOK_AROUND_ANIMATIONS.pick_random())
+	cultist.animated_sprite.animation_finished.connect(_on_animation_finished)
+	cultist.animated_sprite.play(CultistSprite.LOOK_AROUND_ANIMATIONS.pick_random())
 	cultist.velocity = Vector2.ZERO
 	cultist._set_ray_cast_enable(cultist.left_player_close_ray, true)
 	cultist._set_ray_cast_enable(cultist.right_player_close_ray, true)
@@ -36,7 +36,7 @@ func physics_process(_delta: float) -> void:
 
 
 func exit() -> void:
-	cultist.sprite.animation_finished.disconnect(_on_animation_finished)
+	cultist.animated_sprite.animation_finished.disconnect(_on_animation_finished)
 	cultist._set_ray_cast_enable(cultist.left_player_close_ray, false)
 	cultist._set_ray_cast_enable(cultist.right_player_close_ray, false)
 

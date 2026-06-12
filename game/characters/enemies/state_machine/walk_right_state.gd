@@ -9,4 +9,4 @@ func init() -> void:
 
 
 func enter() -> void:
-	cultist.sprite.play(CultistSprite.ANIMATION_WALK_RIGHT)
+	cultist.animated_sprite.play(CultistSprite.ANIMATION_WALK_RIGHT)

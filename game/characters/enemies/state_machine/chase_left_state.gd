@@ -9,7 +9,7 @@ func init() -> void:
 
 
 func enter() -> void:
-	cultist.sprite.play(CultistSprite.ANIMATION_CHASE_LEFT)
+	cultist.animated_sprite.play(CultistSprite.ANIMATION_CHASE_LEFT)
 
 
 func _is_target_reached() -> bool:

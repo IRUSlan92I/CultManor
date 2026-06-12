@@ -6,7 +6,7 @@ extends CultistState
 
 
 func enter() -> void:
-	cultist.sprite.play(CultistSprite.ANIMATION_FALL)
+	cultist.animated_sprite.play(CultistSprite.ANIMATION_FALL)
 
 
 func physics_process(delta: float) -> void:

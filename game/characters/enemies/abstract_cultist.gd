@@ -13,7 +13,8 @@ const FALL_GRAVITY_FACTOR = 1.5
 var target_x := 0.0
 
 
-@onready var sprite : AnimatedSprite2D = $CultistSprite
+@onready var sprite : Sprite2D = $CultistSprite
+@onready var animated_sprite : AnimatedSprite2D = $SubViewport/CultistSprite
 
 @onready var left_wall_high_ray : RayCast2D = $WallCheckHigh/LeftWallRay
 @onready var right_wall_high_ray : RayCast2D = $WallCheckHigh/RightWallRay
