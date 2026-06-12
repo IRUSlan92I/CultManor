@@ -1,6 +1,6 @@
 @tool
 class_name AbstractPlatform
-extends Node2D
+extends AnimatableBody2D
 
 
 const TILE_SIZE = 8
@@ -23,8 +23,9 @@ const MAX_WIDTH = TILE_SIZE * 32
 
 
 func _ready() -> void:
+	if not Engine.is_editor_hint():
+		platform_rect.material.set_shader_parameter("seed", randf())
 	platform_rect.material.set_shader_parameter("tile_size", TILE_SIZE)
-	platform_rect.material.set_shader_parameter("seed", randf())
 	rebuild_platform()
 
 
@@ -32,14 +33,11 @@ func rebuild_platform() -> void:
 	var shape := collision.shape as RectangleShape2D
 	shape.size.x = platform_width
 	
-	sub_viewport.size = Vector2(platform_width, TILE_SIZE)
+	var platfor_size := Vector2(platform_width, TILE_SIZE)
+	
+	sub_viewport.size = platfor_size
+	icon_sprite.position = platfor_size/2
 	platform_rect.size.x = platform_width
 	platform_rect.position = Vector2.ZERO
-	icon_sprite.position = Vector2.ZERO
 	
 	platform_rect.material.set_shader_parameter("platform_width", platform_width)
-
-
-func _physics_process(_delta: float) -> void:
-	if Engine.is_editor_hint():
-		return
