@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bc114fx0hcb6s" path="res://game/levels/test_level.gd" id="2_a2sw7"]
 [ext_resource type="PackedScene" uid="uid://ct6n0u0iegynv" path="res://game/doors/lever_door.tscn" id="2_r01v2"]
 [ext_resource type="PackedScene" uid="uid://b3kyqvuxmfn8f" path="res://game/objects/decorative/fireplace.tscn" id="3_tuvkr"]
-[ext_resource type="PackedScene" uid="uid://jab32eoyc523" path="res://game/platform/self_moving_platform.tscn" id="4_h1708"]
+[ext_resource type="PackedScene" uid="uid://jab32eoyc523" path="res://game/platform/moving_platform.tscn" id="4_h1708"]
 [ext_resource type="PackedScene" uid="uid://g0n5npbt3hb2" path="res://game/doors/circle_door.tscn" id="4_yrqjd"]
 [ext_resource type="PackedScene" uid="uid://cojxqx5al7kyv" path="res://game/doors/locked_door.tscn" id="5_1skah"]
 [ext_resource type="PackedScene" uid="uid://dwvv5dj8lqif2" path="res://game/doors/triangle_door.tscn" id="6_75eok"]
@@ -27,9 +27,9 @@
 
 [sub_resource type="Curve2D" id="Curve2D_h1708"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 229, -75, 0, 0, 0, 0, 47, -75, 0, 0, 0, 0, 160, -26, 0, 0, 0, 0, 229, -75)
+"points": PackedVector2Array(0, 0, 0, 0, 229, -75, 0, 0, 0, 0, 47, -75)
 }
-point_count = 4
+point_count = 2
 
 [node name="TestLevel" unique_id=600627332 instance=ExtResource("1_15okj")]
 script = ExtResource("2_a2sw7")
@@ -38,10 +38,10 @@ script = ExtResource("2_a2sw7")
 position = Vector2(274, -81)
 platform_width = 48
 
-[node name="SelfMovingPlatform" parent="Platforms" parent_id_path=PackedInt32Array(1140671629) index="1" unique_id=349378100 node_paths=PackedStringArray("path_follow") instance=ExtResource("4_h1708")]
+[node name="SelfMovingPlatform" parent="Platforms" parent_id_path=PackedInt32Array(1140671629) index="1" unique_id=349378100 node_paths=PackedStringArray("path", "path_follow") instance=ExtResource("4_h1708")]
 position = Vector2(201.03143, -75)
 rotation = -3.1415925
-is_loop = true
+path = NodePath("../Path2D")
 path_follow = NodePath("../Path2D/PathFollow2D")
 platform_width = 104
 

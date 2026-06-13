@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://jab32eoyc523"]
+
+[ext_resource type="PackedScene" uid="uid://guvijso3k6eq" path="res://game/platform/abstract_platform.tscn" id="1_aar0q"]
+[ext_resource type="Script" uid="uid://cwji3vqis6w6b" path="res://game/platform/moving_platform.gd" id="2_c250g"]
+[ext_resource type="Shader" uid="uid://d4hm3vjx1rhsf" path="res://game/shaders/platform.gdshader" id="3_7t213"]
+[ext_resource type="Texture2D" uid="uid://cpcuokqv8u2xa" path="res://images/level/platform.png" id="4_8q4q1"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_aar0q"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c250g"]
+resource_local_to_scene = true
+shader = ExtResource("3_7t213")
+shader_parameter/tile_size = 8.0
+shader_parameter/platform_width = 24.0
+shader_parameter/atlas = ExtResource("4_8q4q1")
+shader_parameter/seed = 0.94376683
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7t213"]
+resource_local_to_scene = true
+size = Vector2(16, 7)
+
+[node name="MovingPlatform" unique_id=137546339 instance=ExtResource("1_aar0q")]
+script = ExtResource("2_c250g")
+is_loop = false
+type = 0
+speed = 10.0
+
+[node name="Sprite2D" parent="." index="0" unique_id=264863796]
+texture = SubResource("ViewportTexture_aar0q")
+
+[node name="PlatformRect" parent="SubViewport" parent_id_path=PackedInt32Array(226200089) index="0" unique_id=794315918]
+material = SubResource("ShaderMaterial_c250g")
+
+[node name="IconSprite" parent="SubViewport" parent_id_path=PackedInt32Array(226200089) index="1" unique_id=1917841765]
+animation = &"self_moving"
+frame_progress = 0.80246073
+
+[node name="CollisionShape2D" parent="." index="2" unique_id=175449124]
+shape = SubResource("RectangleShape2D_7t213")
+
+[node name="RestartTimer" type="Timer" parent="." index="3" unique_id=1793755125]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="RestartTimer" to="." method="start_movement"]

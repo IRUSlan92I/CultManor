@@ -3,6 +3,21 @@ class_name AbstractPlatform
 extends AnimatableBody2D
 
 
+const ANIMATION_COLOR_SWITCHING = "color_switching"
+const ANIMATION_HIDING = "hiding"
+const ANIMATION_TIMER = "timer"
+
+const ANIMATION_SELF_MOVING = "self_moving"
+
+const ANIMATION_MOVING_PREFIX = "moving_"
+const ANIMATION_MOVING_UP = "up"
+const ANIMATION_MOVING_DOWN = "down"
+const ANIMATION_MOVING_LEFT = "left"
+const ANIMATION_MOVING_RIGHT = "right"
+const ANIMATION_ACTIVE_SUFFIX = "_active"
+const ANIMATION_STATIC_SUFFIX = "_static"
+
+
 const TILE_SIZE = 8
 const MIN_WIDTH = TILE_SIZE * 2
 const MAX_WIDTH = TILE_SIZE * 32
