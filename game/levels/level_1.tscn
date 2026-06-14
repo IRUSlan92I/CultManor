@@ -65,6 +65,7 @@ size = Vector2(80, 12)
 
 [node name="Level1" unique_id=586585189 instance=ExtResource("1_15okj")]
 player_falling_at_start = false
+player_can_switch_color = false
 
 [node name="Parallax2D" type="Parallax2D" parent="." index="0" unique_id=713207635]
 scroll_scale = Vector2(0, 0)
@@ -236,5 +237,5 @@ position = Vector2(1976, 410)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillingAreas/KillingArea2" index="0" unique_id=335586472]
 shape = SubResource("RectangleShape2D_2gpk1")
 
-[node name="LevelEnd" parent="." index="11" unique_id=1018767708]
+[node name="LevelEnd" parent="." index="12" unique_id=1018767708]
 position = Vector2(2416, 471)

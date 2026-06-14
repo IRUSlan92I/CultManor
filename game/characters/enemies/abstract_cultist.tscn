@@ -37,11 +37,11 @@ texture = SubResource("ViewportTexture_cqp7f")
 [node name="SubViewport" type="SubViewport" parent="." unique_id=903152885]
 transparent_bg = true
 canvas_item_default_texture_filter = 0
-size = Vector2i(16, 32)
+size = Vector2i(32, 32)
 
 [node name="CultistSprite" parent="SubViewport" unique_id=1997264413 instance=ExtResource("2_tjvyk")]
 material = null
-position = Vector2(8, 16)
+position = Vector2(16, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=185651284]
 position = Vector2(0, 2)

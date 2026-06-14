@@ -18,12 +18,14 @@ const PICKUP_OFFSET = 16.0
 @export_range(0.0, 1.0) var passive_jump_factor := 0.5
 
 
+var can_switch_color: bool = true
 var is_dead := false
 var _is_switching_needed := false
 
 
 @onready var camera : Camera2D = $Camera2D
 @onready var sprite : AnimatedSprite2D = $PlayerSprite
+@onready var particles : GPUParticles2D = $GPUParticles2D
 @onready var collision_switcher : CollisionSwitcher = $CollisionSwitcher
 @onready var pickups : Node2D = $Pickups
 @onready var jump_buffer_timer : Timer = $JumpBufferTimer
@@ -82,7 +84,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("switch_color"):
+	if event.is_action_pressed("switch_color") and can_switch_color:
 		_switch()
 
 
@@ -95,6 +97,7 @@ func _switch() -> void:
 	if center_area.get_overlapping_bodies().size() == 0:
 		SoundManager.play_sfx_stream(SoundManager.sfx_stream_switch, global_position)
 		collision_switcher.switch_color()
+		particles.restart()
 	else:
 		_is_switching_needed = true
 

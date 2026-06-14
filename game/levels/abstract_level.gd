@@ -3,6 +3,7 @@ extends Node2D
 
 
 @export var player_falling_at_start: bool = true
+@export var player_can_switch_color: bool = true
 
 
 @onready var player : Player = $Player
@@ -19,6 +20,8 @@ func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	
 	SoundManager.play_music_stream(SoundManager.music_stream_gameplay)
+	
+	player.can_switch_color = player_can_switch_color
 	
 	if player_falling_at_start:
 		player.velocity.y = player.max_fall_speed
