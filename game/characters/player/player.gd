@@ -84,7 +84,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("switch_color") and can_switch_color:
+	if event.is_action_pressed("switch_color") and can_switch_color and not particles.emitting:
 		_switch()
 
 
