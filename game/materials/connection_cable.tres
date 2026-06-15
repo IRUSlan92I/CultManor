@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dbcb2x1xbq37g"]
+
+[ext_resource type="Shader" uid="uid://dbsrm43wcolg4" path="res://game/shaders/connection_cable.gdshader" id="1_i3upv"]
+
+[resource]
+shader = ExtResource("1_i3upv")
+shader_parameter/glow_radius = 1.0
+shader_parameter/travel_time = 5.0

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dq3080605jqta"]
+
+[ext_resource type="Script" uid="uid://c1r1ny6xdedil" path="res://game/objects/interactive/connection_cable.gd" id="1_43n88"]
+[ext_resource type="Material" uid="uid://dbcb2x1xbq37g" path="res://game/materials/connection_cable.tres" id="1_k2dc5"]
+
+[node name="ConnectionCable" type="Line2D" unique_id=1234500644]
+material = ExtResource("1_k2dc5")
+width = 2.0
+texture_mode = 2
+script = ExtResource("1_43n88")

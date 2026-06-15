@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://mpsu4g2b5h3a" path="res://game/levels/abstract_level.tscn" id="1_15okj"]
 [ext_resource type="Script" uid="uid://bc114fx0hcb6s" path="res://game/levels/test_level.gd" id="2_a2sw7"]
 [ext_resource type="PackedScene" uid="uid://ct6n0u0iegynv" path="res://game/doors/lever_door.tscn" id="2_r01v2"]
+[ext_resource type="PackedScene" uid="uid://dq3080605jqta" path="res://game/objects/interactive/connection_cable.tscn" id="3_a50fq"]
 [ext_resource type="PackedScene" uid="uid://b3kyqvuxmfn8f" path="res://game/objects/decorative/fireplace.tscn" id="3_tuvkr"]
 [ext_resource type="PackedScene" uid="uid://jab32eoyc523" path="res://game/platform/moving_platform.tscn" id="4_h1708"]
 [ext_resource type="PackedScene" uid="uid://g0n5npbt3hb2" path="res://game/doors/circle_door.tscn" id="4_yrqjd"]
@@ -33,6 +34,11 @@ point_count = 2
 
 [node name="TestLevel" unique_id=600627332 instance=ExtResource("1_15okj")]
 script = ExtResource("2_a2sw7")
+
+[node name="ConnectionCable" parent="ConnectionCables" parent_id_path=PackedInt32Array(279521385) index="0" unique_id=1234500644 instance=ExtResource("3_a50fq")]
+position = Vector2(208, 13)
+points = PackedVector2Array(0, 0, 92, 0, 92, -49, 199, -49)
+width = 1.0
 
 [node name="AbstractColoredPlatform" parent="Platforms" parent_id_path=PackedInt32Array(1140671629) index="0" unique_id=137546339 instance=ExtResource("24_h1708")]
 position = Vector2(274, -81)
@@ -120,7 +126,7 @@ position = Vector2(936, -48)
 [node name="WhiteEnemy" parent="Enemies" parent_id_path=PackedInt32Array(857989772) index="2" unique_id=1447247338 instance=ExtResource("20_rt0xo")]
 position = Vector2(743, -48)
 
-[node name="Player" parent="." index="5" unique_id=1058744997]
+[node name="Player" parent="." index="6" unique_id=1058744997]
 position = Vector2(-13, 0)
 
 [node name="GrayWalls" parent="Tiles" parent_id_path=PackedInt32Array(1626037498) index="0" unique_id=557672309]
@@ -135,7 +141,7 @@ tile_map_data = PackedByteArray("AAAwAP3/AAAAAAEAAAAwAPz/AAAAAAEAAAAwAPv/AAAAAAE
 [node name="Traps" parent="Tiles" parent_id_path=PackedInt32Array(1626037498) index="3" unique_id=635748436]
 tile_map_data = PackedByteArray("AAA9AAcAAAAAAAAAAAA9AAgAAAAAAAEAAAA9AAkAAAAAAAEAAAA=")
 
-[node name="LevelEnd" parent="." index="9" unique_id=1018767708]
+[node name="LevelEnd" parent="." index="10" unique_id=1018767708]
 position = Vector2(1334, 103)
 
 [node name="CollisionShape2D" parent="LevelEnd" index="0" unique_id=937956890]
