@@ -14,6 +14,7 @@ float get_alpha(vec2 uv, float offset) {
 void fragment() {
 	float alpha = 0.0;
 	float offset = 0.0;
+	
 	for (float offset = 0.0; offset <= 1.0; offset += glow_interval) {
 		alpha += get_alpha(UV, offset);
 	}

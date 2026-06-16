@@ -3,6 +3,10 @@ class_name AbstractPlatform
 extends AnimatableBody2D
 
 
+const SHADER_SEED = "shader_parameter/seed"
+const SHADER_TILE_SIZE = "shader_parameter/tile_size"
+const SHADER_PLATFORM_WIDTH = "shader_parameter/platform_width"
+
 const ANIMATION_COLOR_SWITCHING = "color_switching"
 const ANIMATION_HIDING = "hiding"
 const ANIMATION_TIMER = "timer"
@@ -39,8 +43,8 @@ const MAX_WIDTH = TILE_SIZE * 32
 
 func _ready() -> void:
 	if not Engine.is_editor_hint():
-		platform_rect.material.set_shader_parameter("seed", randf())
-	platform_rect.material.set_shader_parameter("tile_size", TILE_SIZE)
+		platform_rect.material.set(SHADER_SEED, randf())
+	platform_rect.material.set(SHADER_TILE_SIZE, TILE_SIZE)
 	rebuild_platform()
 
 
@@ -55,4 +59,4 @@ func rebuild_platform() -> void:
 	platform_rect.size.x = platform_width
 	platform_rect.position = Vector2.ZERO
 	
-	platform_rect.material.set_shader_parameter("platform_width", platform_width)
+	platform_rect.material.set(SHADER_PLATFORM_WIDTH, platform_width)
