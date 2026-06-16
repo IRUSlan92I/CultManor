@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bwmd8w677p7k3"]
+
+[ext_resource type="PackedScene" uid="uid://wpkj48bqyuy2" path="res://game/platform/abstract_color_platform.tscn" id="1_6jqdv"]
+[ext_resource type="Script" uid="uid://b2bityno64bl4" path="res://game/platform/color_switching_platform.gd" id="2_sbqh7"]
+[ext_resource type="Shader" uid="uid://d4hm3vjx1rhsf" path="res://game/shaders/platform.gdshader" id="2_svoke"]
+[ext_resource type="Texture2D" uid="uid://cpcuokqv8u2xa" path="res://images/level/platform.png" id="3_sbqh7"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_svoke"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sbqh7"]
+resource_local_to_scene = true
+shader = ExtResource("2_svoke")
+shader_parameter/tile_size = 8.0
+shader_parameter/platform_width = 24.0
+shader_parameter/atlas = ExtResource("3_sbqh7")
+shader_parameter/seed = 0.12241629
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5slkc"]
+resource_local_to_scene = true
+size = Vector2(16, 7)
+
+[node name="ColorSwitchingPlatform" unique_id=137546339 instance=ExtResource("1_6jqdv")]
+script = ExtResource("2_sbqh7")
+initial_color = 0
+
+[node name="Sprite2D" parent="." index="0" unique_id=264863796]
+texture = SubResource("ViewportTexture_svoke")
+
+[node name="PlatformRect" parent="SubViewport" parent_id_path=PackedInt32Array(226200089) index="0" unique_id=794315918]
+material = SubResource("ShaderMaterial_sbqh7")
+
+[node name="CollisionShape2D" parent="." index="2" unique_id=175449124]
+shape = SubResource("RectangleShape2D_5slkc")

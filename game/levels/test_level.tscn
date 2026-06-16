@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://jab32eoyc523" path="res://game/platform/moving_platform.tscn" id="4_h1708"]
 [ext_resource type="PackedScene" uid="uid://g0n5npbt3hb2" path="res://game/doors/circle_door.tscn" id="4_yrqjd"]
 [ext_resource type="PackedScene" uid="uid://cojxqx5al7kyv" path="res://game/doors/locked_door.tscn" id="5_1skah"]
+[ext_resource type="PackedScene" uid="uid://bwmd8w677p7k3" path="res://game/platform/color_switching_platform.tscn" id="5_a50fq"]
 [ext_resource type="PackedScene" uid="uid://dwvv5dj8lqif2" path="res://game/doors/triangle_door.tscn" id="6_75eok"]
 [ext_resource type="PackedScene" uid="uid://b7imlh4sl036i" path="res://game/doors/square_door.tscn" id="7_1skah"]
 [ext_resource type="PackedScene" uid="uid://cudbspmpx6sik" path="res://game/pickups/book_pickup.tscn" id="7_fq0h3"]
@@ -24,7 +25,6 @@
 [ext_resource type="PackedScene" uid="uid://cb0w6mt8g4mer" path="res://game/characters/enemies/gray_cultist.tscn" id="18_blgb8"]
 [ext_resource type="PackedScene" uid="uid://cutjutvd8dqqc" path="res://game/characters/enemies/black_cultist.tscn" id="19_ohfy3"]
 [ext_resource type="PackedScene" uid="uid://bv2gahb4wxgb1" path="res://game/characters/enemies/white_cultist.tscn" id="20_rt0xo"]
-[ext_resource type="PackedScene" uid="uid://wpkj48bqyuy2" path="res://game/platform/abstract_color_platform.tscn" id="24_h1708"]
 
 [sub_resource type="Curve2D" id="Curve2D_h1708"]
 _data = {
@@ -35,23 +35,22 @@ point_count = 2
 [node name="TestLevel" unique_id=600627332 instance=ExtResource("1_15okj")]
 script = ExtResource("2_a2sw7")
 
-[node name="ConnectionCable" parent="ConnectionCables" parent_id_path=PackedInt32Array(279521385) index="0" unique_id=1234500644 instance=ExtResource("3_a50fq")]
+[node name="ConnectionCableDoor" parent="ConnectionCables" parent_id_path=PackedInt32Array(279521385) index="0" unique_id=1234500644 instance=ExtResource("3_a50fq")]
 position = Vector2(208, 13)
 points = PackedVector2Array(0, 0, 92, 0, 92, -49, 199, -49)
-width = 1.0
 
-[node name="AbstractColoredPlatform" parent="Platforms" parent_id_path=PackedInt32Array(1140671629) index="0" unique_id=137546339 instance=ExtResource("24_h1708")]
-position = Vector2(274, -81)
-platform_width = 48
+[node name="ConnectionCablePlatform" parent="ConnectionCables" parent_id_path=PackedInt32Array(279521385) index="1" unique_id=561577961 instance=ExtResource("3_a50fq")]
+position = Vector2(520, -35)
+points = PackedVector2Array(0, 0, 0, -76, -454, -76, -454, 3)
 
-[node name="SelfMovingPlatform" parent="Platforms" parent_id_path=PackedInt32Array(1140671629) index="1" unique_id=349378100 node_paths=PackedStringArray("path", "path_follow") instance=ExtResource("4_h1708")]
+[node name="SelfMovingPlatform" parent="Platforms" parent_id_path=PackedInt32Array(1140671629) index="0" unique_id=349378100 node_paths=PackedStringArray("path", "path_follow") instance=ExtResource("4_h1708")]
 position = Vector2(201.03143, -75)
 rotation = -3.1415925
 path = NodePath("../Path2D")
 path_follow = NodePath("../Path2D/PathFollow2D")
 platform_width = 104
 
-[node name="Path2D" type="Path2D" parent="Platforms" parent_id_path=PackedInt32Array(1140671629) index="2" unique_id=1306055237]
+[node name="Path2D" type="Path2D" parent="Platforms" parent_id_path=PackedInt32Array(1140671629) index="1" unique_id=1306055237]
 curve = SubResource("Curve2D_h1708")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Platforms/Path2D" index="0" unique_id=1206016336]
@@ -62,6 +61,12 @@ rotates = false
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Platforms/Path2D/PathFollow2D" index="0" unique_id=1642833722]
 remote_path = NodePath("../../../SelfMovingPlatform")
+
+[node name="ColorSwitchingPlatform" parent="Platforms" parent_id_path=PackedInt32Array(1140671629) index="2" unique_id=137546339 instance=ExtResource("5_a50fq")]
+position = Vector2(66, -32)
+collision_layer = 2
+initial_color = 1
+platform_width = 104
 
 [node name="LeverDoor" parent="Doors" parent_id_path=PackedInt32Array(1468144392) index="0" unique_id=1575363350 instance=ExtResource("2_r01v2")]
 position = Vector2(416, -56)
@@ -102,8 +107,11 @@ position = Vector2(344, -78)
 [node name="SwitchActionTip" parent="Objects" parent_id_path=PackedInt32Array(1320033435) index="4" unique_id=1142055805 instance=ExtResource("12_r01v2")]
 position = Vector2(699, -90)
 
-[node name="Lever" parent="Objects" parent_id_path=PackedInt32Array(1320033435) index="5" unique_id=1479061220 instance=ExtResource("13_00l78")]
+[node name="LeverDoor" parent="Objects" parent_id_path=PackedInt32Array(1320033435) index="5" unique_id=1479061220 instance=ExtResource("13_00l78")]
 position = Vector2(208, 8)
+
+[node name="LeverPlatform" parent="Objects" parent_id_path=PackedInt32Array(1320033435) index="6" unique_id=705939742 instance=ExtResource("13_00l78")]
+position = Vector2(520, -40)
 
 [node name="BookPickup" parent="Pickups" parent_id_path=PackedInt32Array(1113969064) index="0" unique_id=261982174 instance=ExtResource("7_fq0h3")]
 position = Vector2(1216, 86)

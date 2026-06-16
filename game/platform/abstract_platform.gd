@@ -37,6 +37,7 @@ const MAX_WIDTH = TILE_SIZE * 32
 
 @onready var collision: CollisionShape2D = $CollisionShape2D
 @onready var sub_viewport: SubViewport = $SubViewport
+@onready var platform_sprite: Sprite2D = $Sprite2D
 @onready var platform_rect: ColorRect = $SubViewport/PlatformRect
 @onready var icon_sprite: AnimatedSprite2D = $SubViewport/IconSprite
 

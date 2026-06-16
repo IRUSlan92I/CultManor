@@ -5,6 +5,6 @@
 
 [node name="ConnectionCable" type="Line2D" unique_id=1234500644]
 material = ExtResource("1_k2dc5")
-width = 2.0
+width = 1.0
 texture_mode = 2
 script = ExtResource("1_43n88")

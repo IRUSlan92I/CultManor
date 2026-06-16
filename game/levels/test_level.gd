@@ -3,5 +3,8 @@ extends AbstractLevel
 
 func _ready() -> void:
 	super._ready()
-	$Objects/Lever.switching.connect($Doors/LeverDoor.toggle)
-	$Objects/Lever.switching.connect($ConnectionCables/ConnectionCable.toggle)
+	$Objects/LeverDoor.switching.connect($Doors/LeverDoor.toggle)
+	$Objects/LeverDoor.switching.connect($ConnectionCables/ConnectionCableDoor.toggle)
+	
+	$Objects/LeverPlatform.switching.connect($Platforms/ColorSwitchingPlatform.toggle)
+	$Objects/LeverPlatform.switching.connect($ConnectionCables/ConnectionCablePlatform.toggle)

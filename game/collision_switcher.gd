@@ -39,19 +39,20 @@ const SHADER_INTENSITY = "shader_parameter/intensity"
 
 @export var object : CollisionObject2D
 
-@export_range(0.0, 60.0, 0.1) var switch_time := 0.0
 @export var initial_state := State.White
 
 
 var material : Material:
 	set(value):
 		material = value
-		_apply_color()
+		if is_node_ready():
+			_apply_color()
 
 var _state : State:
 	set(value):
 		_state = value
-		_apply_color()
+		if is_node_ready():
+			_apply_color()
 
 var _intensity_tween : Tween
 
@@ -70,9 +71,11 @@ func _ready() -> void:
 	_color_mask = _get_color_collision(object.collision_mask)
 	
 	_state = initial_state
+	
+	_apply_color()
 
 
-func switch_color() -> void:
+func switch_color(switch_time := 0.0) -> void:
 	if _intensity_tween != null and _intensity_tween.is_running(): return #TODO
 	
 	if is_zero_approx(switch_time):
