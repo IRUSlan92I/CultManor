@@ -12,8 +12,8 @@ const ANIMATION_NAME = "final_cutscene"
 
 
 func _ready() -> void:
-	super._ready()
 	animation_player.play("hide_cutscene_elements")
+	super._ready()
 
 
 func _on_level_end_entered(body: Node2D) -> void:
