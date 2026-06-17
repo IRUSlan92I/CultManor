@@ -24,6 +24,7 @@ var _is_switching_needed := false
 
 
 @onready var camera : Camera2D = $Camera2D
+@onready var water_splash : GPUParticles2D = $WaterSplash
 @onready var sprite : AnimatedSprite2D = $PlayerSprite
 @onready var particles : GPUParticles2D = $GPUParticles2D
 @onready var collision_switcher : CollisionSwitcher = $CollisionSwitcher
@@ -102,7 +103,11 @@ func _switch() -> void:
 		_is_switching_needed = true
 
 
-func kill() -> void:
+func kill(type := KillingArea.Type.None) -> void:
+	match type:
+		KillingArea.Type.Water:
+			SoundManager.play_sfx_stream(SoundManager.sfx_stream_splash, global_position)
+			water_splash.restart()
 	is_dead = true
 
 

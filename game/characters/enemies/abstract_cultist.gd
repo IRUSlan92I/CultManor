@@ -14,6 +14,7 @@ var target_x := 0.0
 
 
 @onready var sprite : Sprite2D = $CultistSprite
+@onready var water_splash : GPUParticles2D = $WaterSplash
 @onready var animated_sprite : AnimatedSprite2D = $SubViewport/CultistSprite
 
 @onready var left_wall_high_ray : RayCast2D = $WallCheckHigh/LeftWallRay
@@ -46,6 +47,16 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	state_machine.physics_process(delta)
 	move_and_slide()
+
+
+func kill(type := KillingArea.Type.None) -> void:
+	match type:
+		KillingArea.Type.Water:
+			SoundManager.play_sfx_stream(SoundManager.sfx_stream_splash, global_position)
+			water_splash.finished.connect(queue_free)
+			water_splash.restart()
+		_:
+			queue_free()
 
 
 func update_x_velocity(direction: int, max_speed: float, delta: float) -> void:

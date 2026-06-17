@@ -227,15 +227,17 @@ tile_set = SubResource("TileSet_crrvt")
 
 [node name="KillingArea1" parent="KillingAreas" parent_id_path=PackedInt32Array(1935554921) index="0" unique_id=1891922549 instance=ExtResource("24_ia26y")]
 position = Vector2(1600, 380)
+type = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillingAreas/KillingArea1" index="0" unique_id=274691203]
 shape = SubResource("RectangleShape2D_o0jti")
 
 [node name="KillingArea2" parent="KillingAreas" parent_id_path=PackedInt32Array(1935554921) index="1" unique_id=1019647136 instance=ExtResource("24_ia26y")]
 position = Vector2(1976, 410)
+type = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillingAreas/KillingArea2" index="0" unique_id=335586472]
 shape = SubResource("RectangleShape2D_2gpk1")
 
-[node name="LevelEnd" parent="." index="12" unique_id=1018767708]
+[node name="LevelEnd" parent="." index="13" unique_id=1018767708]
 position = Vector2(2416, 471)

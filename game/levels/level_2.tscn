@@ -159,9 +159,10 @@ tile_map_data = PackedByteArray("AAA8AB8AAAAAAAAAAAA9AB8AAAAAAAAAAAA+AB8AAAAAAAA
 
 [node name="KillingArea" parent="KillingAreas" parent_id_path=PackedInt32Array(1935554921) index="0" unique_id=1891922549 instance=ExtResource("19_7s8yo")]
 position = Vector2(1072, 540)
+type = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillingAreas/KillingArea" index="0" unique_id=1478981105]
 shape = SubResource("RectangleShape2D_v8xjl")
 
-[node name="LevelEnd" parent="." index="8" unique_id=1018767708]
+[node name="LevelEnd" parent="." index="10" unique_id=1018767708]
 position = Vector2(1424, 602)

@@ -190,27 +190,31 @@ tile_map_data = PackedByteArray("AAAEACEAAAAAAAAAAAAEACIAAAAAAAEAAAAEACMAAAAAAAE
 
 [node name="KillingArea1" parent="KillingAreas" parent_id_path=PackedInt32Array(1935554921) index="0" unique_id=1891922549 instance=ExtResource("22_kqu3l")]
 position = Vector2(104, 572)
+type = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillingAreas/KillingArea1" index="0" unique_id=1658778408]
 shape = SubResource("RectangleShape2D_b1jnq")
 
 [node name="KillingArea2" parent="KillingAreas" parent_id_path=PackedInt32Array(1935554921) index="1" unique_id=772044084 instance=ExtResource("22_kqu3l")]
 position = Vector2(424, 524)
+type = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillingAreas/KillingArea2" index="0" unique_id=1357291357]
 shape = SubResource("RectangleShape2D_kqu3l")
 
 [node name="KillingArea3" parent="KillingAreas" parent_id_path=PackedInt32Array(1935554921) index="2" unique_id=741954334 instance=ExtResource("22_kqu3l")]
 position = Vector2(912, 860)
+type = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillingAreas/KillingArea3" index="0" unique_id=718491883]
 shape = SubResource("RectangleShape2D_54p7s")
 
 [node name="KillingArea4" parent="KillingAreas" parent_id_path=PackedInt32Array(1935554921) index="3" unique_id=482672287 instance=ExtResource("22_kqu3l")]
 position = Vector2(448, 1148)
+type = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillingAreas/KillingArea4" index="0" unique_id=319407131]
 shape = SubResource("RectangleShape2D_80tx3")
 
-[node name="LevelEnd" parent="." index="8" unique_id=1018767708]
+[node name="LevelEnd" parent="." index="10" unique_id=1018767708]
 position = Vector2(1024, 1218)

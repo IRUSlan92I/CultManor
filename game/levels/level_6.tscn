@@ -327,7 +327,7 @@ position = Vector2(587, 368)
 [node name="WhiteCultist2" parent="Enemies" parent_id_path=PackedInt32Array(857989772) index="3" unique_id=624398972 instance=ExtResource("23_8555i")]
 position = Vector2(549, 160)
 
-[node name="Player" parent="." index="4" unique_id=1058744997]
+[node name="Player" parent="." index="6" unique_id=1058744997]
 position = Vector2(208, -162)
 
 [node name="GrayWalls" parent="Tiles" parent_id_path=PackedInt32Array(1626037498) index="0" unique_id=557672309]
@@ -344,15 +344,17 @@ tile_map_data = PackedByteArray("AAAgABgAAAAAAAAAAAAgABkAAAAAAAEAAAAgABoAAAAAAAE
 
 [node name="KillingArea1" parent="KillingAreas" parent_id_path=PackedInt32Array(1935554921) index="0" unique_id=1891922549 instance=ExtResource("24_te27h")]
 position = Vector2(584, 428)
+type = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillingAreas/KillingArea1" index="0" unique_id=90224205]
 shape = SubResource("RectangleShape2D_cjy8w")
 
 [node name="KillingArea2" parent="KillingAreas" parent_id_path=PackedInt32Array(1935554921) index="1" unique_id=1371007521 instance=ExtResource("24_te27h")]
 position = Vector2(992, 428)
+type = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillingAreas/KillingArea2" index="0" unique_id=213687068]
 shape = SubResource("RectangleShape2D_own00")
 
-[node name="LevelEnd" parent="." index="8" unique_id=1018767708]
+[node name="LevelEnd" parent="." index="10" unique_id=1018767708]
 position = Vector2(400, 890)

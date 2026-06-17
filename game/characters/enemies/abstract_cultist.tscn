@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://but5aeh7y1s0f" path="res://game/characters/enemies/abstract_cultist.gd" id="1_2wrno"]
 [ext_resource type="PackedScene" uid="uid://dtxiercm8dsfm" path="res://game/characters/enemies/cultist_sprite.tscn" id="2_tjvyk"]
+[ext_resource type="PackedScene" uid="uid://8yd8f5x1hujv" path="res://game/characters/water_splash.tscn" id="2_w1t0g"]
 [ext_resource type="PackedScene" uid="uid://dike8xgbqdut2" path="res://game/killing_area.tscn" id="3_tjvyk"]
 [ext_resource type="PackedScene" uid="uid://bg7k6ovbk1xgm" path="res://game/characters/enemies/state_machine/cultist_state_machine.tscn" id="4_yu28k"]
 [ext_resource type="PackedScene" uid="uid://bq1v55jv4c6qe" path="res://game/characters/enemies/state_machine/cultist_state.tscn" id="5_tu2pi"]
@@ -30,6 +31,9 @@ height = 28.0
 [node name="AbstractCultist" type="CharacterBody2D" unique_id=1676614852]
 collision_layer = 0
 script = ExtResource("1_2wrno")
+
+[node name="WaterSplash" parent="." unique_id=658940825 instance=ExtResource("2_w1t0g")]
+position = Vector2(0, -14)
 
 [node name="CultistSprite" type="Sprite2D" parent="." unique_id=797412888]
 texture = SubResource("ViewportTexture_cqp7f")

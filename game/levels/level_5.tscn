@@ -168,7 +168,7 @@ position = Vector2(-38, -12)
 [node name="CircleKeyPickup" parent="Pickups" parent_id_path=PackedInt32Array(1113969064) index="0" unique_id=571829333 instance=ExtResource("6_r6jdw")]
 position = Vector2(-974, 632)
 
-[node name="Player" parent="." index="4" unique_id=1058744997]
+[node name="Player" parent="." index="6" unique_id=1058744997]
 position = Vector2(0, 109)
 
 [node name="GrayWalls" parent="Tiles" parent_id_path=PackedInt32Array(1626037498) index="0" unique_id=557672309]
@@ -185,21 +185,24 @@ tile_map_data = PackedByteArray("AADM/yoAAAAAAAAAAADM/ysAAAAAAAEAAADM/ywAAAAAAAE
 
 [node name="KillingArea1" parent="KillingAreas" parent_id_path=PackedInt32Array(1935554921) index="0" unique_id=1891922549 instance=ExtResource("17_8fy2b")]
 position = Vector2(-512, 716)
+type = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillingAreas/KillingArea1" index="0" unique_id=490664864]
 shape = SubResource("RectangleShape2D_j8u63")
 
 [node name="KillingArea2" parent="KillingAreas" parent_id_path=PackedInt32Array(1935554921) index="1" unique_id=1087634228 instance=ExtResource("17_8fy2b")]
 position = Vector2(-672, 716)
+type = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillingAreas/KillingArea2" index="0" unique_id=55967834]
 shape = SubResource("RectangleShape2D_wjoyx")
 
 [node name="KillingArea3" parent="KillingAreas" parent_id_path=PackedInt32Array(1935554921) index="2" unique_id=160083081 instance=ExtResource("17_8fy2b")]
 position = Vector2(-800, 716)
+type = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillingAreas/KillingArea3" index="0" unique_id=2058383047]
 shape = SubResource("RectangleShape2D_5nurb")
 
-[node name="LevelEnd" parent="." index="8" unique_id=1018767708]
+[node name="LevelEnd" parent="." index="10" unique_id=1018767708]
 position = Vector2(256, 797)

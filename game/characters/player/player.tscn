@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dtcad8tdx78tg"]
 
 [ext_resource type="Script" uid="uid://bb8kc32sggrn2" path="res://game/characters/player/player.gd" id="1_xln5q"]
+[ext_resource type="PackedScene" uid="uid://8yd8f5x1hujv" path="res://game/characters/water_splash.tscn" id="2_eeksw"]
 [ext_resource type="PackedScene" uid="uid://5qlocc0yu8ug" path="res://game/collision_switcher.tscn" id="2_j06tb"]
 [ext_resource type="PackedScene" uid="uid://cvx6akiplg21s" path="res://game/characters/player/player_sprite.tscn" id="2_n6ad3"]
 [ext_resource type="PackedScene" uid="uid://bdk23k2bypj8w" path="res://game/characters/player/state_machine/player_state_machine.tscn" id="4_ybe51"]
@@ -38,6 +39,9 @@ height = 20.0
 collision_layer = 128
 collision_mask = 33
 script = ExtResource("1_xln5q")
+
+[node name="WaterSplash" parent="." unique_id=658940825 instance=ExtResource("2_eeksw")]
+position = Vector2(0, -16)
 
 [node name="PlayerSprite" parent="." unique_id=237719081 instance=ExtResource("2_n6ad3")]
 animation = &"jump_right"
