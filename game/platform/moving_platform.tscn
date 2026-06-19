@@ -23,8 +23,8 @@ size = Vector2(16, 7)
 [node name="MovingPlatform" unique_id=137546339 instance=ExtResource("1_aar0q")]
 script = ExtResource("2_c250g")
 is_loop = false
-type = 0
 speed = 10.0
+type = 0
 
 [node name="Sprite2D" parent="." index="0" unique_id=264863796]
 texture = SubResource("ViewportTexture_aar0q")
@@ -34,13 +34,13 @@ material = SubResource("ShaderMaterial_c250g")
 
 [node name="IconSprite" parent="SubViewport" parent_id_path=PackedInt32Array(226200089) index="1" unique_id=1917841765]
 animation = &"self_moving"
-frame_progress = 0.80246073
+frame_progress = 0.14216548
 
 [node name="CollisionShape2D" parent="." index="2" unique_id=175449124]
 shape = SubResource("RectangleShape2D_7t213")
 
-[node name="RestartTimer" type="Timer" parent="." index="3" unique_id=1793755125]
+[node name="InvertTimer" type="Timer" parent="." index="3" unique_id=1793755125]
 wait_time = 3.0
 one_shot = true
 
-[connection signal="timeout" from="RestartTimer" to="." method="start_movement"]
+[connection signal="timeout" from="InvertTimer" to="." method="_start_movement"]

@@ -8,3 +8,5 @@ func _ready() -> void:
 	
 	$Objects/LeverPlatform.switching.connect($Platforms/ColorSwitchingPlatform.toggle)
 	$Objects/LeverPlatform.switching.connect($ConnectionCables/ConnectionCablePlatform.toggle)
+	
+	$Objects/LeverMoving.switching.connect($Platforms/SelfMovingPlatform.toggle)
