@@ -37,5 +37,5 @@ material = SubResource("ShaderMaterial_vbsvi")
 [node name="CollisionShape2D" parent="." index="2" unique_id=175449124]
 shape = SubResource("RectangleShape2D_pbfpg")
 
-[node name="CollisionSwitcher" parent="." index="3" unique_id=542648449 node_paths=PackedStringArray("object") instance=ExtResource("6_mk014")]
-object = NodePath("..")
+[node name="CollisionSwitcher" parent="." index="3" unique_id=542648449 node_paths=PackedStringArray("objects") instance=ExtResource("6_mk014")]
+objects = [NodePath("..")]

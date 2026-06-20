@@ -4,14 +4,14 @@
 [ext_resource type="Script" uid="uid://das7ujanefsn0" path="res://game/characters/enemies/abstract_color_cultist.gd" id="2_rd56i"]
 [ext_resource type="PackedScene" uid="uid://5qlocc0yu8ug" path="res://game/collision_switcher.tscn" id="3_e5cea"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_c7l74"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_f5md8"]
 viewport_path = NodePath("SubViewport")
 
 [node name="AbstractColorCultist" unique_id=644641841 instance=ExtResource("1_12hr0")]
 script = ExtResource("2_rd56i")
 
-[node name="CultistSprite" parent="." index="0" unique_id=797412888]
-texture = SubResource("ViewportTexture_c7l74")
+[node name="CultistSprite" parent="." index="1" unique_id=797412888]
+texture = SubResource("ViewportTexture_f5md8")
 
-[node name="CollisionSwitcher" parent="." index="2" unique_id=991274552 node_paths=PackedStringArray("object") instance=ExtResource("3_e5cea")]
-object = NodePath("..")
+[node name="CollisionSwitcher" parent="." index="2" unique_id=991274552 node_paths=PackedStringArray("objects") instance=ExtResource("3_e5cea")]
+objects = [NodePath("..")]

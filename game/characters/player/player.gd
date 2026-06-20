@@ -29,14 +29,17 @@ var _is_switching_needed := false
 @onready var particles : GPUParticles2D = $GPUParticles2D
 @onready var collision_switcher : CollisionSwitcher = $CollisionSwitcher
 @onready var pickups : Node2D = $Pickups
+
+@onready var switch_buffer_timer : Timer = $SwitchBufferTimer
 @onready var jump_buffer_timer : Timer = $JumpBufferTimer
 @onready var coyote_time_timer : Timer = $CoyoteTimeTimer
+
 @onready var center_area : Area2D = $CenterArea2D
 @onready var state_machine : PlayerStateMachine = $PlayerStateMachine
 
 
 func _ready() -> void:
-	collision_switcher.material = sprite.material
+	collision_switcher.add_material(sprite.material)
 	
 	state_machine.init()
 
@@ -77,7 +80,7 @@ func _physics_process(delta: float) -> void:
 		else:
 			_slow_down(delta)
 	
-	if _is_switching_needed:
+	if _is_switching_needed and not is_dead:
 		_switch()
 	
 	move_and_slide()
@@ -85,22 +88,19 @@ func _physics_process(delta: float) -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("switch_color") and can_switch_color and not particles.emitting:
+	if event.is_action_pressed("switch_color") and can_switch_color and not is_dead:
+		_is_switching_needed = true
+		switch_buffer_timer.start()
 		_switch()
 
 
-func _switch() -> void:
-	_is_switching_needed = false
-		
-	if is_dead:
-		return
-	
-	if center_area.get_overlapping_bodies().size() == 0:
+func _switch() -> void:	
+	if center_area.get_overlapping_bodies().size() == 0 and not particles.emitting:
 		SoundManager.play_sfx_stream(SoundManager.sfx_stream_switch, global_position)
 		collision_switcher.switch_color()
+		switch_buffer_timer.stop()
 		particles.restart()
-	else:
-		_is_switching_needed = true
+		_is_switching_needed = false
 
 
 func kill(type := KillingArea.Type.None) -> void:
@@ -141,3 +141,7 @@ func _rearrange_pickups() -> void:
 		var node := children[i] as Node2D
 		node.position.x = i * PICKUP_OFFSET - pickup_shift
 		node.position.y = 0
+
+
+func _on_switch_buffer_timer_timeout() -> void:
+	_is_switching_needed = false

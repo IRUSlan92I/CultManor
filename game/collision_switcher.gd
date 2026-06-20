@@ -37,16 +37,13 @@ const SHADER_SWITCH_COLORS = "shader_parameter/switch_colors"
 const SHADER_INTENSITY = "shader_parameter/intensity"
 
 
-@export var object : CollisionObject2D
+@export var objects : Array[CollisionObject2D] = []
 
 @export var initial_state := State.White
 
 
-var material : Material:
-	set(value):
-		material = value
-		if is_node_ready():
-			_apply_color()
+var _materials : Array[Material]
+
 
 var _state : State:
 	set(value):
@@ -56,23 +53,28 @@ var _state : State:
 
 var _intensity_tween : Tween
 
-var _grey_layer := 0
-var _color_layer := 0
+var _grey_layers : Dictionary[CollisionObject2D, int] = {}
+var _color_layers : Dictionary[CollisionObject2D, int] = {}
 
-var _grey_mask := 0
-var _color_mask := 0
+var _grey_masks : Dictionary[CollisionObject2D, int] = {}
+var _color_masks : Dictionary[CollisionObject2D, int] = {}
 
 
 func _ready() -> void:
-	_grey_layer = _get_grey_collision(object.collision_layer)
-	_color_layer = _get_color_collision(object.collision_layer)
-	
-	_grey_mask = _get_grey_collision(object.collision_mask)
-	_color_mask = _get_color_collision(object.collision_mask)
+	for object in objects:
+		_grey_layers[object] = _get_grey_collision(object.collision_layer)
+		_color_layers[object] = _get_color_collision(object.collision_layer)
+		_grey_masks[object] = _get_grey_collision(object.collision_mask)
+		_color_masks[object] = _get_color_collision(object.collision_mask)
 	
 	_state = initial_state
 	
 	_apply_color()
+
+
+func add_material(material: Material) -> void:
+	_materials.append(material)
+	_apply_color_to_material(material)
 
 
 func switch_color(switch_time := 0.0) -> void:
@@ -99,7 +101,8 @@ func _get_color_collision(collision: int) -> int:
 
 
 func _set_shader_internsity(value: float) -> void:
-	material.set(SHADER_INTENSITY, value)
+	for material in _materials:
+		material.set(SHADER_INTENSITY, value)
 
 
 func _update_state() -> void:
@@ -111,23 +114,36 @@ func _update_state() -> void:
 
 
 func _apply_color() -> void:
+	for object in objects:
+		_apply_color_to_object(object)
+	
+	for material in _materials:
+		_apply_color_to_material(material)
+
+
+func _apply_color_to_object(object: CollisionObject2D) -> void:
 	var layer := 0
 	var mask := 0
+	var grey_layer := _grey_layers[object]
+	var color_layer := _color_layers[object]
+	var grey_mask := _grey_masks[object]
+	var color_mask := _color_masks[object]
 	
 	match _state:
 		State.Black:
-			layer = _grey_layer | _color_layer
-			mask = _grey_mask | _color_mask
+			layer = grey_layer | color_layer
+			mask = grey_mask | color_mask
 		State.White:
-			layer = _grey_layer | (_color_layer << COLLISION_WHITE_SHIFT)
-			mask = _grey_mask | (_color_mask << COLLISION_WHITE_SHIFT)
+			layer = grey_layer | (color_layer << COLLISION_WHITE_SHIFT)
+			mask = grey_mask | (color_mask << COLLISION_WHITE_SHIFT)
 		State.TransitionToBlack, State.TransitionToWhite:
-			layer = _grey_layer | _color_layer | (_color_layer << COLLISION_WHITE_SHIFT)
-			mask = _grey_mask | _color_mask | (_color_mask << COLLISION_WHITE_SHIFT)
+			layer = grey_layer | color_layer | (color_layer << COLLISION_WHITE_SHIFT)
+			mask = grey_mask | color_mask | (color_mask << COLLISION_WHITE_SHIFT)
 	
 	object.collision_layer = layer
 	object.collision_mask = mask
-	
-	if material != null:
-		var is_black := _state == State.Black or _state == State.TransitionToBlack
-		material.set(SHADER_SWITCH_COLORS, is_black)
+
+
+func _apply_color_to_material(material: Material) -> void:
+	var is_black := _state == State.Black or _state == State.TransitionToBlack
+	material.set(SHADER_SWITCH_COLORS, is_black)

@@ -17,6 +17,6 @@ enum PlatformColor {
 
 func _ready() -> void:
 	super._ready()
-	collision_switcher.material = platform_sprite.material
+	collision_switcher.add_material(platform_sprite.material)
 	if initial_color == PlatformColor.Black:
 		collision_switcher.switch_color()

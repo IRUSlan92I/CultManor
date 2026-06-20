@@ -35,7 +35,12 @@ material = SubResource("ShaderMaterial_wa58h")
 [node name="CollisionShape2D" parent="." index="2" unique_id=175449124]
 shape = SubResource("RectangleShape2D_vol56")
 
+[node name="CollisionSwitcher" parent="." index="3" unique_id=542648449 node_paths=PackedStringArray("objects")]
+objects = [NodePath(".."), NodePath("../Area2D")]
+
 [node name="Area2D" type="Area2D" parent="." index="4" unique_id=1655744842]
+collision_layer = 0
+collision_mask = 192
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0" unique_id=1261028767]
 position = Vector2(0, -4.5)

@@ -59,8 +59,8 @@ process_material = SubResource("ParticleProcessMaterial_bfpdl")
 position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_xln5q")
 
-[node name="CollisionSwitcher" parent="." unique_id=601548821 node_paths=PackedStringArray("object") instance=ExtResource("2_j06tb")]
-object = NodePath("..")
+[node name="CollisionSwitcher" parent="." unique_id=601548821 node_paths=PackedStringArray("objects") instance=ExtResource("2_j06tb")]
+objects = [NodePath("..")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=45512317]
 process_callback = 0
@@ -75,6 +75,10 @@ drag_bottom_margin = 0.1
 
 [node name="Pickups" type="Node2D" parent="." unique_id=958829860]
 position = Vector2(0, -24)
+
+[node name="SwitchBufferTimer" type="Timer" parent="." unique_id=115300327]
+wait_time = 0.5
+one_shot = true
 
 [node name="JumpBufferTimer" type="Timer" parent="." unique_id=740877224]
 wait_time = 0.1
@@ -240,3 +244,5 @@ jump_right_state = NodePath("../JumpRightState")
 fall_state = NodePath("../FallState")
 fall_left_state = NodePath("../FallLeftState")
 fall_right_state = NodePath("../FallRightState")
+
+[connection signal="timeout" from="SwitchBufferTimer" to="." method="_on_switch_buffer_timer_timeout"]
