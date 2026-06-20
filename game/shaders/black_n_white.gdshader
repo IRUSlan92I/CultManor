@@ -9,12 +9,14 @@ uniform float threshold : hint_range(0.0, 1.0) = 0.5;
 uniform float speed : hint_range(0.0, 10.0) = 0.5;
 uniform float intensity : hint_range(0.0, 1.0) = 1.0;
 uniform float scale : hint_range(0.0, 100.0) = 20.0;
+uniform float seed : hint_range(0.0, 1.0) = 0.0;
+uniform vec2 direction = vec2(1.0, 1.0);
 uniform bool use_world_pos = false;
 
 vec2 random(vec2 uv){
     uv = vec2( dot(uv, vec2(127.1,311.7) ),
                dot(uv, vec2(269.5,183.3) ) );
-    return -1.0 + 2.0 * fract(sin(uv) * 43758.5453123);
+    return -1.0 + 2.0 * fract((sin(uv) + seed) * 43758.5453123);
 }
 
 float noise(vec2 uv) {
@@ -47,7 +49,7 @@ void fragment() {
 			is_black = !is_black;
 		}
 		if (intensity < 1.0) {
-			vec2 coord = noise_uv * scale + TIME * speed;
+			vec2 coord = noise_uv * scale + TIME * speed * normalize(direction);
 
 			if (noise(coord) > intensity) {
 				is_black = !is_black;

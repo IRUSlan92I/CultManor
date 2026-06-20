@@ -5,6 +5,7 @@ extends Area2D
 enum Type {
 	None,
 	Water,
+	Cultist,
 }
 
 

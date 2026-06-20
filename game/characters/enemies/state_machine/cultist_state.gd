@@ -6,7 +6,7 @@ const DIRECTION_LEFT = -1
 const DIRECTION_RIGHT = 1
 
 
-@export var cultist: AbstractCultist
+@export var cultist: Cultist
 
 
 func _get_colliding_player(ray_cast: RayCast2D) -> Player:

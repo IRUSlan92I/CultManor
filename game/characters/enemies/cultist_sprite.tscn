@@ -1,18 +1,11 @@
 [gd_scene format=3 uid="uid://dtxiercm8dsfm"]
 
-[ext_resource type="Shader" uid="uid://lqq1mg6l1qqe" path="res://game/shaders/black_n_white.gdshader" id="1_ew6gn"]
+[ext_resource type="Material" uid="uid://dwgqr50guokxg" path="res://game/materials/cultist.tres" id="1_1pedr"]
+[ext_resource type="Script" uid="uid://bmk0r5ovfi60u" path="res://game/characters/enemies/cultist_sprite.gd" id="2_ew6gn"]
 [ext_resource type="Texture2D" uid="uid://drk8j57acajrq" path="res://images/characters/cultist.png" id="2_g4n4l"]
-[ext_resource type="Script" uid="uid://dkxmwkjttbf2d" path="res://game/characters/enemies/cultist_sprite.gd" id="3_ef0vi"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_vecdo"]
-shader = ExtResource("1_ew6gn")
-shader_parameter/black_color = Color(0, 0, 0, 1)
-shader_parameter/white_color = Color(1, 1, 1, 1)
-shader_parameter/switch_colors = false
-shader_parameter/threshold = 0.5
-shader_parameter/speed = 5.0
-shader_parameter/intensity = 1.0
-shader_parameter/scale = 20.0
+[sub_resource type="ViewportTexture" id="ViewportTexture_bhunq"]
+viewport_path = NodePath("SubViewport")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l58xb"]
 atlas = ExtResource("2_g4n4l")
@@ -177,7 +170,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_x6npu")
 }],
-"loop": true,
+"loop": 1,
 "name": &"chase_left",
 "speed": 20.0
 }, {
@@ -206,7 +199,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0xs27")
 }],
-"loop": true,
+"loop": 1,
 "name": &"chase_right",
 "speed": 20.0
 }, {
@@ -214,7 +207,7 @@ animations = [{
 "duration": 10.0,
 "texture": SubResource("AtlasTexture_tjvyk")
 }],
-"loop": true,
+"loop": 1,
 "name": &"fall",
 "speed": 5.0
 }, {
@@ -222,7 +215,7 @@ animations = [{
 "duration": 5.0,
 "texture": SubResource("AtlasTexture_vecdo")
 }],
-"loop": true,
+"loop": 1,
 "name": &"fall_left",
 "speed": 5.0
 }, {
@@ -230,7 +223,7 @@ animations = [{
 "duration": 5.0,
 "texture": SubResource("AtlasTexture_qly8p")
 }],
-"loop": true,
+"loop": 1,
 "name": &"fall_right",
 "speed": 5.0
 }, {
@@ -244,7 +237,7 @@ animations = [{
 "duration": 5.0,
 "texture": SubResource("AtlasTexture_ijx3p")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -252,7 +245,7 @@ animations = [{
 "duration": 5.0,
 "texture": SubResource("AtlasTexture_klrad")
 }],
-"loop": true,
+"loop": 1,
 "name": &"jump",
 "speed": 5.0
 }, {
@@ -260,7 +253,7 @@ animations = [{
 "duration": 5.0,
 "texture": SubResource("AtlasTexture_rjy0i")
 }],
-"loop": true,
+"loop": 1,
 "name": &"jump_left",
 "speed": 5.0
 }, {
@@ -268,7 +261,7 @@ animations = [{
 "duration": 5.0,
 "texture": SubResource("AtlasTexture_ps2ar")
 }],
-"loop": true,
+"loop": 1,
 "name": &"jump_right",
 "speed": 5.0
 }, {
@@ -285,7 +278,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_soo8x")
 }],
-"loop": true,
+"loop": 1,
 "name": &"look_around",
 "speed": 5.0
 }, {
@@ -305,7 +298,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vbirv")
 }],
-"loop": false,
+"loop": 0,
 "name": &"look_around_1",
 "speed": 5.0
 }, {
@@ -325,7 +318,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hrljr")
 }],
-"loop": false,
+"loop": 0,
 "name": &"look_around_2",
 "speed": 5.0
 }, {
@@ -354,7 +347,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_x6npu")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_left",
 "speed": 10.0
 }, {
@@ -383,13 +376,21 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0xs27")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_right",
 "speed": 10.0
 }]
 
-[node name="CultistSprite" type="AnimatedSprite2D" unique_id=351120861]
-material = SubResource("ShaderMaterial_vecdo")
+[node name="CultistSprite" type="Sprite2D" unique_id=1870874123]
+material = ExtResource("1_1pedr")
+texture = SubResource("ViewportTexture_bhunq")
+script = ExtResource("2_ew6gn")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1722886587]
+transparent_bg = true
+size = Vector2i(32, 32)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SubViewport" unique_id=1233349440]
+position = Vector2(16, 16)
 sprite_frames = SubResource("SpriteFrames_2wrno")
 animation = &"idle"
-script = ExtResource("3_ef0vi")

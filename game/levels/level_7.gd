@@ -6,12 +6,14 @@ const ANIMATION_NAME = "final_cutscene"
 
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
 @onready var fake_player : PlayerSprite = $Cutscene/FakePlayer
+@onready var fake_cultist : CultistSprite = $Cutscene/FakeCultist
 @onready var cutscene_camera : Camera2D = $Cutscene/Camera2D
 
 @onready var cutscene_room_center : Vector2 = $Cutscene/RoomCenter.position
 
 
 func _ready() -> void:
+	$CanvasLayer/MarginContainer/ThanksLabel.hide()
 	animation_player.play("hide_cutscene_elements")
 	super._ready()
 
@@ -40,6 +42,15 @@ func _play_cutscene() -> void:
 
 func _play_cutscene_boop() -> void:
 	SoundManager.play_sfx_stream(SoundManager.sfx_stream_haze, cutscene_room_center)
+
+
+func _play_fake_cultist_animation() -> void:
+	fake_cultist.animated_sprite.play(CultistSprite.ANIMATION_LOOK_AROUND, 0.5)
+
+
+func _make_fake_cultist_grey() -> void:
+	var tween := create_tween()
+	tween.tween_property(fake_cultist.material, CultistSprite.SHADER_INTENSITY, 0.5, 5)
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:

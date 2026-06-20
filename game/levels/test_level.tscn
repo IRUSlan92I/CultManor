@@ -23,18 +23,16 @@
 [ext_resource type="PackedScene" uid="uid://b0pxe00dlyx7t" path="res://game/objects/informative/switch_action_tip.tscn" id="12_r01v2"]
 [ext_resource type="PackedScene" uid="uid://dsww084wps0d0" path="res://game/objects/interactive/lever.tscn" id="13_00l78"]
 [ext_resource type="PackedScene" uid="uid://dx1yasi8wlaye" path="res://game/objects/decorative/bookstand.tscn" id="13_g3b4m"]
-[ext_resource type="PackedScene" uid="uid://cb0w6mt8g4mer" path="res://game/characters/enemies/gray_cultist.tscn" id="18_blgb8"]
-[ext_resource type="PackedScene" uid="uid://cutjutvd8dqqc" path="res://game/characters/enemies/black_cultist.tscn" id="19_ohfy3"]
-[ext_resource type="PackedScene" uid="uid://bv2gahb4wxgb1" path="res://game/characters/enemies/white_cultist.tscn" id="20_rt0xo"]
+[ext_resource type="PackedScene" uid="uid://bx0luh4vdob3q" path="res://game/characters/enemies/cultist.tscn" id="27_te8eb"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_lxcjr"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h1708"]
 resource_local_to_scene = true
 shader = ExtResource("4_lxcjr")
 shader_parameter/glow_interval = 1.0
 shader_parameter/glow_radius = 1.0
 shader_parameter/travel_time = 5.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_te8eb"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a50fq"]
 resource_local_to_scene = true
 shader = ExtResource("4_lxcjr")
 shader_parameter/glow_interval = 1.0
@@ -51,12 +49,12 @@ point_count = 2
 script = ExtResource("2_a2sw7")
 
 [node name="ConnectionCableDoor" parent="ConnectionCables" parent_id_path=PackedInt32Array(279521385) index="0" unique_id=1234500644 instance=ExtResource("3_a50fq")]
-material = SubResource("ShaderMaterial_lxcjr")
+material = SubResource("ShaderMaterial_h1708")
 position = Vector2(208, 13)
 points = PackedVector2Array(0, 0, 92, 0, 92, -49, 199, -49)
 
 [node name="ConnectionCablePlatform" parent="ConnectionCables" parent_id_path=PackedInt32Array(279521385) index="1" unique_id=561577961 instance=ExtResource("3_a50fq")]
-material = SubResource("ShaderMaterial_te8eb")
+material = SubResource("ShaderMaterial_a50fq")
 position = Vector2(520, -35)
 points = PackedVector2Array(0, 0, 0, -76, -454, -76, -454, 3)
 
@@ -142,14 +140,22 @@ position = Vector2(306, -56)
 [node name="TriangleKeyPickup" parent="Pickups" parent_id_path=PackedInt32Array(1113969064) index="3" unique_id=465768166 instance=ExtResource("10_dea75")]
 position = Vector2(803, -56)
 
-[node name="GrayEnemy" parent="Enemies" parent_id_path=PackedInt32Array(857989772) index="0" unique_id=2016246874 instance=ExtResource("18_blgb8")]
-position = Vector2(1552, 96)
-
-[node name="BlackEnemy" parent="Enemies" parent_id_path=PackedInt32Array(857989772) index="1" unique_id=1849216089 instance=ExtResource("19_ohfy3")]
-position = Vector2(936, -48)
-
-[node name="WhiteEnemy" parent="Enemies" parent_id_path=PackedInt32Array(857989772) index="2" unique_id=1447247338 instance=ExtResource("20_rt0xo")]
+[node name="Cultist1" parent="Enemies" parent_id_path=PackedInt32Array(857989772) index="0" unique_id=1676614852 instance=ExtResource("27_te8eb")]
 position = Vector2(743, -48)
+collision_layer = 64
+collision_mask = 33
+
+[node name="Cultist2" parent="Enemies" parent_id_path=PackedInt32Array(857989772) index="1" unique_id=1025404981 instance=ExtResource("27_te8eb")]
+position = Vector2(936, -48)
+collision_layer = 4
+collision_mask = 3
+type = 1
+
+[node name="Cultist3" parent="Enemies" parent_id_path=PackedInt32Array(857989772) index="2" unique_id=1444846763 instance=ExtResource("27_te8eb")]
+position = Vector2(1552, 96)
+collision_layer = 16
+collision_mask = 35
+type = 2
 
 [node name="Player" parent="." index="6" unique_id=1058744997]
 position = Vector2(-13, 0)
