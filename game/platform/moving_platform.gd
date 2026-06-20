@@ -66,7 +66,7 @@ func _select_animation() -> void:
 			icon_sprite.play(ANIMATION_SELF_MOVING)
 		return
 	
-	var direction : String = ANIMATION_MAP[type][not is_reverse]
+	var direction : String = ANIMATION_MAP[type][is_reverse]
 	var suffix := ANIMATION_ACTIVE_SUFFIX if is_moving else ANIMATION_STATIC_SUFFIX
 	icon_sprite.play(ANIMATION_MOVING_PREFIX + direction + suffix)
 

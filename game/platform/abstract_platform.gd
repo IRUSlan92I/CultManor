@@ -36,6 +36,7 @@ const MAX_WIDTH = TILE_SIZE * 32
 
 
 @onready var collision: CollisionShape2D = $CollisionShape2D
+@onready var standing_check_collision: CollisionShape2D = $Area2D/CollisionShape2D
 @onready var sub_viewport: SubViewport = $SubViewport
 @onready var platform_sprite: Sprite2D = $Sprite2D
 @onready var platform_rect: ColorRect = $SubViewport/PlatformRect
@@ -50,8 +51,8 @@ func _ready() -> void:
 
 
 func rebuild_platform() -> void:
-	var shape := collision.shape as RectangleShape2D
-	shape.size.x = platform_width
+	collision.shape.size.x = platform_width
+	standing_check_collision.shape.size.x = platform_width - 4
 	
 	var platfor_size := Vector2(platform_width, TILE_SIZE)
 	

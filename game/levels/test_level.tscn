@@ -61,8 +61,7 @@ position = Vector2(520, -35)
 points = PackedVector2Array(0, 0, 0, -76, -454, -76, -454, 3)
 
 [node name="SelfMovingPlatform" parent="Platforms" parent_id_path=PackedInt32Array(1140671629) index="0" unique_id=349378100 node_paths=PackedStringArray("path", "path_follow") instance=ExtResource("4_h1708")]
-position = Vector2(201.03143, -75)
-rotation = -3.1415925
+position = Vector2(229, -75)
 path = NodePath("../Path2D")
 path_follow = NodePath("../Path2D/PathFollow2D")
 platform_width = 104
@@ -71,9 +70,7 @@ platform_width = 104
 curve = SubResource("Curve2D_h1708")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Platforms/Path2D" index="0" unique_id=1206016336]
-position = Vector2(201.03143, -75)
-rotation = 3.1415927
-progress = 27.97701
+position = Vector2(229, -75)
 rotates = false
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Platforms/Path2D/PathFollow2D" index="0" unique_id=1642833722]
