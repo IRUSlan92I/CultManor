@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cpntbx0bpni2t"]
+
+[ext_resource type="PackedScene" uid="uid://wpkj48bqyuy2" path="res://game/platform/abstract_color_platform.tscn" id="1_xxggt"]
+[ext_resource type="Shader" uid="uid://d4hm3vjx1rhsf" path="res://game/shaders/platform.gdshader" id="2_4n4xw"]
+[ext_resource type="Script" uid="uid://d2xfxje428psp" path="res://game/platform/touch_color_platform.gd" id="2_wa58h"]
+[ext_resource type="Texture2D" uid="uid://cpcuokqv8u2xa" path="res://images/level/platform.png" id="3_wa58h"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_4n4xw"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wa58h"]
+resource_local_to_scene = true
+shader = ExtResource("2_4n4xw")
+shader_parameter/tile_size = 8.0
+shader_parameter/platform_width = 24.0
+shader_parameter/atlas = ExtResource("3_wa58h")
+shader_parameter/seed = 0.12241629
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vol56"]
+resource_local_to_scene = true
+size = Vector2(16, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
+size = Vector2(12, 1)
+
+[node name="TouchColorPlatform" unique_id=137546339 instance=ExtResource("1_xxggt")]
+script = ExtResource("2_wa58h")
+
+[node name="Sprite2D" parent="." index="0" unique_id=264863796]
+texture = SubResource("ViewportTexture_4n4xw")
+
+[node name="PlatformRect" parent="SubViewport" parent_id_path=PackedInt32Array(226200089) index="0" unique_id=794315918]
+material = SubResource("ShaderMaterial_wa58h")
+
+[node name="CollisionShape2D" parent="." index="2" unique_id=175449124]
+shape = SubResource("RectangleShape2D_vol56")
+
+[node name="Area2D" type="Area2D" parent="." index="4" unique_id=1655744842]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0" unique_id=1261028767]
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_bhunq")
+debug_color = Color(0.9020316, 0.24375501, 0.4918024, 0.41960785)

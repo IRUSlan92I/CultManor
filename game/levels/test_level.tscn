@@ -9,7 +9,7 @@
 [ext_resource type="Shader" uid="uid://dbsrm43wcolg4" path="res://game/shaders/connection_cable.gdshader" id="4_lxcjr"]
 [ext_resource type="PackedScene" uid="uid://g0n5npbt3hb2" path="res://game/doors/circle_door.tscn" id="4_yrqjd"]
 [ext_resource type="PackedScene" uid="uid://cojxqx5al7kyv" path="res://game/doors/locked_door.tscn" id="5_1skah"]
-[ext_resource type="PackedScene" uid="uid://bwmd8w677p7k3" path="res://game/platform/color_switching_platform.tscn" id="5_a50fq"]
+[ext_resource type="PackedScene" uid="uid://bwmd8w677p7k3" path="res://game/platform/trigger_color_platform.tscn" id="5_a50fq"]
 [ext_resource type="PackedScene" uid="uid://dwvv5dj8lqif2" path="res://game/doors/triangle_door.tscn" id="6_75eok"]
 [ext_resource type="PackedScene" uid="uid://b7imlh4sl036i" path="res://game/doors/square_door.tscn" id="7_1skah"]
 [ext_resource type="PackedScene" uid="uid://cudbspmpx6sik" path="res://game/pickups/book_pickup.tscn" id="7_fq0h3"]

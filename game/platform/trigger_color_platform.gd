@@ -1,5 +1,5 @@
 @tool
-class_name ColorSwitchingPlatform
+class_name TriggerColorPlatform
 extends AbstractColorPlatform
 
 

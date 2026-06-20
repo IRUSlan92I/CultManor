@@ -4,7 +4,7 @@
 [ext_resource type="Material" uid="uid://2hd2pw5cgn1r" path="res://game/materials/platform_gray.tres" id="2_2ivtb"]
 [ext_resource type="Texture2D" uid="uid://cpcuokqv8u2xa" path="res://images/level/platform.png" id="2_31xwx"]
 [ext_resource type="Shader" uid="uid://d4hm3vjx1rhsf" path="res://game/shaders/platform.gdshader" id="2_jsq8n"]
-[ext_resource type="Texture2D" uid="uid://bi2h4g71bro7v" path="res://images/level/platform-icons.png" id="5_hgabr"]
+[ext_resource type="Texture2D" uid="uid://bi2h4g71bro7v" path="res://images/level/platform_icons.png" id="5_hgabr"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_2ivtb"]
 viewport_path = NodePath("SubViewport")
@@ -224,22 +224,6 @@ region = Rect2(16, 48, 8, 8)
 [sub_resource type="AtlasTexture" id="AtlasTexture_egipa"]
 atlas = ExtResource("5_hgabr")
 region = Rect2(8, 48, 8, 8)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4g8bw"]
-atlas = ExtResource("5_hgabr")
-region = Rect2(0, 64, 8, 8)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mhe6c"]
-atlas = ExtResource("5_hgabr")
-region = Rect2(8, 64, 8, 8)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d8o7t"]
-atlas = ExtResource("5_hgabr")
-region = Rect2(16, 64, 8, 8)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_txrl7"]
-atlas = ExtResource("5_hgabr")
-region = Rect2(24, 64, 8, 8)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j4n83"]
 animations = [{
@@ -470,31 +454,11 @@ animations = [{
 "loop": 1,
 "name": &"self_moving",
 "speed": 10.0
-}, {
-"frames": [{
-"duration": 15.0,
-"texture": SubResource("AtlasTexture_4g8bw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mhe6c")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d8o7t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_txrl7")
-}],
-"loop": 1,
-"name": &"timer",
-"speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jsq8n"]
 resource_local_to_scene = true
 size = Vector2(16, 7)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
-size = Vector2(12, 1)
 
 [node name="AbstractPlatform" type="AnimatableBody2D" unique_id=137546339]
 collision_mask = 0
@@ -531,14 +495,8 @@ size_flags_vertical = 4
 [node name="IconSprite" type="AnimatedSprite2D" parent="SubViewport" unique_id=1917841765]
 position = Vector2(8, 4)
 sprite_frames = SubResource("SpriteFrames_j4n83")
+animation = &"self_moving"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=175449124]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_jsq8n")
-
-[node name="Area2D" type="Area2D" parent="." unique_id=1655744842]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1261028767]
-position = Vector2(0, -4.5)
-shape = SubResource("RectangleShape2D_bhunq")
-debug_color = Color(0.9020316, 0.24375501, 0.4918024, 0.41960785)
