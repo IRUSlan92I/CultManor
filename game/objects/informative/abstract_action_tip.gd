@@ -1,3 +1,4 @@
+@tool
 class_name AbstractActionTip
 extends Node2D
 
@@ -7,8 +8,11 @@ extends Node2D
 
 
 func _ready() -> void:
-	_updated_by_input_type(InputManager.get_type())
-	InputManager.type_changed.connect(_updated_by_input_type)
+	if Engine.is_editor_hint():
+		_updated_by_input_type(InputManager.Type.Keyboard)
+	else:
+		_updated_by_input_type(InputManager.get_type())
+		InputManager.type_changed.connect(_updated_by_input_type)
 
 
 func _updated_by_input_type(type: InputManager.Type) -> void:
