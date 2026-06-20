@@ -3,6 +3,9 @@ class_name CollisionSwitcher
 extends Node
 
 
+signal switched
+
+
 enum Collisions {
 	GREY_WORLD = 1 << 0,
 	GREY_ENEMY = 1 << 4,
@@ -82,6 +85,7 @@ func switch_color(switch_time := 0.0) -> void:
 	
 	if is_zero_approx(switch_time):
 		_state = State.Black if _state == State.White else State.White
+		switched.emit()
 	else:
 		_state = State.TransitionToBlack if _state == State.White else State.TransitionToWhite
 		
@@ -111,6 +115,7 @@ func _update_state() -> void:
 			_state = State.Black
 		State.TransitionToWhite:
 			_state = State.White
+	switched.emit()
 
 
 func _apply_color() -> void:

@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bwmd8w677p7k3" path="res://game/platform/trigger_color_platform.tscn" id="5_a50fq"]
 [ext_resource type="PackedScene" uid="uid://dwvv5dj8lqif2" path="res://game/doors/triangle_door.tscn" id="6_75eok"]
 [ext_resource type="PackedScene" uid="uid://b7imlh4sl036i" path="res://game/doors/square_door.tscn" id="7_1skah"]
+[ext_resource type="PackedScene" uid="uid://cpntbx0bpni2t" path="res://game/platform/touch_color_platform.tscn" id="7_a50fq"]
 [ext_resource type="PackedScene" uid="uid://cudbspmpx6sik" path="res://game/pickups/book_pickup.tscn" id="7_fq0h3"]
 [ext_resource type="PackedScene" uid="uid://dioc4r03dfleq" path="res://game/doors/book_door.tscn" id="8_75eok"]
 [ext_resource type="PackedScene" uid="uid://c4gqqhlew67ay" path="res://game/pickups/circle_key_pickup.tscn" id="8_g1txn"]
@@ -25,14 +26,14 @@
 [ext_resource type="PackedScene" uid="uid://dx1yasi8wlaye" path="res://game/objects/decorative/bookstand.tscn" id="13_g3b4m"]
 [ext_resource type="PackedScene" uid="uid://bx0luh4vdob3q" path="res://game/characters/enemies/cultist.tscn" id="27_te8eb"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_h1708"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lxcjr"]
 resource_local_to_scene = true
 shader = ExtResource("4_lxcjr")
 shader_parameter/glow_interval = 1.0
 shader_parameter/glow_radius = 1.0
 shader_parameter/travel_time = 5.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_a50fq"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_te8eb"]
 resource_local_to_scene = true
 shader = ExtResource("4_lxcjr")
 shader_parameter/glow_interval = 1.0
@@ -49,12 +50,12 @@ point_count = 2
 script = ExtResource("2_a2sw7")
 
 [node name="ConnectionCableDoor" parent="ConnectionCables" parent_id_path=PackedInt32Array(279521385) index="0" unique_id=1234500644 instance=ExtResource("3_a50fq")]
-material = SubResource("ShaderMaterial_h1708")
+material = SubResource("ShaderMaterial_lxcjr")
 position = Vector2(208, 13)
 points = PackedVector2Array(0, 0, 92, 0, 92, -49, 199, -49)
 
 [node name="ConnectionCablePlatform" parent="ConnectionCables" parent_id_path=PackedInt32Array(279521385) index="1" unique_id=561577961 instance=ExtResource("3_a50fq")]
-material = SubResource("ShaderMaterial_a50fq")
+material = SubResource("ShaderMaterial_te8eb")
 position = Vector2(520, -35)
 points = PackedVector2Array(0, 0, 0, -76, -454, -76, -454, 3)
 
@@ -79,6 +80,10 @@ position = Vector2(66, -32)
 collision_layer = 2
 initial_color = 1
 platform_width = 104
+
+[node name="TouchColorPlatform" parent="Platforms" parent_id_path=PackedInt32Array(1140671629) index="3" unique_id=1702050833 instance=ExtResource("7_a50fq")]
+position = Vector2(200, -25)
+platform_width = 80
 
 [node name="LeverDoor" parent="Doors" parent_id_path=PackedInt32Array(1468144392) index="0" unique_id=1575363350 instance=ExtResource("2_r01v2")]
 position = Vector2(416, -56)
@@ -142,8 +147,6 @@ position = Vector2(803, -56)
 
 [node name="Cultist1" parent="Enemies" parent_id_path=PackedInt32Array(857989772) index="0" unique_id=1676614852 instance=ExtResource("27_te8eb")]
 position = Vector2(743, -48)
-collision_layer = 64
-collision_mask = 33
 
 [node name="Cultist2" parent="Enemies" parent_id_path=PackedInt32Array(857989772) index="1" unique_id=1025404981 instance=ExtResource("27_te8eb")]
 position = Vector2(936, -48)
