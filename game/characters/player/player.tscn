@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://8yd8f5x1hujv" path="res://game/characters/water_splash.tscn" id="2_eeksw"]
 [ext_resource type="PackedScene" uid="uid://5qlocc0yu8ug" path="res://game/collision_switcher.tscn" id="2_j06tb"]
 [ext_resource type="PackedScene" uid="uid://cvx6akiplg21s" path="res://game/characters/player/player_sprite.tscn" id="2_n6ad3"]
+[ext_resource type="Shader" uid="uid://cdakbomof1cc6" path="res://game/shaders/invert.gdshader" id="4_v4yks"]
 [ext_resource type="PackedScene" uid="uid://bdk23k2bypj8w" path="res://game/characters/player/state_machine/player_state_machine.tscn" id="4_ybe51"]
 [ext_resource type="PackedScene" uid="uid://c0d4wfdg7xjti" path="res://game/characters/player/state_machine/player_state.tscn" id="5_65114"]
 [ext_resource type="Script" uid="uid://bnxccvt265hlu" path="res://game/characters/player/state_machine/idle_state.gd" id="6_3qf5w"]
@@ -18,6 +19,9 @@
 [ext_resource type="Script" uid="uid://cmimnl6jf78ao" path="res://game/characters/player/state_machine/falling_left_state.gd" id="14_2lnxg"]
 [ext_resource type="Script" uid="uid://5s7ko6pcqagy" path="res://game/characters/player/state_machine/falling_right_state.gd" id="15_bfpdl"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eeksw"]
+shader = ExtResource("4_v4yks")
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bhunq"]
 lifetime_randomness = 0.5
 particle_flag_disable_z = true
@@ -26,7 +30,7 @@ emission_sphere_radius = 2.0
 spread = 15.0
 initial_velocity_min = -25.0
 initial_velocity_max = 25.0
-gravity = Vector3(0, 0, 0)
+gravity = Vector3(0, 9.8, 0)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bfpdl"]
 particle_flag_disable_z = true
@@ -57,12 +61,14 @@ animation = &"jump_right"
 position = Vector2(0, -16)
 
 [node name="BloodSplash" type="GPUParticles2D" parent="." unique_id=218762198]
+material = SubResource("ShaderMaterial_eeksw")
 position = Vector2(0, -4)
 emitting = false
 amount = 32
 one_shot = true
 preprocess = 0.2
 explosiveness = 1.0
+fixed_fps = 10
 process_material = SubResource("ParticleProcessMaterial_bhunq")
 
 [node name="SwitchEffect" type="GPUParticles2D" parent="." unique_id=405618377]
