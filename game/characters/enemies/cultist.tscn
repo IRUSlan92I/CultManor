@@ -48,13 +48,13 @@ collision_layer = 64
 collision_mask = 33
 script = ExtResource("1_ah13v")
 
-[node name="WaterSplash" parent="." unique_id=658940825 instance=ExtResource("2_go1hq")]
-position = Vector2(0, -14)
-
 [node name="CultistSprite" parent="." unique_id=1997264413 instance=ExtResource("3_mbt3t")]
 material = SubResource("ShaderMaterial_ah13v")
 position = Vector2(0, 1)
 texture = SubResource("ViewportTexture_go1hq")
+
+[node name="WaterSplash" parent="." unique_id=658940825 instance=ExtResource("2_go1hq")]
+position = Vector2(0, -14)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=185651284]
 position = Vector2(0, 2)
@@ -110,6 +110,7 @@ collision_mask = 161
 
 [node name="KillingArea" parent="." unique_id=1891922549 instance=ExtResource("5_500rx")]
 collision_mask = 128
+type = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillingArea" unique_id=1710758452]
 position = Vector2(0, 2)

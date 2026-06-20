@@ -38,6 +38,7 @@ const MUSIC_BUS = "Music"
 @export var sfx_stream_player_lost : AudioStream
 @export var sfx_stream_player_spoted : AudioStream
 @export var sfx_stream_splash : AudioStream
+@export var sfx_stream_blood : AudioStream
 @export var sfx_stream_switch : AudioStream
 
 @export_group("Music Streams", "music_stream")

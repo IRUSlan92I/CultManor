@@ -21,6 +21,7 @@
 [ext_resource type="AudioStream" uid="uid://ckmpft46wjgqs" path="res://sound/music/main_menu.wav" id="17_g6nb7"]
 [ext_resource type="AudioStream" uid="uid://ttemdy7avyh7" path="res://sound/music/gameplay.wav" id="17_l5yxe"]
 [ext_resource type="AudioStream" uid="uid://ckykxq8ugds41" path="res://sound/sfx/splash.wav" id="18_4cvue"]
+[ext_resource type="AudioStream" uid="uid://b18trj54c3x4e" path="res://sound/sfx/blood.wav" id="19_yvugr"]
 
 [node name="SoundManager" type="Node" unique_id=1917953940]
 process_mode = 3
@@ -48,6 +49,7 @@ sfx_stream_lever = ExtResource("15_3d1ws")
 sfx_stream_player_lost = ExtResource("8_6ll5c")
 sfx_stream_player_spoted = ExtResource("9_q7cyi")
 sfx_stream_splash = ExtResource("18_4cvue")
+sfx_stream_blood = ExtResource("19_yvugr")
 sfx_stream_switch = ExtResource("7_ab171")
 music_stream_gameplay = ExtResource("17_l5yxe")
 music_stream_main_menu = ExtResource("17_g6nb7")

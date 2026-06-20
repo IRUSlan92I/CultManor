@@ -24,9 +24,10 @@ var _is_switching_needed := false
 
 
 @onready var camera : Camera2D = $Camera2D
-@onready var water_splash : GPUParticles2D = $WaterSplash
 @onready var sprite : AnimatedSprite2D = $PlayerSprite
-@onready var particles : GPUParticles2D = $GPUParticles2D
+@onready var water_splash : GPUParticles2D = $WaterSplash
+@onready var blood_splash : GPUParticles2D = $BloodSplash
+@onready var switch_effect : GPUParticles2D = $SwitchEffect
 @onready var collision_switcher : CollisionSwitcher = $CollisionSwitcher
 @onready var pickups : Node2D = $Pickups
 
@@ -95,11 +96,11 @@ func _input(event: InputEvent) -> void:
 
 
 func _switch() -> void:	
-	if center_area.get_overlapping_bodies().size() == 0 and not particles.emitting:
+	if center_area.get_overlapping_bodies().size() == 0 and not switch_effect.emitting:
 		SoundManager.play_sfx_stream(SoundManager.sfx_stream_switch, global_position)
 		collision_switcher.switch_color()
 		switch_buffer_timer.stop()
-		particles.restart()
+		switch_effect.restart()
 		_is_switching_needed = false
 
 
@@ -108,6 +109,9 @@ func kill(type := KillingArea.Type.None) -> void:
 		KillingArea.Type.Water:
 			SoundManager.play_sfx_stream(SoundManager.sfx_stream_splash, global_position)
 			water_splash.restart()
+		KillingArea.Type.Cultist:
+			SoundManager.play_sfx_stream(SoundManager.sfx_stream_blood, global_position)
+			blood_splash.restart()
 	is_dead = true
 
 

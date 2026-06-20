@@ -18,6 +18,16 @@
 [ext_resource type="Script" uid="uid://cmimnl6jf78ao" path="res://game/characters/player/state_machine/falling_left_state.gd" id="14_2lnxg"]
 [ext_resource type="Script" uid="uid://5s7ko6pcqagy" path="res://game/characters/player/state_machine/falling_right_state.gd" id="15_bfpdl"]
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bhunq"]
+lifetime_randomness = 0.5
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 2.0
+spread = 15.0
+initial_velocity_min = -25.0
+initial_velocity_max = 25.0
+gravity = Vector3(0, 0, 0)
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bfpdl"]
 particle_flag_disable_z = true
 emission_shape = 3
@@ -40,13 +50,22 @@ collision_layer = 128
 collision_mask = 33
 script = ExtResource("1_xln5q")
 
-[node name="WaterSplash" parent="." unique_id=658940825 instance=ExtResource("2_eeksw")]
-position = Vector2(0, -16)
-
 [node name="PlayerSprite" parent="." unique_id=237719081 instance=ExtResource("2_n6ad3")]
 animation = &"jump_right"
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=405618377]
+[node name="WaterSplash" parent="." unique_id=658940825 instance=ExtResource("2_eeksw")]
+position = Vector2(0, -16)
+
+[node name="BloodSplash" type="GPUParticles2D" parent="." unique_id=218762198]
+position = Vector2(0, -4)
+emitting = false
+amount = 32
+one_shot = true
+preprocess = 0.2
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_bhunq")
+
+[node name="SwitchEffect" type="GPUParticles2D" parent="." unique_id=405618377]
 emitting = false
 amount = 16
 lifetime = 0.25
