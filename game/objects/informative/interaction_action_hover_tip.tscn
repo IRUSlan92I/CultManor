@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bj1en1mlmo6tn"]
+
+[ext_resource type="PackedScene" uid="uid://b24pn1q6u3u5v" path="res://game/objects/informative/abstract_action_tip.tscn" id="1_jo2j3"]
+[ext_resource type="Texture2D" uid="uid://dm52nybfe5efa" path="res://images/level/tips.png" id="2_6frub"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jo2j3"]
+atlas = ExtResource("2_6frub")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n74up"]
+atlas = ExtResource("2_6frub")
+region = Rect2(160, 32, 16, 16)
+
+[node name="InteractionActionHoverTip" unique_id=1961962362 instance=ExtResource("1_jo2j3")]
+
+[node name="SpriteKbd" parent="." index="0" unique_id=948959005]
+texture = SubResource("AtlasTexture_jo2j3")
+
+[node name="SpritePad" parent="." index="1" unique_id=1703375720]
+texture = SubResource("AtlasTexture_n74up")

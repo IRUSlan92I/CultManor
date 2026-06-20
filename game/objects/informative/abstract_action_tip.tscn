@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://byjums4jdva4x" path="res://game/objects/informative/abstract_action_tip.gd" id="1_erg4q"]
 
-[node name="AbstractActionTip" type="Node2D"]
+[node name="AbstractActionTip" type="Node2D" unique_id=1961962362]
 script = ExtResource("1_erg4q")
 
-[node name="SpriteKbd" type="Sprite2D" parent="."]
+[node name="SpriteKbd" type="Sprite2D" parent="." unique_id=948959005]
 
-[node name="SpritePad" type="Sprite2D" parent="."]
+[node name="SpritePad" type="Sprite2D" parent="." unique_id=1703375720]

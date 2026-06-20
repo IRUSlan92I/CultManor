@@ -13,7 +13,7 @@ func _ready() -> void:
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2ho61"]
 atlas = ExtResource("1_xghly")
-region = Rect2(0, 0, 32, 32)
+region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2ho61"]
 shader = ExtResource("2_4nvxe")
@@ -26,24 +26,24 @@ shader_parameter/intensity = 0.6000000285
 shader_parameter/scale = 75.0000035625
 shader_parameter/use_world_pos = false
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6xx0h"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_tl0fg"]
 atlas = ExtResource("1_xghly")
-region = Rect2(32, 0, 16, 16)
+region = Rect2(32, 32, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_b1qtt"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wq20"]
 atlas = ExtResource("1_xghly")
-region = Rect2(32, 16, 16, 16)
+region = Rect2(32, 48, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f0x6e"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6xx0h")
+"texture": SubResource("AtlasTexture_tl0fg")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_b1qtt")
+"texture": SubResource("AtlasTexture_1wq20")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]

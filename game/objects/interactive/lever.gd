@@ -39,7 +39,7 @@ func _activate() -> void:
 	var set_state := func(state: State) -> void:
 		_current_state = state
 		_update_animation()
-		hint_sprite.hide()
+		hover_tip.hide()
 		switching.emit()
 		SoundManager.play_sfx_stream(SoundManager.sfx_stream_lever, global_position)
 	
@@ -61,7 +61,7 @@ func _on_animation_finished() -> void:
 		_update_animation()
 		switched.emit()
 		if _player_in_range:
-			hint_sprite.show()
+			hover_tip.show()
 	
 	match _current_state:
 		State.TurningLeft:

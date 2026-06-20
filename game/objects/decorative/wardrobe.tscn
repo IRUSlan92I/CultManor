@@ -1,12 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://cvhovmnl050os"]
+[gd_scene format=3 uid="uid://cvhovmnl050os"]
 
 [ext_resource type="Texture2D" uid="uid://ddm4gc2g3aj2i" path="res://images/level/objects.png" id="1_610bq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wbqlk"]
 atlas = ExtResource("1_610bq")
-region = Rect2(160, 96, 32, 48)
+region = Rect2(96, 80, 32, 48)
 
-[node name="Wardrobe" type="Node2D"]
+[node name="Wardrobe" type="Node2D" unique_id=1607339750]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=422307570]
 texture = SubResource("AtlasTexture_wbqlk")

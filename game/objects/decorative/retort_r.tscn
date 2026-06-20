@@ -1,12 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0uy410hvlosm"]
+[gd_scene format=3 uid="uid://b0uy410hvlosm"]
 
 [ext_resource type="Texture2D" uid="uid://ddm4gc2g3aj2i" path="res://images/level/objects.png" id="1_gohft"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f54r7"]
 atlas = ExtResource("1_gohft")
-region = Rect2(112, 0, 32, 16)
+region = Rect2(112, 32, 32, 16)
 
-[node name="RetortR" type="Node2D"]
+[node name="RetortR" type="Node2D" unique_id=2131329697]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=889741540]
 texture = SubResource("AtlasTexture_f54r7")

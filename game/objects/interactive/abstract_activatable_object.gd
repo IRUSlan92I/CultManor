@@ -2,26 +2,26 @@ class_name AbstractActivatableObject
 extends Node2D
 
 
-@onready var hint_sprite : Sprite2D = $HintSprite
+@onready var hover_tip : Node2D = $HoverTip
 
 
 var _player_in_range := false
 
 
 func _ready() -> void:
-	hint_sprite.hide()
+	hover_tip.hide()
 
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
-		hint_sprite.show()
+		hover_tip.show()
 		_player_in_range = true
 		body.interacted.connect(_activate)
 
 
 func _on_body_exited(body: Node2D) -> void:
 	if body is Player:
-		hint_sprite.hide()
+		hover_tip.hide()
 		_player_in_range = false
 		body.interacted.disconnect(_activate)
 

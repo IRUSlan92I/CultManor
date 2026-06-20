@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://725frvpqe1c8"]
 
 [ext_resource type="Script" uid="uid://cfqo4k2uarorm" path="res://game/objects/interactive/abstract_activatable_object.gd" id="1_b4djr"]
-[ext_resource type="Texture2D" uid="uid://c42nswehn307r" path="res://images/level/activation_hint.png" id="1_rexes"]
+[ext_resource type="PackedScene" uid="uid://bj1en1mlmo6tn" path="res://game/objects/informative/interaction_action_hover_tip.tscn" id="2_b4djr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n2cvl"]
 
@@ -13,8 +13,7 @@ script = ExtResource("1_b4djr")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2065213362]
 shape = SubResource("CircleShape2D_n2cvl")
 
-[node name="HintSprite" type="Sprite2D" parent="." unique_id=1362423739]
-texture = ExtResource("1_rexes")
+[node name="HoverTip" parent="." unique_id=1961962362 instance=ExtResource("2_b4djr")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

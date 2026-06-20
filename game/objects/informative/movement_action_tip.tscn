@@ -1,20 +1,20 @@
 [gd_scene format=3 uid="uid://be3mqeb784shj"]
 
 [ext_resource type="PackedScene" uid="uid://b24pn1q6u3u5v" path="res://game/objects/informative/abstract_action_tip.tscn" id="1_6vlve"]
-[ext_resource type="Texture2D" uid="uid://ddm4gc2g3aj2i" path="res://images/level/objects.png" id="2_aui55"]
+[ext_resource type="Texture2D" uid="uid://dm52nybfe5efa" path="res://images/level/tips.png" id="2_vi0b2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qoa1y"]
-atlas = ExtResource("2_aui55")
-region = Rect2(0, 96, 32, 32)
+atlas = ExtResource("2_vi0b2")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aui55"]
-atlas = ExtResource("2_aui55")
-region = Rect2(0, 128, 32, 32)
+atlas = ExtResource("2_vi0b2")
+region = Rect2(0, 32, 32, 32)
 
-[node name="MovementActionTip" instance=ExtResource("1_6vlve")]
+[node name="MovementActionTip" unique_id=1113266380 instance=ExtResource("1_6vlve")]
 
-[node name="SpriteKbd" parent="." index="0"]
+[node name="SpriteKbd" parent="." index="0" unique_id=948959005]
 texture = SubResource("AtlasTexture_qoa1y")
 
-[node name="SpritePad" parent="." index="1"]
+[node name="SpritePad" parent="." index="1" unique_id=1703375720]
 texture = SubResource("AtlasTexture_aui55")
