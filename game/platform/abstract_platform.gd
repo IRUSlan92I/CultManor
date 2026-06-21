@@ -9,7 +9,6 @@ const SHADER_PLATFORM_WIDTH = "shader_parameter/platform_width"
 
 const ANIMATION_COLOR_SWITCHING = "color_switching"
 const ANIMATION_HIDING = "hiding"
-const ANIMATION_TIMER = "timer"
 
 const ANIMATION_SELF_MOVING = "self_moving"
 

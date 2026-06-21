@@ -10,3 +10,5 @@ func _ready() -> void:
 	$Objects/LeverPlatform.switching.connect($ConnectionCables/ConnectionCablePlatform.toggle)
 	
 	$Objects/LeverMoving.switching.connect($Platforms/SelfMovingPlatform.toggle)
+	
+	$Platforms/HiddenColorPlatform.set_player(player)

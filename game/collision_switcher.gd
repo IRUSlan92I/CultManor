@@ -3,7 +3,13 @@ class_name CollisionSwitcher
 extends Node
 
 
-signal switched
+signal switched(new_color: CollisionSwitcher.ObjectColor)
+
+
+enum ObjectColor {
+	White,
+	Black,
+}
 
 
 enum Collisions {
@@ -85,12 +91,14 @@ func switch_color(switch_time := 0.0) -> void:
 	
 	if is_zero_approx(switch_time):
 		_state = State.Black if _state == State.White else State.White
-		switched.emit()
+		_emit_switch_signal()
 	else:
 		_state = State.TransitionToBlack if _state == State.White else State.TransitionToWhite
 		
 		_intensity_tween = create_tween()
-		_intensity_tween.tween_method(_set_shader_internsity, 0.0, MAX_INTENSITY, switch_time)
+		_intensity_tween.tween_method(_set_shader_internsity, 0.0, MAX_INTENSITY, switch_time) \
+			.set_ease(Tween.EASE_OUT_IN) \
+			.set_trans(Tween.TRANS_SINE)
 		_intensity_tween.finished.connect(_update_state)
 
 
@@ -115,7 +123,7 @@ func _update_state() -> void:
 			_state = State.Black
 		State.TransitionToWhite:
 			_state = State.White
-	switched.emit()
+	_emit_switch_signal()
 
 
 func _apply_color() -> void:
@@ -152,3 +160,15 @@ func _apply_color_to_object(object: CollisionObject2D) -> void:
 func _apply_color_to_material(material: Material) -> void:
 	var is_black := _state == State.Black or _state == State.TransitionToBlack
 	material.set(SHADER_SWITCH_COLORS, is_black)
+
+
+func _emit_switch_signal() -> void:
+	var color : ObjectColor
+	match _state:
+		State.White:
+			color = ObjectColor.White
+		State.Black:
+			color = ObjectColor.Black
+		_:
+			return
+	switched.emit(color)

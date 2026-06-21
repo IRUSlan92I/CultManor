@@ -4,6 +4,7 @@ extends CharacterBody2D
 
 signal dead
 signal interacted
+signal color_switched(new_color: CollisionSwitcher.ObjectColor)
 
 
 const PICKUP_OFFSET = 16.0
@@ -149,3 +150,7 @@ func _rearrange_pickups() -> void:
 
 func _on_switch_buffer_timer_timeout() -> void:
 	_is_switching_needed = false
+
+
+func _on_collision_switched(new_color: CollisionSwitcher.ObjectColor) -> void:
+	color_switched.emit(new_color)

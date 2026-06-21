@@ -270,4 +270,5 @@ fall_state = NodePath("../FallState")
 fall_left_state = NodePath("../FallLeftState")
 fall_right_state = NodePath("../FallRightState")
 
+[connection signal="switched" from="CollisionSwitcher" to="." method="_on_collision_switched"]
 [connection signal="timeout" from="SwitchBufferTimer" to="." method="_on_switch_buffer_timer_timeout"]

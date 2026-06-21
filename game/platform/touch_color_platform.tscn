@@ -6,7 +6,7 @@
 [ext_resource type="Shader" uid="uid://lqq1mg6l1qqe" path="res://game/shaders/black_n_white.gdshader" id="3_vol56"]
 [ext_resource type="Texture2D" uid="uid://cpcuokqv8u2xa" path="res://images/level/platform.png" id="3_wa58h"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4wo0k"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wa58h"]
 resource_local_to_scene = true
 shader = ExtResource("3_vol56")
 shader_parameter/black_color = Color(0, 0, 0, 1)
@@ -20,10 +20,10 @@ shader_parameter/seed = 0.0
 shader_parameter/direction = Vector2(1, 1)
 shader_parameter/use_world_pos = false
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_3k57e"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_vol56"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3tasl"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4wo0k"]
 resource_local_to_scene = true
 shader = ExtResource("2_4n4xw")
 shader_parameter/tile_size = 8.0
@@ -31,7 +31,7 @@ shader_parameter/platform_width = 24.0
 shader_parameter/atlas = ExtResource("3_wa58h")
 shader_parameter/seed = 0.12241629
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_eqoit"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3k57e"]
 resource_local_to_scene = true
 size = Vector2(16, 7)
 
@@ -42,14 +42,14 @@ size = Vector2(12, 1)
 script = ExtResource("2_wa58h")
 
 [node name="Sprite2D" parent="." index="0" unique_id=264863796]
-material = SubResource("ShaderMaterial_4wo0k")
-texture = SubResource("ViewportTexture_3k57e")
+material = SubResource("ShaderMaterial_wa58h")
+texture = SubResource("ViewportTexture_vol56")
 
 [node name="PlatformRect" parent="SubViewport" parent_id_path=PackedInt32Array(226200089) index="0" unique_id=794315918]
-material = SubResource("ShaderMaterial_3tasl")
+material = SubResource("ShaderMaterial_4wo0k")
 
 [node name="CollisionShape2D" parent="." index="2" unique_id=175449124]
-shape = SubResource("RectangleShape2D_eqoit")
+shape = SubResource("RectangleShape2D_3k57e")
 
 [node name="CollisionSwitcher" parent="." index="3" unique_id=542648449 node_paths=PackedStringArray("objects")]
 objects = [NodePath(".."), NodePath("../Area2D")]

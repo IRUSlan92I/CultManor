@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://cudbspmpx6sik" path="res://game/pickups/book_pickup.tscn" id="7_fq0h3"]
 [ext_resource type="PackedScene" uid="uid://dioc4r03dfleq" path="res://game/doors/book_door.tscn" id="8_75eok"]
 [ext_resource type="PackedScene" uid="uid://c4gqqhlew67ay" path="res://game/pickups/circle_key_pickup.tscn" id="8_g1txn"]
+[ext_resource type="PackedScene" uid="uid://bqb2qncny11a" path="res://game/platform/hidden_color_platform.tscn" id="8_lxcjr"]
 [ext_resource type="PackedScene" uid="uid://ciubf1ttwc133" path="res://game/pickups/square_key_pickup.tscn" id="9_yrqjd"]
 [ext_resource type="PackedScene" uid="uid://dqgmfpv2mhdpn" path="res://game/pickups/triangle_key_pickup.tscn" id="10_dea75"]
 [ext_resource type="PackedScene" uid="uid://be3mqeb784shj" path="res://game/objects/informative/movement_action_tip.tscn" id="10_ffor3"]
@@ -83,6 +84,11 @@ platform_width = 104
 
 [node name="TouchColorPlatform" parent="Platforms" parent_id_path=PackedInt32Array(1140671629) index="3" unique_id=1702050833 instance=ExtResource("7_a50fq")]
 position = Vector2(200, -25)
+platform_width = 80
+
+[node name="HiddenColorPlatform" parent="Platforms" parent_id_path=PackedInt32Array(1140671629) index="4" unique_id=1861027364 instance=ExtResource("8_lxcjr")]
+position = Vector2(13, -104)
+collision_layer = 2
 platform_width = 80
 
 [node name="LeverDoor" parent="Doors" parent_id_path=PackedInt32Array(1468144392) index="0" unique_id=1575363350 instance=ExtResource("2_r01v2")]

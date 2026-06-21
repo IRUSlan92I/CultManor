@@ -3,13 +3,11 @@ class_name AbstractColorPlatform
 extends AbstractPlatform
 
 
-enum PlatformColor {
-	White,
-	Black,
-}
-
-
-@export var initial_color := PlatformColor.White
+@export var initial_color := CollisionSwitcher.ObjectColor.White:
+	set(value):
+		initial_color = value
+		if Engine.is_editor_hint() and is_node_ready():
+			collision_switcher.switch_color()
 
 
 @onready var collision_switcher : CollisionSwitcher = $CollisionSwitcher
@@ -18,5 +16,5 @@ enum PlatformColor {
 func _ready() -> void:
 	super._ready()
 	collision_switcher.add_material(platform_sprite.material)
-	if initial_color == PlatformColor.Black:
+	if initial_color == CollisionSwitcher.ObjectColor.Black:
 		collision_switcher.switch_color()
