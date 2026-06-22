@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b7mhdrj3b6loq"]
+[gd_scene format=3 uid="uid://b7mhdrj3b6loq"]
 
 [ext_resource type="Script" uid="uid://5uqub2a6701b" path="res://game/doors/door.gd" id="1_vx1od"]
 [ext_resource type="Material" uid="uid://dojhoc6ljpt1a" path="res://game/materials/walls_gray.tres" id="1_xelsh"]
@@ -48,7 +48,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5nqrw")
 }],
-"loop": true,
+"loop": 1,
 "name": &"closed",
 "speed": 5.0
 }, {
@@ -62,7 +62,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4vug2")
 }],
-"loop": false,
+"loop": 0,
 "name": &"closing",
 "speed": 10.0
 }, {
@@ -70,7 +70,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ymlcn")
 }],
-"loop": true,
+"loop": 1,
 "name": &"open",
 "speed": 5.0
 }, {
@@ -84,34 +84,35 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_j83fq")
 }],
-"loop": false,
+"loop": 0,
 "name": &"opening",
 "speed": 10.0
 }]
 
-[node name="Door" type="Node2D"]
+[node name="Door" type="Node2D" unique_id=2006466960]
 script = ExtResource("1_vx1od")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=584436734]
 position = Vector2(-8.5, 0)
 
-[node name="StaticBodyCollision" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="StaticBodyCollision" type="CollisionShape2D" parent="StaticBody2D" unique_id=193176175]
 unique_name_in_owner = true
 shape = SubResource("RectangleShape2D_cs8ri")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=371280403]
 position = Vector2(-8.5, 0)
 collision_layer = 0
 collision_mask = 136
 
-[node name="AreaCollision" type="CollisionShape2D" parent="Area2D"]
+[node name="AreaCollision" type="CollisionShape2D" parent="Area2D" unique_id=853891699]
 unique_name_in_owner = true
 shape = SubResource("RectangleShape2D_u7b5a")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1718827818]
 material = ExtResource("1_xelsh")
 sprite_frames = SubResource("SpriteFrames_r8rhb")
 animation = &"closed"
+frame_progress = 0.61261725
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_exited"]

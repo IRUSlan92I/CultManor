@@ -1,3 +1,4 @@
+@tool
 class_name Door
 extends Node2D
 
@@ -6,6 +7,13 @@ const ANIMATION_CLOSED = "closed"
 const ANIMATION_OPEN = "open"
 const ANIMATION_OPENING = "opening"
 const ANIMATION_CLOSING = "closing"
+
+
+@export var use_shader := true:
+	set(value):
+		use_shader = value
+		if is_node_ready():
+			_update_shader()
 
 
 var _needed_to_be_open := false
@@ -19,6 +27,7 @@ var _needed_to_be_closed := false
 
 
 func _ready() -> void:
+	_update_shader()
 	sprite.play(ANIMATION_CLOSED)
 
 
@@ -48,6 +57,12 @@ func _close() -> void:
 	SoundManager.play_sfx_stream(SoundManager.sfx_stream_door_closing, global_position)
 	sprite.play(ANIMATION_CLOSING)
 	static_body.process_mode = Node.PROCESS_MODE_INHERIT
+
+
+func _update_shader() -> void:
+	var intensity := 0.5 if use_shader else 1.0
+	print(intensity)
+	sprite.material.set(CollisionSwitcher.SHADER_INTENSITY, intensity)
 
 
 func _on_animation_finished() -> void:
