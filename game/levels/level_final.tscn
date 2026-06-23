@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://mpsu4g2b5h3a" path="res://game/levels/abstract_level.tscn" id="1_bhhdo"]
 [ext_resource type="PackedScene" uid="uid://dx1yasi8wlaye" path="res://game/objects/decorative/bookstand.tscn" id="2_1t02d"]
 [ext_resource type="PackedScene" uid="uid://cojxqx5al7kyv" path="res://game/doors/locked_door.tscn" id="2_b6xh1"]
-[ext_resource type="Script" uid="uid://lxye5wqo5suq" path="res://game/levels/level_7.gd" id="2_sh0fj"]
+[ext_resource type="Script" uid="uid://lxye5wqo5suq" path="res://game/levels/level_final.gd" id="2_sh0fj"]
 [ext_resource type="PackedScene" uid="uid://cudbspmpx6sik" path="res://game/pickups/book_pickup.tscn" id="3_2esp0"]
 [ext_resource type="PackedScene" uid="uid://b7mhdrj3b6loq" path="res://game/doors/door.tscn" id="3_7erpt"]
 [ext_resource type="PackedScene" uid="uid://dioc4r03dfleq" path="res://game/doors/book_door.tscn" id="4_qqn64"]
