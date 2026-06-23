@@ -61,7 +61,6 @@ func _close() -> void:
 
 func _update_shader() -> void:
 	var intensity := 0.5 if use_shader else 1.0
-	print(intensity)
 	sprite.material.set(CollisionSwitcher.SHADER_INTENSITY, intensity)
 
 
