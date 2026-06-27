@@ -102,14 +102,17 @@ drag_bottom_margin = 0.1
 position = Vector2(0, -24)
 
 [node name="SwitchBufferTimer" type="Timer" parent="." unique_id=115300327]
+process_callback = 0
 wait_time = 0.5
 one_shot = true
 
 [node name="JumpBufferTimer" type="Timer" parent="." unique_id=740877224]
+process_callback = 0
 wait_time = 0.1
 one_shot = true
 
 [node name="CoyoteTimeTimer" type="Timer" parent="." unique_id=117837002]
+process_callback = 0
 wait_time = 0.1
 one_shot = true
 
