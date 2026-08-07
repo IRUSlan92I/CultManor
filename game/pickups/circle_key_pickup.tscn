@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c4gqqhlew67ay"]
+[gd_scene format=3 uid="uid://c4gqqhlew67ay"]
 
 [ext_resource type="PackedScene" uid="uid://cmnfpr2h2hbeu" path="res://game/pickups/abstract_pickup.tscn" id="1_u687g"]
 [ext_resource type="Script" uid="uid://dbssfh6ecgstl" path="res://game/pickups/circle_key_pickup.gd" id="2_sjfny"]
@@ -8,8 +8,9 @@
 atlas = ExtResource("3_pwkbp")
 region = Rect2(0, 0, 16, 16)
 
-[node name="CircleKeyPickup" instance=ExtResource("1_u687g")]
+[node name="CircleKeyPickup" unique_id=479576639 instance=ExtResource("1_u687g")]
 script = ExtResource("2_sjfny")
+max_bounce_offset = 2.0
 
-[node name="Sprite2D" parent="." index="0"]
+[node name="Sprite2D" parent="." index="0" unique_id=787072909]
 texture = SubResource("AtlasTexture_mprb4")

@@ -2,6 +2,19 @@ class_name AbstractPickup
 extends Area2D
 
 
+const BOUNCE_SPEED = 250.0
+
+
+@export_range(0.0, 100.0) var max_bounce_offset = 0.0
+
+
+@onready var sprite : Sprite2D = $Sprite2D
+
+
+func _process(_delta: float) -> void:
+	sprite.position.y = round(sin(Time.get_ticks_msec() / BOUNCE_SPEED) * max_bounce_offset)
+
+
 func _play_pickup_sound() -> void:
 	SoundManager.play_sfx_stream(SoundManager.sfx_stream_key_picked_up, global_position)
 

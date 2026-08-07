@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dqgmfpv2mhdpn"]
+[gd_scene format=3 uid="uid://dqgmfpv2mhdpn"]
 
 [ext_resource type="PackedScene" uid="uid://cmnfpr2h2hbeu" path="res://game/pickups/abstract_pickup.tscn" id="1_qr3v1"]
 [ext_resource type="Script" uid="uid://c73gihkak2xns" path="res://game/pickups/triangle_key_pickup.gd" id="2_pn8rn"]
@@ -8,8 +8,9 @@
 atlas = ExtResource("3_5k6x8")
 region = Rect2(16, 0, 16, 16)
 
-[node name="TriangleKeyPickup" instance=ExtResource("1_qr3v1")]
+[node name="TriangleKeyPickup" unique_id=1774919784 instance=ExtResource("1_qr3v1")]
 script = ExtResource("2_pn8rn")
+max_bounce_offset = 2.0
 
-[node name="Sprite2D" parent="." index="0"]
+[node name="Sprite2D" parent="." index="0" unique_id=787072909]
 texture = SubResource("AtlasTexture_8ko2n")
