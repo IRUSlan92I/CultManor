@@ -9,4 +9,5 @@ region = Rect2(48, 96, 16, 32)
 [node name="ChairR" type="Node2D" unique_id=567783693]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1599831744]
+position = Vector2(0, -14)
 texture = SubResource("AtlasTexture_e7ewy")

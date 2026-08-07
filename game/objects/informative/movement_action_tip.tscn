@@ -14,7 +14,9 @@ region = Rect2(0, 32, 32, 32)
 [node name="MovementActionTip" unique_id=1113266380 instance=ExtResource("1_6vlve")]
 
 [node name="SpriteKbd" parent="." index="0" unique_id=948959005]
+position = Vector2(-1, -15)
 texture = SubResource("AtlasTexture_qoa1y")
 
 [node name="SpritePad" parent="." index="1" unique_id=1703375720]
+visible = false
 texture = SubResource("AtlasTexture_aui55")

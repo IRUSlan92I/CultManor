@@ -9,4 +9,5 @@ region = Rect2(144, 64, 16, 32)
 [node name="Bookstand" type="Node2D" unique_id=764203715]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1927584709]
+position = Vector2(0, -10)
 texture = SubResource("AtlasTexture_opqiy")

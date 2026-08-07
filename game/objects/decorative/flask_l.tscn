@@ -9,4 +9,5 @@ region = Rect2(128, 80, 16, 16)
 [node name="FlaskL" type="Node2D" unique_id=1215208712]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1287451147]
+position = Vector2(0, -7)
 texture = SubResource("AtlasTexture_i1pbn")

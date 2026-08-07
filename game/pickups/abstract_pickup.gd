@@ -5,7 +5,7 @@ extends Area2D
 const BOUNCE_SPEED = 250.0
 
 
-@export_range(0.0, 100.0) var max_bounce_offset = 0.0
+@export_range(0.0, 100.0) var max_bounce_offset := 0.0
 
 
 @onready var sprite : Sprite2D = $Sprite2D

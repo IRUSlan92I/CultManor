@@ -26,7 +26,7 @@ shader_parameter/direction = Vector2(1, 1)
 shader_parameter/use_world_pos = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fw0b"]
-size = Vector2(32, 32)
+size = Vector2(38, 38)
 
 [node name="AbstractLevel" type="Node2D" unique_id=1364620575]
 script = ExtResource("1_o2mui")

@@ -70,9 +70,6 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_4ocoy")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rt0xo"]
-size = Vector2(48, 32)
-
 [node name="Level1" unique_id=586585189 instance=ExtResource("1_15okj")]
 player_falling_at_start = false
 player_can_switch_color = false
@@ -117,133 +114,131 @@ position = Vector2(2216, -8)
 use_shader = false
 
 [node name="Outdoor" type="Node2D" parent="Objects" parent_id_path=PackedInt32Array(1320033435) index="0" unique_id=1397940815]
-position = Vector2(71, 0)
+position = Vector2(71, 11)
 
 [node name="MovementActionTip" parent="Objects/Outdoor" index="0" unique_id=547413931 instance=ExtResource("6_ia26y")]
-position = Vector2(-10, -3)
 
-[node name="Entrance" type="Node2D" parent="Objects" parent_id_path=PackedInt32Array(1320033435) index="1" unique_id=893586011]
-position = Vector2(641, 0)
+[node name="Room1" type="Node2D" parent="Objects" parent_id_path=PackedInt32Array(1320033435) index="1" unique_id=893586011]
+position = Vector2(641, 11)
 
-[node name="JumpActionTip" parent="Objects/Entrance" index="0" unique_id=1575953022 instance=ExtResource("7_rt0xo")]
-position = Vector2(131, -43)
+[node name="JumpActionTip" parent="Objects/Room1" index="0" unique_id=1575953022 instance=ExtResource("7_rt0xo")]
+position = Vector2(131, -50)
 
-[node name="FlaskS" parent="Objects/Entrance" index="1" unique_id=2063282400 instance=ExtResource("8_rt0xo")]
-position = Vector2(-212, -20)
+[node name="FlaskS" parent="Objects/Room1" index="1" unique_id=2063282400 instance=ExtResource("8_rt0xo")]
+position = Vector2(-211, -22)
 
-[node name="Fireplace" parent="Objects/Entrance" index="2" unique_id=2135571866 instance=ExtResource("8_dea75")]
-position = Vector2(-206, -5)
+[node name="Fireplace" parent="Objects/Room1" index="2" unique_id=2135571866 instance=ExtResource("8_dea75")]
+position = Vector2(-206, 0)
 
-[node name="PaintingVL" parent="Objects/Entrance" index="3" unique_id=1929268037 instance=ExtResource("9_mmf06")]
-position = Vector2(-259, -48)
+[node name="PaintingVL" parent="Objects/Room1" index="3" unique_id=1929268037 instance=ExtResource("9_mmf06")]
+position = Vector2(-259, -55)
 
-[node name="PaintingHS" parent="Objects/Entrance" index="4" unique_id=334893107 instance=ExtResource("10_yrqjd")]
-position = Vector2(-80, -38)
+[node name="PaintingHS" parent="Objects/Room1" index="4" unique_id=334893107 instance=ExtResource("10_yrqjd")]
+position = Vector2(-80, -45)
 
-[node name="Room1" type="Node2D" parent="Objects" parent_id_path=PackedInt32Array(1320033435) index="2" unique_id=2147003490]
-position = Vector2(1266, -21)
+[node name="Room2" type="Node2D" parent="Objects" parent_id_path=PackedInt32Array(1320033435) index="2" unique_id=2147003490]
+position = Vector2(1266, 11)
 
-[node name="Chair" parent="Objects/Room1" index="0" unique_id=1510809065 instance=ExtResource("11_qpo0v")]
-position = Vector2(-3, 18)
+[node name="Chair" parent="Objects/Room2" index="0" unique_id=1510809065 instance=ExtResource("11_qpo0v")]
+position = Vector2(-3, 0)
 
-[node name="TableM" parent="Objects/Room1" index="1" unique_id=1644373204 instance=ExtResource("12_lxfsh")]
-position = Vector2(0, 23)
+[node name="TableM" parent="Objects/Room2" index="1" unique_id=1644373204 instance=ExtResource("12_lxfsh")]
 
-[node name="Plate" parent="Objects/Room1" index="2" unique_id=705672053 instance=ExtResource("15_rt0xo")]
-position = Vector2(3, 13)
+[node name="Plate" parent="Objects/Room2" index="2" unique_id=705672053 instance=ExtResource("15_rt0xo")]
+position = Vector2(3, -18)
 
-[node name="PaintingVL" parent="Objects/Room1" index="3" unique_id=893098716 instance=ExtResource("9_mmf06")]
-position = Vector2(59, -24)
+[node name="PaintingVL" parent="Objects/Room2" index="3" unique_id=893098716 instance=ExtResource("9_mmf06")]
+position = Vector2(-42, -64)
 
-[node name="PaintingHL" parent="Objects/Room1" index="4" unique_id=806608534 instance=ExtResource("13_g3b4m")]
-position = Vector2(236, -16)
+[node name="PaintingHL" parent="Objects/Room2" index="4" unique_id=806608534 instance=ExtResource("13_g3b4m")]
+position = Vector2(209, -57)
 
-[node name="PaintingVS" parent="Objects/Room1" index="5" unique_id=1542286173 instance=ExtResource("14_blgb8")]
-position = Vector2(-180, -16)
+[node name="PaintingVS" parent="Objects/Room2" index="5" unique_id=1542286173 instance=ExtResource("14_blgb8")]
+position = Vector2(-207, -57)
 
-[node name="Room2" type="Node2D" parent="Objects" parent_id_path=PackedInt32Array(1320033435) index="3" unique_id=1579273124]
-position = Vector2(1758, -88)
+[node name="Room3" type="Node2D" parent="Objects" parent_id_path=PackedInt32Array(1320033435) index="3" unique_id=1579273124]
+position = Vector2(1735, 11)
 
-[node name="Wardrobe" parent="Objects/Room2" index="0" unique_id=988346071 instance=ExtResource("15_ohfy3")]
-position = Vector2(-114, 77)
+[node name="Wardrobe" parent="Objects/Room3" index="0" unique_id=988346071 instance=ExtResource("15_ohfy3")]
+position = Vector2(-96, 0)
 
-[node name="Cabinet1" parent="Objects/Room2" index="1" unique_id=269669164 instance=ExtResource("16_rt0xo")]
-position = Vector2(66, 88)
+[node name="Cabinet1" parent="Objects/Room3" index="1" unique_id=269669164 instance=ExtResource("16_rt0xo")]
+position = Vector2(90, 0)
 
-[node name="MirrorL" parent="Objects/Room2" index="2" unique_id=1833595727 instance=ExtResource("17_blgb8")]
-position = Vector2(-23, 23)
+[node name="MirrorL" parent="Objects/Room3" index="2" unique_id=1833595727 instance=ExtResource("17_blgb8")]
+position = Vector2(-9, -76)
 
-[node name="Cabinet2" parent="Objects/Room2" index="3" unique_id=1550022772 instance=ExtResource("16_rt0xo")]
-position = Vector2(-23, 40)
+[node name="Cabinet2" parent="Objects/Room3" index="3" unique_id=1550022772 instance=ExtResource("16_rt0xo")]
+position = Vector2(-9, -48)
 
-[node name="PaintingHS" parent="Objects/Room2" index="4" unique_id=1914082284 instance=ExtResource("10_yrqjd")]
-position = Vector2(51, 4)
+[node name="PaintingHS" parent="Objects/Room3" index="4" unique_id=1914082284 instance=ExtResource("10_yrqjd")]
+position = Vector2(67, -92)
 
-[node name="PaintingVL" parent="Objects/Room2" index="5" unique_id=492674623 instance=ExtResource("9_mmf06")]
-position = Vector2(-92, -7)
+[node name="PaintingVL" parent="Objects/Room3" index="5" unique_id=492674623 instance=ExtResource("9_mmf06")]
+position = Vector2(-76, -103)
 
-[node name="Room3" type="Node2D" parent="Objects" parent_id_path=PackedInt32Array(1320033435) index="4" unique_id=251399536]
-position = Vector2(2060, -18)
+[node name="Room4" type="Node2D" parent="Objects" parent_id_path=PackedInt32Array(1320033435) index="4" unique_id=251399536]
+position = Vector2(2057, 11)
 
-[node name="ChairF_M" parent="Objects/Room3" index="0" unique_id=447609073 instance=ExtResource("11_qpo0v")]
-position = Vector2(-83, 15)
+[node name="ChairF_M" parent="Objects/Room4" index="0" unique_id=447609073 instance=ExtResource("11_qpo0v")]
+position = Vector2(-83, 0)
 
-[node name="TableM" parent="Objects/Room3" index="1" unique_id=841664693 instance=ExtResource("12_lxfsh")]
-position = Vector2(-74, 20)
+[node name="TableM" parent="Objects/Room4" index="1" unique_id=841664693 instance=ExtResource("12_lxfsh")]
+position = Vector2(-74, 0)
 
-[node name="PlateM" parent="Objects/Room3" index="2" unique_id=1365301653 instance=ExtResource("15_rt0xo")]
-position = Vector2(-78, 10)
+[node name="PlateM" parent="Objects/Room4" index="2" unique_id=1365301653 instance=ExtResource("15_rt0xo")]
+position = Vector2(-78, -18)
 
-[node name="ChairB_M" parent="Objects/Room3" index="3" unique_id=1732447047 instance=ExtResource("18_ohfy3")]
-position = Vector2(-67, 15)
+[node name="ChairB_M" parent="Objects/Room4" index="3" unique_id=1732447047 instance=ExtResource("18_ohfy3")]
+position = Vector2(-67, 0)
 
-[node name="ChairF_L_1" parent="Objects/Room3" index="4" unique_id=938467857 instance=ExtResource("11_qpo0v")]
-position = Vector2(63, 15)
+[node name="ChairF_L_1" parent="Objects/Room4" index="4" unique_id=938467857 instance=ExtResource("11_qpo0v")]
+position = Vector2(63, 0)
 
-[node name="ChairF_L_2" parent="Objects/Room3" index="5" unique_id=1183366175 instance=ExtResource("11_qpo0v")]
-position = Vector2(83, 15)
+[node name="ChairF_L_2" parent="Objects/Room4" index="5" unique_id=1183366175 instance=ExtResource("11_qpo0v")]
+position = Vector2(83, 0)
 
-[node name="ChairF_L_3" parent="Objects/Room3" index="6" unique_id=842018134 instance=ExtResource("11_qpo0v")]
-position = Vector2(106, 15)
+[node name="ChairF_L_3" parent="Objects/Room4" index="6" unique_id=842018134 instance=ExtResource("11_qpo0v")]
+position = Vector2(106, 0)
 
-[node name="TableL" parent="Objects/Room3" index="7" unique_id=1882360184 instance=ExtResource("19_rt0xo")]
-position = Vector2(83, 20)
+[node name="TableL" parent="Objects/Room4" index="7" unique_id=1882360184 instance=ExtResource("19_rt0xo")]
+position = Vector2(83, 0)
 
-[node name="PlateL1" parent="Objects/Room3" index="8" unique_id=1682442692 instance=ExtResource("15_rt0xo")]
-position = Vector2(69, 10)
+[node name="PlateL1" parent="Objects/Room4" index="8" unique_id=1682442692 instance=ExtResource("15_rt0xo")]
+position = Vector2(69, -18)
 
-[node name="PlateL2" parent="Objects/Room3" index="9" unique_id=916509893 instance=ExtResource("15_rt0xo")]
-position = Vector2(89, 10)
+[node name="PlateL2" parent="Objects/Room4" index="9" unique_id=916509893 instance=ExtResource("15_rt0xo")]
+position = Vector2(89, -18)
 
-[node name="ChairB_L_1" parent="Objects/Room3" index="10" unique_id=164131059 instance=ExtResource("18_ohfy3")]
-position = Vector2(72, 15)
+[node name="ChairB_L_1" parent="Objects/Room4" index="10" unique_id=164131059 instance=ExtResource("18_ohfy3")]
+position = Vector2(72, 0)
 
-[node name="ChairB_L_2" parent="Objects/Room3" index="11" unique_id=1361277659 instance=ExtResource("18_ohfy3")]
-position = Vector2(95, 15)
+[node name="ChairB_L_2" parent="Objects/Room4" index="11" unique_id=1361277659 instance=ExtResource("18_ohfy3")]
+position = Vector2(95, 0)
 
-[node name="PaintingHS" parent="Objects/Room3" index="12" unique_id=1489568309 instance=ExtResource("10_yrqjd")]
-position = Vector2(47, -26)
+[node name="PaintingHS" parent="Objects/Room4" index="12" unique_id=1489568309 instance=ExtResource("10_yrqjd")]
+position = Vector2(58, -60)
 
-[node name="PaintingVS" parent="Objects/Room3" index="13" unique_id=1675747115 instance=ExtResource("14_blgb8")]
-position = Vector2(-94, -31)
+[node name="PaintingVS" parent="Objects/Room4" index="13" unique_id=1675747115 instance=ExtResource("14_blgb8")]
+position = Vector2(-83, -65)
 
-[node name="ClosedRoom" type="Node2D" parent="Objects" parent_id_path=PackedInt32Array(1320033435) index="5" unique_id=512917605]
+[node name="Room5" type="Node2D" parent="Objects" parent_id_path=PackedInt32Array(1320033435) index="5" unique_id=512917605]
 position = Vector2(2468, 11)
 
-[node name="Wardrobe" parent="Objects/ClosedRoom" index="0" unique_id=1607339750 instance=ExtResource("15_ohfy3")]
-position = Vector2(-137, -22)
+[node name="Wardrobe" parent="Objects/Room5" index="0" unique_id=1607339750 instance=ExtResource("15_ohfy3")]
+position = Vector2(-136, 0)
 
-[node name="FlaskS" parent="Objects/ClosedRoom" index="1" unique_id=565628633 instance=ExtResource("8_rt0xo")]
-position = Vector2(-143, -50)
+[node name="FlaskS" parent="Objects/Room5" index="1" unique_id=565628633 instance=ExtResource("8_rt0xo")]
+position = Vector2(-143, -44)
 
-[node name="Cabinet" parent="Objects/ClosedRoom" index="2" unique_id=776063180 instance=ExtResource("16_rt0xo")]
-position = Vector2(-52, -9)
+[node name="Cabinet" parent="Objects/Room5" index="2" unique_id=776063180 instance=ExtResource("16_rt0xo")]
+position = Vector2(-52, 0)
 
-[node name="ChairB" parent="Objects/ClosedRoom" index="3" unique_id=593320838 instance=ExtResource("18_ohfy3")]
-position = Vector2(-50, -14)
+[node name="ChairB" parent="Objects/Room5" index="3" unique_id=593320838 instance=ExtResource("18_ohfy3")]
+position = Vector2(-50, 0)
 
-[node name="PaintingHL" parent="Objects/ClosedRoom" index="4" unique_id=959335970 instance=ExtResource("13_g3b4m")]
-position = Vector2(24, -51)
+[node name="PaintingHL" parent="Objects/Room5" index="4" unique_id=959335970 instance=ExtResource("13_g3b4m")]
+position = Vector2(24, -54)
 
 [node name="GrayWalls" parent="Tiles" parent_id_path=PackedInt32Array(1626037498) index="0" unique_id=557672309]
 material = SubResource("ShaderMaterial_rt0xo")
@@ -260,4 +255,3 @@ position = Vector2(2057, 169)
 
 [node name="CollisionShape2D" parent="LevelEnd" index="0" unique_id=937956890]
 position = Vector2(-1, 103)
-shape = SubResource("RectangleShape2D_rt0xo")

@@ -9,4 +9,5 @@ region = Rect2(32, 0, 48, 32)
 [node name="TableM" type="Node2D" unique_id=639741163]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=881942302]
+position = Vector2(0, -9)
 texture = SubResource("AtlasTexture_runce")

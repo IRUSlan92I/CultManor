@@ -9,4 +9,5 @@ region = Rect2(128, 48, 32, 16)
 [node name="RetortL" type="Node2D" unique_id=928599671]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=777287822]
+position = Vector2(-3, -8)
 texture = SubResource("AtlasTexture_8epgq")

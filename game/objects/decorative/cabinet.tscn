@@ -9,4 +9,5 @@ region = Rect2(128, 96, 32, 32)
 [node name="Cabinet" type="Node2D" unique_id=776063180]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=633984423]
+position = Vector2(0, -11)
 texture = SubResource("AtlasTexture_sqimt")
